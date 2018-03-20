@@ -1,6 +1,5 @@
 from os import listdir
 from codecs import open
-from importlib import reload
 
 
 def kr_missing_militia_and_garrison (path, output_file):

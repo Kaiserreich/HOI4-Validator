@@ -1,6 +1,5 @@
 from os import listdir
 from codecs import open
-from importlib import reload
 
 
 def missing_divisions_names_group (path, output_file):
