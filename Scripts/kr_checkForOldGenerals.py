@@ -31,7 +31,7 @@ def events(path, output_file):
         line = file.readline()
         current_line += 1
         while line:
-            if "skill =" in line:
+            if "skill =" in line and "#" not in line:
                 output_file.write(path + "\\" + filename +
                                   " there's an old general around line " + str(current_line) + '\n')
             line = file.readline()
