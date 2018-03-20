@@ -18,8 +18,8 @@ def countries(path, output_file):
         current_line += 1
         while line:
             if "#mw thinks this is a land commander" in line:
-                output_file.write(path+ "\\" + filename +
-                                  " there's an old general around line " + str(current_line) +'\n')
+                output_file.write("\\history\\countries\\" + filename +
+                                  " there's an old general around line " + str(current_line) + '\n')
             line = file.readline()
             current_line += 1
 
@@ -37,7 +37,7 @@ def events(path, output_file):
             if "attack_skill" in line or "defense_skill" in line or "planning_skill" in line or "logistics_skill" in line and ok == 1:
                 ok = 0
             if "}" in line and ok == 1:
-                output_file.write(path + "\\" + filename +
+                output_file.write("\\events\\" + filename +
                                   " there's an old general around line " + str(current_line) + '\n')
                 ok = 0
             line = file.readline()
