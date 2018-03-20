@@ -7,12 +7,11 @@ def missing_divisions_names_group (path, output_file):
     for filename in listdir(path):
         file = open(path + '\\' + filename, 'r', 'ansi')
         line = file.readline()
-        lines = 0
+        lines = 1
         while line:
             split_line = line.split(' ')
             level = 0
             entered_bracket = 0
-            lines += 1
             if 'division_template = {' in line:
                 ok = 0
                 start_line = lines
@@ -25,7 +24,7 @@ def missing_divisions_names_group (path, output_file):
                             level -= 1
                         if "division_names_group" in string:
                             if level != 1:
-                                output_file.write(filename +
+                                output_file.write("\\history\\units\\" + filename +
                                                   " division names group in wrong brackets at line:" + str(lines) + '\n')
                                 ok = 2
                                 break
@@ -36,8 +35,9 @@ def missing_divisions_names_group (path, output_file):
                     split_line = line.split(' ')
 
                 if ok == 0 and entered_bracket == 1:
-                    output_file.write(filename +
+                    output_file.write("\\history\\units\\" + filename +
                                       " division names group missing at division starting on line:"
                                       + str(start_line) + '\n')
             if entered_bracket == 0:
+                lines += 1
                 line = file.readline()

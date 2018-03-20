@@ -21,6 +21,6 @@ def kr_missing_militia_and_garrison (path, output_file):
                         has_militia += 1
             line = file.readline()
         if has_militia == 0:
-            output_file.write(filename + " has no militia\n")
+            output_file.write("\\common\\units\\names_divisions\\" + filename + " has no militia\n")
         if has_garrison == 0:
-            output_file.write(filename + " has no garrison\n")
+            output_file.write("\\common\\units\\names_divisions\\" +  filename + " has no garrison\n")
