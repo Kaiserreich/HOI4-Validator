@@ -30,10 +30,16 @@ def events(path, output_file):
         file = open(path + '\\' + filename, 'r', 'utf-8-sig')
         line = file.readline()
         current_line += 1
+        ok = 0
         while line:
             if "skill =" in line and "#" not in line:
+                ok = 1
+            if "attack_skill" in line or "defense_skill" in line or "planning_skill" in line or "logistics_skill" in line and ok == 1:
+                ok = 0
+            if "}" in line and ok == 1:
                 output_file.write(path + "\\" + filename +
                                   " there's an old general around line " + str(current_line) + '\n')
+                ok = 0
             line = file.readline()
             current_line += 1
 
