@@ -11,7 +11,7 @@ def kr_missing_militia_and_garrison (path, output_file):
         line = file.readline()
         while line:
             split_line = line.split(' ')
-            if 'division_types' in split_line[0]:
+            if 'division_types' in line:
                 for string in split_line:
                     if "#" in string:
                         break
