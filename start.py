@@ -9,6 +9,7 @@ sys.path.append(dirName + "\\Scripts")
 from missingDivisionNamesGroup import missing_divisions_names_group
 from kr_missingMilitiaAndGarrison import kr_missing_militia_and_garrison
 from checkForOldGenerals import check_for_old_generals
+from checkForNameLists import check_for_name_lists
 
 # Creating the path for the Mod
 ok = 0
@@ -23,9 +24,11 @@ for string in sys.argv:
 outputFile = open("validator.txt", 'w', 'utf-8-sig')
 
 # functions go HERE
+
 missing_divisions_names_group(path, outputFile)
 kr_missing_militia_and_garrison(path, outputFile)
 check_for_old_generals(path, outputFile)
+check_for_name_lists(path, outputFile)
 
 
 

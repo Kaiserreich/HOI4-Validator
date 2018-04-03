@@ -5,8 +5,8 @@ from codecs import open
 def check_for_old_generals(path, output_file):
     check(path, output_file, "\\history\\countries", 'utf-8-sig')
     check(path, output_file, "\\events", 'utf-8-sig')
-    check(path, output_file, "\\common\\national_focus", 'utf-8-sig')
-    check(path, output_file, "\\common\\scripted_effects", 'utf-8-sig')
+    check(path, output_file, "\\common\\national_focus", 'ansi')
+    check(path, output_file, "\\common\\scripted_effects", 'ansi')
 
 
 def check(path, output_file, sub_path, encoding):
