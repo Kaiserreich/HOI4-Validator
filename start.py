@@ -5,7 +5,6 @@ from codecs import open
 dirName = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(dirName + "\\Scripts")
 
-print (dirName + "\\Scripts\n")
 # imports go HERE
 from missingDivisionNamesGroup import missing_divisions_names_group
 from checkForOldGenerals import check_for_old_generals
