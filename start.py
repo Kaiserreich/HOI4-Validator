@@ -29,6 +29,7 @@ check_for_old_generals(path, outputFile)
 check_for_name_lists(path, outputFile)
 
 
+print ('The validator finished, the output file should be at ' + os.path.abspath(outputFile.name))
 
 
 
