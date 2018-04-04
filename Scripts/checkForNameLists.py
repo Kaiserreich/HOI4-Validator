@@ -31,7 +31,7 @@ def check_for_name_lists(file_path, output_file):
                             break
 
                 if level == 2 and "group =" in line:
-                    if "support" not in line:
+                    if "support" not in line and unit_name not in unit_types:
                         unit_types.append(unit_name)
 
                 if '{' in line:
