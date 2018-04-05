@@ -9,6 +9,7 @@ sys.path.append(dirName + "\\Scripts")
 from missingDivisionNamesGroup import missing_divisions_names_group
 from checkForOldGenerals import check_for_old_generals
 from checkForNameLists import check_for_name_lists
+from checkBrackets import check_brackets
 
 # Creating the path for the Mod
 ok = 0
@@ -24,9 +25,10 @@ outputFile = open("validator.txt", 'w', 'utf-8-sig')
 
 # functions go HERE
 
-missing_divisions_names_group(path, outputFile)
-check_for_old_generals(path, outputFile)
-check_for_name_lists(path, outputFile)
+#missing_divisions_names_group(path, outputFile)
+#check_for_old_generals(path, outputFile)
+#check_for_name_lists(path, outputFile)
+check_brackets(path, outputFile)
 
 
 print ('The validator finished, the output file should be at ' + os.path.abspath(outputFile.name))
