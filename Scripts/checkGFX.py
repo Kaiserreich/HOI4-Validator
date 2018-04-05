@@ -33,3 +33,4 @@ def check_for_missing_gfx(file_path, output_file):
 
     #Ill also need common\scripted_effects for cosmetic tags
     #fucking flags and their cosmetic tags
+    #test

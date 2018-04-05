@@ -32,6 +32,7 @@ check_brackets(path, outputFile)
 
 
 print ('The validator finished, the output file should be at ' + os.path.abspath(outputFile.name))
+#test
 
 
 
