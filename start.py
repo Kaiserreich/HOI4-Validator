@@ -25,9 +25,9 @@ outputFile = open("validator.txt", 'w', 'utf-8-sig')
 
 # functions go HERE
 
-#missing_divisions_names_group(path, outputFile)
-#check_for_old_generals(path, outputFile)
-#check_for_name_lists(path, outputFile)
+missing_divisions_names_group(path, outputFile)
+check_for_old_generals(path, outputFile)
+check_for_name_lists(path, outputFile)
 check_brackets(path, outputFile)
 
 

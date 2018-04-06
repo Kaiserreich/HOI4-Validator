@@ -27,7 +27,6 @@ def check(path, output_file, sub_path, encoding):
         current_line += 1
         stack = []
         while line:
-            split_line = line.split(' ')
             if not_commented(line):
                 for letter in line:
                     if letter == '(':
