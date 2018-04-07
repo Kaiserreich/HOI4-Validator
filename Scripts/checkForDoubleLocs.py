@@ -17,7 +17,7 @@ def check_for_double_locs(path, output_file):
             while line:
                 line = line.strip()
                 i = line.find(':')
-                if line[0] != '#' and i != -1:
+                if i != -1 and line[0] != '#':
                     loc = line[:i]
                     if loc in list_loc:
                         output_file.write("Duplicated Loc: '" + loc + "' in: " + list_loc[loc] + " and in: '\\localisation\\" + filename + "' at line " + str(current_line) + "\n")
