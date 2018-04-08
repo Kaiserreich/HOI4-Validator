@@ -18,7 +18,7 @@ def check_for_missing_gfx(file_path, output_file):
     tree_path = file_path + "\\common\\national_focus"
     tree_gfx_path = file_path + "\\gfx\\interface\\goals"
     decisions_path = file_path + "\\common\\decisions"
-    scripted_triggers_path = file_path = "\\common\\scripted_effects"
+    scripted_triggers_path = file_path + "\\common\\scripted_effects"
 
     event_path  = file_path + "\\events"
     event_gfx_path = file_path + "\\gfx\\event_pictures"
@@ -36,26 +36,47 @@ def check_for_missing_gfx(file_path, output_file):
     flags_gfx_path = file_path + "\\gfx\\flags"
 
     cosmetic_tag_dirs = [event_path, decisions_path, tree_path, scripted_triggers_path]
-    fill_tags(tags_path)
+    fill_tags(tags_path, cosmetic_tag_dirs )
 
     #Ill also need common\scripted_effects for cosmetic tags
     #fucking flags and their cosmetic tags
     #test
 
 
-def fill_tags(internal_path):
+def fill_tags(internal_path, cos_tag_dir):
 
     #Find Normal Tags
     counter = 0
-    file = open(internal_path + "\\00_countries.txt", 'r', 'utf-8-sig')
+    file = open(internal_path + "\\00_countries.txt", 'r', 'ansi')
     print("Reading: " + file.name)
     lines = file.readlines()
     for string in lines:
         temp_string = string[:3]
         if '#' not in temp_string and '\r\n' != string:
             tags[counter] = string[:3]
-            print("Found TAG: " + tags[counter])
             counter += 1
+    file.close()
 
     #Find Cosmetic Tags
     counter = 0
+    for dirs in cos_tag_dir:
+        for filename in listdir(dirs):
+            if 'categories' in filename:
+                break
+            file = open(dirs + "\\" + filename, 'r', 'utf-8')
+            lines = file.readlines()
+            for string in lines:
+                if 'set_cosmetic_tag' in string and '#' not in string and '{' not in string:
+                    temp_string = string.split(' ')[2][:-2]
+                    if finddup(cosmetic_tags, temp_string) is False:
+                        cosmetic_tags[counter] = temp_string
+                        print("Found TAG: " + cosmetic_tags[counter] + " at " + counter.__str__())
+                        counter += 1
+
+
+def finddup(array, string):
+    try:
+        array.index(string)
+        return True
+    except ValueError:
+        return False
