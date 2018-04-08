@@ -11,6 +11,7 @@ from checkForOldGenerals import check_for_old_generals
 from checkForNameLists import check_for_name_lists
 from checkBrackets import check_brackets
 from checkForDoubleLocs import check_for_double_locs
+from checkGFX import check_for_missing_gfx
 
 # Creating the path for the Mod
 ok = 0
@@ -31,6 +32,7 @@ check_for_old_generals(path, outputFile)
 check_for_name_lists(path, outputFile)
 check_brackets(path, outputFile)
 check_for_double_locs(path, outputFile)
+check_for_missing_gfx(path, outputFile)
 
 print ('The validator finished, the output file should be at ' + os.path.abspath(outputFile.name))
 #test
