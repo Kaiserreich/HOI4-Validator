@@ -53,17 +53,15 @@ def fill_tag_array(internal_path, tags, cosmetics):
 
     #Find Normal Tags
     tags_path = internal_path + "\\common\\country_tags\\00_countries.txt"
-    counter = 0
     file = open(tags_path, 'r', 'ansi')
     print("Reading: " + file.name)
     lines = file.readlines()
+
     for string in lines:
         temp_string = string[:3]
         if '#' not in temp_string and '\r\n' != string:
             tags.append(string[:3])
             #print("Found TAG: " + tags[counter])
-            counter += 1
-    file.close()
 
     #Find Cosmetic Tags
     if cosmetics is True:
@@ -78,9 +76,7 @@ def fill_tag_array(internal_path, tags, cosmetics):
                         temp_string = string.split(' ')[2][:-2]
                         if finddup(tags, temp_string) is False:
                             tags.append(temp_string)
-                            #print("Found TAG: " + cosmetic_tags[counter])
-                            counter += 1
-    print(counter)
+                            #print("Found TAG: " + temp_string)
 
 
 def finddup(array, string):
