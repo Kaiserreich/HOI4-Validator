@@ -7,7 +7,6 @@ import re
 
 
 def check_for_missing_gfx(file_path, output_file):
-    print("Just checking")
     # C:\Users\Martijn\Documents\Paradox Interactive\Hearts of Iron IV\mod\KRBU
     # this is going to be a mess
 
@@ -33,8 +32,8 @@ def check_for_missing_gfx(file_path, output_file):
 
     flags_gfx_path = file_path + "\\gfx\\flags"
 
-    tag = [None] * 600
-    fill_tag_array(file_path, tag, True )
+    tag = []
+    fill_tag_array(file_path, tag, True)
     check_flags(tag, flags_gfx_path)
 
     #Ill also need common\scripted_effects for cosmetic tags
@@ -80,12 +79,39 @@ def fill_tag_array(internal_path, tags, cosmetics):
 
 
 def finddup(array, string):
-
-    try:
-        array.index(string)
+    if string in array:
         return True
-    except ValueError:
+    else:
         return False
 
+def hasideo(string, idarray):
+    for ideos in idarray:
+        if ideos in string:
+            return True
+    return False
+
+
+def stripideo(string, idarray):
+    for ideos in idarray:
+        if ideos in string:
+            return string[:-len(ideos)-1]
+
+
 def check_flags(tag_array, flag_path):
-    print("")
+    ideos = ["totalist", "syndicalist", "radical_socialist", "social_democrat", "social_liberal", "market_liberal", "social_conservative", "authoritarian_democrat", "paternal_autocrat", "national_populist"]
+    flagarr = []
+    for file_name in listdir(flag_path):
+        if 'medium' in file_name or 'small' in file_name:
+            break
+        temp_string = file_name[:-4]
+        if hasideo(temp_string, ideos) is True:
+            temp_string = stripideo(temp_string, ideos)
+        if finddup(tag_array, temp_string) is False:
+            print("No tag for " + file_name)
+        if finddup(flagarr, temp_string) is False:
+            flagarr.append(temp_string)
+            print(temp_string)
+    for strings in tag_array:
+        if finddup(flagarr, strings) is False:
+            #print("No flag for " + strings)
+            counter = 0
