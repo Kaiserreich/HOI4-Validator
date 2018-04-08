@@ -3,8 +3,7 @@ from os import path
 from codecs import open
 import re
 
-tags = [None] * 300
-cosmetic_tags = [None] * 300
+
 
 
 def check_for_missing_gfx(file_path, output_file):
@@ -13,7 +12,6 @@ def check_for_missing_gfx(file_path, output_file):
     # this is going to be a mess
 
     interface_path = file_path + "\\interface"
-    tags_path = file_path + "\\common\\country_tags"
 
     tree_path = file_path + "\\common\\national_focus"
     tree_gfx_path = file_path + "\\gfx\\interface\\goals"
@@ -35,48 +33,63 @@ def check_for_missing_gfx(file_path, output_file):
 
     flags_gfx_path = file_path + "\\gfx\\flags"
 
-    cosmetic_tag_dirs = [event_path, decisions_path, tree_path, scripted_triggers_path]
-    fill_tags(tags_path, cosmetic_tag_dirs )
+    tag = [None] * 600
+    fill_tag_array(file_path, tag, True )
+    check_flags(tag, flags_gfx_path)
 
     #Ill also need common\scripted_effects for cosmetic tags
     #fucking flags and their cosmetic tags
     #test
 
 
-def fill_tags(internal_path, cos_tag_dir):
+def fill_tag_array(internal_path, tags, cosmetics):
+
+    event_path = internal_path + "\\events"
+    tree_path = internal_path + "\\common\\national_focus"
+    decisions_path = internal_path + "\\common\\decisions"
+    scripted_triggers_path = internal_path + "\\common\\scripted_effects"
+
+    cosmetic_tag_dirs = [event_path, decisions_path, tree_path, scripted_triggers_path]
 
     #Find Normal Tags
+    tags_path = internal_path + "\\common\\country_tags\\00_countries.txt"
     counter = 0
-    file = open(internal_path + "\\00_countries.txt", 'r', 'ansi')
+    file = open(tags_path, 'r', 'ansi')
     print("Reading: " + file.name)
     lines = file.readlines()
     for string in lines:
         temp_string = string[:3]
         if '#' not in temp_string and '\r\n' != string:
-            tags[counter] = string[:3]
+            tags.append(string[:3])
+            #print("Found TAG: " + tags[counter])
             counter += 1
     file.close()
 
     #Find Cosmetic Tags
-    counter = 0
-    for dirs in cos_tag_dir:
-        for filename in listdir(dirs):
-            if 'categories' in filename:
-                break
-            file = open(dirs + "\\" + filename, 'r', 'utf-8')
-            lines = file.readlines()
-            for string in lines:
-                if 'set_cosmetic_tag' in string and '#' not in string and '{' not in string:
-                    temp_string = string.split(' ')[2][:-2]
-                    if finddup(cosmetic_tags, temp_string) is False:
-                        cosmetic_tags[counter] = temp_string
-                        print("Found TAG: " + cosmetic_tags[counter] + " at " + counter.__str__())
-                        counter += 1
+    if cosmetics is True:
+        for dirs in cosmetic_tag_dirs:
+            for filename in listdir(dirs):
+                if 'categories' in filename:
+                    break
+                file = open(dirs + "\\" + filename, 'r', 'utf-8')
+                lines = file.readlines()
+                for string in lines:
+                    if 'set_cosmetic_tag' in string and '#' not in string and '{' not in string:
+                        temp_string = string.split(' ')[2][:-2]
+                        if finddup(tags, temp_string) is False:
+                            tags.append(temp_string)
+                            #print("Found TAG: " + cosmetic_tags[counter])
+                            counter += 1
+    print(counter)
 
 
 def finddup(array, string):
+
     try:
         array.index(string)
         return True
     except ValueError:
         return False
+
+def check_flags(tag_array, flag_path):
+    print("")
