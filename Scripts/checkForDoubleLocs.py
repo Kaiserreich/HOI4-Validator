@@ -2,6 +2,12 @@ from os import listdir
 from codecs import open
 
 
+def check_and_strip(string, range):
+    string = string.replace('   ', '')
+    if "  " in string[range+1:]:
+        return True
+    else:
+        return False
  
 def check_for_double_locs(path, output_file):
     path += "\\localisation"
@@ -23,7 +29,9 @@ def check_for_double_locs(path, output_file):
                         output_file.write("Duplicated Loc: '" + loc + "' in: " + list_loc[loc] + " and in: '\\localisation\\" + filename + "' at line " + str(current_line) + "\n")
                     else:
                         list_loc[loc] = "'\\localisation\\" + filename + "' at line " + str(current_line)
-                    if "  " in line[i+1:]:
+                    #if "  " in line[i+1:]:
+                    if check_and_strip(line, i) is True:
+                        #print("Double Spaces in Loc: '" + loc + "' in: '\\localisation\\" + filename + "' at line " + str(current_line))
                         output_file.write("Double Spaces in Loc: '" + loc + "' in: '\\localisation\\" + filename + "' at line " + str(current_line) + "\n")
                 line = file.readline()
                 current_line += 1
