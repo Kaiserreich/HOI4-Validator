@@ -2,11 +2,12 @@ from os import listdir
 from os import walk
 from os import path
 from codecs import open
-import re
+import time
 
 def check_for_missing_gfx(file_path, output_file, hoi4_path):
     # C:\Users\Martijn\Documents\Paradox Interactive\Hearts of Iron IV\mod\KRBU
     # this is going to be a mess
+    t0 = time.time()
 
     interface_path = file_path + "\\interface"
 
@@ -30,9 +31,12 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
 
     flags_gfx_path = file_path + "\\gfx\\flags"
 
-    #check_flags(flags_gfx_path, output_file, file_path)
+    check_flags(flags_gfx_path, output_file, file_path)
 
     check_events(event_path, event_gfx_path,interface_path, file_path, output_file, hoi4_path)
+
+    t0 = time.time()- t0
+    print("Time taken for GFX script: " + (t0*1000).__str__() + " ms")
 
 
 def fill_tag_array(internal_path, cosmetics):
@@ -164,8 +168,6 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
     file_names.append("eventpictures.gfx")
     for file_name in file_names:
         if "event" in file_name and 'gfx' in file_name:
-            counter = 0
-            counter2 = 0
             line_number = 0
             if file_name != "eventpictures.gfx":
                 file = open(interface_path + "\\" + file_name, 'r', 'utf-8')
@@ -179,9 +181,7 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
                         line = line.split('#')[0].strip()
                     temp_string = line.split('"')[1].strip()
                     event_gfx_key.append(temp_string)
-                    counter2 += 1
                     if finddup(event_picture, temp_string) is False:
-                        counter += 1
                         #print("Unused Gfx: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name)
                         output_file.write("Unused event Gfx: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name + "\n")
                 if "texturefile" in line and line.strip().startswith('#') is False:
@@ -190,10 +190,8 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
                     temp_string = line.split('"')[1].strip()
                     event_gfx_file_names_in_gfx_file.append(temp_string)
                     #print(temp_string)
-            #print(file_name + ": unused: " + counter.__str__() + " out of " + counter2.__str__())
 
     #GFX keys in events that arent initialised
-    counter = 0
     for file_name in listdir(event_path):
         line_number = 0
         file = open(event_path + "\\" + file_name, 'r', 'utf-8')
@@ -209,12 +207,10 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
                     temp_string = temp_string.split(' ')[2]
                     #print(temp_string)
                     if finddup(event_gfx_key, temp_string) is False:
-                        counter += 1
                         output_file.write("GFX key not found: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name + "\n")
                         #print("GFX key not found: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name)
 
     #Scrub actual pictures to see if theyre defined in .gfx files
-    counter = 0
     actual_found_gfx = []
     for root, directories, filenames in walk(event_gfx_path):
         for filename in filenames:
@@ -223,6 +219,5 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
             if finddup(event_gfx_file_names_in_gfx_file, temp_string) is False:
                 output_file.write("GFX not used in any .gfx file: " + temp_string + "\n")
                 #print("GFX not used in any .gfx file: " + temp_string)
-                counter += 1
 
-    print(counter)
+
