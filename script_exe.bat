@@ -1,0 +1,1 @@
+pyinstaller console_start.py --path=%cd%\Scripts -F -n validator

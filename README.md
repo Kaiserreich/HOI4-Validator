@@ -5,11 +5,17 @@ GUIDE by Roparex:
 
 HOW TO USE:
 
-if you have python installed, open a command line and run:
- start.py [Mod Directory]
+>currently developing GUI app so you don't have to use the scaaaary console
+
+if you're impacient/you don't wanna use the GUI,open a command prompt in the same directory as the validator and use it like this:
+
+validator.exe --Mod Location --HoI4 Location
+
 Example:
 
- start.py C:\Users\ZankSucks\Documents\Paradox Interactive\Hearts of Iron IV\mod\Kaiserreich
+validator.exe --C:\Users\ZankSucks\Documents\Paradox Interactive\Hearts of Iron IV\mod\Kaiserreich --C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV
+
+
  
 HOW TO CONTRIBUTE:
 
@@ -36,6 +42,35 @@ Then call the function with the parameters path and outputFile.
 Example:
 
 missing_divisions_names_group(path, outputFile)
+
+Note: for debug purposes, use:
+
+start_console.py --C:\Users\ZankSucks\Documents\Paradox Interactive\Hearts of Iron IV\mod\Kaiserreich --C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV
+
+to run the scripts
+
+
+HOW TO BUILD STANDALONE EXECUTABLE:
+
+1. Make sure that the 'pip' command works (if not, reinstall python and select pip to be installed)
+
+example: py pip
+
+2.use this command to install pyinstaller:
+
+py pip install PyInstaller
+
+3.check if pyinstaller now works:
+
+pyinstaller --version
+
+4.if no error occured, run script_exe.bat
+
+5.take out the validator.exe file out of the dist directory, then delete the dist and build directories and the validator.spec file
+
+6.put the validator.exe in the root of the project.
+
+Try and do this before every push, so we always have the latest.exe for our users.
 
 Have fun coding!
 
