@@ -5,9 +5,10 @@ GUIDE by Roparex:
 
 HOW TO USE:
 
->currently developing GUI app so you don't have to use the scaaaary console
+Open the validatorGUI.exe and fill in the blanks with the directory with your mod and the directory with Hoi4 on it and press run. After a few seconds another window will appear telling you it finished.
+(Requires the latest .NET, should be autoinstalled on windows 10)
 
-if you're impacient/you don't wanna use the GUI,open a command prompt in the same directory as the validator and use it like this:
+If you don't wanna use the GUI,open a command prompt in the same directory as the validator and use it like this:
 
 validator.exe --Mod Location --HoI4 Location
 
