@@ -13,9 +13,26 @@ namespace Validator
 {
     public partial class Form1 : Form
     {
+        System.IO.StreamReader settingsFileIn;
+        System.IO.StreamWriter settingsFileOut;
+
         public Form1()
         {
             InitializeComponent();
+            try
+            {
+                settingsFileIn = new System.IO.StreamReader("settings.txt");
+                string line = settingsFileIn.ReadLine();
+                modPath.Text = settingsFileIn.ReadLine();
+                line = settingsFileIn.ReadLine();
+                hoi4Path.Text = settingsFileIn.ReadLine();
+            }
+            catch
+            {
+                hoi4Path.Text = "";
+                modPath.Text = "";
+            }
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -36,6 +53,23 @@ namespace Validator
             cmd.Start();
             cmd.WaitForExit();
             MessageBox.Show("Validator finished, output should be in the same directory as this program!", this.Text);
+
+            try
+            {
+                settingsFileIn.Close();
+            }
+            catch
+            {
+
+            }
+            settingsFileOut = new System.IO.StreamWriter("settings.txt");
+            settingsFileOut.WriteLine("Input File:");
+            settingsFileOut.WriteLine(fModPath);
+            settingsFileOut.WriteLine("Output File:");
+            settingsFileOut.WriteLine(fHoi4Path);
+            settingsFileOut.Flush();
+            settingsFileOut.Close();
+
             Application.Exit();
         }
     }

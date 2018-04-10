@@ -17,3 +17,13 @@ F:\python\validator\ValidatorGuiProject\WindowsFormsApp1\obj\Debug\ValidatorGui.
 F:\python\validator\ValidatorGuiProject\WindowsFormsApp1\obj\Debug\ValidatorGui.csproj.CoreCompileInputs.cache
 F:\python\validator\ValidatorGuiProject\WindowsFormsApp1\obj\Debug\ValidatorGUI.exe
 F:\python\validator\ValidatorGuiProject\WindowsFormsApp1\obj\Debug\ValidatorGUI.pdb
+F:\python\validator\PDS-Validator\ValidatorGuiProject\WindowsFormsApp1\bin\Debug\ValidatorGUI.exe.config
+F:\python\validator\PDS-Validator\ValidatorGuiProject\WindowsFormsApp1\bin\Debug\ValidatorGUI.exe
+F:\python\validator\PDS-Validator\ValidatorGuiProject\WindowsFormsApp1\bin\Debug\ValidatorGUI.pdb
+F:\python\validator\PDS-Validator\ValidatorGuiProject\WindowsFormsApp1\obj\Debug\ValidatorGui.csprojResolveAssemblyReference.cache
+F:\python\validator\PDS-Validator\ValidatorGuiProject\WindowsFormsApp1\obj\Debug\Validator.Form1.resources
+F:\python\validator\PDS-Validator\ValidatorGuiProject\WindowsFormsApp1\obj\Debug\Validator.Properties.Resources.resources
+F:\python\validator\PDS-Validator\ValidatorGuiProject\WindowsFormsApp1\obj\Debug\ValidatorGui.csproj.GenerateResource.cache
+F:\python\validator\PDS-Validator\ValidatorGuiProject\WindowsFormsApp1\obj\Debug\ValidatorGui.csproj.CoreCompileInputs.cache
+F:\python\validator\PDS-Validator\ValidatorGuiProject\WindowsFormsApp1\obj\Debug\ValidatorGUI.exe
+F:\python\validator\PDS-Validator\ValidatorGuiProject\WindowsFormsApp1\obj\Debug\ValidatorGUI.pdb
