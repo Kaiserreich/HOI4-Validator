@@ -1,4 +1,6 @@
 from os import listdir
+from os import walk
+from os import path
 from codecs import open
 import re
 
@@ -153,9 +155,9 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
                         #print("Incorrect or false negative gfx key of " + temp_string + " at line " + line_number.__str__() + " in file " + file_name)
                         output_file.write("Incorrect or false negative gfx key of " + temp_string + " at line " + line_number.__str__() + " in file " + file_name + "\n")
 
-    #event gfx
+    #GFX Keys that arent used
     event_gfx_key = []
-    event_gfx_file_names = []
+    event_gfx_file_names_in_gfx_file = []
     file_names = listdir(interface_path)
     file_names.append("eventpictures.gfx")
     for file_name in file_names:
@@ -180,10 +182,11 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
                         output_file.write("Unused event Gfx: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name + "\n")
                 if "texturefile" in line and '#' not in line:
                     temp_string = line.split('"')[1].strip()
-                    event_gfx_file_names.append(temp_string)
+                    event_gfx_file_names_in_gfx_file.append(temp_string)
                     #print(temp_string)
             #print(file_name + ": unused: " + counter.__str__() + " out of " + counter2.__str__())
 
+    #GFX keys in events that arent initialised
     counter = 0
     for file_name in listdir(event_path):
         line_number = 0
@@ -199,4 +202,17 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
                         counter += 1
                         output_file.write("GFX key not found: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name + "\n")
                         #print("GFX key not found: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name)
-    print("Amount of incorrect GFX keys in event files: " + counter.__str__())
+
+    #Scrub actual pictures to see if theyre defined in .gfx files
+    counter = 0
+    actual_found_gfx = []
+    for root, directories, filenames in walk(event_gfx_path):
+        for filename in filenames:
+            temp_string = path.join(root, filename)[len(file_path)+1:].replace('\\','/')
+            actual_found_gfx.append(temp_string)
+            if finddup(event_gfx_file_names_in_gfx_file, temp_string) is False:
+                output_file.write("GFX not used in any .gfx file: " + temp_string + "\n")
+                #print("GFX not used in any .gfx file: " + temp_string)
+                counter += 1
+
+    print(counter)
