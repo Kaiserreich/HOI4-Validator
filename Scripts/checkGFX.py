@@ -180,7 +180,11 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
                     if '#' in line:
                         line = line.split('#')[0].strip()
                     temp_string = line.split('"')[1].strip()
-                    event_gfx_key.append(temp_string)
+                    if finddup(event_gfx_key, temp_string) is True:
+                        #print("Duplicated gfx key " + temp_string +" in file " + file_name + " at line " + line_number.__str__())
+                        output_file.write("Duplicated gfx key " + temp_string +" in file " + file_name + " at line " + line_number.__str__() + "\n")
+                    else:
+                        event_gfx_key.append(temp_string)
                     if finddup(event_picture, temp_string) is False:
                         #print("Unused Gfx: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name)
                         output_file.write("Unused event Gfx: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name + "\n")
@@ -215,9 +219,14 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
     for root, directories, filenames in walk(event_gfx_path):
         for filename in filenames:
             temp_string = path.join(root, filename)[len(file_path)+1:].replace('\\','/')
-            actual_found_gfx.append(temp_string)
+            if finddup(actual_found_gfx, temp_string) is True:
+                #print("Duplicate event gfx: " + filename)
+                output_file.write("Duplicate event gfx: " + temp_string + "\n")
+            else:
+                actual_found_gfx.append(temp_string)
             if finddup(event_gfx_file_names_in_gfx_file, temp_string) is False:
                 output_file.write("GFX not used in any .gfx file: " + temp_string + "\n")
                 #print("GFX not used in any .gfx file: " + temp_string)
 
+    #Scrub for leader gfx
 
