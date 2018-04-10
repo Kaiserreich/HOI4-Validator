@@ -70,7 +70,7 @@ def fill_tag_array(internal_path, cosmetics):
                 file = open(dirs + "\\" + filename, 'r', 'utf-8')
                 lines = file.readlines()
                 for string in lines:
-                    if 'set_cosmetic_tag' in string and '#' not in string and '{' not in string:
+                    if 'set_cosmetic_tag' in string and string.strip().startswith('#') is False and '{' not in string:
                         temp_string = string.split(' ')[2][:-2]
                         if finddup(tags, temp_string) is False:
                             tags.append(temp_string)
@@ -134,7 +134,9 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
         lines = file.readlines()
         for line in lines:
             line_number += 1
-            if "picture" in line and '#' not in line:
+            if "picture" in line and line.strip().startswith('#') is False:
+                if '#' in line:
+                    line = line.split('#')[0].strip()
                 temp_string = line.strip()
                 if '.tga' in temp_string:
                     temp_string =  temp_string.split('=')[1].replace('"', '')
@@ -172,7 +174,9 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
             lines = file.readlines()
             for line in lines:
                 line_number += 1
-                if "name" in line and '#' not in line:
+                if "name" in line and line.strip().startswith('#') is False:
+                    if '#' in line:
+                        line = line.split('#')[0].strip()
                     temp_string = line.split('"')[1].strip()
                     event_gfx_key.append(temp_string)
                     counter2 += 1
@@ -180,7 +184,9 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
                         counter += 1
                         #print("Unused Gfx: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name)
                         output_file.write("Unused event Gfx: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name + "\n")
-                if "texturefile" in line and '#' not in line:
+                if "texturefile" in line and line.strip().startswith('#') is False:
+                    if '#' in line:
+                        line = line.split('#')[0].strip()
                     temp_string = line.split('"')[1].strip()
                     event_gfx_file_names_in_gfx_file.append(temp_string)
                     #print(temp_string)
@@ -194,10 +200,14 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
         lines = file.readlines()
         for line in lines:
             line_number += 1
-            if "picture" in line and '#' not in line:
-                temp_string = line.strip()
+            temp_string = line.strip()
+            if "picture" in line and temp_string.startswith('#') is False:
                 if '"' not in temp_string:
+                    if '#' in temp_string:
+                        temp_string = temp_string.split('#')[0].strip()
+                    temp_string.replace('	', ' ')
                     temp_string = temp_string.split(' ')[2]
+                    #print(temp_string)
                     if finddup(event_gfx_key, temp_string) is False:
                         counter += 1
                         output_file.write("GFX key not found: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name + "\n")
