@@ -197,7 +197,7 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
                         output_file.write("Duplicated gfx key " + temp_string +" in file " + file_name + " at line " + line_number.__str__() + "\n")
                     else:
                         event_gfx_key.append(temp_string)
-                    if finddup(event_picture, temp_string) is False and type == 1:
+                    if finddup(event_picture, temp_string) is False and type == 0:
                         #print("Unused Gfx: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name)
                         output_file.write("Unused event Gfx: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name + "\n")
                 if "texturefile" in line and line.strip().startswith('#') is False:
