@@ -33,7 +33,7 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
 
     check_flags(flags_gfx_path, output_file, file_path)
 
-    check_events(event_path, event_gfx_path,interface_path, file_path, output_file, hoi4_path)
+    check_events(event_path, event_gfx_path,interface_path, file_path, output_file, hoi4_path, leaders_gfx_path)
 
     t0 = time.time()- t0
     print("Time taken for GFX script: " + (t0*1000).__str__() + " ms")
@@ -102,6 +102,14 @@ def stripideo(string, idarray):
             return string[:-len(ideos)-1]
 
 
+def strip_and_clean(string):
+    if '/' in string:
+        strings = string.split('/')
+        return strings[len(strings)-1].strip()
+    else:
+        return string.strip()
+
+
 def check_flags( flag_path, output_file, file_path):
     ideos = ["totalist", "syndicalist", "radical_socialist", "social_democrat", "social_liberal", "market_liberal", "social_conservative", "authoritarian_democrat", "paternal_autocrat", "national_populist"]
     flagarr = []
@@ -126,7 +134,7 @@ def check_flags( flag_path, output_file, file_path):
             output_file.write("No flag for " + strings + "\n")
             #print("No flag for " + strings)
 
-def check_events(event_path, event_gfx_path, interface_path, file_path, output_file, hoi4path):
+def check_events(event_path, event_gfx_path, interface_path, file_path, output_file, hoi4path, leaders_gfx_path):
 
     #Fill Both the Leader pictures and the event pictures
     amountarr = []
@@ -145,6 +153,8 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
                 if '.tga' in temp_string:
                     temp_string =  temp_string.split('=')[1].replace('"', '')
                     if finddup(leader_picture, temp_string) is False:
+                        temp_string = strip_and_clean(temp_string)
+                        #print(temp_string)
                         leader_picture.append(temp_string)
                         amountarr.append(1)
                     else:
@@ -171,8 +181,10 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
             line_number = 0
             if file_name != "eventpictures.gfx":
                 file = open_file(interface_path + '\\' + file_name)
+                type = 0
             else:
                 file = open_file(hoi4path + '\\interface\\' + file_name)
+                type = 1
             lines = file.readlines()
             for line in lines:
                 line_number += 1
@@ -185,7 +197,7 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
                         output_file.write("Duplicated gfx key " + temp_string +" in file " + file_name + " at line " + line_number.__str__() + "\n")
                     else:
                         event_gfx_key.append(temp_string)
-                    if finddup(event_picture, temp_string) is False:
+                    if finddup(event_picture, temp_string) is False and type == 0:
                         #print("Unused Gfx: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name)
                         output_file.write("Unused event Gfx: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name + "\n")
                 if "texturefile" in line and line.strip().startswith('#') is False:
@@ -215,18 +227,32 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
                         #print("GFX key not found: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name)
 
     #Scrub actual pictures to see if theyre defined in .gfx files
-    actual_found_gfx = []
+    actual_found_event_gfx = []
     for root, directories, filenames in walk(event_gfx_path):
         for filename in filenames:
             temp_string = path.join(root, filename)[len(file_path)+1:].replace('\\','/')
-            if finddup(actual_found_gfx, temp_string) is True:
+            if finddup(actual_found_event_gfx, temp_string) is True:
                 #print("Duplicate event gfx: " + filename)
                 output_file.write("Duplicate event gfx: " + temp_string + "\n")
             else:
-                actual_found_gfx.append(temp_string)
+                actual_found_event_gfx.append(temp_string)
             if finddup(event_gfx_file_names_in_gfx_file, temp_string) is False:
                 output_file.write("GFX not used in any .gfx file: " + temp_string + "\n")
                 #print("GFX not used in any .gfx file: " + temp_string)
 
     #Scrub for leader gfx
-
+    actual_found_portrait_gfx = []
+    actual_amount = []
+    for root, directories, filenames in walk(leaders_gfx_path):
+        for filename in filenames:
+            #temp_string = path.join(root, filename)[len(file_path)+1:].replace('\\','/')
+            temp_string = filename
+            if finddup(actual_found_portrait_gfx, temp_string) is False:
+                #output_file.write("Duplicate event gfx: " + temp_string + "\n")
+                actual_found_portrait_gfx.append(temp_string)
+                actual_amount.append(1)
+            else:
+                index = actual_found_portrait_gfx.index(temp_string)
+                amount = actual_amount[index] + 1
+                actual_amount[index] = amount
+                #print(temp_string + ", " + amount.__str__())
