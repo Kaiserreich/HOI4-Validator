@@ -67,9 +67,7 @@ pyinstaller --version
 
 4.if no error occured, run script_exe.bat
 
-5.take out the validator.exe file out of the dist directory, then delete the dist and build directories and the validator.spec file
-
-6.put the validator.exe in the root of the project.
+You will now have the new validator.exe in the project root.
 
 Try and do this before every push, so we always have the latest.exe for our users.
 
