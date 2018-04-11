@@ -1,6 +1,6 @@
 from os import listdir
-from codecs import open
-
+import time
+from openFile import open_file
 
 def check_and_strip(string, range):
     string = string.replace('   ', '')
@@ -10,11 +10,12 @@ def check_and_strip(string, range):
         return False
  
 def check_for_double_locs(path, output_file):
+    t0 = time.time()
     path += "\\localisation"
     list_loc = {}
     for filename in listdir(path):
         current_line = 0
-        file = open(path + '\\' + filename, 'r', 'utf-8-sig')
+        file = open_file(path + '\\' + filename)
         line = file.readline()
         current_line += 1
         if "l_english" in line:
@@ -34,4 +35,6 @@ def check_for_double_locs(path, output_file):
                         #print("Double Spaces in Loc: '" + loc + "' in: '\\localisation\\" + filename + "' at line " + str(current_line))
                         output_file.write("Double Spaces in Loc: '" + loc + "' in: '\\localisation\\" + filename + "' at line " + str(current_line) + "\n")
                 line = file.readline()
-                current_line += 1
+                current_line += 1    
+    t0 = time.time() - t0
+    print("Time taken for Locs script: " + (t0*1000).__str__() + " ms")

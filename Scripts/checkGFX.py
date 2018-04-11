@@ -1,8 +1,8 @@
 from os import listdir
 from os import walk
 from os import path
-from codecs import open
 import time
+from openFile import open_file
 
 def check_for_missing_gfx(file_path, output_file, hoi4_path):
     # C:\Users\Martijn\Documents\Paradox Interactive\Hearts of Iron IV\mod\KRBU
@@ -54,7 +54,7 @@ def fill_tag_array(internal_path, cosmetics):
 
     #Find Normal Tags
     tags_path = internal_path + "\\common\\country_tags\\00_countries.txt"
-    file = open(tags_path, 'r', 'ansi')
+    file = open_file(tags_path)
     #print("Reading: " + file.name)
     lines = file.readlines()
 
@@ -71,7 +71,7 @@ def fill_tag_array(internal_path, cosmetics):
             for filename in listdir(dirs):
                 if 'categories' in filename:
                     continue
-                file = open(dirs + "\\" + filename, 'r', 'utf-8')
+                file = open_file(dirs + '\\' + filename)
                 lines = file.readlines()
                 for string in lines:
                     if 'set_cosmetic_tag' in string and string.strip().startswith('#') is False and '{' not in string:
@@ -134,7 +134,7 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
     leader_picture = []
     for file_name in listdir(event_path):
         line_number = 0
-        file = open(event_path + "\\" + file_name, 'r', 'utf-8')
+        file = open_file(event_path + '\\' + file_name)
         lines = file.readlines()
         for line in lines:
             line_number += 1
@@ -170,9 +170,9 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
         if "event" in file_name and 'gfx' in file_name:
             line_number = 0
             if file_name != "eventpictures.gfx":
-                file = open(interface_path + "\\" + file_name, 'r', 'utf-8')
+                file = open_file(interface_path + '\\' + file_name)
             else:
-                file = open(hoi4path + "\\interface\\" + file_name, 'r', 'utf-8')
+                file = open_file(hoi4path + '\\interface\\' + file_name)
             lines = file.readlines()
             for line in lines:
                 line_number += 1
@@ -198,7 +198,7 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
     #GFX keys in events that arent initialised
     for file_name in listdir(event_path):
         line_number = 0
-        file = open(event_path + "\\" + file_name, 'r', 'utf-8')
+        file = open_file(event_path + '\\' + file_name)
         lines = file.readlines()
         for line in lines:
             line_number += 1

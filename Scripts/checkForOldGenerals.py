@@ -1,6 +1,5 @@
 from os import listdir
-from codecs import open
-
+from openFile import open_file
 
 def check_for_old_generals(path, output_file):
     check(path, output_file, "\\history\\countries", 'utf-8-sig')
@@ -13,7 +12,7 @@ def check(path, output_file, sub_path, encoding):
     path += sub_path
     for filename in listdir(path):
         current_line = 0
-        file = open(path+'\\'+filename, 'r', encoding)
+        file = open_file(path + '\\' + filename)
         line = file.readline()
         current_line += 1
         ok = 0

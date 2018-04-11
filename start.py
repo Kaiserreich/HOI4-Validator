@@ -1,6 +1,6 @@
 import os
 import sys
-
+import time
 from codecs import open
 
 dirName = os.path.dirname(os.path.abspath(__file__))
@@ -20,6 +20,7 @@ from checkGFX import check_for_missing_gfx
 # functions go HERE
 
 def start(mod_path, hoi4_path):
+    t0 = time.time()
     output_file = open("validator.txt", 'w', 'utf-8-sig')
     missing_divisions_names_group(mod_path, output_file)
     check_for_old_generals(mod_path, output_file)
@@ -27,6 +28,8 @@ def start(mod_path, hoi4_path):
     check_brackets(mod_path, output_file)
     check_for_double_locs(mod_path, output_file)
     check_for_missing_gfx(mod_path, output_file, hoi4_path)
+    t0 = time.time() - t0
+    print("Total time taken: " + (t0*1000).__str__() + " ms")
 
 
 

@@ -1,7 +1,7 @@
 from os import listdir
 from os import path
-from codecs import open
 import re
+from openFile import open_file
 
 # Note that it will produce false positives for unused tags
 
@@ -17,7 +17,7 @@ def check_for_name_lists(file_path, output_file):
 
     for filename in listdir(aux_path):
         if path.isfile(aux_path + '\\' + filename):
-            file = open(aux_path+'\\'+filename, 'r', 'ansi')
+            file = open_file(aux_path + '\\' + filename)
             line = file.readline()
             level = 0
 
@@ -46,7 +46,7 @@ def check_for_name_lists(file_path, output_file):
 
     aux_path = file_path + "\\common\\country_tags"
 
-    file = open(aux_path + '\\' + "00_countries.txt", 'r', 'ansi')
+    file = open_file(aux_path + '\\' + "00_countries.txt")
     line = file.readline()
 
     while line:
@@ -71,7 +71,7 @@ def check_for_name_lists(file_path, output_file):
 
     for filename in listdir(aux_path):
         level = 0
-        file = open(aux_path + '\\' + filename, 'r', 'utf-8-sig')
+        file = open_file(aux_path + '\\' + filename)
         line = file.readline()
         current_tags = list()
         current_unit_types = list()

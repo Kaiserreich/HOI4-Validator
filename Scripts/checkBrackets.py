@@ -1,17 +1,26 @@
 from os import listdir
-from codecs import open
-
+from os.path import isdir
+import time
+from openFile import open_file
 
 def check_brackets(path, output_file):
-    check(path, output_file, "\\events", 'utf-8-sig')
-    check(path, output_file, "\\common\\national_focus", 'utf-8-sig')
+    t0 = time.time()
+    check(path, output_file, "\\events")
+    check(path, output_file, "\\common")
+    check(path, output_file, "\\interface")
+    check(path, output_file, "\\history")
+    t0 = time.time() - t0
+    print("Time taken for Brackets script: " + (t0*1000).__str__() + " ms")
 
-
-def check(path, output_file, sub_path, encoding):
+def check(path, output_file, sub_path):
+    original_path = path
     path += sub_path
     for filename in listdir(path):
+        if(isdir(path + '\\' + filename)):
+            check(original_path, output_file, sub_path + '\\' + filename)
+            continue
         current_line = 0
-        file = open(path + '\\' + filename, 'r', encoding)
+        file = open_file(path + '\\' + filename)
         line = file.readline()
         current_line += 1
         stack = []
