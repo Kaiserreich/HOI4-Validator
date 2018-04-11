@@ -50,9 +50,10 @@ namespace Validator
             cmd.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             cmd.StartInfo.FileName = "cmd.exe";
             cmd.StartInfo.Arguments = "/C " + "validator.exe --" + fModPath + " --" + fHoi4Path;
+            long initialTicks = DateTime.Now.Ticks; 
             cmd.Start();
             cmd.WaitForExit();
-            MessageBox.Show("Validator finished, output should be in the same directory as this program!", this.Text);
+            MessageBox.Show("Validator finished, output should be in the same directory as this program! It took " + Convert.ToString((DateTime.Now.Ticks - initialTicks)/10000000F) + " seconds.", this.Text);
 
             try
             {
