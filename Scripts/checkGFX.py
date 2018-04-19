@@ -1,13 +1,50 @@
 from os import listdir
 from os import walk
 from os import path
-import time
-from openFile import open_file
+from codecs import open
+
 
 def check_for_missing_gfx(file_path, output_file, hoi4_path):
     # C:\Users\Martijn\Documents\Paradox Interactive\Hearts of Iron IV\mod\KRBU
     # this is going to be a mess
-    t0 = time.time()
+
+    #Checklist:
+    # Per type either check directly for file name or check for the keys in .gfx files
+    # .gfx for
+    #   Focus
+    #   Events
+    #   Ideas
+    #   Companies
+    #Not needed to check for minister files, since its auto generated with filename.tga -> filename
+    #
+    #For each check:
+    #   Picture used in key
+    #   used gfx key never defined
+    #   defined gfx key never used
+    #Flags:
+    #   Normal: Done
+    #   Cosmetic: Done
+    #Leader/General GFX:
+    #   Events: Done
+    #   Decisions:
+    #   Focus Trees(?):
+    #Decisions:
+    #   Icons: Done
+    #Event GFX:
+    #   Events: Done
+    #Tech GFX:
+    #   Tech Trees:
+    #Focus Icons:
+    #   Focus Trees:
+    #Idea Icons:
+    #   Focus Trees:
+    #   Decisions(?):
+    #   Events:
+    #Nation:
+    #   Ministers: Done by mw
+    #   Companies:
+    #Other:
+    #   Miscased: Done
 
     interface_path = file_path + "\\interface"
 
@@ -33,10 +70,7 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
 
     check_flags(flags_gfx_path, output_file, file_path)
 
-    check_events(event_path, event_gfx_path,interface_path, file_path, output_file, hoi4_path, leaders_gfx_path)
-
-    t0 = time.time()- t0
-    print("Time taken for GFX script: " + (t0*1000).__str__() + " ms")
+    check_events(event_path, event_gfx_path,interface_path, file_path, output_file, hoi4_path, leaders_gfx_path, country_history_path, decisions_path)
 
 
 def fill_tag_array(internal_path, cosmetics):
@@ -54,7 +88,7 @@ def fill_tag_array(internal_path, cosmetics):
 
     #Find Normal Tags
     tags_path = internal_path + "\\common\\country_tags\\00_countries.txt"
-    file = open_file(tags_path)
+    file = open(tags_path, 'r', 'ansi')
     #print("Reading: " + file.name)
     lines = file.readlines()
 
@@ -71,7 +105,7 @@ def fill_tag_array(internal_path, cosmetics):
             for filename in listdir(dirs):
                 if 'categories' in filename:
                     continue
-                file = open_file(dirs + '\\' + filename)
+                file = open(dirs + "\\" + filename, 'r', 'utf-8')
                 lines = file.readlines()
                 for string in lines:
                     if 'set_cosmetic_tag' in string and string.strip().startswith('#') is False and '{' not in string:
@@ -134,42 +168,89 @@ def check_flags( flag_path, output_file, file_path):
             output_file.write("No flag for " + strings + "\n")
             #print("No flag for " + strings)
 
-def check_events(event_path, event_gfx_path, interface_path, file_path, output_file, hoi4path, leaders_gfx_path):
 
-    #Fill Both the Leader pictures and the event pictures
+def check_events(event_path, event_gfx_path, interface_path, file_path, output_file, hoi4path, leaders_gfx_path, country_history_path, decisions_path):
+
+    #Scrub for leader gfx
+    actual_found_portrait_gfx = []
+    actual_found_portrait_gfx_lower = []
+    actual_amount = []
+    for root, directories, filenames in walk(leaders_gfx_path):
+        for filename in filenames:
+            #temp_string = path.join(root, filename)[len(file_path)+1:].replace('\\','/')
+            temp_string = filename
+            if finddup(actual_found_portrait_gfx, temp_string) is False:
+                actual_found_portrait_gfx.append(temp_string)
+                actual_found_portrait_gfx_lower.append((temp_string.lower()))
+                actual_amount.append(1)
+            else:
+                index = actual_found_portrait_gfx.index(temp_string)
+                amount = actual_amount[index] + 1
+                actual_amount[index] = amount
+                #print("Found Leader Portrait: " + temp_string + ", " + amount.__str__())
+
+    #Scrub for leader gfx in vanilla
+    for root, directories, filenames in walk(hoi4path + "\\gfx\\leaders"):
+        for filename in filenames:
+            #temp_string = path.join(root, filename)[len(file_path)+1:].replace('\\','/')
+            temp_string = filename
+            if finddup(actual_found_portrait_gfx, temp_string) is False:
+                #print("Found Leader Portrait: " + temp_string)
+                actual_found_portrait_gfx.append(temp_string)
+                actual_found_portrait_gfx_lower.append((temp_string.lower()))
+                actual_amount.append(1)
+            else:
+                index = actual_found_portrait_gfx.index(temp_string)
+                amount = actual_amount[index] + 1
+                actual_amount[index] = amount
+                #print("Found Leader Portrait: " + temp_string + ", " + amount.__str__())
+
+
+    #Fill all the pictures!
     amountarr = []
     event_picture = []
     leader_picture = []
-    for file_name in listdir(event_path):
-        line_number = 0
-        file = open_file(event_path + '\\' + file_name)
-        lines = file.readlines()
-        for line in lines:
-            line_number += 1
-            if "picture" in line and line.strip().startswith('#') is False:
-                if '#' in line:
-                    line = line.split('#')[0].strip()
-                temp_string = line.strip()
-                if '.tga' in temp_string:
-                    temp_string =  temp_string.split('=')[1].replace('"', '')
-                    if finddup(leader_picture, temp_string) is False:
-                        temp_string = strip_and_clean(temp_string)
-                        #print(temp_string)
-                        leader_picture.append(temp_string)
-                        amountarr.append(1)
+    counter = 0
+    dirs = [country_history_path, event_path]
+    for dir in dirs:
+        for file_name in listdir(dir):
+            line_number = 0
+            file = open(dir + "\\" + file_name, 'r', 'utf-8')
+            lines = file.readlines()
+            for line in lines:
+                line_number += 1
+                if "picture" in line and line.strip().startswith('#') is False:
+                    if '#' in line:
+                        line = line.split('#')[0].strip()
+                    temp_string = line.strip()
+                    if '.tga' in temp_string or '.dds' in temp_string:
+                        temp_string =  temp_string.split('=')[1].replace('"', '')
+                        if finddup(leader_picture, temp_string) is False:
+                            temp_string = strip_and_clean(temp_string)
+                            #print(temp_string)
+                            leader_picture.append(temp_string)
+                            amountarr.append(1)
+                        else:
+                            index = leader_picture.index(temp_string)
+                            amount = amountarr[index] + 1
+                            amountarr[index] = amount
+                        if finddup(actual_found_portrait_gfx, temp_string) is False:
+                            if finddup(actual_found_portrait_gfx_lower, temp_string.lower()) is True:
+                                #print("Wrongly spelled portrait: " + temp_string + " in file " + dir.split('\\')[len(dir.split('\\'))-1] + "\\" + file_name + " at line " + line_number.__str__())
+                                output_file.write("Wrongly spelled portrait: " + temp_string + " in  file " + dir.split('\\')[len(dir.split( '\\')) - 1] + "\\" + file_name + " at line " + line_number.__str__() + "\n")
+                            else:
+                                #print("Didnt find portrait: " + temp_string + " in file " + dir.split('\\')[len(dir.split('\\'))-1] + "\\" + file_name + " at line " + line_number.__str__())
+                                output_file.write("Didnt find portrait: " + temp_string + " in  file " + dir.split('\\')[len(dir.split('\\')) - 1] + "\\" + file_name + " at line " + line_number.__str__() + "\n")
+                    elif '"' not in temp_string:
+                        temp_string = temp_string.split(' ')[2]
+                        if finddup(event_picture, temp_string) is False:
+                            event_picture.append(temp_string)
                     else:
-                        index = leader_picture.index(temp_string)
-                        amount = amountarr[index] + 1
-                        amountarr[index] = amount
-                elif '"' not in temp_string:
-                    temp_string = temp_string.split(' ')[2]
-                    if finddup(event_picture, temp_string) is False:
-                        event_picture.append(temp_string)
-                else:
-                    temp_string = temp_string.split('=')[1].replace('"', '').strip()
-                    if temp_string != "" and "." not in temp_string:
-                        #print("Incorrect or false negative gfx key of " + temp_string + " at line " + line_number.__str__() + " in file " + file_name)
-                        output_file.write("Incorrect or false negative gfx key of " + temp_string + " at line " + line_number.__str__() + " in file " + file_name + "\n")
+                        temp_string = temp_string.split('=')[1].replace('"', '').strip()
+                        if temp_string != "" and "." not in temp_string:
+                            #print("Incorrect or false negative gfx key of " + temp_string + " at line " + line_number.__str__() + " in file " + file_name)
+                            output_file.write("Incorrect or false negative gfx key of " + temp_string + " at line " + line_number.__str__() + " in file " + file_name + "\n")
+
 
     #GFX Keys that arent used
     event_gfx_key = []
@@ -180,11 +261,11 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
         if "event" in file_name and 'gfx' in file_name:
             line_number = 0
             if file_name != "eventpictures.gfx":
-                file = open_file(interface_path + '\\' + file_name)
-                type = 0
+                file = open(interface_path + "\\" + file_name, 'r', 'utf-8')
+                vanilla = 0
             else:
-                file = open_file(hoi4path + '\\interface\\' + file_name)
-                type = 1
+                file = open(hoi4path + "\\interface\\" + file_name, 'r', 'utf-8')
+                vanilla = 1
             lines = file.readlines()
             for line in lines:
                 line_number += 1
@@ -197,7 +278,7 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
                         output_file.write("Duplicated gfx key " + temp_string +" in file " + file_name + " at line " + line_number.__str__() + "\n")
                     else:
                         event_gfx_key.append(temp_string)
-                    if finddup(event_picture, temp_string) is False and type == 0:
+                    if finddup(event_picture, temp_string) is False and vanilla == 0:
                         #print("Unused Gfx: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name)
                         output_file.write("Unused event Gfx: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name + "\n")
                 if "texturefile" in line and line.strip().startswith('#') is False:
@@ -210,7 +291,7 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
     #GFX keys in events that arent initialised
     for file_name in listdir(event_path):
         line_number = 0
-        file = open_file(event_path + '\\' + file_name)
+        file = open(event_path + "\\" + file_name, 'r', 'utf-8')
         lines = file.readlines()
         for line in lines:
             line_number += 1
@@ -223,7 +304,7 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
                     temp_string = temp_string.split(' ')[2]
                     #print(temp_string)
                     if finddup(event_gfx_key, temp_string) is False:
-                        output_file.write("GFX key not found: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name + "\n")
+                        output_file.write("GFX event key not found: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name + "\n")
                         #print("GFX key not found: " + temp_string + " at line " + line_number.__str__() + " in file " + file_name)
 
     #Scrub actual pictures to see if theyre defined in .gfx files
@@ -240,19 +321,40 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
                 output_file.write("GFX not used in any .gfx file: " + temp_string + "\n")
                 #print("GFX not used in any .gfx file: " + temp_string)
 
-    #Scrub for leader gfx
-    actual_found_portrait_gfx = []
-    actual_amount = []
-    for root, directories, filenames in walk(leaders_gfx_path):
-        for filename in filenames:
-            #temp_string = path.join(root, filename)[len(file_path)+1:].replace('\\','/')
-            temp_string = filename
-            if finddup(actual_found_portrait_gfx, temp_string) is False:
-                #output_file.write("Duplicate event gfx: " + temp_string + "\n")
-                actual_found_portrait_gfx.append(temp_string)
-                actual_amount.append(1)
-            else:
-                index = actual_found_portrait_gfx.index(temp_string)
-                amount = actual_amount[index] + 1
-                actual_amount[index] = amount
-                #print(temp_string + ", " + amount.__str__())
+    #Fill Decisions keys
+    decisions_keys = []
+    file = open(hoi4path + "\\interface\\decisions.gfx")
+    lines = file.readlines()
+    for line in lines:
+        if 'name' in line:
+            if line.strip().startswith('#') is False:
+                temp_string = line.split('\"')[1].strip()
+                decisions_keys.append(temp_string[13:])
+    for filenames in listdir(interface_path):
+        if 'decisions' in filenames:
+            file = open(interface_path + "\\" + filenames)
+            lines = file.readlines()
+            for line in lines:
+                if 'name' in line:
+                    if line.strip().startswith('#') is False:
+                        temp_string = line.split('\"')[1].strip()
+                        decisions_keys.append(temp_string[13:])
+
+
+    #Check Decision gfx in the txt files
+    line_number = 0
+    decisions_found = []
+    for filename in listdir(decisions_path):
+        if 'categories' in filename:
+            continue
+        file = open(decisions_path + "\\" + filename)
+        lines = file.readlines()
+        for line in lines:
+            line_number += 1
+            if 'icon' in line:
+                if line.strip().startswith('#') is False:
+                    temp_string = line.split('=')[1].strip()
+                    decisions_found.append(temp_string)
+                    if finddup(decisions_keys, temp_string) is False:
+                        output_file.write("Didn't find icon decisions/" + temp_string + " in file " + filename + " at " +line_number.__str__() + "\n")
+
