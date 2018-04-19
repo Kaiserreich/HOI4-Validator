@@ -2,9 +2,11 @@ from os import listdir
 from os import walk
 from os import path
 from codecs import open
+import time
 
 
 def check_for_missing_gfx(file_path, output_file, hoi4_path):
+    t0 = time.time()
     # C:\Users\Martijn\Documents\Paradox Interactive\Hearts of Iron IV\mod\KRBU
     # this is going to be a mess
 
@@ -71,6 +73,8 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
     check_flags(flags_gfx_path, output_file, file_path)
 
     check_events(event_path, event_gfx_path,interface_path, file_path, output_file, hoi4_path, leaders_gfx_path, country_history_path, decisions_path)
+    t0 = time.time() - t0
+    print("GFX script Time: " + (t0*1000).__str__() + " ms")
 
 
 def fill_tag_array(internal_path, cosmetics):
