@@ -7,6 +7,7 @@ import time
 
 def check_for_missing_gfx(file_path, output_file, hoi4_path):
     t0 = time.time()
+    #test
     # C:\Users\Martijn\Documents\Paradox Interactive\Hearts of Iron IV\mod\KRBU
     # this is going to be a mess
 
