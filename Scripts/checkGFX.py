@@ -211,7 +211,7 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
                 #print("Found Leader Portrait: " + temp_string + ", " + amount.__str__())
 
 
-    #Fill all the pictures!
+    #Fill all the pictures (from events#)!
     amountarr = []
     event_picture = []
     leader_picture = []
