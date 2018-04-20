@@ -27,7 +27,9 @@ def focus(cpath):
     #immediate = {log = "Focus id: "+ id + "\n"}  # autolog
     for filename in listdir(cpath + "\\common\\national_focus"):
         if ".txt" in filename and ".bak" not in filename:
-            file = open(cpath + "\\common\\national_focus\\" + filename, 'r', 'utf-8-sig')
+            file = open(cpath + "\\common\\national_focus\\" + filename, 'r', 'utf-8')
+            if file.read() == "":
+                continue
             lines = file.readlines()
             line_number = 0
             ids = []
@@ -41,13 +43,15 @@ def focus(cpath):
                     new_focus = True
                 if 'id' in line and new_focus is True:
                         focus_id = line.split('=')[1].strip()
+                        if '#' in focus_id:
+                            focus_id = focus_id.split('#')[0].strip()
                         ids.append(focus_id)
                 if 'completion_reward' in line and new_focus is True:
                     new_focus = False
                     idss.append(line_number)
 
             line_number = 0
-            outputfile = open(cpath + "\\common\\national_focus\\" + filename, 'w', 'utf-8-sig')
+            outputfile = open(cpath + "\\common\\national_focus\\" + filename, 'w', 'utf-8')
             for line in lines:
                 line_number += 1
                 if line_number in idss:
@@ -91,6 +95,8 @@ def event(cpath):
                 line_number += 1
                 if line_number in ids:
                     event_id = line.split('=')[1].strip()
+                    if '#' in event_id:
+                        event_id = event_id.split('#')[0].strip()
                     replacement_text = event_id + "\n    immediate = {log = \"[Root.GetName]: event " + event_id  + "\"}#Auto-logging"
                     outputfile.write(line.replace(event_id, replacement_text))
                 else:
