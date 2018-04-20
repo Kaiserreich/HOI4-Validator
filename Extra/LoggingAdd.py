@@ -5,10 +5,10 @@ import fileinput
 
 
 def check_triggered(line_number, lines):
-    if line_number == len(lines):
+    if line_number == len(lines) or line_number == len(lines)-1:
         return True
     if '}' in lines[line_number+1]:
-         #print("1: Found Triggered Event at line: " + line_number.__str__())
+        #print("1: Found Triggered Event at line: " + line_number.__str__())
         return True
     for i in range(line_number, len(lines)):
         string = lines[i].strip()
@@ -27,7 +27,7 @@ def focus(cpath):
     #immediate = {log = "Focus id: "+ id + "\n"}  # autolog
     for filename in listdir(cpath + "\\common\\national_focus"):
         if ".txt" in filename and ".bak" not in filename:
-            file = open(cpath + "\\common\\national_focus\\" + filename, 'r', 'ansi')
+            file = open(cpath + "\\common\\national_focus\\" + filename, 'r', 'utf-8-sig')
             lines = file.readlines()
             line_number = 0
             ids = []
@@ -47,12 +47,12 @@ def focus(cpath):
                     idss.append(line_number)
 
             line_number = 0
-            outputfile = open(cpath + "\\common\\national_focus\\" + filename, 'w', 'utf-8')
+            outputfile = open(cpath + "\\common\\national_focus\\" + filename, 'w', 'utf-8-sig')
             for line in lines:
                 line_number += 1
                 if line_number in idss:
                     event_id = ids[idss.index(line_number)]
-                    replacement_text = "completion_reward = { immediate = {log = \"[Root.GetName]: Focus " + event_id + "\"}#Auto-logging"
+                    replacement_text = "completion_reward = {\nlog = \"[Root.GetName]: Focus " + event_id + "\"#Auto-logging\n"
                     outputfile.write(line.replace("completion_reward = {", replacement_text))
                 else:
                     outputfile.write(line)
@@ -61,7 +61,7 @@ def event(cpath):
     # immediate = {log = "[Root.GetName]: event "+ id + "\n"}  # autolog
     for filename in listdir(cpath + "\\events"):
         if ".txt" in filename and ".bak" not in filename:
-            file = open(cpath + "\\events\\" + filename, 'r', 'ansi')
+            file = open(cpath + "\\events\\" + filename, 'r', 'utf-8-sig')
             lines = file.readlines()
             event_id = None
             line_number = 0
@@ -86,7 +86,7 @@ def event(cpath):
                         triggered = False
 
             line_number = 0
-            outputfile = open(cpath + "\\events\\" + filename, 'w', 'utf-8')
+            outputfile = open(cpath + "\\events\\" + filename, 'w', 'utf-8-sig')
             for line in lines:
                 line_number += 1
                 if line_number in ids:
