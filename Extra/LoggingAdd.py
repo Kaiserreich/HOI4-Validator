@@ -28,8 +28,6 @@ def focus(cpath):
     for filename in listdir(cpath + "\\common\\national_focus"):
         if ".txt" in filename and ".bak" not in filename:
             file = open(cpath + "\\common\\national_focus\\" + filename, 'r', 'utf-8')
-            if file.read() == "":
-                continue
             lines = file.readlines()
             line_number = 0
             ids = []
