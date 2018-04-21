@@ -12,7 +12,7 @@ def check_triggered(line_number, lines):
         return True
     for i in range(line_number, len(lines)):
         string = lines[i].strip()
-        if string.startswith('#') is True:
+        if string.startswith('#') is True or 'days' in string:
             continue
         if string.startswith('}') is True:
             #print("2: Found Triggered Event at line: " + i.__str__())
@@ -27,7 +27,7 @@ def focus(cpath):
     #immediate = {log = "Focus id: "+ id + "\n"}  # autolog
     for filename in listdir(cpath + "\\common\\national_focus"):
         if ".txt" in filename and ".bak" not in filename:
-            file = open(cpath + "\\common\\national_focus\\" + filename, 'r', 'utf-8')
+            file = open(cpath + "\\common\\national_focus\\" + filename, 'r', 'utf-8-sig')
             lines = file.readlines()
             line_number = 0
             ids = []
@@ -49,7 +49,8 @@ def focus(cpath):
                     idss.append(line_number)
 
             line_number = 0
-            outputfile = open(cpath + "\\common\\national_focus\\" + filename, 'w', 'utf-8')
+            outputfile = open(cpath + "\\common\\national_focus\\" + filename, 'w', 'utf-8-sig')
+            outputfile.truncate()
             for line in lines:
                 line_number += 1
                 if line_number in idss:
@@ -89,6 +90,7 @@ def event(cpath):
 
             line_number = 0
             outputfile = open(cpath + "\\events\\" + filename, 'w', 'utf-8-sig')
+            outputfile.truncate()
             for line in lines:
                 line_number += 1
                 if line_number in ids:
