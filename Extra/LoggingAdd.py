@@ -39,6 +39,7 @@ def focus(cpath):
             ids = []
             idss = []
             new_focus = False
+            find_coml = True
             for line in lines:
                 line_number += 1
                 if line.strip().startswith('#') or 'immediate = {log = ' in line:
@@ -46,12 +47,14 @@ def focus(cpath):
                 if 'focus = {' in line:  # New Event
                     new_focus = True
                 if 'id' in line and new_focus is True:
+                        new_focus = False
+                        find_coml = True
                         focus_id = line.split('=')[1].strip()
                         if '#' in focus_id:
                             focus_id = focus_id.split('#')[0].strip()
                         ids.append(focus_id)
-                if 'completion_reward' in line and new_focus is True:
-                    new_focus = False
+                if 'completion_reward' in line and find_coml is True:
+                    find_coml = False
                     idss.append(line_number)
 
             line_number = 0
@@ -136,7 +139,7 @@ def main():
             ok += 1
         else:
             cpath += ' ' + string
-    #event(cpath)
+    event(cpath)
     focus(cpath)
 
 
