@@ -5,16 +5,22 @@ import fileinput
 
 
 def check_triggered(line_number, lines):
-    if line_number == len(lines) or line_number == len(lines)-1:
+    if line_number == len(lines) or line_number == len(lines)-1 or line_number == len(lines)-2 :
         return True
-    if '}' in lines[line_number+1]:
+    if '}' in lines[line_number+2] or 'days' in lines[line_number+2]:
+        #print("1: Found Triggered Event at line: " + line_number.__str__())
+        return True
+    if '}' in lines[line_number+1] or 'days' in lines[line_number+1]:
+        #print("1: Found Triggered Event at line: " + line_number.__str__())
+        return True
+    if '}' in lines[line_number] or 'days' in lines[line_number]:
         #print("1: Found Triggered Event at line: " + line_number.__str__())
         return True
     for i in range(line_number, len(lines)):
         string = lines[i].strip()
-        if string.startswith('#') is True or 'days' in string:
+        if string.startswith('#') is True:
             continue
-        if string.startswith('}') is True:
+        if string.startswith('}') is True or 'days' in string:
             #print("2: Found Triggered Event at line: " + i.__str__())
             return True
         elif string != "":
@@ -26,8 +32,8 @@ def check_triggered(line_number, lines):
 def focus(cpath):
     #immediate = {log = "Focus id: "+ id + "\n"}  # autolog
     for filename in listdir(cpath + "\\common\\national_focus"):
-        if ".txt" in filename and ".bak" not in filename:
-            file = open(cpath + "\\common\\national_focus\\" + filename, 'r', 'utf-8-sig')
+        if ".txt" in filename and "KR" in filename:
+            file = open(cpath + "\\common\\national_focus\\" + filename, 'r', 'utf-8')
             lines = file.readlines()
             line_number = 0
             ids = []
@@ -35,7 +41,7 @@ def focus(cpath):
             new_focus = False
             for line in lines:
                 line_number += 1
-                if line.strip().startswith('#') is True:
+                if line.strip().startswith('#') or 'immediate = {log = ' in line:
                     continue
                 if 'focus = {' in line:  # New Event
                     new_focus = True
@@ -49,34 +55,48 @@ def focus(cpath):
                     idss.append(line_number)
 
             line_number = 0
-            outputfile = open(cpath + "\\common\\national_focus\\" + filename, 'w', 'utf-8-sig')
+            outputfile = open(cpath + "\\common\\national_focus\\" + filename, 'w', 'utf-8')
             outputfile.truncate()
             for line in lines:
                 line_number += 1
                 if line_number in idss:
-                    event_id = ids[idss.index(line_number)]
-                    replacement_text = "completion_reward = {\nlog = \"[Root.GetName]: Focus " + event_id + "\"#Auto-logging\n"
-                    outputfile.write(line.replace("completion_reward = {", replacement_text))
+                    focus_id = ids[idss.index(line_number)]
+                    if '}' in line:
+                        temp = line.split("{")
+
+                        replacement_text = temp[0] + "{\n\n\t\t\tlog = \"[Root.GetName]: Focus " + focus_id + "\"#Auto-logging\n" + "{".join(temp)[len(temp[0])+1:] + "\n"
+                    else:
+                        replacement_text = "\t\tcompletion_reward = {\n\t\t\tlog = \"[Root.GetName]: Focus " + focus_id + "\"#Auto-logging\n"
+                    outputfile.write(replacement_text)
+                    #print("Inserted loc at {0} in file {1}".format(line_number.__str__(), filename))
                 else:
                     outputfile.write(line)
 
 def event(cpath):
     # immediate = {log = "[Root.GetName]: event "+ id + "\n"}  # autolog
     for filename in listdir(cpath + "\\events"):
-        if ".txt" in filename and ".bak" not in filename:
+        if ".txt" in filename and "KR" in filename:
             file = open(cpath + "\\events\\" + filename, 'r', 'utf-8-sig')
             lines = file.readlines()
             event_id = None
             line_number = 0
             triggered = False
             ids = []
+            idss = []
             for line in lines:
                 line_number += 1
+                if line.strip().startswith('#') or 'immediate = {log = ' in line:
+                    continue
                 if 'country_event' in line: #New Event
                     if check_triggered(line_number, lines) is False:
-                        new_event = True
-                        if event_id is not None:
-                            triggered = False
+                        if "}" not in line or "days" not in line:
+                            new_event = True
+                            if event_id is not None:
+                                triggered = False
+                        else:
+                            triggered = True
+                            new_event = False
+                            #print("1: Found Triggered Event at line: " + line_number.__str__())
                     else:
                         triggered = True
                         new_event = False
@@ -84,6 +104,7 @@ def event(cpath):
                     if triggered is False:
                         new_event = False
                         event_id = line.split('=')[1].strip()
+                        idss.append(event_id)
                         ids.append(line_number)
                     else:
                         triggered = False
@@ -94,13 +115,17 @@ def event(cpath):
             for line in lines:
                 line_number += 1
                 if line_number in ids:
-                    event_id = line.split('=')[1].strip()
+                    event_id = idss[ids.index(line_number)]
                     if '#' in event_id:
                         event_id = event_id.split('#')[0].strip()
-                    replacement_text = event_id + "\n    immediate = {log = \"[Root.GetName]: event " + event_id  + "\"}#Auto-logging"
-                    outputfile.write(line.replace(event_id, replacement_text))
+                    if '.' not in event_id:
+                        outputfile.write(line)
+                        continue
+                    replacement_text = "\tid = " + event_id + "\n\timmediate = {log = \"[Root.GetName]: event " + event_id  + "\"}#Auto-logging\n"
+                    outputfile.write(replacement_text)
+                    #print("Inserted loc at {0} in file {1}".format(line_number.__str__(), filename))
                 else:
-                    outputfile.write(line[:-1])
+                    outputfile.write(line)
 
 
 def main():
@@ -111,7 +136,7 @@ def main():
             ok += 1
         else:
             cpath += ' ' + string
-    event(cpath)
+    #event(cpath)
     focus(cpath)
 
 
