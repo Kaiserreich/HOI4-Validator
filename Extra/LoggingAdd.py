@@ -33,6 +33,7 @@ def focus(cpath):
     #immediate = {log = "Focus id: "+ id + "\n"}  # autolog
     for filename in listdir(cpath + "\\common\\national_focus"):
         if ".txt" in filename and "KR" in filename:
+            print(filename)
             file = open(cpath + "\\common\\national_focus\\" + filename, 'r', 'utf-8')
             lines = file.readlines()
             line_number = 0
@@ -67,9 +68,9 @@ def focus(cpath):
                     if '}' in line:
                         temp = line.split("{")
 
-                        replacement_text = temp[0] + "{\n\n\t\t\tlog = \"[Root.GetName]: Focus " + focus_id + "\"#Auto-logging\n" + "{".join(temp)[len(temp[0])+1:] + "\n"
+                        replacement_text = temp[0] + "{\n\n\t\t\tlog = \"[Root.GetName]: Focus " + focus_id + "\"\n" + "{".join(temp)[len(temp[0])+1:] + "\n"
                     else:
-                        replacement_text = "\t\tcompletion_reward = {\n\t\t\tlog = \"[Root.GetName]: Focus " + focus_id + "\"#Auto-logging\n"
+                        replacement_text = "\t\tcompletion_reward = {\n\t\t\tlog = \"[Root.GetName]: Focus " + focus_id + "\"\n"
                     outputfile.write(replacement_text)
                     #print("Inserted loc at {0} in file {1}".format(line_number.__str__(), filename))
                 else:
@@ -79,6 +80,7 @@ def event(cpath):
     # immediate = {log = "[Root.GetName]: event "+ id + "\n"}  # autolog
     for filename in listdir(cpath + "\\events"):
         if ".txt" in filename and "KR" in filename:
+            print(filename)
             file = open(cpath + "\\events\\" + filename, 'r', 'utf-8-sig')
             lines = file.readlines()
             event_id = None
@@ -124,7 +126,7 @@ def event(cpath):
                     if '.' not in event_id:
                         outputfile.write(line)
                         continue
-                    replacement_text = "\tid = " + event_id + "\n\timmediate = {log = \"[Root.GetName]: event " + event_id  + "\"}#Auto-logging\n"
+                    replacement_text = "\tid = " + event_id + "\n\timmediate = {log = \"[Root.GetName]: event " + event_id  + "\"}\n"
                     outputfile.write(replacement_text)
                     #print("Inserted loc at {0} in file {1}".format(line_number.__str__(), filename))
                 else:
