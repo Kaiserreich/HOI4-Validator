@@ -1,7 +1,8 @@
 from codecs import open
 import sys
 from os import listdir
-import fileinput
+import time
+
 
 
 def check_triggered(line_number, lines):
@@ -30,10 +31,10 @@ def check_triggered(line_number, lines):
 
 
 def focus(cpath):
+    ttime = 0
     #immediate = {log = "Focus id: "+ id + "\n"}  # autolog
     for filename in listdir(cpath + "\\common\\national_focus"):
         if ".txt" in filename and "KR" in filename:
-            print(filename)
             file = open(cpath + "\\common\\national_focus\\" + filename, 'r', 'utf-8')
             lines = file.readlines()
             line_number = 0
@@ -41,6 +42,7 @@ def focus(cpath):
             idss = []
             new_focus = False
             find_coml = True
+            timestart = time.time()
             for line in lines:
                 line_number += 1
                 if line.strip().startswith('#') or 'immediate = {log = ' in line:
@@ -57,7 +59,7 @@ def focus(cpath):
                 if 'completion_reward' in line and find_coml is True:
                     find_coml = False
                     idss.append(line_number)
-
+            time1 = time.time() - timestart
             line_number = 0
             outputfile = open(cpath + "\\common\\national_focus\\" + filename, 'w', 'utf-8')
             outputfile.truncate()
@@ -75,12 +77,17 @@ def focus(cpath):
                     #print("Inserted loc at {0} in file {1}".format(line_number.__str__(), filename))
                 else:
                     outputfile.write(line)
+            time2 = time.time() - timestart - time1
+
+            #print(filename + " 1: %.3f ms  2: %.3f ms" % (time1*1000, time2*1000))
+            ttime += time1 + time2
+    return ttime
 
 def event(cpath):
+    ttime = 0
     # immediate = {log = "[Root.GetName]: event "+ id + "\n"}  # autolog
     for filename in listdir(cpath + "\\events"):
         if ".txt" in filename and "KR" in filename:
-            print(filename)
             file = open(cpath + "\\events\\" + filename, 'r', 'utf-8-sig')
             lines = file.readlines()
             event_id = None
@@ -88,6 +95,7 @@ def event(cpath):
             triggered = False
             ids = []
             idss = []
+            timestart = time.time()
             for line in lines:
                 line_number += 1
                 if line.strip().startswith('#') or 'immediate = {log = ' in line:
@@ -113,7 +121,7 @@ def event(cpath):
                         ids.append(line_number)
                     else:
                         triggered = False
-
+            time1 = time.time() - timestart
             line_number = 0
             outputfile = open(cpath + "\\events\\" + filename, 'w', 'utf-8-sig')
             outputfile.truncate()
@@ -126,11 +134,17 @@ def event(cpath):
                     if '.' not in event_id:
                         outputfile.write(line)
                         continue
-                    replacement_text = "\tid = " + event_id + "\n\timmediate = {log = \"[Root.GetName]: event " + event_id  + "\"}\n"
+                    replacement_text = "\tid = " + event_id + "\n\timmediate = {log = \"[Root.GetName]: event " + event_id + "\"}\n"
                     outputfile.write(replacement_text)
                     #print("Inserted loc at {0} in file {1}".format(line_number.__str__(), filename))
                 else:
                     outputfile.write(line)
+            time2 = time.time() - timestart - time1
+
+            #print(filename + " 1: %.3f ms  2: %.3f ms" % (time1*1000, time2*1000))
+            ttime += time1 + time2
+    return ttime
+
 
 
 def main():
@@ -141,9 +155,10 @@ def main():
             ok += 1
         else:
             cpath += ' ' + string
-    event(cpath)
-    focus(cpath)
-
+    ttime = 0
+    ttime += event(cpath)
+    ttime += focus(cpath)
+    print("Total Time: %.3f ms" % (ttime * 1000))
 
 if __name__ == "__main__":
     main()
