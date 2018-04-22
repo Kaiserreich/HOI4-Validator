@@ -70,9 +70,9 @@ def focus(cpath):
                     if '}' in line:
                         temp = line.split("{")
 
-                        replacement_text = temp[0] + "{\n\n\t\t\tlog = \"[Root.GetName]: Focus " + focus_id + "\"\n" + "{".join(temp)[len(temp[0])+1:] + "\n"
+                        replacement_text = temp[0] + "{\n\n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Focus " + focus_id + "\"\n" + "{".join(temp)[len(temp[0])+1:] + "\n"
                     else:
-                        replacement_text = "\t\tcompletion_reward = {\n\t\t\tlog = \"[Root.GetName]: Focus " + focus_id + "\"\n"
+                        replacement_text = "\t\tcompletion_reward = {\n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Focus " + focus_id + "\"\n"
                     outputfile.write(replacement_text)
                     #print("Inserted loc at {0} in file {1}".format(line_number.__str__(), filename))
                 else:
@@ -134,7 +134,7 @@ def event(cpath):
                     if '.' not in event_id:
                         outputfile.write(line)
                         continue
-                    replacement_text = "\tid = " + event_id + "\n\timmediate = {log = \"[Root.GetName]: event " + event_id + "\"}\n"
+                    replacement_text = "\tid = " + event_id + "\n\timmediate = {log = \"[GetDateText]: [Root.GetName]: event " + event_id + "\"}\n"
                     outputfile.write(replacement_text)
                     #print("Inserted loc at {0} in file {1}".format(line_number.__str__(), filename))
                 else:
