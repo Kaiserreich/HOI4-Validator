@@ -67,9 +67,10 @@ def focus(cpath):
                 line_number += 1
                 if line_number in idss:
                     focus_id = ids[idss.index(line_number)]
+                    if focus_id in ["{", "}"]:
+                        focus_id = "Error, focus name not found"
                     if '}' in line:
                         temp = line.split("{")
-
                         replacement_text = temp[0] + "{\n\n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Focus " + focus_id + "\"\n" + "{".join(temp)[len(temp[0])+1:] + "\n"
                     else:
                         replacement_text = "\t\tcompletion_reward = {\n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Focus " + focus_id + "\"\n"
