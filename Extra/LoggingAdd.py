@@ -51,20 +51,22 @@ def focus(cpath):
                 if 'focus = {' in line:  # New Event
                     new_focus = True
                     skip = False
-                if 'log = \"' in line:
-                    skip = True
-                if 'id' in line and new_focus is True and skip is False:
+                if line.strip().startswith('id') and new_focus is True:
                         new_focus = False
                         find_coml = True
                         focus_id = line.split('=')[1].strip()
                         if '#' in focus_id:
                             focus_id = focus_id.split('#')[0].strip()
                         ids.append(focus_id)
-                if 'completion_reward' in line and find_coml is True and skip is False:
-                    find_coml = False
-                    idss.append(line_number)
+                if 'completion_reward' in line and find_coml is True:
+                        find_coml = False
+                        idss.append(line_number)
+                if 'log = "[GetDateText]:' in line:
+                    idss.pop()
+                    ids.pop()
             time1 = time.time() - timestart
             line_number = 0
+
             outputfile = open(cpath + "\\common\\national_focus\\" + filename, 'w', 'utf-8')
             outputfile.truncate()
             for line in lines:
@@ -119,7 +121,7 @@ def event(cpath):
                     else:
                         triggered = True
                         new_event = False
-                if 'id' in line and new_event is True and 'immediate = {log = ' not in lines[line_number+1]:
+                if line.strip().startswith('id') and new_event is True and 'immediate = {log =' not in lines[line_number+1]:
                     if triggered is False:
                         new_event = False
                         event_id = line.split('=')[1].strip()
