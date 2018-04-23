@@ -15,7 +15,7 @@ def focus(cpath):
             outputfile.truncate()
             for line in lines:
                 linenumber += 1
-                if 'log = "[Root.GetName]:' not in line:
+                if 'log = "[GetDateText]' not in line:
                     outputfile.write(line)
                 else:
                     outputfile.write("")
@@ -30,7 +30,7 @@ def event(cpath):
             outputfile = open(cpath + "\\events\\" + filename, 'w', 'utf-8-sig')
             outputfile.truncate()
             for line in lines:
-                if 'log = "[Root.GetName]:' not in line:
+                if 'immediate = {log = ' not in line:
                     outputfile.write(line)
                 else:
                     outputfile.write("")

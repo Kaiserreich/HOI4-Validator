@@ -42,21 +42,25 @@ def focus(cpath):
             idss = []
             new_focus = False
             find_coml = True
+            skip = False
             timestart = time.time()
             for line in lines:
                 line_number += 1
-                if line.strip().startswith('#') or 'immediate = {log = ' in line:
+                if line.strip().startswith('#'):
                     continue
                 if 'focus = {' in line:  # New Event
                     new_focus = True
-                if 'id' in line and new_focus is True:
+                    skip = False
+                if 'log = \"' in line:
+                    skip = True
+                if 'id' in line and new_focus is True and skip is False:
                         new_focus = False
                         find_coml = True
                         focus_id = line.split('=')[1].strip()
                         if '#' in focus_id:
                             focus_id = focus_id.split('#')[0].strip()
                         ids.append(focus_id)
-                if 'completion_reward' in line and find_coml is True:
+                if 'completion_reward' in line and find_coml is True and skip is False:
                     find_coml = False
                     idss.append(line_number)
             time1 = time.time() - timestart
@@ -96,12 +100,13 @@ def event(cpath):
             triggered = False
             ids = []
             idss = []
+
             timestart = time.time()
             for line in lines:
                 line_number += 1
                 if line.strip().startswith('#') or 'immediate = {log = ' in line:
                     continue
-                if 'country_event' in line: #New Event
+                if 'country_event' in line or 'news_event' in line: #New Event
                     if check_triggered(line_number, lines) is False:
                         if "}" not in line or "days" not in line:
                             new_event = True
@@ -114,7 +119,7 @@ def event(cpath):
                     else:
                         triggered = True
                         new_event = False
-                if 'id' in line and new_event is True:
+                if 'id' in line and new_event is True and 'immediate = {log = ' not in lines[line_number+1]:
                     if triggered is False:
                         new_event = False
                         event_id = line.split('=')[1].strip()
