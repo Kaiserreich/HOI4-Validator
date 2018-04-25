@@ -1,14 +1,18 @@
 from codecs import open
 import sys
 from os import listdir
+import os
 
 
 def focus(cpath):
     #immediate = {log = "Focus id: "+ id + "\n"}  # autolog
     for filename in listdir(cpath + "\\common\\national_focus"):
-        if ".txt" in filename and "KR" in filename:
+        if ".txt" in filename:
             linenumber = 0
             outputfile = open(cpath + "\\common\\national_focus\\" + filename, 'r', 'utf-8')
+            size = os.path.getsize(cpath + "\\common\\national_focus\\" + filename)
+            if size < 100:
+                continue
             lines = outputfile.readlines()
             outputfile.close()
             outputfile = open(cpath + "\\common\\national_focus\\" + filename, 'w', 'utf-8')
@@ -23,8 +27,11 @@ def focus(cpath):
 def event(cpath):
     # immediate = {log = "[Root.GetName]: event "+ id + "\n"}  # autolog
     for filename in listdir(cpath + "\\events"):
-        if ".txt" in filename and "KR" in filename:
+        if ".txt" in filename:
             outputfile = open(cpath + "\\events\\" + filename, 'r', 'utf-8-sig')
+            size = os.path.getsize(cpath + "\\events\\" + filename)
+            if size < 100:
+                continue
             lines = outputfile.readlines()
             outputfile.close()
             outputfile = open(cpath + "\\events\\" + filename, 'w', 'utf-8-sig')

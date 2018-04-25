@@ -2,6 +2,7 @@ from codecs import open
 import sys
 from os import listdir
 import time
+import os
 
 
 
@@ -34,15 +35,17 @@ def focus(cpath):
     ttime = 0
     #immediate = {log = "Focus id: "+ id + "\n"}  # autolog
     for filename in listdir(cpath + "\\common\\national_focus"):
-        if ".txt" in filename and "KR" in filename:
+        if ".txt" in filename:
             file = open(cpath + "\\common\\national_focus\\" + filename, 'r', 'utf-8')
+            size = os.path.getsize(cpath + "\\common\\national_focus\\" + filename)
+            if size < 100:
+                continue
             lines = file.readlines()
             line_number = 0
             ids = []
             idss = []
             new_focus = False
-            find_coml = True
-            skip = False
+            find_coml = False
             timestart = time.time()
             for line in lines:
                 line_number += 1
@@ -50,7 +53,9 @@ def focus(cpath):
                     continue
                 if 'focus = {' in line:  # New Event
                     new_focus = True
-                    skip = False
+                    if find_coml is True:
+                        find_coml = False
+                        ids.pop()
                 if line.strip().startswith('id') and new_focus is True:
                         new_focus = False
                         find_coml = True
@@ -94,9 +99,12 @@ def event(cpath):
     ttime = 0
     # immediate = {log = "[Root.GetName]: event "+ id + "\n"}  # autolog
     for filename in listdir(cpath + "\\events"):
-        if ".txt" in filename and "KR" in filename:
+        if ".txt" in filename:
             file = open(cpath + "\\events\\" + filename, 'r', 'utf-8-sig')
             lines = file.readlines()
+            size = os.path.getsize(cpath + "\\events\\" + filename)
+            if size < 100:
+                continue
             event_id = None
             line_number = 0
             triggered = False
