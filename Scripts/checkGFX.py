@@ -100,6 +100,8 @@ def fill_tag_array(internal_path, cosmetics):
     if cosmetics != 1:
         for string in lines:
             temp_string = string[:3]
+            if '#' in line:
+                line = line.split('#')[0]
             if '#' not in temp_string and '\r\n' != string:
                 tags.append(string[:3])
                 #print("Found TAG: " + tags[counter])
@@ -224,9 +226,9 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
             lines = file.readlines()
             for line in lines:
                 line_number += 1
+                if '#' in line:
+                    line = line.split('#')[0].strip()
                 if "picture" in line and line.strip().startswith('#') is False:
-                    if '#' in line:
-                        line = line.split('#')[0].strip()
                     temp_string = line.strip()
                     if '.tga' in temp_string or '.dds' in temp_string:
                         temp_string =  temp_string.split('=')[1].replace('"', '')
@@ -331,6 +333,8 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
     file = open(hoi4path + "\\interface\\decisions.gfx")
     lines = file.readlines()
     for line in lines:
+        if '#' in line:
+            line = line.split('#')[0].strip()
         if 'name' in line:
             if line.strip().startswith('#') is False:
                 temp_string = line.split('\"')[1].strip()
@@ -341,6 +345,8 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
             lines = file.readlines()
             for line in lines:
                 if 'name' in line:
+                    if '#' in line:
+                        line = line.split('#')[0].strip()
                     if line.strip().startswith('#') is False:
                         temp_string = line.split('\"')[1].strip()
                         decisions_keys.append(temp_string[13:])
@@ -357,6 +363,8 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
         for line in lines:
             line_number += 1
             if 'icon' in line:
+                if '#' in line:
+                    line = line.split('#')[0].strip()
                 if line.strip().startswith('#') is False:
                     temp_string = line.split('=')[1].strip()
                     decisions_found.append(temp_string)

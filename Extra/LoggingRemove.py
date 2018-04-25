@@ -42,7 +42,23 @@ def event(cpath):
                 else:
                     outputfile.write("")
 
-
+def idea(cpath):
+    # immediate = {log = "[Root.GetName]: event "+ id + "\n"}  # autolog
+    for filename in listdir(cpath + "\\events"):
+        if ".txt" in filename and filename.startswith('_') is False:
+            outputfile = open(cpath + "\\common\\ideas\\" + filename, 'r', 'utf-8-sig')
+            size = os.path.getsize(cpath + "\\common\\ideas\\" + filename)
+            if size < 100:
+                continue
+            lines = outputfile.readlines()
+            outputfile.close()
+            outputfile = open(cpath + "\\common\\ideas\\" + filename, 'w', 'utf-8-sig')
+            outputfile.truncate()
+            for line in lines:
+                if 'on_add = {log = ' not in line:
+                    outputfile.write(line)
+                else:
+                    outputfile.write("")
 
 def main():
     cpath = sys.argv[1]
@@ -56,6 +72,7 @@ def main():
             cpath += ' ' + string
     event(cpath)
     focus(cpath)
+    idea(cpath)
 
 
 if __name__ == "__main__":

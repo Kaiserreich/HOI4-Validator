@@ -3,6 +3,7 @@ import sys
 from os import listdir
 import time
 import os
+import re
 
 
 
@@ -51,6 +52,8 @@ def focus(cpath):
                 line_number += 1
                 if line.strip().startswith('#'):
                     continue
+                if '#' in line:
+                    line = line.split('#')[0]
                 if 'focus = {' in line:  # New Event
                     new_focus = True
                     if find_coml is True:
@@ -67,8 +70,9 @@ def focus(cpath):
                         find_coml = False
                         idss.append(line_number)
                 if 'log = "[GetDateText]:' in line:
-                    idss.pop()
-                    ids.pop()
+                    if  idss != [] or ids != []:
+                        idss.pop()
+                        ids.pop()
             time1 = time.time() - timestart
             line_number = 0
 
@@ -95,6 +99,7 @@ def focus(cpath):
             ttime += time1 + time2
     return ttime
 
+
 def event(cpath):
     ttime = 0
     # immediate = {log = "[Root.GetName]: event "+ id + "\n"}  # autolog
@@ -116,6 +121,8 @@ def event(cpath):
                 line_number += 1
                 if line.strip().startswith('#') or 'immediate = {log = ' in line:
                     continue
+                if '#' in line:
+                    line = line.split('#')[0]
                 if 'country_event' in line or 'news_event' in line: #New Event
                     if check_triggered(line_number, lines) is False:
                         if "}" not in line or "days" not in line:
@@ -162,6 +169,60 @@ def event(cpath):
     return ttime
 
 
+def idea(cpath):
+    ttime = 0
+    timestart = time.time()
+    #First bit
+    # 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea "}
+    for filename in listdir(cpath + "\\common\\ideas"):
+        if ".txt" in filename and filename.startswith('_') is False:
+            file = open(cpath + "\\common\\ideas\\" + filename, 'r', 'utf-8')
+            size = os.path.getsize(cpath + "\\common\\ideas\\" + filename)
+            if size < 100:
+                continue
+            level = 0
+            line_number = 0
+            ids = []
+            lines = file.readlines()
+            for line in lines:
+                line_number += 1
+                if '#' in line:
+                    if line.strip().startswith("#") is True:
+                        continue
+                    else:
+                        line = line.split('#')[0]
+                re.sub(r'".+?"', '', line)
+                if '= {' in line:
+                    if level == 2:
+                        #print(line.split('=')[0].strip())
+                        ids.append(line_number)
+                if '{' in line:
+                    level += line.count('{')
+                if '}' in line:
+                    level -= line.count('}')
+
+            line_number = 0
+            outputfile = open(cpath + "\\common\\ideas\\" + filename, 'w', 'utf-8')
+            outputfile.truncate()
+            for line in lines:
+                line_number += 1
+                if line_number in ids:
+                    idea_id = line.split('=')[0].strip()
+                    replacement_text = idea_id + " = {\n\ton_add = {log = \"[GetDateText]: [Root.GetName]: add idea " + idea_id + "\"}\n"
+                    outputfile.write(replacement_text)
+                    #print("Inserted loc at {0} in file {1}".format(line_number.__str__(), filename))
+                else:
+                    outputfile.write(line)
+
+
+
+
+    time1 = time.time() - timestart
+    #Second Bit
+
+    time2 = time.time() - timestart - time1
+    ttime += time1 + time2
+    return ttime
 
 def main():
     cpath = sys.argv[1]
@@ -174,6 +235,7 @@ def main():
     ttime = 0
     ttime += event(cpath)
     ttime += focus(cpath)
+    ttime += idea(cpath)
     print("Total Time: %.3f ms" % (ttime * 1000))
 
 if __name__ == "__main__":
