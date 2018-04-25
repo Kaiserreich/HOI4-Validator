@@ -17,7 +17,6 @@ def strip_focus(focustext, value, splittext):
 
 def actually_check_for_missing_focus(path, focusdict):
     #this heads through the files. Every time it sees a focus, it sets that focus's value in returndict to true
-    #it also makes sure the focus isn't commented out
     returndict = focusdict
     for filename in listdir(path):
         file = open_file(path + '\\' + filename)
@@ -49,6 +48,7 @@ def check_for_missing_focus(path, output_file):
                         focusdict[focustext] = False
                         linedict[focustext] = current_line
                         filedict[focustext] = filename
+                        #i copied and pasted code for this. i have failed.
                 else:
                     linelist = line.split(' focus =')
                     for posfocus in linelist:
