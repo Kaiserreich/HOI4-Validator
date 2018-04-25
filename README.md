@@ -46,7 +46,7 @@ missing_divisions_names_group(path, outputFile)
 
 Note: for debug purposes, use:
 
-start_console.py --C:\Users\ZankSucks\Documents\Paradox Interactive\Hearts of Iron IV\mod\Kaiserreich --C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV
+py console_start.py --C:\Users\sheehanmilesk\Documents\kaiserreich --C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV
 
 to run the scripts
 

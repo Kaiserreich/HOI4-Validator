@@ -13,6 +13,7 @@ from checkForNameLists import check_for_name_lists
 from checkBrackets import check_brackets
 from checkForDoubleLocs import check_for_double_locs
 from checkGFX import check_for_missing_gfx
+from checkFocus import check_for_missing_focus
 
 
 # output file initialisation
@@ -28,6 +29,7 @@ def start(mod_path, hoi4_path):
     check_brackets(mod_path, output_file)
     check_for_double_locs(mod_path, output_file)
     check_for_missing_gfx(mod_path, output_file, hoi4_path)
+    check_for_missing_focus(mod_path, output_file)
     t0 = time.time() - t0
     print("Total time taken: " + (t0*1000).__str__() + " ms")
 
