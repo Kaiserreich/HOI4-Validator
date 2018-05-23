@@ -60,6 +60,26 @@ def idea(cpath):
                 else:
                     outputfile.write("")
 
+
+def decision(cpath):
+    # immediate = {log = "[Root.GetName]: event "+ id + "\n"}  # autolog
+    for filename in listdir(cpath + "\\common\\decisions"):
+        if ".txt" in filename and filename.startswith('_') is False and 'categories' not in filename:
+            outputfile = open(cpath + "\\common\\decisions\\" + filename, 'r', 'utf-8')
+            size = os.path.getsize(cpath + "\\common\\decisions\\" + filename)
+            if size < 100:
+                continue
+            lines = outputfile.readlines()
+            outputfile.close()
+            outputfile = open(cpath + "\\common\\decisions\\" + filename, 'w', 'utf-8')
+            outputfile.truncate()
+            for line in lines:
+                if 'log = "[GetDateText]' not in line:
+                    outputfile.write(line)
+                else:
+                    outputfile.write("")
+
+
 def main():
     cpath = sys.argv[1]
     #cpath = "C:\\Users\\Martijn\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\KRBU"
@@ -70,10 +90,10 @@ def main():
             ok += 1
         else:
             cpath += ' ' + string
-    event(cpath)
-    focus(cpath)
-    idea(cpath)
-
+    #event(cpath)
+    #focus(cpath)
+    #idea(cpath)
+    decision(cpath)
 
 if __name__ == "__main__":
     main()

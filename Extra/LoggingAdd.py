@@ -225,6 +225,87 @@ def idea(cpath):
     ttime += time1 + time2
     return ttime
 
+
+def decision(cpath):
+    ttime = 0
+    # log = "[GetDateText] [Root.GetName]: decision (remove) name"
+    #common\decisions
+    #for filename in listdir(cpath + "\\common\\decisions"):
+    for filename in listdir(cpath + "\\common\\decisions"):
+        if 'categories' in filename:
+            continue
+        if ".txt" in filename:
+            file = open(cpath + "\\common\\decisions\\" + filename, 'r', 'utf-8')
+            size = os.path.getsize(cpath + "\\common\\decisions\\" + filename)
+            if size < 100:
+                continue
+            lines = file.readlines()
+            line_number = 0
+            level = 0
+            ids = [] #array of the names
+            idss = [] #line numbers of completion effect
+            idsss = [] #line numbers of remove effect
+            timestart = time.time()
+            for line in lines:
+                line_number += 1
+                if '#' in line:
+                    if line.strip().startswith("#") is True:
+                        continue
+                    else:
+                        line = line.split('#')[0]
+                if '= {' in line or '={' in line:
+                    if level == 1:
+                        if 'log = "[GetDateText]' not in lines[line_number+0]:
+                           # print("found id: " + line.split('=')[0].strip())
+                            ids.append(line.split('=')[0].strip())
+
+                if 'complete_effect' in line:
+                    #print("Found completion effect for " + ids[len(ids)-1] + " at line " + line_number.__str__())
+                    idss.append(line_number)
+                if 'remove_effect' in line:
+                    #print("Found remove effect for " + ids[len(ids)-1] + " at line " + line_number.__str__())
+                    idsss.append(line_number)
+                if '{' in line:
+                    level += line.count('{')
+                if '}' in line:
+                    level -= line.count('}')
+
+            time1 = time.time() - timestart
+            line_number = 0
+
+            outputfile = open(cpath + "\\common\\decisions\\" + filename, 'w', 'utf-8')
+            outputfile.truncate()
+            for line in lines:
+                line_number += 1
+                if line_number in idss:
+                    dec_id = ids[idss.index(line_number)]
+                    if dec_id in ["{", "}"]:
+                        dec_id = "Error, focus name not found"
+                    if '}' in line:
+                        temp = line.split("{")
+                        replacement_text = temp[0] + "{\n\n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Decision " + dec_id + "\"\n" + "{".join(temp)[len(temp[0])+1:] + "\n"
+                    else:
+                        replacement_text = "\t\tcomplete_effect = { \n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Decision " + dec_id + "\"\n"
+                    outputfile.write(replacement_text)
+                    #print("Inserted loc at {0} in file {1}".format(line_number.__str__(), filename))
+                elif line_number in idsss:
+                    if '}' in line:
+                        temp = line.split("{")
+                        replacement_text = temp[0] + "{\n\n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Decision remove " + dec_id + "\"\n" + "{".join(temp)[len(temp[0])+1:] + "\n"
+                    else:
+                        replacement_text = "\t\tremove_effect = {\n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Decision remove " + dec_id + "\"\n"
+                    outputfile.write(replacement_text)
+                    #print("Inserted remove loc at {0} in file {1}".format(line_number.__str__(), filename))
+                else:
+                    outputfile.write(line)
+            time2 = time.time() - timestart - time1
+
+            #print(filename + " 1: %.3f ms  2: %.3f ms" % (time1*1000, time2*1000))
+            ttime += time1 + time2
+    return ttime
+
+
+
 def main():
     cpath = sys.argv[1]
     ok = 0
@@ -237,6 +318,7 @@ def main():
     ttime += event(cpath)
     ttime += focus(cpath)
     ttime += idea(cpath)
+    ttime += decision(cpath)
     print("Total Time: %.3f ms" % (ttime * 1000))
 
 if __name__ == "__main__":
