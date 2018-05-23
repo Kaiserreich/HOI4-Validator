@@ -194,8 +194,9 @@ def idea(cpath):
                 re.sub(r'".+?"', '', line)
                 if '= {' in line:
                     if level == 2:
-                        #print(line.split('=')[0].strip())
-                        ids.append(line_number)
+                        if 'on_add = {log = ' not in lines[line_number]:
+                            #print(line.split('=')[0].strip())
+                            ids.append(line_number)
                 if '{' in line:
                     level += line.count('{')
                 if '}' in line:
@@ -208,7 +209,7 @@ def idea(cpath):
                 line_number += 1
                 if line_number in ids:
                     idea_id = line.split('=')[0].strip()
-                    replacement_text = idea_id + " = {\n\ton_add = {log = \"[GetDateText]: [Root.GetName]: add idea " + idea_id + "\"}\n"
+                    replacement_text = "\t\t" + idea_id + " = {\n\t\t\ton_add = {log = \"[GetDateText]: [Root.GetName]: add idea " + idea_id + "\"}\n"
                     outputfile.write(replacement_text)
                     #print("Inserted loc at {0} in file {1}".format(line_number.__str__(), filename))
                 else:
