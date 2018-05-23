@@ -32,7 +32,7 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
     #   Decisions:
     #   Focus Trees(?):
     #Decisions:
-    #   Icons: Done
+    #   Icons: Actually Done
     #Event GFX:
     #   Events: Done
     #Tech GFX:
@@ -73,7 +73,7 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
 
     check_flags(flags_gfx_path, output_file, file_path)
 
-    check_events(event_path, event_gfx_path,interface_path, file_path, output_file, hoi4_path, leaders_gfx_path, country_history_path, decisions_path)
+    check_a_lot(event_path, event_gfx_path,interface_path, file_path, output_file, hoi4_path, leaders_gfx_path, country_history_path, decisions_path)
     t0 = time.time() - t0
     print("GFX script Time: " + (t0*1000).__str__() + " ms")
 
@@ -100,8 +100,8 @@ def fill_tag_array(internal_path, cosmetics):
     if cosmetics != 1:
         for string in lines:
             temp_string = string[:3]
-            if '#' in line:
-                line = line.split('#')[0]
+            if '#' in string:
+                string = string.split('#')[0]
             if '#' not in temp_string and '\r\n' != string:
                 tags.append(string[:3])
                 #print("Found TAG: " + tags[counter])
@@ -176,7 +176,7 @@ def check_flags( flag_path, output_file, file_path):
             #print("No flag for " + strings)
 
 
-def check_events(event_path, event_gfx_path, interface_path, file_path, output_file, hoi4path, leaders_gfx_path, country_history_path, decisions_path):
+def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_file, hoi4path, leaders_gfx_path, country_history_path, decisions_path):
 
     #Scrub for leader gfx
     actual_found_portrait_gfx = []
@@ -330,6 +330,7 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
 
     #Fill Decisions keys
     decisions_keys = []
+    decisions_keys_full = []
     file = open(hoi4path + "\\interface\\decisions.gfx")
     lines = file.readlines()
     for line in lines:
@@ -338,7 +339,12 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
         if 'name' in line:
             if line.strip().startswith('#') is False:
                 temp_string = line.split('\"')[1].strip()
-                decisions_keys.append(temp_string[13:])
+                decisions_keys_full.append(temp_string)
+                if 'category' in temp_string:
+                    temp_string = temp_string[22:]
+                else:
+                    temp_string = temp_string[13:]
+                decisions_keys.append(temp_string)
     for filenames in listdir(interface_path):
         if 'decisions' in filenames:
             file = open(interface_path + "\\" + filenames)
@@ -350,11 +356,13 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
                     if line.strip().startswith('#') is False:
                         temp_string = line.split('\"')[1].strip()
                         decisions_keys.append(temp_string[13:])
+                        decisions_keys_full.append(temp_string)
 
 
     #Check Decision gfx in the txt files
     line_number = 0
     decisions_found = []
+    pictures_found = []
     for filename in listdir(decisions_path):
         if 'categories' in filename:
             continue
@@ -363,11 +371,59 @@ def check_events(event_path, event_gfx_path, interface_path, file_path, output_f
         for line in lines:
             line_number += 1
             if 'icon' in line:
-                if '#' in line:
-                    line = line.split('#')[0].strip()
                 if line.strip().startswith('#') is False:
+                    if '#' in line:
+                        line = line.split('#')[0].strip()
                     temp_string = line.split('=')[1].strip()
                     decisions_found.append(temp_string)
                     if finddup(decisions_keys, temp_string) is False:
-                        output_file.write("Didn't find icon decisions/" + temp_string + " in file " + filename + " at " +line_number.__str__() + "\n")
+                        if finddup(decisions_keys_full, temp_string) is False:
+                            output_file.write("Didn't find icon decisions " + temp_string + " in file " + filename + " at " + line_number.__str__() + "\n")
+                        else:
+                            output_file.write("Key for decisions wronly written (did you add or remove GFX_categories/GFX decisions)" + temp_string + " in file " + filename + " at " + line_number.__str__() + "\n")
 
+
+
+
+    for filename in listdir(decisions_path + "\\categories"):
+        file = open(decisions_path + "\\categories\\" + filename)
+        lines = file.readlines()
+        for line in lines:
+            line_number += 1
+            if 'icon' in line:
+                if line.strip().startswith('#') is False:
+                    if '#' in line:
+                        line = line.split('#')[0].strip()
+                    temp_string = line.split('=')[1].strip()
+                    decisions_found.append(temp_string)
+                    if finddup(decisions_keys, temp_string) is False:
+                        if finddup(decisions_keys_full, temp_string) is False:
+                            output_file.write("Didn't find icon decisions/ Wrong type used " + temp_string + " in file " + filename + " at " + line_number.__str__() + ". Did you forget to add categories_ to the icon name?\n")
+                            print("Didn't find icon decisions " + temp_string + " in file " + filename + " at " + line_number.__str__())
+            if 'picture' in line:
+                if line.strip().startswith('#') is False:
+                    if '#' in line:
+                        line = line.split('#')[0].strip()
+                    temp_string = line.split('=')[1].strip()
+                    decisions_found.append(temp_string)
+                    if finddup(decisions_keys_full, temp_string) is False:
+                        output_file.write("Didn't find icon decisions/ Wrong type used " + temp_string + " in file " + filename + " at " + line_number.__str__() + ". Did you forget to add categories_ to the icon name?\n")
+                        print("Didn't find picture decisions " + temp_string + " in file " + filename + " at " + line_number.__str__())
+
+
+    #Check if KReys are used
+    for filenames in listdir(interface_path):
+        if 'decisions' in filenames:
+            file = open(interface_path + "\\" + filenames)
+            lines = file.readlines()
+            for line in lines:
+                if 'name' in line:
+                    if '#' in line:
+                        line = line.split('#')[0].strip()
+                    if line.strip().startswith('#') is False:
+                        temp_string = line.split('\"')[1].strip()
+                        #temp_string = temp_string[13:]
+                        if finddup(decisions_found, temp_string) is False:
+                            if finddup(decisions_found, temp_string[13:]) is False:
+                                print("Found Unused KR Decision GFX " + temp_string + " in " + filenames)
+                                output_file.write("Found Unused KR Decision GFX " + temp_string + " in " + filenames + "\n")
