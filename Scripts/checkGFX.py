@@ -79,9 +79,9 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
 
     flags_gfx_path = file_path + "\\gfx\\flags"
 
-    #check_flags(flags_gfx_path, output_file, file_path)
+    check_flags(flags_gfx_path, output_file, file_path)
 
-    #check_a_lot(event_path, event_gfx_path,interface_path, file_path, output_file, hoi4_path, leaders_gfx_path, country_history_path, decisions_path, tree_path)
+    check_a_lot(event_path, event_gfx_path,interface_path, file_path, output_file, hoi4_path, leaders_gfx_path, country_history_path, decisions_path, tree_path)
 
     focus_tree_icons(tree_path, hoi4_path, output_file, file_path, tree_gfx_path, interface_path)
     t0 = time.time() - t0
@@ -230,7 +230,7 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
     dirs = [country_history_path, event_path, tree_path, decisions_path]
     for dir in dirs:
         for file_name in listdir(dir):
-            if 'categories' in filename:
+            if 'categories' in file_name:
                 continue
             line_number = 0
             file = open(dir + "\\" + file_name, 'r', 'utf-8')
