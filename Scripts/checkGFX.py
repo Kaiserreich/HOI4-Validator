@@ -31,10 +31,12 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
     #   Events: Done
     #   Decisions: Done
     #   Focus Trees: Done
+    #   History: Done
     #General GFX:
-    #   Events:
-    #   Decisions:
-    #   Focus Trees:
+    #   Events: Done
+    #   Decisions: Done
+    #   Focus Trees: Done
+    #   History: Done
     #Decisions:
     #   Icons: Actually Done
     #Event GFX:
@@ -42,7 +44,7 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
     #Tech GFX:
     #   Tech Trees:
     #Focus Icons:
-    #   Focus Trees:
+    #   Focus Trees: Done
     #Idea Icons:
     #   Focus Trees:
     #   Decisions(?):
@@ -57,10 +59,12 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
 
     tree_path = file_path + "\\common\\national_focus"
     tree_gfx_path = file_path + "\\gfx\\interface\\goals"
+
     decisions_path = file_path + "\\common\\decisions"
+
     scripted_triggers_path = file_path + "\\common\\scripted_effects"
 
-    event_path  = file_path + "\\events"
+    event_path = file_path + "\\events"
     event_gfx_path = file_path + "\\gfx\\event_pictures"
 
     ideas_gfx_path = file_path + "\\gfx\\interface\\ideas"
@@ -75,9 +79,11 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
 
     flags_gfx_path = file_path + "\\gfx\\flags"
 
-    check_flags(flags_gfx_path, output_file, file_path)
+    #check_flags(flags_gfx_path, output_file, file_path)
 
-    check_a_lot(event_path, event_gfx_path,interface_path, file_path, output_file, hoi4_path, leaders_gfx_path, country_history_path, decisions_path, tree_path)
+    #check_a_lot(event_path, event_gfx_path,interface_path, file_path, output_file, hoi4_path, leaders_gfx_path, country_history_path, decisions_path, tree_path)
+
+    focus_tree_icons(tree_path, hoi4_path, output_file, file_path, tree_gfx_path, interface_path)
     t0 = time.time() - t0
     print("GFX script Time: " + (t0*1000).__str__() + " ms")
 
@@ -432,3 +438,97 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
                             if finddup(decisions_found, temp_string[13:]) is False:
                                 #print("Found Unused KR Decision GFX " + temp_string + " in " + filenames)
                                 output_file.write("Found Unused KR Decision GFX " + temp_string + " in " + filenames + "\n")
+
+def focus_tree_icons(tree_path, hoi4_path, output_file, mod_path, tree_gfx, gfx_files):
+    #First check if every file is defined
+
+    #Fill all present goal icons
+    tree_gfx_files = []
+    for filename in listdir(tree_gfx):
+        tree_gfx_files.append(filename)
+
+    #Fill all defined keys from the .gfx file
+    #KR specifically generates a shine file, so i will ignore that
+    goals_files_needed = []
+    gfx_names = []
+    for filename in listdir(gfx_files):
+        if 'goals' in filename and 'shine' not in filename:
+            file = open(gfx_files + "\\" + filename, 'r', 'utf-8')
+            lines = file.readlines()
+            for line in lines:
+                if 'name' in line:
+                    temp_string = line.strip()
+                    if temp_string.startswith('#'):
+                        continue
+                    if '#' in temp_string:
+                        temp_string = temp_string.split('#')[0].strip()
+                    temp_string = temp_string.split('"')[1]
+                    gfx_names.append(temp_string)
+                if 'texturefile' in line and 'shine_overlay' not in line:
+                    temp_string = line.strip()
+                    if temp_string.startswith('#'):
+                        continue
+                    if '#' in temp_string:
+                        temp_string = temp_string.split('#')[0].strip()
+                    temp_string = temp_string.split('"')[1]
+                    if '/' in temp_string:
+                        if 'goals' not in temp_string:
+                            continue
+                        temp_string = temp_string.split('/')[len(temp_string.split('/'))-1]
+                    goals_files_needed.append(temp_string[:len(temp_string)-4])
+                    if finddup(tree_gfx_files, temp_string) is False:
+                        if 'tga' in temp_string:
+                            if finddup(tree_gfx_files, temp_string.replace('tga', 'dds')) is False:
+                                #print("Could not find " + temp_string + " in the gfx/interface/goals folder")
+                                output_file.write("Could not find " + temp_string + " in the gfx/interface/goals folder\n")
+                        elif 'dds' in temp_string:
+                            if finddup(tree_gfx_files, temp_string.replace('dds', 'tga')) is False:
+                                #print("Could not find " + temp_string + " in the gfx/interface/goals folder")
+                                output_file.write("Could not find " + temp_string + " in the gfx/interface/goals folder\n")
+
+    for filename in tree_gfx_files:
+        if finddup(goals_files_needed, filename[:len(filename)-4]) is False:
+            #print("Found Focus texture not used " + filename[:len(filename)-4])
+            output_file.write("Found Focus texture not used " + filename[:len(filename)-4] + "\n")
+
+    kr_gfx_names = gfx_names
+    #append vanilla stuff
+    file.close()
+    file = open(hoi4_path + "\\interface\\goals.gfx", 'r', 'utf-8')
+    lines = file.readlines()
+    for line in lines:
+        if 'name' in line:
+            line = line.strip()
+            if '#' in line:
+                if line.startswith('#'):
+                    continue
+                else:
+                    line = line.split('#')[0]
+            line = line.split('"')[1]
+            gfx_names.append(line)
+
+    #start scrubbing
+    found_gfx_in_tree = []
+    for filename in listdir(tree_path):
+        size = path.getsize(tree_path + "\\" + filename)
+        if size < 100:
+            continue
+        file = open(tree_path + "\\" + filename, 'r', 'utf-8')
+        lines = file.readlines()
+        line_number = 0
+        for line in lines:
+            line_number += 1
+            if 'icon' in line:
+                if '#' in line:
+                    if line.startswith('#'):
+                        continue
+                    else:
+                        line = line.split('#')[0]
+                if line.strip() is not "":
+                    line = line.split('=')[1].strip()
+                    found_gfx_in_tree.append(line)
+                    if finddup(gfx_names, line) is False:
+                        output_file.write("Found focus icon \"" + line + "\" not declared in " + filename + " in line: " + line_number.__str__())
+    for string in kr_gfx_names:
+        if finddup(found_gfx_in_tree, string) is False:
+            output_file.write("Found focus icon never used in any focus tree: " + string)
