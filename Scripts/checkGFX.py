@@ -17,7 +17,7 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
     #   Focus
     #   Events
     #   Ideas
-    #   Companies
+    #   Decisions
     #Not needed to check for minister files, since its auto generated with filename.tga -> filename
     #
     #For each check:
@@ -27,10 +27,14 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
     #Flags:
     #   Normal: Done
     #   Cosmetic: Done
-    #Leader/General GFX:
+    #Leader GFX:
     #   Events: Done
+    #   Decisions: Done
+    #   Focus Trees: Done
+    #General GFX:
+    #   Events:
     #   Decisions:
-    #   Focus Trees(?):
+    #   Focus Trees:
     #Decisions:
     #   Icons: Actually Done
     #Event GFX:
@@ -47,7 +51,7 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
     #   Ministers: Done by mw
     #   Companies:
     #Other:
-    #   Miscased: Done
+    #   Miscased: Done (Only relevant for leader portraits so far)
 
     interface_path = file_path + "\\interface"
 
@@ -73,7 +77,7 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
 
     check_flags(flags_gfx_path, output_file, file_path)
 
-    check_a_lot(event_path, event_gfx_path,interface_path, file_path, output_file, hoi4_path, leaders_gfx_path, country_history_path, decisions_path)
+    check_a_lot(event_path, event_gfx_path,interface_path, file_path, output_file, hoi4_path, leaders_gfx_path, country_history_path, decisions_path, tree_path)
     t0 = time.time() - t0
     print("GFX script Time: " + (t0*1000).__str__() + " ms")
 
@@ -176,7 +180,7 @@ def check_flags( flag_path, output_file, file_path):
             #print("No flag for " + strings)
 
 
-def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_file, hoi4path, leaders_gfx_path, country_history_path, decisions_path):
+def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_file, hoi4path, leaders_gfx_path, country_history_path, decisions_path, tree_path):
 
     #Scrub for leader gfx
     actual_found_portrait_gfx = []
@@ -217,10 +221,11 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
     amountarr = []
     event_picture = []
     leader_picture = []
-    counter = 0
-    dirs = [country_history_path, event_path]
+    dirs = [country_history_path, event_path, tree_path, decisions_path]
     for dir in dirs:
         for file_name in listdir(dir):
+            if 'categories' in filename:
+                continue
             line_number = 0
             file = open(dir + "\\" + file_name, 'r', 'utf-8')
             lines = file.readlines()
@@ -231,7 +236,7 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
                 if "picture" in line and line.strip().startswith('#') is False:
                     temp_string = line.strip()
                     if '.tga' in temp_string or '.dds' in temp_string:
-                        temp_string =  temp_string.split('=')[1].replace('"', '')
+                        temp_string = temp_string.split('=')[1].replace('"', '')
                         if finddup(leader_picture, temp_string) is False:
                             temp_string = strip_and_clean(temp_string)
                             #print(temp_string)
@@ -425,5 +430,5 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
                         #temp_string = temp_string[13:]
                         if finddup(decisions_found, temp_string) is False:
                             if finddup(decisions_found, temp_string[13:]) is False:
-                                print("Found Unused KR Decision GFX " + temp_string + " in " + filenames)
+                                #print("Found Unused KR Decision GFX " + temp_string + " in " + filenames)
                                 output_file.write("Found Unused KR Decision GFX " + temp_string + " in " + filenames + "\n")
