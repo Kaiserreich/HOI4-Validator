@@ -255,16 +255,15 @@ def decision(cpath):
                         line = line.split('#')[0]
                 if '= {' in line or '={' in line:
                     if level == 1:
-                        if 'log = "[GetDateText]' not in lines[line_number+0]:
-                           # print("found id: " + line.split('=')[0].strip())
-                            ids.append(line.split('=')[0].strip())
-
+                        ids.append(line.split('=')[0].strip())
                 if 'complete_effect' in line:
-                    #print("Found completion effect for " + ids[len(ids)-1] + " at line " + line_number.__str__())
-                    idss.append(line_number)
+                    if 'log = \"[GetDateText]:' not in lines[line_number]:
+                        idss.append(line_number)
+                    else:
+                        ids.pop()
                 if 'remove_effect' in line:
-                    #print("Found remove effect for " + ids[len(ids)-1] + " at line " + line_number.__str__())
-                    idsss.append(line_number)
+                    if 'log = \"[GetDateText]' not in lines[line_number]:
+                        idsss.append(line_number)
                 if '{' in line:
                     level += line.count('{')
                 if '}' in line:
@@ -315,9 +314,9 @@ def main():
         else:
             cpath += ' ' + string
     ttime = 0
-    ttime += event(cpath)
-    ttime += focus(cpath)
-    ttime += idea(cpath)
+    #ttime += event(cpath)
+    #ttime += focus(cpath)
+    #ttime += idea(cpath)
     ttime += decision(cpath)
     print("Total Time: %.3f ms" % (ttime * 1000))
 

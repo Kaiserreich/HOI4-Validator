@@ -90,9 +90,9 @@ def main():
             ok += 1
         else:
             cpath += ' ' + string
-    #event(cpath)
-    #focus(cpath)
-    #idea(cpath)
+    event(cpath)
+    focus(cpath)
+    idea(cpath)
     decision(cpath)
 
 if __name__ == "__main__":
