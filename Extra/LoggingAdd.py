@@ -245,6 +245,7 @@ def decision(cpath):
             ids = [] #array of the names
             idss = [] #line numbers of completion effect
             idsss = [] #line numbers of remove effect
+            idssss = [] #line numbers of imteout_effect
             timestart = time.time()
             for line in lines:
                 line_number += 1
@@ -264,6 +265,9 @@ def decision(cpath):
                 if 'remove_effect' in line:
                     if 'log = \"[GetDateText]' not in lines[line_number]:
                         idsss.append(line_number)
+                if 'timeout_effect' in line:
+                    if 'log = \"[GetDateText]' not in lines[line_number]:
+                        idssss.append(line_number)
                 if '{' in line:
                     level += line.count('{')
                 if '}' in line:
@@ -271,13 +275,16 @@ def decision(cpath):
 
             time1 = time.time() - timestart
             line_number = 0
-
+            backup_index = 0
             outputfile = open(cpath + "\\common\\decisions\\" + filename, 'w', 'utf-8')
             outputfile.truncate()
+            dec_id = ""
+            dec_bu = ""
             for line in lines:
                 line_number += 1
                 if line_number in idss:
                     dec_id = ids[idss.index(line_number)]
+                    backup_index = ids.index(dec_id)
                     if dec_id in ["{", "}"]:
                         dec_id = "Error, focus name not found"
                     if '}' in line:
@@ -293,6 +300,19 @@ def decision(cpath):
                         replacement_text = temp[0] + "{\n\n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Decision remove " + dec_id + "\"\n" + "{".join(temp)[len(temp[0])+1:] + "\n"
                     else:
                         replacement_text = "\t\tremove_effect = {\n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Decision remove " + dec_id + "\"\n"
+                    outputfile.write(replacement_text)
+                    #print("Inserted remove loc at {0} in file {1}".format(line_number.__str__(), filename))
+                elif line_number in idssss:
+                    if dec_id is "":
+                        dec_id = ids[backup_index]
+                    elif dec_id == dec_bu:
+                        dec_id = ids[backup_index+1]
+                    dec_bu = dec_id
+                    if '}' in line:
+                        temp = line.split("{")
+                        replacement_text = temp[0] + "{\n\n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Decision timeout " + dec_id + "\"\n" + "{".join(temp)[len(temp[0])+1:] + "\n"
+                    else:
+                        replacement_text = "\t\ttimeout_effect = {\n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Decision timeout " + dec_id + "\"\n"
                     outputfile.write(replacement_text)
                     #print("Inserted remove loc at {0} in file {1}".format(line_number.__str__(), filename))
                 else:
@@ -313,10 +333,12 @@ def main():
             ok += 1
         else:
             cpath += ' ' + string
+
+
     ttime = 0
-    #ttime += event(cpath)
-    #ttime += focus(cpath)
-    #ttime += idea(cpath)
+    ttime += event(cpath)
+    ttime += focus(cpath)
+    ttime += idea(cpath)
     ttime += decision(cpath)
     print("Total Time: %.3f ms" % (ttime * 1000))
 
