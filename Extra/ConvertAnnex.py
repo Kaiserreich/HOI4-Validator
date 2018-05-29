@@ -104,6 +104,19 @@ def fill_activation(dec_file, start_no, lines):
         dec_file.write(white + line + "\n")
 
 
+def get_loc(base_lines, id):
+    for line in base_lines:
+        if "annex." + id.__str__() + ".t:0" in line:
+            return line.split(':')[1].strip()
+    return  "0 \"War with Australasia\""
+
+
+def get_desc(base_lines, id):
+    for line in base_lines:
+        if "annex." + id.__str__() + ".d:0" in line:
+            return line.split(':')[1].strip()
+    return  "0 \"It seems we have no choice but to face down our former colony. We are now at war with [AST.GetNameDef], and we will not rest until the islands are back in British hands.\""
+
 def main():
     cpath = sys.argv[1]
     ok = 0
@@ -113,7 +126,7 @@ def main():
         else:
             cpath += ' ' + string
     annex_event_file = open(cpath + "\\events\\KR_Annexations.txt", "r", "utf-8-sig")
-    annex_on_action_file = open(cpath + "\\common\\on_actions\\KR_on_actions_annexations.txt", "r", "utf-8")
+    annex_on_action_file = open("C:\\Users\\Martijn\\Desktop\\KR_on_actions_annexations.txt", "r", "utf-8")
     lines_event = annex_event_file.readlines()
     #I need three things:
     #Negative effects from event file
@@ -254,10 +267,21 @@ def main():
         dec_file.write("    }\n")
     dec_file.write("}\n")
 
+    base_loc = open(cpath + "\\localisation\\KR_Annexations_l_english.yml", 'r', 'utf-8-sig')
+    base_lines = base_loc.readlines()
     loc_file = open(cpath + "\\localisation\\KR_Annexation_Decisions_l_english.yml", 'w', 'utf-8-sig')
     loc_file.write("l_english: \n")
+    loc_thing = ""
     for x in range(0, counter):
-        loc_file.write("" + dec_name_arr[x] + ":0 \""+loc_arr[x].strip() + "\"\n")
+        trigger_list = event_trigger_arr[x].split(',')
+        if trigger_list[0] is not "0":
+            y = trigger_list[0]
+        else:
+            y = trigger_list[1]
+        loc_thing = get_loc(base_lines, y)
+        desc_thing = get_desc(base_lines, y)
+        loc_file.write("" + dec_name_arr[x] + ":" + loc_thing + "\n")
+        loc_file.write("" + dec_name_arr[x] + "_desc:" + desc_thing + "\n")
 
 
 if __name__ == "__main__":
