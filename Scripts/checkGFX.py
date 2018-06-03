@@ -488,8 +488,8 @@ def focus_tree_icons(tree_path, hoi4_path, output_file, mod_path, tree_gfx, gfx_
 
     for filename in tree_gfx_files:
         if finddup(goals_files_needed, filename[:len(filename)-4]) is False:
-            #print("Found Focus texture not used " + filename[:len(filename)-4])
-            output_file.write("Found Focus texture not used " + filename[:len(filename)-4] + "\n")
+            #print("Found focus texture not used " + filename[:len(filename)-4])
+            output_file.write("Found focus texture not used " + filename[:len(filename)-4] + "\n")
 
     kr_gfx_names = gfx_names
     #append vanilla stuff

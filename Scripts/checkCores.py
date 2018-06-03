@@ -14,7 +14,7 @@ def check_for_missing_cores(path, output_file):
         current_line += 1
         while line:
             if ('add_core_of = ' in line):
-                #this means thre is a core in the state
+                #this means there is a core in the state
                 hascore = True
             line = file.readline()
             current_line += 1
@@ -23,7 +23,7 @@ def check_for_missing_cores(path, output_file):
             filelist.append(filename)
     i = 0
     while (i < len(filelist)):
-        result = "The state in" + filelist[i] + "does not have any cores\n"
+        result = "The state in " + filelist[i] + " does not have any cores\n"
         print(result)
         output_file.write(result)
         i += 1
