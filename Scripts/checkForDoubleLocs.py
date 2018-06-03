@@ -2,13 +2,15 @@ from os import listdir
 import time
 from openFile import open_file
 
-def check_and_strip(string, range):
-    string = string.replace('   ', '')
-    if "  " in string[range+1:]:
-        return True
-    else:
-        return False
- 
+
+def check_and_strip(string, _range):
+    for __range in range(_range, len(string)-2):
+        if "  " in string[__range:__range+2] and (__range > 1 and " " not in string[__range-1:__range]) \
+                and ((__range+2 < len(string) and " " not in string[__range+2:__range+3]) or
+                     (__range+2 >= len(string))):
+            return True
+    return False
+
 def check_for_double_locs(path, output_file):
     t0 = time.time()
     path += "\\localisation"
