@@ -1,36 +1,18 @@
-﻿\history\units\unlock_heavy_tanks.txt division names group missing at division starting on line:1
+﻿\history\units\DEI.txt division names group missing at division starting on line:1
+\history\units\DEI.txt division names group missing at division starting on line:17
+\history\units\DEI.txt division names group missing at division starting on line:36
+\history\units\DEI_bannelingenlegioen.txt division names group missing at division starting on line:1
+\history\units\DEI_reinforcements.txt division names group missing at division starting on line:1
+\history\units\DEI_resistance.txt division names group missing at division starting on line:1
+\history\units\unlock_heavy_tanks.txt division names group missing at division starting on line:1
 \history\units\unlock_marines.txt division names group missing at division starting on line:1
 \history\units\unlock_mountineers.txt division names group missing at division starting on line:1
 \history\units\unlock_paratroopers.txt division names group missing at division starting on line:1
-\history\countries\CAF - West Indies Federation.txt there's an old general around line 216
-\history\countries\CAF - West Indies Federation.txt there's an old general around line 223
-CEN has no light_armor namelist
-CEN has no medium_armor namelist
-CEN has no heavy_armor namelist
-CEN has no modern_armor namelist
-CEN has no paratrooper namelist
-CEN has no marine namelist
-CEN has no mountaineers namelist
-CEN has no infantry namelist
-CEN has no cavalry namelist
-CEN has no motorized namelist
-CEN has no mechanized namelist
-CEN has no militia namelist
-YUC has no light_armor namelist
-YUC has no medium_armor namelist
-YUC has no heavy_armor namelist
-YUC has no modern_armor namelist
-YUC has no paratrooper namelist
-YUC has no marine namelist
-YUC has no mountaineers namelist
-YUC has no infantry namelist
-YUC has no cavalry namelist
-YUC has no motorized namelist
-YUC has no mechanized namelist
-YUC has no militia namelist
+\history\countries\DEI - Dutch East Indies.txt there's an unchanged KR general around line 103
+\history\countries\DEI - Dutch East Indies.txt there's an unchanged KR general around line 116
+\history\countries\DEI - Dutch East Indies.txt there's an unchanged KR general around line 129
 \events\KR_Canada.txt Brackets: Expecting: ']' but found '}' around line 3516
-\common\national_focus\KR_Honduras.txt Brackets: there are 1 opening bracket(s) without closing bracket(s)
-Double Spaces in Loc: 'RADAR_ONMAP_TOOLTIP_COVERAGE_ENTRY' in: '\localisation\buildings_l_english.yml' at line 85
+\history\states\1047-Subei.txt Brackets: there are 1 opening bracket(s) without closing bracket(s)
 Double Spaces in Loc: 'SUPPLY_INFO' in: '\localisation\core_l_english.yml' at line 365
 Double Spaces in Loc: 'NAVAL_COMBAT_DIST_TO_ARRIVE' in: '\localisation\core_l_english.yml' at line 471
 Double Spaces in Loc: 'STATE_VIEW_WICTORY_POINTS_DESC' in: '\localisation\core_l_english.yml' at line 768
@@ -45,72 +27,6 @@ Double Spaces in Loc: 'PROV_TOOLTIP_LOCATION_HEADER' in: '\localisation\core_l_e
 Double Spaces in Loc: 'PROV_TOOLTIP_WEATHER_MODIFIER' in: '\localisation\core_l_english.yml' at line 1279
 Double Spaces in Loc: 'PROV_TOOLTIP_TEMPERATURE_MODIFIER' in: '\localisation\core_l_english.yml' at line 1280
 Duplicated Loc: 'ALB_gendarmerie_protection' in: '\localisation\KR_Albania_l_english.yml' at line 513 and in: '\localisation\KR_Albania_l_english.yml' at line 516
-Double Spaces in Loc: 'amcivwar.4.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 69
-Double Spaces in Loc: 'amcivwar.9.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 89
-Double Spaces in Loc: 'amcivwar.13.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 109
-Double Spaces in Loc: 'amcivwar.16.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 124
-Double Spaces in Loc: 'amcivwar.19.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 140
-Double Spaces in Loc: 'amcivwar.33.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 197
-Duplicated Loc: 'amcivwar.52.t' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 290 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 304
-Duplicated Loc: 'amcivwar.52.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 291 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 305
-Duplicated Loc: 'amcivwar.52.a' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 292 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 306
-Duplicated Loc: 'amcivwar.52.b' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 293 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 307
-Duplicated Loc: 'amcivwar.52.t' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 290 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 309
-Duplicated Loc: 'amcivwar.52.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 291 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 310
-Duplicated Loc: 'amcivwar.52.a' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 292 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 311
-Duplicated Loc: 'amcivwar.52.b' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 293 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 312
-Duplicated Loc: 'amcivwar.52.t' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 290 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 314
-Duplicated Loc: 'amcivwar.52.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 291 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 315
-Duplicated Loc: 'amcivwar.52.a' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 292 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 316
-Duplicated Loc: 'amcivwar.52.b' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 293 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 317
-Duplicated Loc: 'amcivwar.52.t' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 290 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 319
-Duplicated Loc: 'amcivwar.52.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 291 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 320
-Duplicated Loc: 'amcivwar.52.a' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 292 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 321
-Duplicated Loc: 'amcivwar.52.b' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 293 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 322
-Duplicated Loc: 'amcivwar.52.t' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 290 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 324
-Duplicated Loc: 'amcivwar.52.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 291 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 325
-Duplicated Loc: 'amcivwar.52.a' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 292 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 326
-Duplicated Loc: 'amcivwar.52.b' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 293 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 327
-Duplicated Loc: 'amcivwar.52.t' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 290 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 329
-Duplicated Loc: 'amcivwar.52.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 291 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 330
-Duplicated Loc: 'amcivwar.52.a' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 292 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 331
-Duplicated Loc: 'amcivwar.52.b' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 293 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 332
-Duplicated Loc: 'amcivwar.52.t' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 290 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 334
-Duplicated Loc: 'amcivwar.52.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 291 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 335
-Duplicated Loc: 'amcivwar.52.a' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 292 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 336
-Duplicated Loc: 'amcivwar.52.b' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 293 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 337
-Duplicated Loc: 'amcivwar.52.t' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 290 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 339
-Duplicated Loc: 'amcivwar.52.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 291 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 340
-Duplicated Loc: 'amcivwar.52.a' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 292 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 341
-Duplicated Loc: 'amcivwar.52.b' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 293 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 342
-Duplicated Loc: 'amcivwar.52.t' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 290 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 344
-Duplicated Loc: 'amcivwar.52.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 291 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 345
-Duplicated Loc: 'amcivwar.52.a' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 292 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 346
-Duplicated Loc: 'amcivwar.52.b' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 293 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 347
-Duplicated Loc: 'amcivwar.52.t' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 290 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 349
-Duplicated Loc: 'amcivwar.52.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 291 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 350
-Duplicated Loc: 'amcivwar.52.a' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 292 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 351
-Duplicated Loc: 'amcivwar.52.b' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 293 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 352
-Duplicated Loc: 'amcivwar.52.t' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 290 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 354
-Duplicated Loc: 'amcivwar.52.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 291 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 355
-Duplicated Loc: 'amcivwar.52.a' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 292 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 356
-Duplicated Loc: 'amcivwar.52.b' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 293 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 357
-Duplicated Loc: 'amcivwar.52.t' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 290 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 359
-Duplicated Loc: 'amcivwar.52.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 291 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 360
-Duplicated Loc: 'amcivwar.52.a' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 292 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 361
-Duplicated Loc: 'amcivwar.52.b' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 293 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 362
-Duplicated Loc: 'amcivwar.52.t' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 290 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 364
-Duplicated Loc: 'amcivwar.52.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 291 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 365
-Duplicated Loc: 'amcivwar.52.a' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 292 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 366
-Duplicated Loc: 'amcivwar.52.b' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 293 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 367
-Duplicated Loc: 'amcivwar.52.t' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 290 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 369
-Duplicated Loc: 'amcivwar.52.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 291 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 370
-Duplicated Loc: 'amcivwar.52.a' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 292 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 371
-Duplicated Loc: 'amcivwar.52.b' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 293 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 372
-Duplicated Loc: 'amcivwar.52.t' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 290 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 374
-Duplicated Loc: 'amcivwar.52.d' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 291 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 375
-Duplicated Loc: 'amcivwar.52.a' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 292 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 376
-Duplicated Loc: 'amcivwar.52.b' in: '\localisation\KR_American_Civil_War_l_english.yml' at line 293 and in: '\localisation\KR_American_Civil_War_l_english.yml' at line 377
 Duplicated Loc: 'ARG_Engines_of_War' in: '\localisation\KR_Argentina_l_english.yml' at line 20 and in: '\localisation\KR_Argentina_l_english.yml' at line 77
 Duplicated Loc: 'austral.256.a' in: '\localisation\KR_Australasia_l_english.yml' at line 932 and in: '\localisation\KR_Australasia_l_english.yml' at line 934
 Duplicated Loc: 'COL_status_quo' in: '\localisation\KR_Colombia_l_english.yml' at line 10 and in: '\localisation\KR_Colombia_l_english.yml' at line 146
@@ -123,116 +39,113 @@ Duplicated Loc: 'COL_one_nation' in: '\localisation\KR_Colombia_l_english.yml' a
 Duplicated Loc: 'COL_one_nation_desc' in: '\localisation\KR_Colombia_l_english.yml' at line 23 and in: '\localisation\KR_Colombia_l_english.yml' at line 233
 Duplicated Loc: 'COL_break_the_chains' in: '\localisation\KR_Colombia_l_english.yml' at line 32 and in: '\localisation\KR_Colombia_l_english.yml' at line 290
 Duplicated Loc: 'COL_break_the_chains_desc' in: '\localisation\KR_Colombia_l_english.yml' at line 33 and in: '\localisation\KR_Colombia_l_english.yml' at line 291
-Duplicated Loc: 'CSA_reconstruction_desc' in: '\localisation\KR_Combined_Syndicates_of_America_l_english.yml' at line 161 and in: '\localisation\KR_Combined_Syndicates_of_America_l_english.yml' at line 193
-Duplicated Loc: 'CSA_revolutionary_guards' in: '\localisation\KR_Combined_Syndicates_of_America_l_english.yml' at line 112 and in: '\localisation\KR_Combined_Syndicates_of_America_l_english.yml' at line 300
-Double Spaces in Loc: 'csa.1.d' in: '\localisation\KR_Combined_Syndicates_of_America_l_english.yml' at line 483
-Double Spaces in Loc: 'csa.6.d' in: '\localisation\KR_Combined_Syndicates_of_America_l_english.yml' at line 506
-Duplicated Loc: 'DEI_totalist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2184 and in: '\localisation\KR_Countries_l_english.yml' at line 1801
-Duplicated Loc: 'DEI_totalist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2185 and in: '\localisation\KR_Countries_l_english.yml' at line 1802
-Duplicated Loc: 'DEI_totalist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2186 and in: '\localisation\KR_Countries_l_english.yml' at line 1803
-Duplicated Loc: 'DEI_syndicalist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2181 and in: '\localisation\KR_Countries_l_english.yml' at line 1804
-Duplicated Loc: 'DEI_syndicalist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2182 and in: '\localisation\KR_Countries_l_english.yml' at line 1805
-Duplicated Loc: 'DEI_syndicalist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2183 and in: '\localisation\KR_Countries_l_english.yml' at line 1806
-Duplicated Loc: 'DEI_radical_socialist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2169 and in: '\localisation\KR_Countries_l_english.yml' at line 1807
-Duplicated Loc: 'DEI_radical_socialist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2170 and in: '\localisation\KR_Countries_l_english.yml' at line 1808
-Duplicated Loc: 'DEI_radical_socialist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2171 and in: '\localisation\KR_Countries_l_english.yml' at line 1809
-Duplicated Loc: 'DEI_social_democrat' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2175 and in: '\localisation\KR_Countries_l_english.yml' at line 1810
-Duplicated Loc: 'DEI_social_democrat_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2176 and in: '\localisation\KR_Countries_l_english.yml' at line 1811
-Duplicated Loc: 'DEI_social_democrat_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2177 and in: '\localisation\KR_Countries_l_english.yml' at line 1812
-Duplicated Loc: 'DEI_social_liberal' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2178 and in: '\localisation\KR_Countries_l_english.yml' at line 1813
-Duplicated Loc: 'DEI_social_liberal_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2179 and in: '\localisation\KR_Countries_l_english.yml' at line 1814
-Duplicated Loc: 'DEI_social_liberal_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2180 and in: '\localisation\KR_Countries_l_english.yml' at line 1815
-Duplicated Loc: 'DEI_market_liberal' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2160 and in: '\localisation\KR_Countries_l_english.yml' at line 1816
-Duplicated Loc: 'DEI_market_liberal_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2161 and in: '\localisation\KR_Countries_l_english.yml' at line 1817
-Duplicated Loc: 'DEI_market_liberal_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2162 and in: '\localisation\KR_Countries_l_english.yml' at line 1818
-Duplicated Loc: 'DEI_social_conservative' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2172 and in: '\localisation\KR_Countries_l_english.yml' at line 1819
-Duplicated Loc: 'DEI_social_conservative_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2173 and in: '\localisation\KR_Countries_l_english.yml' at line 1820
-Duplicated Loc: 'DEI_social_conservative_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2174 and in: '\localisation\KR_Countries_l_english.yml' at line 1821
-Duplicated Loc: 'DEI_authoritarian_democrat' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2157 and in: '\localisation\KR_Countries_l_english.yml' at line 1822
-Duplicated Loc: 'DEI_authoritarian_democrat_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2158 and in: '\localisation\KR_Countries_l_english.yml' at line 1823
-Duplicated Loc: 'DEI_authoritarian_democrat_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2159 and in: '\localisation\KR_Countries_l_english.yml' at line 1824
-Duplicated Loc: 'DEI_paternal_autocrat' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2166 and in: '\localisation\KR_Countries_l_english.yml' at line 1825
-Duplicated Loc: 'DEI_paternal_autocrat_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2167 and in: '\localisation\KR_Countries_l_english.yml' at line 1826
-Duplicated Loc: 'DEI_paternal_autocrat_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2168 and in: '\localisation\KR_Countries_l_english.yml' at line 1827
-Duplicated Loc: 'DEI_national_populist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2163 and in: '\localisation\KR_Countries_l_english.yml' at line 1828
-Duplicated Loc: 'DEI_national_populist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2164 and in: '\localisation\KR_Countries_l_english.yml' at line 1829
-Duplicated Loc: 'DEI_national_populist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2165 and in: '\localisation\KR_Countries_l_english.yml' at line 1830
-Duplicated Loc: 'NCH_totalist' in: '\localisation\KR_Countries_l_english.yml' at line 4557 and in: '\localisation\KR_Countries_l_english.yml' at line 4558
-Duplicated Loc: 'NCH_totalist_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4559 and in: '\localisation\KR_Countries_l_english.yml' at line 4560
-Duplicated Loc: 'NCH_totalist_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4561 and in: '\localisation\KR_Countries_l_english.yml' at line 4562
-Duplicated Loc: 'NCH_syndicalist' in: '\localisation\KR_Countries_l_english.yml' at line 4563 and in: '\localisation\KR_Countries_l_english.yml' at line 4564
-Duplicated Loc: 'NCH_syndicalist_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4565 and in: '\localisation\KR_Countries_l_english.yml' at line 4566
-Duplicated Loc: 'NCH_syndicalist_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4567 and in: '\localisation\KR_Countries_l_english.yml' at line 4568
-Duplicated Loc: 'NCH_radical_socialist' in: '\localisation\KR_Countries_l_english.yml' at line 4569 and in: '\localisation\KR_Countries_l_english.yml' at line 4570
-Duplicated Loc: 'NCH_radical_socialist_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4571 and in: '\localisation\KR_Countries_l_english.yml' at line 4572
-Duplicated Loc: 'NCH_radical_socialist_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4573 and in: '\localisation\KR_Countries_l_english.yml' at line 4574
-Duplicated Loc: 'NCH_social_democrat' in: '\localisation\KR_Countries_l_english.yml' at line 4575 and in: '\localisation\KR_Countries_l_english.yml' at line 4576
-Duplicated Loc: 'NCH_social_democrat_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4577 and in: '\localisation\KR_Countries_l_english.yml' at line 4578
-Duplicated Loc: 'NCH_social_democrat_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4579 and in: '\localisation\KR_Countries_l_english.yml' at line 4580
-Duplicated Loc: 'NCH_social_liberal' in: '\localisation\KR_Countries_l_english.yml' at line 4581 and in: '\localisation\KR_Countries_l_english.yml' at line 4582
-Duplicated Loc: 'NCH_social_liberal_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4583 and in: '\localisation\KR_Countries_l_english.yml' at line 4584
-Duplicated Loc: 'NCH_social_liberal_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4585 and in: '\localisation\KR_Countries_l_english.yml' at line 4586
-Duplicated Loc: 'NCH_market_liberal' in: '\localisation\KR_Countries_l_english.yml' at line 4588 and in: '\localisation\KR_Countries_l_english.yml' at line 4589
-Duplicated Loc: 'NCH_market_liberal_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4590 and in: '\localisation\KR_Countries_l_english.yml' at line 4591
-Duplicated Loc: 'NCH_market_liberal_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4592 and in: '\localisation\KR_Countries_l_english.yml' at line 4593
-Duplicated Loc: 'NCH_social_conservative' in: '\localisation\KR_Countries_l_english.yml' at line 4594 and in: '\localisation\KR_Countries_l_english.yml' at line 4595
-Duplicated Loc: 'NCH_social_conservative_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4596 and in: '\localisation\KR_Countries_l_english.yml' at line 4597
-Duplicated Loc: 'NCH_social_conservative_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4598 and in: '\localisation\KR_Countries_l_english.yml' at line 4599
-Duplicated Loc: 'NCH_authoritarian_democrat' in: '\localisation\KR_Countries_l_english.yml' at line 4600 and in: '\localisation\KR_Countries_l_english.yml' at line 4601
-Duplicated Loc: 'NCH_authoritarian_democrat_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4602 and in: '\localisation\KR_Countries_l_english.yml' at line 4603
-Duplicated Loc: 'NCH_authoritarian_democrat_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4604 and in: '\localisation\KR_Countries_l_english.yml' at line 4605
-Duplicated Loc: 'NCH_paternal_autocrat' in: '\localisation\KR_Countries_l_english.yml' at line 4606 and in: '\localisation\KR_Countries_l_english.yml' at line 4607
-Duplicated Loc: 'NCH_paternal_autocrat_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4608 and in: '\localisation\KR_Countries_l_english.yml' at line 4609
-Duplicated Loc: 'NCH_paternal_autocrat_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4610 and in: '\localisation\KR_Countries_l_english.yml' at line 4611
-Duplicated Loc: 'NCH_national_populist' in: '\localisation\KR_Countries_l_english.yml' at line 4612 and in: '\localisation\KR_Countries_l_english.yml' at line 4613
-Duplicated Loc: 'NCH_national_populist_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4614 and in: '\localisation\KR_Countries_l_english.yml' at line 4615
-Duplicated Loc: 'NCH_national_populist_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4616 and in: '\localisation\KR_Countries_l_english.yml' at line 4617
-Duplicated Loc: 'RTS_totalist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1250 and in: '\localisation\KR_Countries_l_english.yml' at line 5763
-Duplicated Loc: 'RTS_totalist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1251 and in: '\localisation\KR_Countries_l_english.yml' at line 5764
-Duplicated Loc: 'RTS_totalist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1252 and in: '\localisation\KR_Countries_l_english.yml' at line 5765
-Duplicated Loc: 'RTS_syndicalist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1247 and in: '\localisation\KR_Countries_l_english.yml' at line 5766
-Duplicated Loc: 'RTS_syndicalist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1248 and in: '\localisation\KR_Countries_l_english.yml' at line 5767
-Duplicated Loc: 'RTS_syndicalist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1249 and in: '\localisation\KR_Countries_l_english.yml' at line 5768
-Duplicated Loc: 'RTS_radical_socialist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1235 and in: '\localisation\KR_Countries_l_english.yml' at line 5769
-Duplicated Loc: 'RTS_radical_socialist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1236 and in: '\localisation\KR_Countries_l_english.yml' at line 5770
-Duplicated Loc: 'RTS_radical_socialist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1237 and in: '\localisation\KR_Countries_l_english.yml' at line 5771
-Duplicated Loc: 'RTS_social_democrat' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1241 and in: '\localisation\KR_Countries_l_english.yml' at line 5772
-Duplicated Loc: 'RTS_social_democrat_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1242 and in: '\localisation\KR_Countries_l_english.yml' at line 5773
-Duplicated Loc: 'RTS_social_democrat_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1243 and in: '\localisation\KR_Countries_l_english.yml' at line 5774
-Duplicated Loc: 'RTS_social_liberal' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1244 and in: '\localisation\KR_Countries_l_english.yml' at line 5775
-Duplicated Loc: 'RTS_social_liberal_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1245 and in: '\localisation\KR_Countries_l_english.yml' at line 5776
-Duplicated Loc: 'RTS_social_liberal_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1246 and in: '\localisation\KR_Countries_l_english.yml' at line 5777
-Duplicated Loc: 'RTS_market_liberal' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1226 and in: '\localisation\KR_Countries_l_english.yml' at line 5778
-Duplicated Loc: 'RTS_market_liberal_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1227 and in: '\localisation\KR_Countries_l_english.yml' at line 5779
-Duplicated Loc: 'RTS_market_liberal_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1228 and in: '\localisation\KR_Countries_l_english.yml' at line 5780
-Duplicated Loc: 'RTS_social_conservative' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1238 and in: '\localisation\KR_Countries_l_english.yml' at line 5781
-Duplicated Loc: 'RTS_social_conservative_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1239 and in: '\localisation\KR_Countries_l_english.yml' at line 5782
-Duplicated Loc: 'RTS_social_conservative_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1240 and in: '\localisation\KR_Countries_l_english.yml' at line 5783
-Duplicated Loc: 'RTS_authoritarian_democrat' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1223 and in: '\localisation\KR_Countries_l_english.yml' at line 5784
-Duplicated Loc: 'RTS_authoritarian_democrat_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1224 and in: '\localisation\KR_Countries_l_english.yml' at line 5785
-Duplicated Loc: 'RTS_authoritarian_democrat_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1225 and in: '\localisation\KR_Countries_l_english.yml' at line 5786
-Duplicated Loc: 'RTS_paternal_autocrat' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1232 and in: '\localisation\KR_Countries_l_english.yml' at line 5787
-Duplicated Loc: 'RTS_paternal_autocrat_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1233 and in: '\localisation\KR_Countries_l_english.yml' at line 5788
-Duplicated Loc: 'RTS_paternal_autocrat_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1234 and in: '\localisation\KR_Countries_l_english.yml' at line 5789
-Duplicated Loc: 'RTS_national_populist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1229 and in: '\localisation\KR_Countries_l_english.yml' at line 5790
-Duplicated Loc: 'RTS_national_populist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1230 and in: '\localisation\KR_Countries_l_english.yml' at line 5791
-Duplicated Loc: 'RTS_national_populist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1231 and in: '\localisation\KR_Countries_l_english.yml' at line 5792
-Double Spaces in Loc: 'CUB_chaos_desc' in: '\localisation\KR_Cuba_l_english.yml' at line 59
-Duplicated Loc: 'CUB_USinterresp' in: '\localisation\KR_Cuba_l_english.yml' at line 345 and in: '\localisation\KR_Cuba_l_english.yml' at line 346
-Duplicated Loc: 'CUB_strike_destroyed' in: '\localisation\KR_Cuba_l_english.yml' at line 303 and in: '\localisation\KR_Cuba_l_english.yml' at line 367
-Double Spaces in Loc: 'cuba.12.d_2' in: '\localisation\KR_Cuba_l_english.yml' at line 641
-Duplicated Loc: 'cuba.62.a' in: '\localisation\KR_Cuba_l_english.yml' at line 885 and in: '\localisation\KR_Cuba_l_english.yml' at line 886
-Duplicated Loc: 'cuba.64.a' in: '\localisation\KR_Cuba_l_english.yml' at line 894 and in: '\localisation\KR_Cuba_l_english.yml' at line 895
-Duplicated Loc: 'cuba.71.a' in: '\localisation\KR_Cuba_l_english.yml' at line 930 and in: '\localisation\KR_Cuba_l_english.yml' at line 931
+Duplicated Loc: 'CSA_centralized_union' in: '\localisation\KR_Combined_Syndicates_of_America_l_english.yml' at line 61 and in: '\localisation\KR_Combined_Syndicates_of_America_l_english.yml' at line 269
+Duplicated Loc: 'CSA_centralized_union_desc' in: '\localisation\KR_Combined_Syndicates_of_America_l_english.yml' at line 62 and in: '\localisation\KR_Combined_Syndicates_of_America_l_english.yml' at line 270
+Duplicated Loc: 'DEI_totalist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2184 and in: '\localisation\KR_Countries_l_english.yml' at line 1770
+Duplicated Loc: 'DEI_totalist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2185 and in: '\localisation\KR_Countries_l_english.yml' at line 1771
+Duplicated Loc: 'DEI_totalist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2186 and in: '\localisation\KR_Countries_l_english.yml' at line 1772
+Duplicated Loc: 'DEI_syndicalist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2181 and in: '\localisation\KR_Countries_l_english.yml' at line 1773
+Duplicated Loc: 'DEI_syndicalist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2182 and in: '\localisation\KR_Countries_l_english.yml' at line 1774
+Duplicated Loc: 'DEI_syndicalist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2183 and in: '\localisation\KR_Countries_l_english.yml' at line 1775
+Duplicated Loc: 'DEI_radical_socialist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2169 and in: '\localisation\KR_Countries_l_english.yml' at line 1776
+Duplicated Loc: 'DEI_radical_socialist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2170 and in: '\localisation\KR_Countries_l_english.yml' at line 1777
+Duplicated Loc: 'DEI_radical_socialist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2171 and in: '\localisation\KR_Countries_l_english.yml' at line 1778
+Duplicated Loc: 'DEI_social_democrat' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2175 and in: '\localisation\KR_Countries_l_english.yml' at line 1779
+Duplicated Loc: 'DEI_social_democrat_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2176 and in: '\localisation\KR_Countries_l_english.yml' at line 1780
+Duplicated Loc: 'DEI_social_democrat_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2177 and in: '\localisation\KR_Countries_l_english.yml' at line 1781
+Duplicated Loc: 'DEI_social_liberal' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2178 and in: '\localisation\KR_Countries_l_english.yml' at line 1782
+Duplicated Loc: 'DEI_social_liberal_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2179 and in: '\localisation\KR_Countries_l_english.yml' at line 1783
+Duplicated Loc: 'DEI_social_liberal_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2180 and in: '\localisation\KR_Countries_l_english.yml' at line 1784
+Duplicated Loc: 'DEI_market_liberal' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2160 and in: '\localisation\KR_Countries_l_english.yml' at line 1785
+Duplicated Loc: 'DEI_market_liberal_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2161 and in: '\localisation\KR_Countries_l_english.yml' at line 1786
+Duplicated Loc: 'DEI_market_liberal_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2162 and in: '\localisation\KR_Countries_l_english.yml' at line 1787
+Duplicated Loc: 'DEI_social_conservative' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2172 and in: '\localisation\KR_Countries_l_english.yml' at line 1788
+Duplicated Loc: 'DEI_social_conservative_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2173 and in: '\localisation\KR_Countries_l_english.yml' at line 1789
+Duplicated Loc: 'DEI_social_conservative_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2174 and in: '\localisation\KR_Countries_l_english.yml' at line 1790
+Duplicated Loc: 'DEI_authoritarian_democrat' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2157 and in: '\localisation\KR_Countries_l_english.yml' at line 1791
+Duplicated Loc: 'DEI_authoritarian_democrat_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2158 and in: '\localisation\KR_Countries_l_english.yml' at line 1792
+Duplicated Loc: 'DEI_authoritarian_democrat_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2159 and in: '\localisation\KR_Countries_l_english.yml' at line 1793
+Duplicated Loc: 'DEI_paternal_autocrat' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2166 and in: '\localisation\KR_Countries_l_english.yml' at line 1794
+Duplicated Loc: 'DEI_paternal_autocrat_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2167 and in: '\localisation\KR_Countries_l_english.yml' at line 1795
+Duplicated Loc: 'DEI_paternal_autocrat_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2168 and in: '\localisation\KR_Countries_l_english.yml' at line 1796
+Duplicated Loc: 'DEI_national_populist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2163 and in: '\localisation\KR_Countries_l_english.yml' at line 1797
+Duplicated Loc: 'DEI_national_populist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2164 and in: '\localisation\KR_Countries_l_english.yml' at line 1798
+Duplicated Loc: 'DEI_national_populist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2165 and in: '\localisation\KR_Countries_l_english.yml' at line 1799
+Duplicated Loc: 'NCH_totalist' in: '\localisation\KR_Countries_l_english.yml' at line 4529 and in: '\localisation\KR_Countries_l_english.yml' at line 4530
+Duplicated Loc: 'NCH_totalist_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4531 and in: '\localisation\KR_Countries_l_english.yml' at line 4532
+Duplicated Loc: 'NCH_totalist_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4533 and in: '\localisation\KR_Countries_l_english.yml' at line 4534
+Duplicated Loc: 'NCH_syndicalist' in: '\localisation\KR_Countries_l_english.yml' at line 4535 and in: '\localisation\KR_Countries_l_english.yml' at line 4536
+Duplicated Loc: 'NCH_syndicalist_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4537 and in: '\localisation\KR_Countries_l_english.yml' at line 4538
+Duplicated Loc: 'NCH_syndicalist_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4539 and in: '\localisation\KR_Countries_l_english.yml' at line 4540
+Duplicated Loc: 'NCH_radical_socialist' in: '\localisation\KR_Countries_l_english.yml' at line 4541 and in: '\localisation\KR_Countries_l_english.yml' at line 4542
+Duplicated Loc: 'NCH_radical_socialist_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4543 and in: '\localisation\KR_Countries_l_english.yml' at line 4544
+Duplicated Loc: 'NCH_radical_socialist_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4545 and in: '\localisation\KR_Countries_l_english.yml' at line 4546
+Duplicated Loc: 'NCH_social_democrat' in: '\localisation\KR_Countries_l_english.yml' at line 4547 and in: '\localisation\KR_Countries_l_english.yml' at line 4548
+Duplicated Loc: 'NCH_social_democrat_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4549 and in: '\localisation\KR_Countries_l_english.yml' at line 4550
+Duplicated Loc: 'NCH_social_democrat_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4551 and in: '\localisation\KR_Countries_l_english.yml' at line 4552
+Duplicated Loc: 'NCH_social_liberal' in: '\localisation\KR_Countries_l_english.yml' at line 4553 and in: '\localisation\KR_Countries_l_english.yml' at line 4554
+Duplicated Loc: 'NCH_social_liberal_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4555 and in: '\localisation\KR_Countries_l_english.yml' at line 4556
+Duplicated Loc: 'NCH_social_liberal_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4557 and in: '\localisation\KR_Countries_l_english.yml' at line 4558
+Duplicated Loc: 'NCH_market_liberal' in: '\localisation\KR_Countries_l_english.yml' at line 4560 and in: '\localisation\KR_Countries_l_english.yml' at line 4561
+Duplicated Loc: 'NCH_market_liberal_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4562 and in: '\localisation\KR_Countries_l_english.yml' at line 4563
+Duplicated Loc: 'NCH_market_liberal_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4564 and in: '\localisation\KR_Countries_l_english.yml' at line 4565
+Duplicated Loc: 'NCH_social_conservative' in: '\localisation\KR_Countries_l_english.yml' at line 4566 and in: '\localisation\KR_Countries_l_english.yml' at line 4567
+Duplicated Loc: 'NCH_social_conservative_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4568 and in: '\localisation\KR_Countries_l_english.yml' at line 4569
+Duplicated Loc: 'NCH_social_conservative_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4570 and in: '\localisation\KR_Countries_l_english.yml' at line 4571
+Duplicated Loc: 'NCH_authoritarian_democrat' in: '\localisation\KR_Countries_l_english.yml' at line 4572 and in: '\localisation\KR_Countries_l_english.yml' at line 4573
+Duplicated Loc: 'NCH_authoritarian_democrat_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4574 and in: '\localisation\KR_Countries_l_english.yml' at line 4575
+Duplicated Loc: 'NCH_authoritarian_democrat_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4576 and in: '\localisation\KR_Countries_l_english.yml' at line 4577
+Duplicated Loc: 'NCH_paternal_autocrat' in: '\localisation\KR_Countries_l_english.yml' at line 4578 and in: '\localisation\KR_Countries_l_english.yml' at line 4579
+Duplicated Loc: 'NCH_paternal_autocrat_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4580 and in: '\localisation\KR_Countries_l_english.yml' at line 4581
+Duplicated Loc: 'NCH_paternal_autocrat_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4582 and in: '\localisation\KR_Countries_l_english.yml' at line 4583
+Duplicated Loc: 'NCH_national_populist' in: '\localisation\KR_Countries_l_english.yml' at line 4584 and in: '\localisation\KR_Countries_l_english.yml' at line 4585
+Duplicated Loc: 'NCH_national_populist_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4586 and in: '\localisation\KR_Countries_l_english.yml' at line 4587
+Duplicated Loc: 'NCH_national_populist_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4588 and in: '\localisation\KR_Countries_l_english.yml' at line 4589
+Duplicated Loc: 'RTS_totalist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1250 and in: '\localisation\KR_Countries_l_english.yml' at line 5738
+Duplicated Loc: 'RTS_totalist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1251 and in: '\localisation\KR_Countries_l_english.yml' at line 5739
+Duplicated Loc: 'RTS_totalist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1252 and in: '\localisation\KR_Countries_l_english.yml' at line 5740
+Duplicated Loc: 'RTS_syndicalist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1247 and in: '\localisation\KR_Countries_l_english.yml' at line 5741
+Duplicated Loc: 'RTS_syndicalist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1248 and in: '\localisation\KR_Countries_l_english.yml' at line 5742
+Duplicated Loc: 'RTS_syndicalist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1249 and in: '\localisation\KR_Countries_l_english.yml' at line 5743
+Duplicated Loc: 'RTS_radical_socialist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1235 and in: '\localisation\KR_Countries_l_english.yml' at line 5744
+Duplicated Loc: 'RTS_radical_socialist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1236 and in: '\localisation\KR_Countries_l_english.yml' at line 5745
+Duplicated Loc: 'RTS_radical_socialist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1237 and in: '\localisation\KR_Countries_l_english.yml' at line 5746
+Duplicated Loc: 'RTS_social_democrat' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1241 and in: '\localisation\KR_Countries_l_english.yml' at line 5747
+Duplicated Loc: 'RTS_social_democrat_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1242 and in: '\localisation\KR_Countries_l_english.yml' at line 5748
+Duplicated Loc: 'RTS_social_democrat_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1243 and in: '\localisation\KR_Countries_l_english.yml' at line 5749
+Duplicated Loc: 'RTS_social_liberal' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1244 and in: '\localisation\KR_Countries_l_english.yml' at line 5750
+Duplicated Loc: 'RTS_social_liberal_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1245 and in: '\localisation\KR_Countries_l_english.yml' at line 5751
+Duplicated Loc: 'RTS_social_liberal_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1246 and in: '\localisation\KR_Countries_l_english.yml' at line 5752
+Duplicated Loc: 'RTS_market_liberal' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1226 and in: '\localisation\KR_Countries_l_english.yml' at line 5753
+Duplicated Loc: 'RTS_market_liberal_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1227 and in: '\localisation\KR_Countries_l_english.yml' at line 5754
+Duplicated Loc: 'RTS_market_liberal_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1228 and in: '\localisation\KR_Countries_l_english.yml' at line 5755
+Duplicated Loc: 'RTS_social_conservative' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1238 and in: '\localisation\KR_Countries_l_english.yml' at line 5756
+Duplicated Loc: 'RTS_social_conservative_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1239 and in: '\localisation\KR_Countries_l_english.yml' at line 5757
+Duplicated Loc: 'RTS_social_conservative_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1240 and in: '\localisation\KR_Countries_l_english.yml' at line 5758
+Duplicated Loc: 'RTS_authoritarian_democrat' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1223 and in: '\localisation\KR_Countries_l_english.yml' at line 5759
+Duplicated Loc: 'RTS_authoritarian_democrat_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1224 and in: '\localisation\KR_Countries_l_english.yml' at line 5760
+Duplicated Loc: 'RTS_authoritarian_democrat_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1225 and in: '\localisation\KR_Countries_l_english.yml' at line 5761
+Duplicated Loc: 'RTS_paternal_autocrat' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1232 and in: '\localisation\KR_Countries_l_english.yml' at line 5762
+Duplicated Loc: 'RTS_paternal_autocrat_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1233 and in: '\localisation\KR_Countries_l_english.yml' at line 5763
+Duplicated Loc: 'RTS_paternal_autocrat_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1234 and in: '\localisation\KR_Countries_l_english.yml' at line 5764
+Duplicated Loc: 'RTS_national_populist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1229 and in: '\localisation\KR_Countries_l_english.yml' at line 5765
+Duplicated Loc: 'RTS_national_populist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1230 and in: '\localisation\KR_Countries_l_english.yml' at line 5766
+Duplicated Loc: 'RTS_national_populist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1231 and in: '\localisation\KR_Countries_l_english.yml' at line 5767
 Duplicated Loc: 'DAH_agaja' in: '\localisation\KR_Dahomey_l_english.yml' at line 46 and in: '\localisation\KR_Dahomey_l_english.yml' at line 99
 Duplicated Loc: 'DAH_salvage' in: '\localisation\KR_Dahomey_l_english.yml' at line 51 and in: '\localisation\KR_Dahomey_l_english.yml' at line 102
+Duplicated Loc: 'dei_random_followup.6.t' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 253 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 256
+Duplicated Loc: 'dei_random_followup.6.d' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 254 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 257
+Duplicated Loc: 'dei_random_followup.6.a' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 255 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 258
+Duplicated Loc: 'holex.35.t' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 401 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 407
+Duplicated Loc: 'holex.35.d' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 402 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 408
+Duplicated Loc: 'holex.35.a' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 403 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 409
+Duplicated Loc: 'holex.36.t' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 404 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 410
+Duplicated Loc: 'holex.36.d' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 405 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 411
+Duplicated Loc: 'holex.36.a' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 406 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 412
+Double Spaces in Loc: 'dei_bannelingenlegioen_spawns' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 787
+Duplicated Loc: 'holex_resistance_attack_civilian_fac' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 806 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 807
 Duplicated Loc: 'EGY_general_staff' in: '\localisation\KR_Egypt_l_english.yml' at line 117 and in: '\localisation\KR_Egypt_l_english.yml' at line 350
 Duplicated Loc: 'EGY_bombers_desc' in: '\localisation\KR_Egypt_l_english.yml' at line 395 and in: '\localisation\KR_Egypt_l_english.yml' at line 396
-Double Spaces in Loc: 'ELS_coffee_exports_desc' in: '\localisation\KR_El_Salvador_l_english.yml' at line 61
-Double Spaces in Loc: 'ELS_coffee_exports_2_desc' in: '\localisation\KR_El_Salvador_l_english.yml' at line 64
-Double Spaces in Loc: 'ELS_coffee_exports_3_desc' in: '\localisation\KR_El_Salvador_l_english.yml' at line 67
-Duplicated Loc: 'ELS_guerilla_warfare' in: '\localisation\KR_El_Salvador_l_english.yml' at line 116 and in: '\localisation\KR_El_Salvador_l_english.yml' at line 239
-Duplicated Loc: 'ELS_professional_army' in: '\localisation\KR_El_Salvador_l_english.yml' at line 128 and in: '\localisation\KR_El_Salvador_l_english.yml' at line 244
 Duplicated Loc: 'EMI_ducal_constitution' in: '\localisation\KR_Emilia_l_english.yml' at line 118 and in: '\localisation\KR_Emilia_l_english.yml' at line 128
 Duplicated Loc: 'EMI_ducal_constitution_desc' in: '\localisation\KR_Emilia_l_english.yml' at line 119 and in: '\localisation\KR_Emilia_l_english.yml' at line 129
 Duplicated Loc: 'EMI_vroom' in: '\localisation\KR_Emilia_l_english.yml' at line 112 and in: '\localisation\KR_Emilia_l_english.yml' at line 130
@@ -274,84 +187,24 @@ Duplicated Loc: 'GAB_Cooperate_with_Dahomey_desc' in: '\localisation\KR_Gabon_l_
 Duplicated Loc: 'research_production' in: '\localisation\ideas_l_english.yml' at line 538 and in: '\localisation\KR_General_l_english.yml' at line 110
 Duplicated Loc: 'GER_ostwall' in: '\localisation\focus_l_english.yml' at line 274 and in: '\localisation\KR_Germany_l_english.yml' at line 539
 Duplicated Loc: 'GER_ostwall_desc' in: '\localisation\focus_l_english.yml' at line 275 and in: '\localisation\KR_Germany_l_english.yml' at line 540
-Duplicated Loc: 'GUA_ubico_wins' in: '\localisation\KR_Guatemala_l_english.yml' at line 55 and in: '\localisation\KR_Guatemala_l_english.yml' at line 57
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 43
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 44
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 45
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 46
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 47
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 48
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 49
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 50
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 51
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 52
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 53
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 54
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 55
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 56
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 57
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 58
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 59
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 60
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 61
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 62
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 63
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 64
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 65
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 66
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 67
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 68
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 69
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 70
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 71
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 72
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 75
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 76
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 77
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 84
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 85
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 86
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 87
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 88
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 89
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 90
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 91
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 92
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 93
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 94
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 95
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 96
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 97
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 98
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 99
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 100
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 101
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 102
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 110
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 111
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 112
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 113
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 114
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 115
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 116
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 117
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 118
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 119
-Duplicated Loc: 'FOCUSNAME' in: '\localisation\KR_Honduras_l_english.yml' at line 42 and in: '\localisation\KR_Honduras_l_english.yml' at line 120
+Duplicated Loc: 'HAW_hawaiian_revolution' in: '\localisation\KR_Hawaii_l_english.yml' at line 28 and in: '\localisation\KR_Hawaii_l_english.yml' at line 220
 Duplicated Loc: 'INC_infiltrate_the_north_decision' in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 792 and in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 814
 Duplicated Loc: 'INC_infiltrate_the_north_decision_desc' in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 793 and in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 815
 Duplicated Loc: 'INC_political_instruction_decision' in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 890 and in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 891
 Duplicated Loc: 'INC_finish_land_reform' in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 878 and in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 896
 Duplicated Loc: 'INC_land_reform_promise_mission' in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 869 and in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 898
-Duplicated Loc: 'IRE_AUTARKY' in: '\localisation\KR_Ireland_l_english.yml' at line 727 and in: '\localisation\KR_Ireland_l_english.yml' at line 979
-Duplicated Loc: 'IRE_AUTARKY_desc' in: '\localisation\KR_Ireland_l_english.yml' at line 728 and in: '\localisation\KR_Ireland_l_english.yml' at line 980
-Duplicated Loc: 'ire_belfast_shipwright' in: '\localisation\KR_Ireland_l_english.yml' at line 1051 and in: '\localisation\KR_Ireland_l_english.yml' at line 1052
-Duplicated Loc: 'IRE_BLUEBLOUSES' in: '\localisation\KR_Ireland_l_english.yml' at line 1105 and in: '\localisation\KR_Ireland_l_english.yml' at line 1163
-Duplicated Loc: 'IRE_BLUEBLOUSES_desc' in: '\localisation\KR_Ireland_l_english.yml' at line 1106 and in: '\localisation\KR_Ireland_l_english.yml' at line 1164
-Duplicated Loc: 'IRE_ICA' in: '\localisation\KR_Ireland_l_english.yml' at line 1107 and in: '\localisation\KR_Ireland_l_english.yml' at line 1165
-Duplicated Loc: 'IRE_ICA_desc' in: '\localisation\KR_Ireland_l_english.yml' at line 1108 and in: '\localisation\KR_Ireland_l_english.yml' at line 1166
-Duplicated Loc: 'IRE_CNM' in: '\localisation\KR_Ireland_l_english.yml' at line 1109 and in: '\localisation\KR_Ireland_l_english.yml' at line 1167
-Duplicated Loc: 'IRE_CNM_desc' in: '\localisation\KR_Ireland_l_english.yml' at line 1110 and in: '\localisation\KR_Ireland_l_english.yml' at line 1168
+Duplicated Loc: 'INS_idea_insulindian_national_revolution' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 719 and in: '\localisation\KR_Insulindia_l_english.yml' at line 4
+Double Spaces in Loc: 'ins.17.d' in: '\localisation\KR_Insulindia_l_english.yml' at line 121
+Duplicated Loc: 'INS_kraton_administration' in: '\localisation\KR_Insulindia_l_english.yml' at line 17 and in: '\localisation\KR_Insulindia_l_english.yml' at line 524
+Duplicated Loc: 'IRE_AUTARKY' in: '\localisation\KR_Ireland_l_english.yml' at line 719 and in: '\localisation\KR_Ireland_l_english.yml' at line 968
+Duplicated Loc: 'IRE_AUTARKY_desc' in: '\localisation\KR_Ireland_l_english.yml' at line 720 and in: '\localisation\KR_Ireland_l_english.yml' at line 969
+Duplicated Loc: 'ire_belfast_shipwright' in: '\localisation\KR_Ireland_l_english.yml' at line 1040 and in: '\localisation\KR_Ireland_l_english.yml' at line 1041
+Duplicated Loc: 'IRE_BLUEBLOUSES' in: '\localisation\KR_Ireland_l_english.yml' at line 1094 and in: '\localisation\KR_Ireland_l_english.yml' at line 1152
+Duplicated Loc: 'IRE_BLUEBLOUSES_desc' in: '\localisation\KR_Ireland_l_english.yml' at line 1095 and in: '\localisation\KR_Ireland_l_english.yml' at line 1153
+Duplicated Loc: 'IRE_ICA' in: '\localisation\KR_Ireland_l_english.yml' at line 1096 and in: '\localisation\KR_Ireland_l_english.yml' at line 1154
+Duplicated Loc: 'IRE_ICA_desc' in: '\localisation\KR_Ireland_l_english.yml' at line 1097 and in: '\localisation\KR_Ireland_l_english.yml' at line 1155
+Duplicated Loc: 'IRE_CNM' in: '\localisation\KR_Ireland_l_english.yml' at line 1098 and in: '\localisation\KR_Ireland_l_english.yml' at line 1156
+Duplicated Loc: 'IRE_CNM_desc' in: '\localisation\KR_Ireland_l_english.yml' at line 1099 and in: '\localisation\KR_Ireland_l_english.yml' at line 1157
 Duplicated Loc: 'JBS_arms_imports' in: '\localisation\KR_Jabal_Shammar_l_english.yml' at line 179 and in: '\localisation\KR_Jabal_Shammar_l_english.yml' at line 180
 Double Spaces in Loc: 'JBS_establish_arabian_airforce_desc' in: '\localisation\KR_Jabal_Shammar_l_english.yml' at line 241
 Duplicated Loc: 'KTG_Dominer_Pour_Servir' in: '\localisation\KR_Katanga_l_english.yml' at line 92 and in: '\localisation\KR_Katanga_l_english.yml' at line 227
@@ -369,15 +222,6 @@ Duplicated Loc: 'INVEST_SEIZED' in: '\localisation\KR_Legation_Cities_l_english.
 Double Spaces in Loc: 'LOM_armored_desc' in: '\localisation\KR_Lombardy_l_english.yml' at line 95
 Duplicated Loc: 'LOM_education_reform' in: '\localisation\KR_Lombardy_l_english.yml' at line 72 and in: '\localisation\KR_Lombardy_l_english.yml' at line 120
 Duplicated Loc: 'LOM_education_reform_desc' in: '\localisation\KR_Lombardy_l_english.yml' at line 73 and in: '\localisation\KR_Lombardy_l_english.yml' at line 121
-Duplicated Loc: 'POLITICS_EMILIANO_ZAPATA_DESC' in: '\localisation\KR_Leaders_l_english.yml' at line 317 and in: '\localisation\KR_Mexico_l_english.yml' at line 49
-Duplicated Loc: 'POLITICS_PLUTARCO_CALLES_DESC' in: '\localisation\KR_Leaders_l_english.yml' at line 318 and in: '\localisation\KR_Mexico_l_english.yml' at line 50
-Duplicated Loc: 'POLITICS_PANCHO_VILLA_DESC' in: '\localisation\KR_Leaders_l_english.yml' at line 319 and in: '\localisation\KR_Mexico_l_english.yml' at line 51
-Duplicated Loc: 'POLITICS_PABLO_GONZALEZ_GARZA_DESC' in: '\localisation\KR_Leaders_l_english.yml' at line 320 and in: '\localisation\KR_Mexico_l_english.yml' at line 52
-Duplicated Loc: 'POLITICS_JOSE_URQUIZA_DESC' in: '\localisation\KR_Leaders_l_english.yml' at line 321 and in: '\localisation\KR_Mexico_l_english.yml' at line 53
-Duplicated Loc: 'POLITICS_VINCENTE_TOLEDANO_DESC' in: '\localisation\KR_Leaders_l_english.yml' at line 322 and in: '\localisation\KR_Mexico_l_english.yml' at line 54
-Duplicated Loc: 'POLITICS_LAZARO_CARDENAS_DESC' in: '\localisation\KR_Leaders_l_english.yml' at line 323 and in: '\localisation\KR_Mexico_l_english.yml' at line 55
-Duplicated Loc: 'POLITICS_DONA_ITURBIDE_DESC' in: '\localisation\KR_Leaders_l_english.yml' at line 324 and in: '\localisation\KR_Mexico_l_english.yml' at line 56
-Duplicated Loc: 'POLITICS_DON_FERNANDO' in: '\localisation\KR_Leaders_l_english.yml' at line 325 and in: '\localisation\KR_Mexico_l_english.yml' at line 57
 Duplicated Loc: 'CAR_Elixio_Rodriguez_cair_sli' in: '\localisation\KR_Companies_l_english.yml' at line 837 and in: '\localisation\KR_Ministers_l_english.yml' at line 3801
 Duplicated Loc: 'INC_Truong_Chinh_hog_syn' in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 127 and in: '\localisation\KR_Ministers_l_english.yml' at line 10305
 Double Spaces in Loc: 'JOR_Abdullah_AL__Damalugi_for_sco' in: '\localisation\KR_Ministers_l_english.yml' at line 11648
@@ -401,19 +245,22 @@ Double Spaces in Loc: 'HOL_destroyer_AA_design_tt' in: '\localisation\KR_Netherl
 Double Spaces in Loc: 'HOL_submarine_colonial_design_tt' in: '\localisation\KR_Netherlands_l_english.yml' at line 787
 Duplicated Loc: 'FLEET_NAME_HOL' in: '\localisation\KR_Equipment_l_english.yml' at line 5021 and in: '\localisation\KR_Netherlands_l_english.yml' at line 2629
 Duplicated Loc: 'HOL_vesting_holland' in: '\localisation\KR_Netherlands_l_english.yml' at line 570 and in: '\localisation\KR_Netherlands_l_english.yml' at line 2636
-Duplicated Loc: 'POLITICS_AUGUSTO_CESAR_SANDINO_DESC' in: '\localisation\KR_Leaders_l_english.yml' at line 221 and in: '\localisation\KR_Nicaragua_l_english.yml' at line 30
-Duplicated Loc: 'POLITICS_JUAN_BAUTISTA_SACASA_DESC' in: '\localisation\KR_Leaders_l_english.yml' at line 184 and in: '\localisation\KR_Nicaragua_l_english.yml' at line 32
-Double Spaces in Loc: 'nic.26.d' in: '\localisation\KR_Nicaragua_l_english.yml' at line 177
-Double Spaces in Loc: 'nic.37.d' in: '\localisation\KR_Nicaragua_l_english.yml' at line 222
-Duplicated Loc: 'nic.40.d' in: '\localisation\KR_Nicaragua_l_english.yml' at line 230 and in: '\localisation\KR_Nicaragua_l_english.yml' at line 234
 Duplicated Loc: 'NOR_CA_1_tooltip' in: '\localisation\KR_Norway_l_english.yml' at line 1027 and in: '\localisation\KR_Norway_l_english.yml' at line 1028
 Duplicated Loc: 'OTT_naval_doctrine_bonus' in: '\localisation\KR_Ottoman_l_english.yml' at line 45 and in: '\localisation\KR_Ottoman_l_english.yml' at line 46
-Duplicated Loc: 'cal_baned_can' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 82 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 83
-Double Spaces in Loc: 'pacificstates.7.d.not_president' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 435
-Duplicated Loc: 'pacificstates.19.a' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 528 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 529
-Duplicated Loc: 'pacificstates.19.a' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 528 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 530
-Duplicated Loc: 'pacificstates.20.a' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 536 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 537
-Duplicated Loc: 'pacificstates.20.a' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 536 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 538
+Duplicated Loc: 'CAL_defend_democarcy' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 12 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 20
+Duplicated Loc: 'CAL_defend_democarcy_desc' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 13 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 21
+Duplicated Loc: 'CAL_fighters' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 84 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 85
+Duplicated Loc: 'cal_baned_can' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 245 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 246
+Duplicated Loc: 'pacificstates.8.t' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 276 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 301
+Duplicated Loc: 'pacificstates.8.d' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 277 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 302
+Duplicated Loc: 'pacificstates.8.a' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 278 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 303
+Duplicated Loc: 'pacificstates.8.b' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 279 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 304
+Duplicated Loc: 'pacificstates.9.t' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 280 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 307
+Duplicated Loc: 'pacificstates.9.d' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 281 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 308
+Duplicated Loc: 'pacificstates.9.a' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 282 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 309
+Duplicated Loc: 'pacificstates.11.t' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 283 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 319
+Duplicated Loc: 'pacificstates.11.d' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 284 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 320
+Duplicated Loc: 'pacificstates.11.a' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 285 and in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 321
 Duplicated Loc: 'PRU_customs_union' in: '\localisation\KR_Peru_l_english .yml' at line 34 and in: '\localisation\KR_Peru_l_english .yml' at line 81
 Duplicated Loc: 'PRU_customs_union_desc' in: '\localisation\KR_Peru_l_english .yml' at line 35 and in: '\localisation\KR_Peru_l_english .yml' at line 82
 Duplicated Loc: 'PRU_federated_admin' in: '\localisation\KR_Peru_l_english .yml' at line 14 and in: '\localisation\KR_Peru_l_english .yml' at line 93
@@ -569,28 +416,20 @@ Duplicated Loc: 'ENG_improve_army2' in: '\localisation\KR_Union_of_Britain_l_eng
 Duplicated Loc: 'ENG_show_of_force_op' in: '\localisation\KR_Union_of_Britain_l_english.yml' at line 1335 and in: '\localisation\KR_Union_of_Britain_l_english.yml' at line 1361
 Duplicated Loc: 'ENG_never_surrender' in: '\localisation\KR_Union_of_Britain_l_english.yml' at line 76 and in: '\localisation\KR_Union_of_Britain_l_english.yml' at line 1409
 Duplicated Loc: 'ENG_never_surrender_desc' in: '\localisation\KR_Union_of_Britain_l_english.yml' at line 77 and in: '\localisation\KR_Union_of_Britain_l_english.yml' at line 1410
-Duplicated Loc: 'USA_american_trade' in: '\localisation\KR_USA_l_english.yml' at line 48 and in: '\localisation\KR_USA_l_english.yml' at line 53
-Duplicated Loc: 'POLITICS_JACK_REED_DESC' in: '\localisation\KR_Leaders_l_english.yml' at line 188 and in: '\localisation\KR_USA_l_english.yml' at line 72
-Duplicated Loc: 'POLITICS_JOHN_NANCE_GARNER_DESC' in: '\localisation\KR_Leaders_l_english.yml' at line 189 and in: '\localisation\KR_USA_l_english.yml' at line 73
-Duplicated Loc: 'POLITICS_HERBERT_HOOVER_DESC' in: '\localisation\KR_Leaders_l_english.yml' at line 190 and in: '\localisation\KR_USA_l_english.yml' at line 74
-Duplicated Loc: 'POLITICS_DOUGLAS_MACARTHUR_DESC' in: '\localisation\KR_Leaders_l_english.yml' at line 191 and in: '\localisation\KR_USA_l_english.yml' at line 75
-Duplicated Loc: 'POLITICS_HUEY_LONG_DESC' in: '\localisation\KR_Leaders_l_english.yml' at line 192 and in: '\localisation\KR_USA_l_english.yml' at line 76
-Duplicated Loc: 'USA_national_recovery_act_idea' in: '\localisation\KR_USA_l_english.yml' at line 120 and in: '\localisation\KR_USA_l_english.yml' at line 121
-Duplicated Loc: 'USA_civil_war_decisions' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 91 and in: '\localisation\KR_USA_l_english.yml' at line 135
-Duplicated Loc: 'USA_civil_war_decisions_desc' in: '\localisation\KR_Pacific_States_of_America_l_english.yml' at line 92 and in: '\localisation\KR_USA_l_english.yml' at line 136
-Duplicated Loc: 'USA_liberty_ships' in: '\localisation\focus_l_english.yml' at line 875 and in: '\localisation\KR_USA_l_english.yml' at line 423
-Duplicated Loc: 'USA_liberty_ships_desc' in: '\localisation\focus_l_english.yml' at line 876 and in: '\localisation\KR_USA_l_english.yml' at line 424
-Duplicated Loc: 'ustates.7.b' in: '\localisation\KR_USA_l_english.yml' at line 529 and in: '\localisation\KR_USA_l_english.yml' at line 530
-Double Spaces in Loc: 'ustates.19.d' in: '\localisation\KR_USA_l_english.yml' at line 579
-Double Spaces in Loc: 'ustates.20.d' in: '\localisation\KR_USA_l_english.yml' at line 583
-Duplicated Loc: 'ustates.87.a' in: '\localisation\KR_USA_l_english.yml' at line 881 and in: '\localisation\KR_USA_l_english.yml' at line 882
-Double Spaces in Loc: 'ustates.89.d' in: '\localisation\KR_USA_l_english.yml' at line 889
-Duplicated Loc: 'ustates.90.a' in: '\localisation\KR_USA_l_english.yml' at line 894 and in: '\localisation\KR_USA_l_english.yml' at line 895
+Duplicated Loc: 'united.5.t' in: '\localisation\KR_Centroamerica_l_english.yml' at line 73 and in: '\localisation\KR_United_Provinces_l_english.yml' at line 68
+Duplicated Loc: 'NIC_Anger' in: '\localisation\KR_Centroamerica_l_english.yml' at line 72 and in: '\localisation\KR_United_Provinces_l_english.yml' at line 244
+Duplicated Loc: 'american_states_league_of_nations' in: '\localisation\KR_American_Union_State_l_english.yml' at line 223 and in: '\localisation\KR_USA_l_english.yml' at line 282
+Duplicated Loc: 'USA_liberty_ships' in: '\localisation\focus_l_english.yml' at line 875 and in: '\localisation\KR_USA_l_english.yml' at line 309
+Duplicated Loc: 'USA_liberty_ships_desc' in: '\localisation\focus_l_english.yml' at line 876 and in: '\localisation\KR_USA_l_english.yml' at line 310
+Duplicated Loc: 'USA_joint_chiefs_of_staff' in: '\localisation\KR_USA_l_english.yml' at line 106 and in: '\localisation\KR_USA_l_english.yml' at line 345
+Duplicated Loc: 'USA_joint_chiefs_of_staff_desc' in: '\localisation\KR_USA_l_english.yml' at line 107 and in: '\localisation\KR_USA_l_english.yml' at line 346
+Duplicated Loc: 'USA_democracy_arsenal' in: '\localisation\KR_USA_l_english.yml' at line 307 and in: '\localisation\KR_USA_l_english.yml' at line 447
+Duplicated Loc: 'USA_army_rangers' in: '\localisation\KR_USA_l_english.yml' at line 122 and in: '\localisation\KR_USA_l_english.yml' at line 450
+Duplicated Loc: 'USA_american_trade' in: '\localisation\KR_USA_l_english.yml' at line 480 and in: '\localisation\KR_USA_l_english.yml' at line 485
 Duplicated Loc: 'VEN_milinf' in: '\localisation\KR_Venezuela_l_english.yml' at line 57 and in: '\localisation\KR_Venezuela_l_english.yml' at line 58
 Duplicated Loc: 'VICTORY_POINTS_2038' in: '\localisation\KR_Victory_Points_l_english.yml' at line 165 and in: '\localisation\KR_Victory_Points_l_english.yml' at line 166
 Duplicated Loc: 'VIE_Imperial_Council' in: '\localisation\KR_Vietnam_l_english.yml' at line 49 and in: '\localisation\KR_Vietnam_l_english.yml' at line 50
 Duplicated Loc: 'VIE_Da_Lat_Academy' in: '\localisation\KR_Vietnam_l_english.yml' at line 36 and in: '\localisation\KR_Vietnam_l_english.yml' at line 126
-Duplicated Loc: 'CAF_young_army_4_desc' in: '\localisation\KR_West_Indies_Federation_l_english.yml' at line 39 and in: '\localisation\KR_West_Indies_Federation_l_english.yml' at line 42
 Double Spaces in Loc: 'worldnews.270.d.bur' in: '\localisation\KR_World_News_l_english.yml' at line 820
 Duplicated Loc: 'YEM_forts' in: '\localisation\KR_Yemen_l_english.yml' at line 31 and in: '\localisation\KR_Yemen_l_english.yml' at line 32
 Duplicated Loc: 'YEM_arabian_integration_2' in: '\localisation\KR_Yemen_l_english.yml' at line 82 and in: '\localisation\KR_Yemen_l_english.yml' at line 83
@@ -599,27 +438,23 @@ Duplicated Loc: 'YEM_Nepotism_desc' in: '\localisation\KR_Yemen_l_english.yml' a
 Duplicated Loc: 'YEM_Prepared_Army' in: '\localisation\KR_Yemen_l_english.yml' at line 39 and in: '\localisation\KR_Yemen_l_english.yml' at line 428
 Duplicated Loc: 'YEM_Prepared_Army_desc' in: '\localisation\KR_Yemen_l_english.yml' at line 40 and in: '\localisation\KR_Yemen_l_english.yml' at line 429
 Duplicated Loc: 'YEM_Modern_Army_desc' in: '\localisation\KR_Yemen_l_english.yml' at line 398 and in: '\localisation\KR_Yemen_l_english.yml' at line 452
-Duplicated Loc: 'YUC_radical_socialist' in: '\localisation\KR_Countries_l_english.yml' at line 7722 and in: '\localisation\KR_Yucatan_l_english.yml' at line 132
 Duplicated Loc: 'POLITICS_NOELECTIONS' in: '\localisation\KR_General_l_english.yml' at line 115 and in: '\localisation\politics_l_english.yml' at line 7
 Double Spaces in Loc: 'POLITICS_IDEA_COST_COMPACT' in: '\localisation\politics_l_english.yml' at line 31
 Double Spaces in Loc: 'POLITICS_GOAL_COST_COMPACT' in: '\localisation\politics_l_english.yml' at line 47
 Duplicated Loc: 'jungle_warfare' in: '\localisation\KR_Siam_l_english.yml' at line 117 and in: '\localisation\research_l_english.yml' at line 242
-Duplicated Loc: 'BUILDING_SLOT_REMOVE_COOLDOWN' in: '\localisation\buildings_l_english.yml' at line 74 and in: '\localisation\zzz_KR_Vanilla_Override_l_english.yml' at line 38
-Duplicated Loc: 'maintheme' in: '\localisation\KR_General_l_english.yml' at line 59 and in: '\localisation\zzz_KR_Vanilla_Override_l_english.yml' at line 94
-Duplicated Loc: 'RELEASE_NATION_TITLE' in: '\localisation\politics_l_english.yml' at line 86 and in: '\localisation\zzz_KR_Vanilla_Override_l_english.yml' at line 99
-Duplicated Loc: 'RELEASE_NATION_DESC' in: '\localisation\politics_l_english.yml' at line 87 and in: '\localisation\zzz_KR_Vanilla_Override_l_english.yml' at line 100
-Duplicated Loc: 'CAN_DECLARE_WAR_WITHOUT_WARGOAL_WHEN_IN_WAR' in: '\localisation\zzz_KR_Vanilla_Override_l_english.yml' at line 109 and in: '\localisation\zzz_KR_Vanilla_Override_l_english.yml' at line 194
+Duplicated Loc: 'maintheme' in: '\localisation\KR_General_l_english.yml' at line 59 and in: '\localisation\zzz_KR_Vanilla_Override_l_english.yml' at line 91
+Duplicated Loc: 'RELEASE_NATION_TITLE' in: '\localisation\politics_l_english.yml' at line 86 and in: '\localisation\zzz_KR_Vanilla_Override_l_english.yml' at line 96
+Duplicated Loc: 'RELEASE_NATION_DESC' in: '\localisation\politics_l_english.yml' at line 87 and in: '\localisation\zzz_KR_Vanilla_Override_l_english.yml' at line 97
+Duplicated Loc: 'CAN_DECLARE_WAR_WITHOUT_WARGOAL_WHEN_IN_WAR' in: '\localisation\zzz_KR_Vanilla_Override_l_english.yml' at line 106 and in: '\localisation\zzz_KR_Vanilla_Override_l_english.yml' at line 191
 No (cosmetic) tag for AHE.tga
 No (cosmetic) tag for ANG_GER.tga
 No (cosmetic) tag for BOT_GER.tga
 No (cosmetic) tag for BUL_old.tga
 No (cosmetic) tag for CAF_britain.tga
-No (cosmetic) tag for CAL_NEW.tga
 No (cosmetic) tag for CAM_GER.tga
 No (cosmetic) tag for CAN_britain.tga
 No (cosmetic) tag for CEA_GER.tga
 No (cosmetic) tag for CNR_GER.tga
-No (cosmetic) tag for CSA_socialist_union_of_america.tga
 No (cosmetic) tag for DIETSMON.tga
 No (cosmetic) tag for DRV.tga
 No (cosmetic) tag for EMI_PAR.tga
@@ -633,10 +468,7 @@ No (cosmetic) tag for GAB_GER.tga
 No (cosmetic) tag for GBR_britain.tga
 No (cosmetic) tag for GBR_republic.tga
 No (cosmetic) tag for GHA_GER.tga
-No (cosmetic) tag for HAW_commune.tga
-No (cosmetic) tag for HAW_kingdom.tga
 No (cosmetic) tag for INC_GER.tga
-No (cosmetic) tag for INSULT_paternal_autocrat.tga
 No (cosmetic) tag for INS_HOL.tga
 No (cosmetic) tag for ITR.tga
 No (cosmetic) tag for KEN_GER.tga
@@ -644,16 +476,11 @@ No (cosmetic) tag for LAO_GER.tga
 No (cosmetic) tag for LBV.tga
 No (cosmetic) tag for LYB_IFR.tga
 No (cosmetic) tag for MAG_GER.tga
-No (cosmetic) tag for MEE.tga
-No (cosmetic) tag for MEE_paternal_autocrat.tga
-No (cosmetic) tag for MEK.tga
-No (cosmetic) tag for MEK_paternal_autocrat.tga
 No (cosmetic) tag for MLY_GER.tga
 No (cosmetic) tag for MOR_GER.tga
 No (cosmetic) tag for MOZ_GER.tga
 No (cosmetic) tag for NFM.tga
 No (cosmetic) tag for NOU.tga
-No (cosmetic) tag for NUSCOM_radical_socialist.tga
 No (cosmetic) tag for OYO.tga
 No (cosmetic) tag for PNM.tga
 No (cosmetic) tag for PNM_national_populist.tga
@@ -676,9 +503,6 @@ No (cosmetic) tag for SRD_PIE.tga
 No (cosmetic) tag for SWU.tga
 No (cosmetic) tag for SWU_authoritarian_democrat.tga
 No (cosmetic) tag for SYR_great.tga
-No (cosmetic) tag for TEX_GUARD.tga
-No (cosmetic) tag for TEX_SALTIRE.tga
-No (cosmetic) tag for TEX_SWORD.tga
 No (cosmetic) tag for THI_EMPIRE.tga
 No (cosmetic) tag for TSC.tga
 No (cosmetic) tag for TSC_radical_socialist.tga
@@ -705,39 +529,19 @@ Didnt find portrait: Portrait_Bolivia_Edwin_Moller.tga in  file countries\BOL - 
 Didnt find portrait: Portrait_Leaders.tga in  file countries\BRA - Brazil.txt at line 107
 Didnt find portrait: Portrait_João_Amazonas.tga in  file countries\BRA - Brazil.txt at line 133
 Didnt find portrait: Portrait_Burundi_Leopold_Biha.tga in  file countries\BRD - Burundi.txt at line 66
-Didnt find portrait: Portrait_CAF_Tubal_Uriah_Butler.tga in  file countries\CAF - West Indies Federation.txt at line 193
-Didnt find portrait: Portrait_CAF_Cyril_Lionel_Robert_James.tga in  file countries\CAF - West Indies Federation.txt at line 202
 Didnt find portrait: Portrait_CAR_Valentín_Paz_Andrade.tga in  file countries\CAR - Carlist Spain.txt at line 128
 Didnt find portrait: Portrait_CEA_Boganda.tga in  file countries\CEA - Cental Africa.txt at line 65
-Didnt find portrait: Portrait_CEN_Military_Council.tga in  file countries\CEN - Central America.txt at line 84
-Didnt find portrait: Portrait_CEN_Military_Council.tga in  file countries\CEN - Central America.txt at line 93
-Didnt find portrait: Portrait_CEN_Military_Council.tga in  file countries\CEN - Central America.txt at line 102
-Didnt find portrait: Portrait_CEN_Central_American_Council.tga in  file countries\CEN - Central America.txt at line 111
-Didnt find portrait: Portrait_CEN_Central_American_Council.tga in  file countries\CEN - Central America.txt at line 120
-Didnt find portrait: Portrait_CEN_Central_American_Council.tga in  file countries\CEN - Central America.txt at line 129
-Didnt find portrait: Portrait_CEN_Revolutionary_Council.tga in  file countries\CEN - Central America.txt at line 138
-Didnt find portrait: Portrait_CEN_Revolutionary_Council.tga in  file countries\CEN - Central America.txt at line 147
-Didnt find portrait: Portrait_CEN_Revolutionary_Council.tga in  file countries\CEN - Central America.txt at line 156
-Didnt find portrait: Portrait_CEN_Revolutionary_Council.tga in  file countries\CEN - Central America.txt at line 165
 Didnt find portrait: Portrait_Chile_Rafael_Reyes.tga in  file countries\CHL - Chile.txt at line 140
 Didnt find portrait: Portrait_Columbia_Jose_Villarreal.tga in  file countries\COL - Colombia.txt at line 113
 Didnt find portrait: Portrait_Columbia_Eduardo_Montejo.tga in  file countries\COL - Colombia.txt at line 140
-Didnt find portrait: Portrait_Cuba_Lazaro_Pena_Gonzalez.tga in  file countries\CUB - Cuba.txt at line 75
-Didnt find portrait: Portrait_Cuba_Carlos_Cespedes_Quesada.tga in  file countries\CUB - Cuba.txt at line 111
-Didnt find portrait: Portrait_Cuba_Miguel_Mariano_Gomez.tga in  file countries\CUB - Cuba.txt at line 120
-Didnt find portrait: Portrait_Cuba_Mario_Garcia_Menocal.tga in  file countries\CUB - Cuba.txt at line 129
-Didnt find portrait: Portrait_Cuba_Pablo_Rodriguez.tga in  file countries\CUB - Cuba.txt at line 147
 Didnt find portrait: Portrait_CVG_Frusoni.tga in  file countries\CVG - Cape Verde Guinea.txt at line 68
 Didnt find portrait: Portrait_Dahomey_Soglo.tga in  file countries\DAH - Dahomey.txt at line 77
 Didnt find portrait: Portrait_Dahomey_Soglo.tga in  file countries\DAH - Dahomey.txt at line 86
 Didnt find portrait: Portrait_Dahomey_J_A_T.tga in  file countries\DAH - Dahomey.txt at line 131
-Didnt find portrait: Portrait_DEI_de_Jonge.tga in  file countries\DEI - Dutch East Indies.txt at line 87
 Didnt find portrait: Portrait_Denmark_Aage_Helgesen_Vedel.tga in  file countries\DEN - Denmark.txt at line 202
-Didnt find portrait: Portrait_Manuel_Troncoso_Concha.tga in  file countries\DOM - Dominican Republic.txt at line 93
 Didnt find portrait: Portrait_Ecuador_Jose_Ibarra.tga in  file countries\ECU - Ecuador.txt at line 104
 Didnt find portrait: Portrait_Ecuador_Gustavo_Becerra.tga in  file countries\ECU - Ecuador.txt at line 113
-Didnt find portrait: Portrait_ELS_Osmin_Aguirre_y_Salinas.tga in  file countries\ELS - El Salvador.txt at line 96
-Didnt find portrait: Portrait_ELS_Maximiliano_Hernandez_Martinez.tga in  file countries\ELS - El Salvador.txt at line 134
+Incorrect or false negative gfx key of GFX_portrait_el_salvador_maximiliano_hernandez_martinez at line 61 in file ELS - El Salvador.txt
 Didnt find portrait: Portrait_EMI_Dardano_Fennuli.tga in  file countries\EMI - ModenaParma.txt at line 169
 Didnt find portrait: Portrait_Ashanti_Gbedemah.tga in  file countries\GHA - Ghana.txt at line 65
 Didnt find portrait: Portrait_Ashanti_Casey.tga in  file countries\GHA - Ghana.txt at line 83
@@ -745,14 +549,9 @@ Didnt find portrait: Portrait_Ashanti_Coussey.tga in  file countries\GHA - Ghana
 Didnt find portrait: Portrait_Ashanti_Kojo_Botsio.tga in  file countries\GHA - Ghana.txt at line 128
 Didnt find portrait: Portrait_GNE_Yacine.dds in  file countries\GNE - Guinea.txt at line 59
 Incorrect or false negative gfx key of Portrait_Germany_Paul_von_Lettow_Vorbeck at line 137 in file GRU - German Union.txt
-Didnt find portrait: Portrait_GUA_Silverio_Oritz.tga in  file countries\GUA - Guatemla.txt at line 116
-Didnt find portrait: Portrait_Haiti_Jacques_Romain.tga in  file countries\HAI - Haiti.txt at line 70
-Didnt find portrait: Portrait_Haiti_Jean_Price_Mars.tga in  file countries\HAI - Haiti.txt at line 79
-Incorrect or false negative gfx key of GFX_portrait_haiti_stenio_vincent at line 88 in file HAI - Haiti.txt
+Incorrect or false negative gfx key of GFX_portrait_haiti_stenio_vincent at line 70 in file HAI - Haiti.txt
 Didnt find portrait: Portrait_HAU_Sokoto.dds in  file countries\HAU - Hausaland.txt at line 66
-Didnt find portrait: Portrait_Honduras_Honduran_Council.tga in  file countries\HON - Honduras.txt at line 86
-Didnt find portrait: Portrait_HON_Frank_Ross_McCoy.tga in  file countries\HON - Honduras.txt at line 113
-Didnt find portrait: Portrait_HON_.tga in  file countries\HON - Honduras.txt at line 122
+Didnt find portrait: Portrait_Indonesia_Semaun.tga in  file countries\INS - Indonesia.txt at line 122
 Didnt find portrait: Portrait_IRQ_Ahmad_Al-Jaber_Al-Sabah.tga in  file countries\IRQ - Iraq.txt at line 110
 Didnt find portrait: Portrait_Italy_Giuseppe_Fioravanzo.tga in  file countries\ITA - Italy.txt at line 309
 Didnt find portrait: Portrait_Italy_Angelo_Iachino.tga in  file countries\ITA - Italy.txt at line 322
@@ -765,9 +564,6 @@ Didnt find portrait: Portrait_LYB_Ahmed_Sharif_I.tga in  file countries\LYB - Ly
 Didnt find portrait: Portrait_Mittelafrika_Heinrich_Schnee.tga in  file countries\MAF - Mittelafrika.txt at line 122
 Didnt find portrait: Portrait_Mittelafrika_Nigel_Leaky.tga in  file countries\MAF - Mittelafrika.txt at line 165
 Didnt find portrait: Portrait_Mittelafrika_Albert_Goering.tga in  file countries\MAF - Mittelafrika.txt at line 174
-Didnt find portrait: Portrait_Mexico_Pascual_Rubio.tga in  file countries\MEX - Mexico.txt at line 116
-Didnt find portrait: Portrait_Mexico_Manuel_Morin.tga in  file countries\MEX - Mexico.txt at line 124
-Didnt find portrait: Portrait_Mexico_Jose_vasconcelos.tga in  file countries\MEX - Mexico.txt at line 132
 Didnt find portrait: Portrait_MLW_Eliot_Kenan.tga in  file countries\MLW - Malawi.txt at line 66
 Didnt find portrait: Portrait_MLW_Sangala.tga in  file countries\MLW - Malawi.txt at line 75
 Didnt find portrait: Portrait_MLW_Chilembwe.tga in  file countries\MLW - Malawi.txt at line 84
@@ -790,9 +586,7 @@ Didnt find portrait: Portrait_NGR_Obafemi.tga in  file countries\NGR - Nigeria.t
 Didnt find portrait: Portrait_NGR_Oladipo.tga in  file countries\NGR - Nigeria.txt at line 113
 Didnt find portrait: Portrait_NGR_Obafemi.tga in  file countries\NGR - Nigeria.txt at line 122
 Didnt find portrait: Portrait_NGR_Obafemi.tga in  file countries\NGR - Nigeria.txt at line 131
-Didnt find portrait: Portrait_NIC_Anastasio_Somozo_Garcia.tga in  file countries\NIC - Nicaragua.txt at line 92
-Didnt find portrait: Portrait_NIC_Adolfo_Diaz.tga in  file countries\NIC - Nicaragua.txt at line 101
-Didnt find portrait: Portrait_NIC_Francisco_Sequeria_Moreno.tga in  file countries\NIC - Nicaragua.txt at line 119
+Didnt find portrait: Portrait_NIC_Otto_Cortes_Fernandez.tga in  file countries\NIC - Nicaragua.txt at line 107
 Didnt find portrait: Portrait_PAL_al-Hadi.tga in  file countries\PAL - Palestine.txt at line 68
 Didnt find portrait: Portrait_Paraguay_Rafael_Franco.tga in  file countries\PAR - Paraguay.txt at line 85
 Didnt find portrait: Portrait_Paraguay_Lucas_Ibarrola.tga in  file countries\PAR - Paraguay.txt at line 130
@@ -829,9 +623,6 @@ Didnt find portrait: Portrait_XSM_Ma_Mingfang.tga in  file countries\XSM - Xibei
 Didnt find portrait: Portrait_XSM_Ma_Wenrui.tga in  file countries\XSM - Xibei San Ma.txt at line 143
 Didnt find portrait: Portrait_XSM_He_Xiangning.tga in  file countries\XSM - Xibei San Ma.txt at line 152
 Didnt find portrait: Portrait_XSM_Ma_Yuanxiang.tga in  file countries\XSM - Xibei San Ma.txt at line 279
-Didnt find portrait: Portrait_Yucatan_Felipe_Puerto.tga in  file countries\YUC - Yucatan.txt at line 72
-Didnt find portrait: Portrait_Yucatan_Alfredo_Vasquez.tga in  file countries\YUC - Yucatan.txt at line 88
-Didnt find portrait: Portrait_Yucatan_Gustavo_Correa.tga in  file countries\YUC - Yucatan.txt at line 96
 Didnt find portrait: Portrait_ALO_Tsar_Of_All_Russias.dds in  file events\KR_Alash_Autonomy.txt at line 1214
 Wrongly spelled portrait: CHI_Portrait_Huang_Xing.tga in  file events\KR_Allgemeine_Ostasiatische_Gesellschaft.txt at line 841
 Didnt find portrait: Portrait_Bolivia_Gustavo_Navarro.tga in  file events\KR_Bolivia.txt at line 547
@@ -839,30 +630,36 @@ Didnt find portrait: BRA_Lampiao.tga in  file events\KR_Brazil.txt at line 1152
 Didnt find portrait: misc.tga in  file events\KR_Canada.txt at line 7078
 Didnt find portrait: Portrait_Columbia_Eduardo_Montejo.tga in  file events\KR_Colombia.txt at line 225
 Didnt find portrait: Portrait_Columbia_Arango_Velez.tga in  file events\KR_Colombia.txt at line 248
-Didnt find portrait: Portrait_Cuba_Raul_Roa_Garcia.tga in  file events\KR_Cuba.txt at line 2434
-Didnt find portrait: Portrait_Cuba_Ruben_Martinez_Villena.tga in  file events\KR_Cuba.txt at line 2500
-Didnt find portrait: Portrait_Cuba_Ruben_Martinez_Villena.tga in  file events\KR_Cuba.txt at line 2516
-Didnt find portrait: Portrait_Cuba_Manuel_Bisbe_Alberni.tga in  file events\KR_Cuba.txt at line 4163
-Didnt find portrait: Portrait_Cuba_Manuel_Bisbe_Alberni.tga in  file events\KR_Cuba.txt at line 4288
-Didnt find portrait: Portrait_Cuba_Pablo_Rodriguez.tga in  file events\KR_Cuba.txt at line 4503
+Didnt find portrait: Portrait_CUB_alfredo_lopez_rojas.tga in  file events\KR_Combined_Syndicates_America.txt at line 2763
+Didnt find portrait: Portrait_CUB_alfredo_lopez_rojas.tga in  file events\KR_Combined_Syndicates_America.txt at line 2771
+Didnt find portrait: Portrait_CUB_alfredo_lopez_rojas.tga in  file events\KR_Combined_Syndicates_America.txt at line 2779
+Didnt find portrait: Portrait_HAI_jacques_roumain.tga in  file events\KR_Combined_Syndicates_America.txt at line 2923
+Didnt find portrait: Portrait_HAI_jacques_roumain.tga in  file events\KR_Combined_Syndicates_America.txt at line 2931
+Didnt find portrait: Portrait_HAI_jacques_roumain.tga in  file events\KR_Combined_Syndicates_America.txt at line 2939
+Didnt find portrait: Portrait_DOM_mauricio_baez.tga in  file events\KR_Combined_Syndicates_America.txt at line 3054
+Didnt find portrait: Portrait_DOM_mauricio_baez.tga in  file events\KR_Combined_Syndicates_America.txt at line 3062
+Didnt find portrait: Portrait_DOM_mauricio_baez.tga in  file events\KR_Combined_Syndicates_America.txt at line 3070
+Didnt find portrait: Portrait_CUB_Julio_Antonio_Mella.tga in  file events\KR_Cuba.txt at line 305
+Didnt find portrait: Portrait_CUB_Julio_Antonio_Mella.tga in  file events\KR_Cuba.txt at line 314
+Didnt find portrait: Portrait_CUB_Julio_Antonio_Mella.tga in  file events\KR_Cuba.txt at line 323
+Didnt find portrait: Portrait_CUB_Fulgencio_Batista.tga in  file events\KR_Cuba.txt at line 472
+Didnt find portrait: Portrait_CUB_Fulgencio_Batista.tga in  file events\KR_Cuba.txt at line 522
+Didnt find portrait: Portrait_CUB_Fulgencio_Batista.tga in  file events\KR_Cuba.txt at line 574
+Didnt find portrait: Portrait_CUB_Raul_Castro.tga in  file events\KR_Cuba.txt at line 1295
+Didnt find portrait: Portrait_CUB_Raul_Castro.tga in  file events\KR_Cuba.txt at line 1304
+Didnt find portrait: Portrait_CUB_Raul_Castro.tga in  file events\KR_Cuba.txt at line 1313
 Didnt find portrait: Portrait_Ecuador_Carlos_Tola.tga in  file events\KR_Ecuador.txt at line 277
 Didnt find portrait: Portrait_Ecuador_Carlos_Tola.tga in  file events\KR_Ecuador.txt at line 409
 Didnt find portrait: Portrait_LEC_Tu_Yueh_Sen.tga in  file events\KR_Legation_Cities.txt at line 232
 Didnt find portrait: Portrait_LEC_Euan_Mitchell.tga in  file events\KR_Legation_Cities.txt at line 775
 Didnt find portrait: Portrait_LEC_Euan_Mitchell.tga in  file events\KR_Legation_Cities.txt at line 1500
-Didnt find portrait: Portrait_Mexico_Lazaro_Cardenas.tga in  file events\KR_Mexico.txt at line 189
-Didnt find portrait: Portrait_Mexico_Emilio_Gil.tga in  file events\KR_Mexico.txt at line 201
-Didnt find portrait: Portrait_Mexico_Abelardo_Rodriguez.tga in  file events\KR_Mexico.txt at line 213
-Didnt find portrait: Portrait_Mexico_Lazaro_Cardenas.tga in  file events\KR_Mexico.txt at line 246
 Didnt find portrait: Portrait_Mongolia_Rezukhin.tga in  file events\KR_Mongolia.txt at line 1421
 Didnt find portrait: Portrait_Mongolia_Changkya_Khutukhtu.tga in  file events\KR_Mongolia.txt at line 1464
 Didnt find portrait: Portrait_Mongolia_Zhelne_Khatun.tga in  file events\KR_Mongolia.txt at line 1540
 Didnt find portrait: Portrait_Mongolia_Genhgis_Khan_III.tga in  file events\KR_Mongolia.txt at line 1591
 Didnt find portrait: Portrait_Mongolia_Tribal_Council.tga in  file events\KR_Mongolia.txt at line 1915
 Didnt find portrait: Portrait_HOL_Portrait_HOL_Reynders.tga in  file events\KR_Netherlands.txt at line 647
-Didnt find portrait: Portrait_CAL_George_Craig.tga in  file events\KR_Pacific_States.txt at line 1522
-Didnt find portrait: Portrait_CAL_Val_Peterson.tga in  file events\KR_Pacific_States.txt at line 1546
-Didnt find portrait: Portrait_CAL_Harry_P_Cain.tga in  file events\KR_Pacific_States.txt at line 1557
+Incorrect or false negative gfx key of GFX_portrait_panama_harmodio_arias_madrid at line 41 in file KR_Panama.txt
 Didnt find portrait: Portrait_Paraguay_Rafael_Franco.tga in  file events\KR_Paraguay.txt at line 150
 Didnt find portrait: Portrait_England_William_V.tga in  file events\KR_Partitions.txt at line 8608
 Didnt find portrait: Portrait_England_William_V.tga in  file events\KR_Partitions.txt at line 8618
@@ -931,6 +728,7 @@ Didnt find portrait: Portrait_South_Africa_Charles_Stallard.tga in  file events\
 Didnt find portrait: Portrait_South_Africa_Charles_Stallard.tga in  file events\KR_United_Kingdom.txt at line 1852
 Didnt find portrait: Portrait_South_Africa_Charles_Stallard.tga in  file events\KR_United_Kingdom.txt at line 1860
 Didnt find portrait: Portrait_South_Africa_Charles_Stallard.tga in  file events\KR_United_Kingdom.txt at line 1868
+Didnt find portrait: Portrait_USA_Averell_Harriman.dds in  file events\KR_USA.txt at line 8857
 Didnt find portrait: Portrait_Venezuela_Romulo_Galegos.tga in  file events\KR_Venezuela.txt at line 374
 Didnt find portrait: Portrait_Venezuela_Rafael_Caldera.tga in  file events\KR_Venezuela.txt at line 428
 Didnt find portrait: Portrait_CHI_Chen_Jioming.tga in  file events\KR_Yunnan.txt at line 1803
@@ -968,153 +766,144 @@ Unused event Gfx: japanese_young_officers at line 489 in file eventpics.gfx
 Unused event Gfx: japan_rentaro at line 494 in file eventpics.gfx
 Unused event Gfx: japan_meeting at line 509 in file eventpics.gfx
 Duplicated gfx key japan_rikken_seiyukai in file eventpics.gfx at line 519
-Unused event Gfx: HOL_landwacht at line 547 in file eventpics.gfx
-Unused event Gfx: HOL_mijnbouw at line 583 in file eventpics.gfx
-Unused event Gfx: HOL_lichte_kruiser at line 587 in file eventpics.gfx
-Unused event Gfx: HOL_vliegdekschip at line 595 in file eventpics.gfx
-Unused event Gfx: HOL_torpedoboot at line 599 in file eventpics.gfx
-Unused event Gfx: NOR_andoya_rocketsite at line 605 in file eventpics.gfx
-Unused event Gfx: NOR_election_36_fedrelandslaget at line 637 in file eventpics.gfx
-Unused event Gfx: NOR_hirden_poster at line 653 in file eventpics.gfx
-Duplicated gfx key GFX_report_event_AST_parliament2 in file eventpics.gfx at line 957
-Unused event Gfx: GFX_OTT_victory at line 1197 in file eventpics.gfx
-Unused event Gfx: GFX_Golden_Gate_Bridge at line 1208 in file eventpics.gfx
-Unused event Gfx: GFX_Heat_Wave_Crops at line 1212 in file eventpics.gfx
-Unused event Gfx: GFX_Alexander_Berkman at line 1216 in file eventpics.gfx
-Unused event Gfx: GFX_Curtis_Recovers at line 1224 in file eventpics.gfx
-Unused event Gfx: GFX_Boulder_Dam_1 at line 1228 in file eventpics.gfx
-Unused event Gfx: GFX_Boulder_Dam_2 at line 1232 in file eventpics.gfx
-Unused event Gfx: GFX_USA_Riots at line 1236 in file eventpics.gfx
-Unused event Gfx: GFX_Long_Rally at line 1240 in file eventpics.gfx
-Unused event Gfx: GFX_USA_Inauguration at line 1244 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_MAF_zimmerman at line 1425 in file eventpics.gfx
-Unused event Gfx: GFX_DerKleinePrinz at line 1481 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_cambodia at line 1493 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_malaya at line 1497 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_siam at line 1501 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_VIE_fashion at line 1601 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_VIE_waifu at line 1613 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_VIE_waifu2 at line 1617 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Be_Careful at line 1655 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Schoolbook_Reform at line 1671 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Woman_Corps_Posters at line 1683 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Parliament_2 at line 1692 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Ratthaniyom_Decrees at line 1700 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Thai_Japan_Parliament at line 1704 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Treaty_signed at line 1708 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_1932_Revolution_3_Musketeers at line 1712 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_1932_Revolution_Motorized_Infantry at line 1720 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_1932_Revolution_Officers at line 1724 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_AA_Guns_Grand_Palace at line 1728 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Airforces at line 1736 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Bofors_Artillery at line 1748 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Armoured_Train at line 1752 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Prince at line 1768 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Rebel_Train at line 1772 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Rebel_Troops at line 1776 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Rebellion_Monument at line 1780 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Suicide_Train at line 1788 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Suicide_Train_2 at line 1792 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Vickers_Tank at line 1796 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Vickers_Tank_Gate at line 1800 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Canal_Digging at line 1808 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Carden_Lloyd_Tankette at line 1816 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Chulalongkorn_University at line 1828 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Chulalongkorn_University_Arts_Faculty at line 1832 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Chulalongkorn_University_Medical_Research at line 1836 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Dam_Construcion at line 1844 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Democracy_Monument_Openning at line 1848 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Democracy_Monument_Soldier at line 1852 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Ha-Go_Tank_Grand_Palace at line 1864 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Ha-Go_Tank_Parade at line 1868 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Khana_Ratsadon_1937 at line 1872 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Khana_Ratsadon_1944 at line 1876 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Lampang_Bridge_Bombing at line 1884 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Meeting_Dinner_Parliament at line 1892 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Military_Cadet_Officer at line 1896 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Ministry_of_Transportation at line 1900 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Admiral_Submarine at line 1904 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Coastal_Defense_Ship_SriAyutthaya at line 1908 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Coastal_Defense_Ship_Sukothai at line 1912 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Coastal_Defense_Ship_Thonburi_Survivors at line 1916 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Matchanu_Submarine at line 1920 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Matchanu_Submarine_2 at line 1924 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Royal_Barge_Ceremony at line 1928 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Sinsamuth_Submarine at line 1932 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Submarine_Construction at line 1936 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Torpedo_Boats at line 1940 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Wirun_Submarine at line 1944 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Phao_Sriyanond_Coup at line 1952 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Phraya_Phahon_Phonpayuhasena at line 1964 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Plane_Production_1 at line 1968 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Plane_Production_2 at line 1972 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Plane_Production_3 at line 1976 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Propaganda_Department at line 1992 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Railway_Bangkok_Station at line 1996 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_6_Tank_Prototype at line 2000 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_Canada at line 2008 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_German_Trip_Berlin at line 2020 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_German_Trip_Berlin_2 at line 2024 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_German_Trip_Car at line 2028 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_German_Trip_Troops_Inspection at line 2032 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_Graduation_event at line 2036 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_Japan_Trip at line 2040 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_Japan_Trip_Yasukuni at line 2044 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_NewYork at line 2048 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_Queen_Picnic at line 2052 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_Throne at line 2056 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Road_Bureau at line 2060 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Royal_Mail at line 2064 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Sarit_Thanarat_Coup at line 2068 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_SPAAG_Boworadet_Rebellion_End at line 2080 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_SPAAG_Boworadet_Train at line 2084 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_SPAAG_Early_War_2 at line 2092 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Thai_Dance at line 2104 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Thai_Japan_Flag_Waving at line 2112 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Thai_Japan_Propaganda at line 2116 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Thai_Japan_Propaganda_2 at line 2120 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Thai_Japan_Propaganda_3 at line 2124 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Thai_Japan_Royal_Visit_Bangkok at line 2128 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Tin_Mining_Yala at line 2132 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Troops_Standby at line 2136 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Vickers_Tank at line 2140 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Wargame_Practice_Army_2 at line 2144 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Wargame_Practice_Army_Short at line 2148 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Woman_Corps at line 2152 in file eventpics.gfx
-Unused event Gfx: GFX_news_event_SAF_parliament at line 2230 in file eventpics.gfx
-Unused event Gfx: GFX_Protest_Peacefull at line 2286 in file eventpics.gfx
-Unused event Gfx: GFX_BWP at line 2306 in file eventpics.gfx
-Unused event Gfx: GFX_Justitiepaleis at line 2331 in file eventpics.gfx
-Unused event Gfx: GFX_Mons at line 2336 in file eventpics.gfx
-Unused event Gfx: GFX_Paleis at line 2346 in file eventpics.gfx
-Unused event Gfx: GFX_Paleis2 at line 2351 in file eventpics.gfx
-Unused event Gfx: GFX_Parlement at line 2356 in file eventpics.gfx
-Unused event Gfx: GFX_Tankswachten at line 2416 in file eventpics.gfx
-Unused event Gfx: GFX_Antwerp_Nurse at line 2421 in file eventpics.gfx
-Unused event Gfx: GFX_Dinant at line 2436 in file eventpics.gfx
-Unused event Gfx: GFX_Destroyer at line 2471 in file eventpics.gfx
-Unused event Gfx: GFX_Cruiser at line 2476 in file eventpics.gfx
-Unused event Gfx: GFX_Submarine at line 2481 in file eventpics.gfx
-Unused event Gfx: GFX_Verbod_21_July at line 2511 in file eventpics.gfx
-Duplicated gfx key GFX_21_July in file eventpics.gfx at line 2516
-Unused event Gfx: GFX_Latin_Empire at line 2555 in file eventpics.gfx
-Unused event Gfx: GFX_bel_11 at line 2579 in file eventpics.gfx
-Unused event Gfx: GFX_HOL_Albarda at line 2634 in file eventpics.gfx
-Unused event Gfx: GFX_HOL_dutch_army at line 2691 in file eventpics.gfx
-Unused event Gfx: GFX_HOL_dutch_army3 at line 2699 in file eventpics.gfx
-Unused event Gfx: GFX_HOL_dutch_army5 at line 2707 in file eventpics.gfx
-Unused event Gfx: GFX_HOL_dutch_police at line 2711 in file eventpics.gfx
-Unused event Gfx: GFX_HOL_landwacht4 at line 2767 in file eventpics.gfx
-Unused event Gfx: GFX_HOL_syndicalist_volunteers at line 2843 in file eventpics.gfx
-Unused event Gfx: GFX_HOL_progovernment_rally at line 2863 in file eventpics.gfx
-Unused event Gfx: GFX_Koningskwestie at line 2910 in file eventpics.gfx
-Unused event Gfx: GFX_La_Louviere at line 2922 in file eventpics.gfx
-Unused event Gfx: GFX_Force_Publique at line 2954 in file eventpics.gfx
-Unused event Gfx: GFX_Force_Publique2 at line 2958 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_EGY_egypt_army at line 2996 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_EGY_egypt_army_1 at line 3000 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_EGY_german_scouting_in_egypt at line 3044 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_EGY_the_will_movie at line 3064 in file eventpics.gfx
+Unused event Gfx: HOL_landwacht at line 563 in file eventpics.gfx
+Unused event Gfx: HOL_mijnbouw at line 599 in file eventpics.gfx
+Unused event Gfx: HOL_lichte_kruiser at line 603 in file eventpics.gfx
+Unused event Gfx: HOL_vliegdekschip at line 611 in file eventpics.gfx
+Unused event Gfx: HOL_torpedoboot at line 615 in file eventpics.gfx
+Unused event Gfx: NOR_andoya_rocketsite at line 621 in file eventpics.gfx
+Unused event Gfx: NOR_election_36_fedrelandslaget at line 653 in file eventpics.gfx
+Unused event Gfx: NOR_hirden_poster at line 669 in file eventpics.gfx
+Duplicated gfx key GFX_report_event_AST_parliament2 in file eventpics.gfx at line 973
+Unused event Gfx: GFX_OTT_victory at line 1213 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_MAF_zimmerman at line 1441 in file eventpics.gfx
+Unused event Gfx: GFX_DerKleinePrinz at line 1497 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_cambodia at line 1509 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_malaya at line 1513 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_siam at line 1517 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_VIE_fashion at line 1617 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_VIE_waifu at line 1629 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_VIE_waifu2 at line 1633 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Be_Careful at line 1671 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Schoolbook_Reform at line 1687 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Woman_Corps_Posters at line 1699 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Parliament_2 at line 1708 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Ratthaniyom_Decrees at line 1716 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Thai_Japan_Parliament at line 1720 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Treaty_signed at line 1724 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_1932_Revolution_3_Musketeers at line 1728 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_1932_Revolution_Motorized_Infantry at line 1736 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_1932_Revolution_Officers at line 1740 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_AA_Guns_Grand_Palace at line 1744 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Airforces at line 1752 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Bofors_Artillery at line 1764 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Armoured_Train at line 1768 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Prince at line 1784 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Rebel_Train at line 1788 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Rebel_Troops at line 1792 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Rebellion_Monument at line 1796 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Suicide_Train at line 1804 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Suicide_Train_2 at line 1808 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Vickers_Tank at line 1812 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Vickers_Tank_Gate at line 1816 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Canal_Digging at line 1824 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Carden_Lloyd_Tankette at line 1832 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Chulalongkorn_University at line 1844 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Chulalongkorn_University_Arts_Faculty at line 1848 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Chulalongkorn_University_Medical_Research at line 1852 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Dam_Construcion at line 1860 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Democracy_Monument_Openning at line 1864 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Democracy_Monument_Soldier at line 1868 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Ha-Go_Tank_Grand_Palace at line 1880 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Ha-Go_Tank_Parade at line 1884 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Khana_Ratsadon_1937 at line 1888 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Khana_Ratsadon_1944 at line 1892 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Lampang_Bridge_Bombing at line 1900 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Meeting_Dinner_Parliament at line 1908 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Military_Cadet_Officer at line 1912 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Ministry_of_Transportation at line 1916 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Admiral_Submarine at line 1920 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Coastal_Defense_Ship_SriAyutthaya at line 1924 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Coastal_Defense_Ship_Sukothai at line 1928 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Coastal_Defense_Ship_Thonburi_Survivors at line 1932 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Matchanu_Submarine at line 1936 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Matchanu_Submarine_2 at line 1940 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Royal_Barge_Ceremony at line 1944 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Sinsamuth_Submarine at line 1948 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Submarine_Construction at line 1952 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Torpedo_Boats at line 1956 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Wirun_Submarine at line 1960 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Phao_Sriyanond_Coup at line 1968 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Phraya_Phahon_Phonpayuhasena at line 1980 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Plane_Production_1 at line 1984 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Plane_Production_2 at line 1988 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Plane_Production_3 at line 1992 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Propaganda_Department at line 2008 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Railway_Bangkok_Station at line 2012 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_6_Tank_Prototype at line 2016 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_Canada at line 2024 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_German_Trip_Berlin at line 2036 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_German_Trip_Berlin_2 at line 2040 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_German_Trip_Car at line 2044 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_German_Trip_Troops_Inspection at line 2048 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_Graduation_event at line 2052 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_Japan_Trip at line 2056 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_Japan_Trip_Yasukuni at line 2060 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_NewYork at line 2064 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_Queen_Picnic at line 2068 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_Throne at line 2072 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Road_Bureau at line 2076 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Royal_Mail at line 2080 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Sarit_Thanarat_Coup at line 2084 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_SPAAG_Boworadet_Rebellion_End at line 2096 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_SPAAG_Boworadet_Train at line 2100 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_SPAAG_Early_War_2 at line 2108 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Thai_Dance at line 2120 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Thai_Japan_Flag_Waving at line 2128 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Thai_Japan_Propaganda at line 2132 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Thai_Japan_Propaganda_2 at line 2136 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Thai_Japan_Propaganda_3 at line 2140 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Thai_Japan_Royal_Visit_Bangkok at line 2144 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Tin_Mining_Yala at line 2148 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Troops_Standby at line 2152 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Vickers_Tank at line 2156 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Wargame_Practice_Army_2 at line 2160 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Wargame_Practice_Army_Short at line 2164 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Woman_Corps at line 2168 in file eventpics.gfx
+Unused event Gfx: GFX_news_event_SAF_parliament at line 2246 in file eventpics.gfx
+Unused event Gfx: GFX_Protest_Peacefull at line 2302 in file eventpics.gfx
+Unused event Gfx: GFX_BWP at line 2322 in file eventpics.gfx
+Unused event Gfx: GFX_Justitiepaleis at line 2347 in file eventpics.gfx
+Unused event Gfx: GFX_Mons at line 2352 in file eventpics.gfx
+Unused event Gfx: GFX_Paleis at line 2362 in file eventpics.gfx
+Unused event Gfx: GFX_Paleis2 at line 2367 in file eventpics.gfx
+Unused event Gfx: GFX_Parlement at line 2372 in file eventpics.gfx
+Unused event Gfx: GFX_Tankswachten at line 2432 in file eventpics.gfx
+Unused event Gfx: GFX_Antwerp_Nurse at line 2437 in file eventpics.gfx
+Unused event Gfx: GFX_Dinant at line 2452 in file eventpics.gfx
+Unused event Gfx: GFX_Destroyer at line 2487 in file eventpics.gfx
+Unused event Gfx: GFX_Cruiser at line 2492 in file eventpics.gfx
+Unused event Gfx: GFX_Submarine at line 2497 in file eventpics.gfx
+Unused event Gfx: GFX_Verbod_21_July at line 2527 in file eventpics.gfx
+Duplicated gfx key GFX_21_July in file eventpics.gfx at line 2532
+Unused event Gfx: GFX_Latin_Empire at line 2571 in file eventpics.gfx
+Unused event Gfx: GFX_bel_11 at line 2595 in file eventpics.gfx
+Unused event Gfx: GFX_HOL_Albarda at line 2650 in file eventpics.gfx
+Unused event Gfx: GFX_HOL_dutch_army at line 2707 in file eventpics.gfx
+Unused event Gfx: GFX_HOL_dutch_army3 at line 2715 in file eventpics.gfx
+Unused event Gfx: GFX_HOL_dutch_army5 at line 2723 in file eventpics.gfx
+Unused event Gfx: GFX_HOL_dutch_police at line 2727 in file eventpics.gfx
+Unused event Gfx: GFX_HOL_landwacht4 at line 2783 in file eventpics.gfx
+Unused event Gfx: GFX_HOL_syndicalist_volunteers at line 2859 in file eventpics.gfx
+Unused event Gfx: GFX_HOL_progovernment_rally at line 2879 in file eventpics.gfx
+Unused event Gfx: GFX_Koningskwestie at line 2926 in file eventpics.gfx
+Unused event Gfx: GFX_La_Louviere at line 2938 in file eventpics.gfx
+Unused event Gfx: GFX_Force_Publique at line 2970 in file eventpics.gfx
+Unused event Gfx: GFX_Force_Publique2 at line 2974 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_EGY_egypt_army at line 3012 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_EGY_egypt_army_1 at line 3016 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_EGY_german_scouting_in_egypt at line 3060 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_EGY_the_will_movie at line 3080 in file eventpics.gfx
 Unused event Gfx: americans_marching at line 6 in file eventpics_news_old.gfx
 Unused event Gfx: ausgleich_dip at line 14 in file eventpics_news_old.gfx
 Unused event Gfx: ausgleich_start at line 18 in file eventpics_news_old.gfx
@@ -1155,29 +944,12 @@ Unused event Gfx: GFX_news_event_spanish_civil_war_2 at line 356 in file eventpi
 Unused event Gfx: GFX_news_event_SRI_speech at line 368 in file eventpics_news_old.gfx
 Unused event Gfx: GFX_news_event_SRI_superga at line 380 in file eventpics_news_old.gfx
 Unused event Gfx: GFX_news_event_thai_royal_carriage at line 384 in file eventpics_news_old.gfx
-Unused event Gfx: am_battle at line 11 in file eventpics_old.gfx
-Unused event Gfx: am_police at line 15 in file eventpics_old.gfx
-Unused event Gfx: am_police2 at line 19 in file eventpics_old.gfx
-Unused event Gfx: Amcivwar_generic4 at line 23 in file eventpics_old.gfx
-Unused event Gfx: books at line 51 in file eventpics_old.gfx
-Unused event Gfx: cali_oil at line 55 in file eventpics_old.gfx
-Unused event Gfx: Capitol_building at line 59 in file eventpics_old.gfx
 Duplicated gfx key HOL_de_roden_roepen in file eventpics_old.gfx at line 83
-Unused event Gfx: flood at line 123 in file eventpics_old.gfx
 Duplicated gfx key HOL_jordaanoproer in file eventpics_old.gfx at line 183
 Duplicated gfx key HOL_vnh_poster in file eventpics_old.gfx at line 187
 Duplicated gfx key HOL_zwolle_riots in file eventpics_old.gfx at line 191
-Unused event Gfx: huey at line 195 in file eventpics_old.gfx
-Unused event Gfx: hungry_people2 at line 203 in file eventpics_old.gfx
-Unused event Gfx: indians at line 207 in file eventpics_old.gfx
-Unused event Gfx: jack at line 211 in file eventpics_old.gfx
-Unused event Gfx: july4 at line 259 in file eventpics_old.gfx
 Unused event Gfx: GFX_report_event_OTT_black_monday at line 275 in file eventpics_old.gfx
 Unused event Gfx: popularity_rising at line 291 in file eventpics_old.gfx
-Unused event Gfx: USA_Fort_Sumter at line 671 in file eventpics_old.gfx
-Unused event Gfx: USA_Peoples_March at line 675 in file eventpics_old.gfx
-Unused event Gfx: USA_Union_Station at line 679 in file eventpics_old.gfx
-Unused event Gfx: USA_Wall_Street at line 683 in file eventpics_old.gfx
 Duplicated gfx key GFX_DDD in file eventpictures.gfx at line 644
 Duplicated gfx key GFX_news_event_french_parade in file eventpictures.gfx at line 1144
 Duplicated gfx key GFX_news_event_german_reichstag_graffiti_ruins in file eventpictures.gfx at line 1158
@@ -1186,44 +958,11 @@ Duplicated gfx key GFX_report_event_jap_imperial_family in file eventpictures.gf
 Duplicated gfx key GFX_report_event_canada_ronnie in file eventpictures.gfx at line 1917
 GFX event key not found: GFX_NOR_black_monday at line 59 in file KR_Albania.txt
 GFX event key not found: GFX_SWI_event_council at line 523 in file KR_Albania.txt
-GFX event key not found: Amcivwar_CSA at line 13 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 101 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 186 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 255 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 281 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 370 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 452 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 521 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 570 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 677 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 762 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 784 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 889 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 971 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 993 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1080 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1162 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1185 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1205 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1225 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1245 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1266 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1299 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1332 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1365 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1404 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1426 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1445 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1464 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1487 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1513 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1532 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1551 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1576 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1595 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1614 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1633 in file KR_American_Civil_War.txt
-GFX event key not found: Amcivwar_CSA at line 1652 in file KR_American_Civil_War.txt
+GFX event key not found: Amcivwar_CSA at line 14 in file KR_American_Civil_War.txt
+GFX event key not found: GFX_Amcivwar_alaska at line 672 in file KR_American_Civil_War.txt
+GFX event key not found: GFX_Amcivwar_alaska at line 727 in file KR_American_Civil_War.txt
+GFX event key not found: GFX_Amcivwar_guamtake at line 744 in file KR_American_Civil_War.txt
+GFX event key not found: GFX_Amcivwar_guamtake at line 786 in file KR_American_Civil_War.txt
 GFX event key not found: GFX_balticduchy at line 12 in file KR_Baltic_Duchy.txt
 GFX event key not found: GFX_balticduchy at line 44 in file KR_Baltic_Duchy.txt
 GFX event key not found: GFX_balticduchy at line 65 in file KR_Baltic_Duchy.txt
@@ -1339,118 +1078,6 @@ GFX event key not found: GFX_report_event_BUR_coup at line 303 in file KR_Burma.
 GFX event key not found: GFX_report_event_BUR_coup at line 344 in file KR_Burma.txt
 GFX event key not found: GFX_report_event_BUR_coup at line 377 in file KR_Burma.txt
 GFX event key not found: Amcivwar_macarthur2 at line 3467 in file KR_Canada.txt
-GFX event key not found: placeholder at line 18 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 38 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 132 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 245 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 277 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 321 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 455 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 498 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 541 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 577 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 652 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 724 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 783 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 818 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 853 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 944 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 1011 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 1032 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 1059 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 1123 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 1154 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 1175 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 1240 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 1280 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 1310 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 1359 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 1380 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 1419 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 1456 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 1499 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 1586 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 1673 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2097 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2176 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2211 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2293 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2328 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2371 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2406 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2449 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2482 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2531 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2578 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2671 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2702 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2767 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2828 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2857 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2899 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2960 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 2992 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3207 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3265 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3342 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3375 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3411 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3456 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3498 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3524 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3551 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3578 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3624 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3652 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3724 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3751 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3772 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3857 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3917 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 3983 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 4020 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 4054 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 4087 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 4139 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 4197 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 4304 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 4482 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 4658 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 4679 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 4705 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 4787 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 4809 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 4840 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 4876 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 4911 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 4937 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 4970 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 5003 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 5036 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 5058 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 5086 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 5120 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 5153 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 5244 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 5374 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 5410 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 5477 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 5544 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 5567 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 5594 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 5621 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 6304 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 6337 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 6366 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 6400 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 6434 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 6468 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 6502 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 6536 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 6570 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 6604 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 6638 in file KR_Cuba.txt
-GFX event key not found: placeholder at line 6658 in file KR_Cuba.txt
 GFX event key not found: GFX_petain_NFA at line 15 in file KR_Ethiopia.txt
 GFX event key not found: GFX_petain_NFA at line 34 in file KR_Ethiopia.txt
 GFX event key not found: partisans at line 1641 in file KR_Germany_Domestic.txt
@@ -1505,9 +1132,9 @@ GFX event key not found: NFA_Petain at line 4296 in file KR_Germany_Foreign.txt
 GFX event key not found: NFA_Petain at line 4320 in file KR_Germany_Foreign.txt
 GFX event key not found: NFA_Petain at line 4344 in file KR_Germany_Foreign.txt
 GFX event key not found: NFA_Petain at line 4376 in file KR_Germany_Foreign.txt
-GFX event key not found: GFX_report_event_VIE_mass at line 3111 in file KR_Indochinese_Union.txt
-GFX event key not found: GFX_news_event_CoF_election_sorelians at line 9900 in file KR_Ireland.txt
-GFX event key not found: GFX_news_event_CoF_election_sorelians at line 9941 in file KR_Ireland.txt
+GFX event key not found: GFX_report_event_VIE_mass at line 3104 in file KR_Indochinese_Union.txt
+GFX event key not found: GFX_news_event_CoF_election_sorelians at line 9893 in file KR_Ireland.txt
+GFX event key not found: GFX_news_event_CoF_election_sorelians at line 9934 in file KR_Ireland.txt
 GFX event key not found: GFX_petain_NFA at line 14 in file KR_Literature.txt
 GFX event key not found: GFX_petain_NFA at line 36 in file KR_Literature.txt
 GFX event key not found: GFX_petain_NFA at line 58 in file KR_Literature.txt
@@ -1698,8 +1325,8 @@ GFX event key not found: GFX_petain_NFA at line 7240 in file KR_Nationalist_Fran
 GFX event key not found: GFX_petain_NFA at line 7300 in file KR_Nationalist_France.txt
 GFX event key not found: GFX_petain_NFA at line 7352 in file KR_Nationalist_France.txt
 GFX event key not found: GFX_petain_NFA at line 7386 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_Amcivwar_generic4 at line 16 in file KR_New_England.txt
-GFX event key not found: GFX_Amcivwar_generic4 at line 72 in file KR_New_England.txt
+GFX event key not found: GFX_Amcivwar_generic4 at line 17 in file KR_New_England.txt
+GFX event key not found: GFX_Amcivwar_generic4 at line 68 in file KR_New_England.txt
 GFX event key not found: GFX_petain_NFA at line 3311 in file KR_Norway.txt
 GFX event key not found: GFX_petain_NFA at line 3366 in file KR_Norway.txt
 GFX event key not found: GFX_petain_NFA at line 3416 in file KR_Norway.txt
@@ -2287,13 +1914,15 @@ GFX event key not found: GFX_report_RoyalPloughingCeremony at line 4226 in file 
 GFX event key not found: GFX_report_RoyalPloughingCeremony at line 4259 in file KR_Siam_New.txt
 GFX event key not found: GFX_report_RoyalPloughingCeremony at line 4304 in file KR_Siam_New.txt
 GFX event key not found: GFX_leninrem at line 879 in file KR_Soviet_Domestic.txt
-GFX event key not found: GFX_petain_NFA at line 377 in file KR_Sweden.txt
+GFX event key not found: GFX_petain_NFA at line 392 in file KR_Sweden.txt
 GFX event key not found: GFX_petain_NFA at line 2599 in file KR_Ukraine.txt
 GFX event key not found: ayy at line 16 in file KR_Union_of_Britain.txt
 GFX event key not found: GFX_report_crowd_in_prague at line 209 in file KR_Union_of_Britain.txt
-GFX event key not found: GFX_report_event_communist_leader at line 771 in file KR_Union_of_Britain_Flavour.txt
+GFX event key not found: GFX_report_event_communist_leader at line 734 in file KR_Union_of_Britain_Flavour.txt
 GFX event key not found: GFX_bra_vote at line 18 in file KR_Uruguay.txt
-GFX event key not found: GFX_remarque at line 424 in file KR_World_News.txt
+GFX event key not found: report_event_IRE_unionist_rally at line 932 in file KR_USA.txt
+GFX event key not found: Amcivwar_amstateunion at line 1364 in file KR_USA.txt
+GFX event key not found: Amcivwar_CSA at line 1916 in file KR_USA.txt
 GFX event key not found: GFX_news_053 at line 1586 in file KR_World_News.txt
 GFX not used in any .gfx file: gfx/event_pictures/East Asia/China/mingsheng1.dds
 GFX not used in any .gfx file: gfx/event_pictures/East Asia/China/warlord_observer1.dds
@@ -2301,7 +1930,6 @@ GFX not used in any .gfx file: gfx/event_pictures/Europe/Austria/report_event_au
 GFX not used in any .gfx file: gfx/event_pictures/Europe/Belgium/BEL_derailed_train.dds
 GFX not used in any .gfx file: gfx/event_pictures/Europe/Belgium/BEL_Parlement2.dds
 GFX not used in any .gfx file: gfx/event_pictures/Europe/Belgium/flawa_6.tga
-GFX not used in any .gfx file: gfx/event_pictures/Europe/Netherlands/HOL_alcoholism_on_the_rise3.dds
 GFX not used in any .gfx file: gfx/event_pictures/Europe/Netherlands/hol_landwacht.dds
 GFX not used in any .gfx file: gfx/event_pictures/Europe/Netherlands/HOL_military_putsch.dds
 GFX not used in any .gfx file: gfx/event_pictures/Europe/Netherlands/HOL_natpop_welfare.dds
@@ -2321,60 +1949,20 @@ GFX not used in any .gfx file: gfx/event_pictures/news_old/news_event_nanjing_ca
 GFX not used in any .gfx file: gfx/event_pictures/news_old/news_event_parade_tank_with_soldier.dds
 GFX not used in any .gfx file: gfx/event_pictures/old/report_event_burma.dds
 GFX not used in any .gfx file: gfx/event_pictures/Southeast Asia/Burma/report_event_BUR_coup.tga
-Didn't find icon decisions political_discourse in file KR_Austria_decisions.txt at 3046
-Didn't find icon decisions political_discourse in file KR_Austria_decisions.txt at 3089
-Didn't find icon decisions decision_rubber in file KR_Cuba_decisions.txt at 7585
-Didn't find icon decisions decision_rubber in file KR_Cuba_decisions.txt at 7608
-Didn't find icon decisions decision_rubber in file KR_Cuba_decisions.txt at 7630
-Didn't find icon decisions decision_rubber in file KR_Cuba_decisions.txt at 7652
-Didn't find icon decisions decision_generic_political_discourse in file KR_Cuba_decisions.txt at 7677
-Didn't find icon decisions category_generic in file KR_Dahomey.txt at 7727
-Key for decisions wronly written (did you add or remove GFX_categories/GFX decisions)GFX_decision_generic_political_discourse in file KR_Iran_decisions.txt at 11768
-Key for decisions wronly written (did you add or remove GFX_categories/GFX decisions)GFX_decision_generic_political_discourse in file KR_Iran_decisions.txt at 11804
-Key for decisions wronly written (did you add or remove GFX_categories/GFX decisions)GFX_decision_generic_political_discourse in file KR_Iran_decisions.txt at 11857
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_AUS_decision_categories.txt at 14201. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_AUS_decision_categories.txt at 14201. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_category_generic_political_actions in file KR_CSA_decision_categories.txt at 14307. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_chi_political_support in file KR_CSA_decision_categories.txt at 14312. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_chi_political_support in file KR_CSA_decision_categories.txt at 14312. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_CSA_decision_categories.txt at 14322. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_CSA_decision_categories.txt at 14322. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_CSA_decision_categories.txt at 14330. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_CSA_decision_categories.txt at 14330. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_category_generic_prospect_for_resources in file KR_Cuba_decision_categories.txt at 14341. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_category_army_reform in file KR_Cuba_decision_categories.txt at 14355. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_category_generic_political_actions in file KR_Egypt_decision_categories.txt at 14379. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_generic_mefo_bills in file KR_Egypt_decision_categories.txt at 14387. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_Ireland_decision_categories.txt at 14611. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_Ireland_decision_categories.txt at 14611. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_PSA_decision_categories.txt at 14648. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_PSA_decision_categories.txt at 14648. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_PSA_decision_categories.txt at 14656. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_PSA_decision_categories.txt at 14656. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_generic_austria_hungary in file KR_Republic_of_Italy_decision_categories.txt at 14661. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_generic_austria_hungary in file KR_Republic_of_Italy_decision_categories.txt at 14668. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_category_generic_political_actions in file KR_Socialist_Italy_decision_categories.txt at 14740. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_generic_mefo_bills in file KR_Socialist_Italy_decision_categories.txt at 14752. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_USA_decision_categories.txt at 14791. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_USA_decision_categories.txt at 14791. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_USA_decision_categories.txt at 14800. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_USA_decision_categories.txt at 14800. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_USA_decision_categories.txt at 14813. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_USA_decision_categories.txt at 14813. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_USA_decision_categories.txt at 14826. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_USA_decision_categories.txt at 14826. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_USA_decision_categories.txt at 14839. Did you forget to add categories_ to the icon name?
-Didn't find icon decisions/ Wrong type used decision_cat_picture_generic_border_conflicts in file KR_USA_decision_categories.txt at 14839. Did you forget to add categories_ to the icon name?
-Could not find IRE_coalition.dds in the gfx/interface/goals folder
-Could not find IRE_Capital.dds in the gfx/interface/goals folder
-Could not find goal_rhineland.dds in the gfx/interface/goals folder
+Didn't find icon decisions political_discourse in file KR_Austria_decisions.txt at 11847
+Didn't find icon decisions political_discourse in file KR_Austria_decisions.txt at 11890
+Didn't find icon decisions category_generic in file KR_Dahomey.txt at 15101
+Key for decisions wronly written (did you add or remove GFX_categories/GFX decisions)GFX_decision_generic_political_discourse in file KR_Iran_decisions.txt at 19978
+Key for decisions wronly written (did you add or remove GFX_categories/GFX decisions)GFX_decision_generic_political_discourse in file KR_Iran_decisions.txt at 20014
+Key for decisions wronly written (did you add or remove GFX_categories/GFX decisions)GFX_decision_generic_political_discourse in file KR_Iran_decisions.txt at 20067
+Didn't find icon decisions/ Wrong type used decision_category_generic_political_actions in file KR_Egypt_decision_categories.txt at 22104. Did you forget to add categories_ to the icon name?
+Didn't find icon decisions/ Wrong type used decision_cat_generic_mefo_bills in file KR_Egypt_decision_categories.txt at 22112. Did you forget to add categories_ to the icon name?
+Didn't find icon decisions/ Wrong type used decision_cat_generic_austria_hungary in file KR_Republic_of_Italy_decision_categories.txt at 22420. Did you forget to add categories_ to the icon name?
+Didn't find icon decisions/ Wrong type used decision_cat_generic_austria_hungary in file KR_Republic_of_Italy_decision_categories.txt at 22427. Did you forget to add categories_ to the icon name?
+Didn't find icon decisions/ Wrong type used decision_category_generic_political_actions in file KR_Socialist_Italy_decision_categories.txt at 22499. Did you forget to add categories_ to the icon name?
+Didn't find icon decisions/ Wrong type used decision_cat_generic_mefo_bills in file KR_Socialist_Italy_decision_categories.txt at 22511. Did you forget to add categories_ to the icon name?
 Found Focus texture not used BEL_Spaak
 Found Focus texture not used DAH_stand_our_own_2
-Found Focus texture not used DEI_focus_batavia_conference
-Found Focus texture not used DEI_focus_de_jonge
-Found Focus texture not used DEI_focus_furstner
-Found Focus texture not used DEI_focus_palar
-Found Focus texture not used DEI_focus_starkenborgh_stachouwer
 Found Focus texture not used doctrine_tank_warfare
 Found Focus texture not used elections
 Found Focus texture not used ENG_tank
@@ -2383,26 +1971,261 @@ Found Focus texture not used GFX_goal_greek_shield
 Found Focus texture not used goal_HOL_expand_veldleger
 Found Focus texture not used goal_POR_ saotome
 Found Focus texture not used HOL_dutch_unity
-Found Focus texture not used INS_focus_flag_PHL
-Found Focus texture not used INS_focus_flag_SIA
-Found Focus texture not used INS_focus_garuda
-Found Focus texture not used INS_focus_Insulindian_sultanate
-Found Focus texture not used INS_focus_islamic_socialism
-Found Focus texture not used INS_focus_malphilinsul
-Found Focus texture not used INS_focus_merdeka
-Found Focus texture not used INS_focus_nusantara_communes
-Found Focus texture not used INS_focus_party_coalition
-Found Focus texture not used INS_focus_party_di
-Found Focus texture not used INS_focus_party_murba
-Found Focus texture not used INS_focus_party_nu
-Found Focus texture not used INS_focus_party_PNI
-Found Focus texture not used INS_focus_stable_again
-Found Focus texture not used IRE_capital
-Found Focus texture not used IRE_Coalition
 Found Focus texture not used IRE_women_industry
 Found Focus texture not used ITA_tank
 Found Focus texture not used RUS_armored_school
 Found Focus texture not used RUS_Wrangel_plan
-Found focus icon "GFX_focus_cze_german_puppet" not declared in KR_El_Salvador.txt in line: 885
-Found focus icon "GFX_GUA_bananas" not declared in KR_Honduras.txt in line: 385
-Found focus icon "GFX_focus_yug_ikarus" not declared in KR_New_England.txt in line: 865
+Found focus icon "GFX_goal_rubber" not declared in KR_Dutch_East_Indies.txt in line: 238
+Found focus icon "GFX_focus_cze_german_puppet" not declared in KR_Dutch_East_Indies.txt in line: 1411
+Found focus icon never used in any focus tree: GFX_goal_AUS_step_on_skull
+Found focus icon never used in any focus tree: GFX_goal_HUN_step_on_skull
+Found focus icon never used in any focus tree: GFX_goal_big_news
+Found focus icon never used in any focus tree: GFX_goal_break_rifle
+Found focus icon never used in any focus tree: GFX_goal_checkmate
+Found focus icon never used in any focus tree: GFX_goal_china_deal
+Found focus icon never used in any focus tree: GFX_goal_double_research
+Found focus icon never used in any focus tree: GFX_goal_revolution_tools
+Found focus icon never used in any focus tree: GFX_goal_brazilian_syndicalism
+Found focus icon never used in any focus tree: GFX_goal_ire_returnees
+Found focus icon never used in any focus tree: GFX_goal_USA_sabotabby
+Found focus icon never used in any focus tree: GFX_goal_USA_american_industry
+Found focus icon never used in any focus tree: GFX_goal_USA_freedom_fighters
+Found focus icon never used in any focus tree: GFX_goal_USA_ursine_spirit
+Found focus icon never used in any focus tree: GFX_goal_USA_golden_gate
+Found focus icon never used in any focus tree: GFX_goal_USA_mexican_friendship
+Found focus icon never used in any focus tree: GFX_goal_USA_eagle
+Found focus icon never used in any focus tree: GFX_goal_USA_police_state
+Found focus icon never used in any focus tree: GFX_goal_USA_macarthur_military
+Found focus icon never used in any focus tree: GFX_goal_LEC_armsBRA
+Found focus icon never used in any focus tree: GFX_goal_LEC_armsSPA
+Found focus icon never used in any focus tree: GFX_goal_LEC_armsRUS
+Found focus icon never used in any focus tree: GFX_goal_LEC_strikeJAP
+Found focus icon never used in any focus tree: GFX_goal_panafrica
+Found focus icon never used in any focus tree: GFX_MEX_New
+Found focus icon never used in any focus tree: GFX_HOL_daf
+Found focus icon never used in any focus tree: GFX_goal_HOL_korps_mariniers
+Found focus icon never used in any focus tree: GFX_goal_india_council
+Found focus icon never used in any focus tree: GFX_goal_illyria
+Found focus icon never used in any focus tree: GFX_goal_dahomey
+Found focus icon never used in any focus tree: GFX_goal_crete
+Found focus icon never used in any focus tree: GFX_goal_epirus
+Found focus icon never used in any focus tree: GFX_goal_greece
+Found focus icon never used in any focus tree: GFX_goal_ottoman
+Found focus icon never used in any focus tree: GFX_NOR_Jonas_Lie
+Found focus icon never used in any focus tree: GFX_NOR_Karl_Marthinsen
+Found focus icon never used in any focus tree: GFX_NOR_Oliver_Moystad
+Found focus icon never used in any focus tree: GFX_NOR_Henrik_Rogstad
+Found focus icon never used in any focus tree: GFX_NOR_Axel_Stang
+Found focus icon never used in any focus tree: GFX_NOR_Konrad_Sundlo
+Found focus icon never used in any focus tree: GFX_goal_psa_flag
+Found focus icon never used in any focus tree: GFX_goal_new_england_flag
+Found focus icon never used in any focus tree: GFX_HOL_flanders_for_alliance
+Found focus icon never used in any focus tree: GFX_SIA_whiteelephant2
+Found focus icon never used in any focus tree: GFX_goal_HOL_radsoc_paradise
+Found focus icon never used in any focus tree: GFX_goal_HOL_guyana_for_alliance
+Found focus icon never used in any focus tree: GFX_goal_HOL_indonesian_dominion
+Found focus icon never used in any focus tree: GFX_goal_HOL_surinamese_dominion
+Found focus icon never used in any focus tree: gfx/interface/goals/goal_HOL_surinamese_dominion.dds
+Found focus icon never used in any focus tree: GFX_goal_HOL_a_new_era
+Found focus icon never used in any focus tree: GFX_goal_HOL_apartheid
+Found focus icon never used in any focus tree: GFX_goal_HOL_crackdown_totalist
+Found focus icon never used in any focus tree: GFX_goal_LEC_three_dragons
+Found focus icon never used in any focus tree: GFX_goal_portugal_shield
+Found focus icon never used in any focus tree: GFX_SOM_focus
+Found focus icon never used in any focus tree: GFX_goal_SAF_dominion
+Found focus icon never used in any focus tree: GFX_goal_SAF_federation
+Found focus icon never used in any focus tree: GFX_goal_EGY_austrian_tourists
+Found focus icon never used in any focus tree: GFX_goal_EGY_coptic
+Found focus icon never used in any focus tree: GFX_goal_EGY_safe_copts
+Found focus icon never used in any focus tree: GFX_goal_EGY_shatter_copts
+Found focus icon never used in any focus tree: GFX_VIE_dragon
+Found focus icon never used in any focus tree: GFX_VIE_Caodai
+Found focus icon never used in any focus tree: GFX_VIE_Caodai2
+Found focus icon never used in any focus tree: GFX_generic_home_defense_bel
+Found focus icon never used in any focus tree: GFX_wallonia
+Found focus icon never used in any focus tree: GFX_BEL_Economic_Regions
+Found focus icon never used in any focus tree: GFX_BEL_Improve_Spanish_Relations
+Found focus icon never used in any focus tree: GFX_BEL_Improve_American_Relations
+Found focus icon never used in any focus tree: GFX_goal_Belgian_Cooperative
+Found focus icon never used in any focus tree: GFX_goal_BEL_Resist_and_Bite
+Found focus icon never used in any focus tree: GFX_goal_RUS_Secure_Iraq
+Found focus icon never used in any focus tree: GFX_LEC_Passports
+Found focus icon never used in any focus tree: GFX_goal_KTG_flag_Of_kivu
+Found focus icon never used in any focus tree: GFX_goal_AST_skip_plebiscite
+Found focus icon never used in any focus tree: GFX_goal_EST_Estonian_Eagle_Focus
+Found focus icon never used in any focus tree: GFX_goal_EST_Hjalmar_Mae_Focus
+Found focus icon never used in any focus tree: GFX_goal_EST_Pats_Focus
+Found focus icon never used in any focus tree: GFX_EST_Vapsid_Focus
+Found focus icon never used in any focus tree: GFX_PAP_roman_senate
+Found focus icon never used in any focus tree: GFX_GRE_new_expansionism
+Found focus icon never used in any focus tree: GFX_GRE_army_focus
+Found focus icon never used in any focus tree: GFX_GRE_navy_focus
+Found focus icon never used in any focus tree: GFX_GRE_air_force_focus
+Found focus icon never used in any focus tree: GFX_GRE_hellenic_shipyard
+Found focus icon never used in any focus tree: GFX_GRE_megali
+Found focus icon never used in any focus tree: GFX_GRE_monarchy
+Found focus icon never used in any focus tree: GFX_GRE_empower_monarchy
+Found focus icon never used in any focus tree: GFX_GRE_king_pavlos
+Found focus icon never used in any focus tree: GFX_GRE_king_georgios
+Found focus icon never used in any focus tree: GFX_GRE_king_alexander
+Found focus icon never used in any focus tree: GFX_GRE_tur_cooperation
+Found focus icon never used in any focus tree: GFX_NATFRA_attackgermany
+Found focus icon never used in any focus tree: GFX_NATFRA_conscription
+Found focus icon never used in any focus tree: GFX_NATFRA_fire
+Found focus icon never used in any focus tree: GFX_NATFRA_flags1
+Found focus icon never used in any focus tree: GFX_NATFRA_flags3
+Found focus icon never used in any focus tree: GFX_NATFRA_friendwithpoland
+Found focus icon never used in any focus tree: GFX_NATFRA_naturalborders
+Found focus icon never used in any focus tree: GFX_NATFRA_rightfullborders
+Found focus icon never used in any focus tree: GFX_goal_africa_flames
+Found focus icon never used in any focus tree: GFX_goal_agriculture2
+Found focus icon never used in any focus tree: GFX_goal_action_francaise
+Found focus icon never used in any focus tree: GFX_goal_africa2
+Found focus icon never used in any focus tree: GFX_america_goal_eagle_deal
+Found focus icon never used in any focus tree: GFX_goal_bombs_away
+Found focus icon never used in any focus tree: GFX_goal_aog_cloth
+Found focus icon never used in any focus tree: GFX_goal_backstab
+Found focus icon never used in any focus tree: GFX_goal_battleship
+Found focus icon never used in any focus tree: GFX_goal_balkan_fist
+Found focus icon never used in any focus tree: GFX_goal_bluewater_navy
+Found focus icon never used in any focus tree: GFX_goal_aog_helmet
+Found focus icon never used in any focus tree: GFX_goal_buckingham
+Found focus icon never used in any focus tree: GFX_goal_split_helmet
+Found focus icon never used in any focus tree: GFX_BUL_broken_crown
+Found focus icon never used in any focus tree: GFX_goal_china_split_helmet
+Found focus icon never used in any focus tree: GFX_BUL_star
+Found focus icon never used in any focus tree: GFX_BUL_bulgarian_crown
+Found focus icon never used in any focus tree: GFX_BUL_bulgarian_navy
+Found focus icon never used in any focus tree: GFX_BUL_bulgarian_government
+Found focus icon never used in any focus tree: GFX_BUL_bulgarian_army
+Found focus icon never used in any focus tree: GFX_BUL_bulgarian_officer
+Found focus icon never used in any focus tree: GFX_goal_cavalry
+Found focus icon never used in any focus tree: GFX_goal_burning_globe
+Found focus icon never used in any focus tree: GFX_goal_bull
+Found focus icon never used in any focus tree: GFX_goal_card_tricks
+Found focus icon never used in any focus tree: GFX_goal_capitalist_system
+Found focus icon never used in any focus tree: GFX_goal_collaborate_local_elites2
+Found focus icon never used in any focus tree: GFX_goal_collaborate_local_elites
+Found focus icon never used in any focus tree: GFX_goal_champagne_diplomacy
+Found focus icon never used in any focus tree: GFX_america_goal_champagn
+Found focus icon never used in any focus tree: GFX_goal_construction
+Found focus icon never used in any focus tree: GFX_goal_death_tracks
+Found focus icon never used in any focus tree: GFX_goal_crush_monarchy
+Found focus icon never used in any focus tree: GFX_goal_foreign_diplomacy
+Found focus icon never used in any focus tree: GFX_goal_enlist_the_police
+Found focus icon never used in any focus tree: GFX_goal_skull_treaty2
+Found focus icon never used in any focus tree: GFX_goal_finnish_spirit
+Found focus icon never used in any focus tree: GFX_goal_japan_helmet
+Found focus icon never used in any focus tree: GFX_goal_japanese_navy
+Found focus icon never used in any focus tree: GFX_goal_lep_cloth
+Found focus icon never used in any focus tree: GFX_goal_aog_money
+Found focus icon never used in any focus tree: GFX_goal_japanese_officer
+Found focus icon never used in any focus tree: GFX_goal_machine
+Found focus icon never used in any focus tree: GFX_goal_bag_of_money
+Found focus icon never used in any focus tree: GFX_goal_radio
+Found focus icon never used in any focus tree: GFX_goal_nuclear
+Found focus icon never used in any focus tree: GFX_goal_lec_seal
+Found focus icon never used in any focus tree: GFX_goal_navy_hat_ships
+Found focus icon never used in any focus tree: GFX_JBS_goal_iraq
+Found focus icon never used in any focus tree: GFX_JBS_goal_syria
+Found focus icon never used in any focus tree: GFX_JBS_goal_syria_coins
+Found focus icon never used in any focus tree: GFX_JBS_goal_yemen
+Found focus icon never used in any focus tree: GFX_goal_INS_focus_flag_PHL
+Found focus icon never used in any focus tree: GFX_goal_INS_focus_flag_SIA
+Found focus icon never used in any focus tree: GFX_focus_smiling_buddha
+Found focus icon never used in any focus tree: GFX_focus_generic_japanese_imperial_glory
+Found focus icon never used in any focus tree: GFX_goal_shine_test
+Found focus icon never used in any focus tree: GFX_focus_focus_generic_industry_1
+Found focus icon never used in any focus tree: GFX_focus_generic_combined_arms
+Found focus icon never used in any focus tree: GFX_focus_generic_tank_production
+Found focus icon never used in any focus tree: GFX_focus_generic_army_tanks2
+Found focus icon never used in any focus tree: GFX_focus_ger_reichskommisariats
+Found focus icon never used in any focus tree: GFX_focus_ger_assassinate_mussolini
+Found focus icon never used in any focus tree: GFX_focus_ger_strike_at_the_source
+Found focus icon never used in any focus tree: GFX_focus_ger_accept_british_naval_dominance
+Found focus icon never used in any focus tree: GFX_focus_ger_break_anglo_french_colonial_hegemony
+Found focus icon never used in any focus tree: GFX_focus_AST_squander_bug
+Found focus icon never used in any focus tree: GFX_goal_tfv_saf_support_german_coup
+Found focus icon never used in any focus tree: GFX_focus_hun_assassinate_horthy
+Found focus icon never used in any focus tree: GFX_focus_CZE_military_aeronautical_institute
+Found focus icon never used in any focus tree: GFX_focus_CZE_military_research_institute
+Found focus icon never used in any focus tree: GFX_focus_YUG_zmaj
+Found focus icon never used in any focus tree: GFX_focus_YUG_rogozarski
+Found focus icon never used in any focus tree: GFX_focus_YUG_ikarus
+Found focus icon never used in any focus tree: GFX_focus_YUG_banovina_of_croatia
+Found focus icon never used in any focus tree: GFX_focus_RAJ_seek_help_from_germany
+Found focus icon never used in any focus tree: GFX_focus_RAJ_two_nation_theory
+Found focus icon never used in any focus tree: GFX_focus_chi_legislative_yuan
+Found focus icon never used in any focus tree: GFX_focus_chi_examination_yuan
+Found focus icon never used in any focus tree: GFX_focus_chi_united_front
+Found focus icon never used in any focus tree: GFX_focus_chi_flying_tigers
+Found focus icon never used in any focus tree: GFX_focus_chi_whampoa_military_academy
+Found focus icon never used in any focus tree: GFX_focus_chi_one_china_policy
+Found focus icon never used in any focus tree: GFX_focus_chi_mission_to_germany
+Found focus icon never used in any focus tree: GFX_focus_chi_mission_to_the_soviet_union
+Found focus icon never used in any focus tree: GFX_focus_chi_reach_out_to_france
+Found focus icon never used in any focus tree: GFX_focus_chi_british_cooperation
+Found focus icon never used in any focus tree: GFX_focus_chi_mission_to_the_us
+Found focus icon never used in any focus tree: GFX_focus_chi_cooperation_with_the_nationalists
+Found focus icon never used in any focus tree: GFX_focus_chi_proclaim_rival_government
+Found focus icon never used in any focus tree: GFX_focus_chi_cooperation_with_the_communists
+Found focus icon never used in any focus tree: GFX_focus_prc_proclaim_the_peoples_republic
+Found focus icon never used in any focus tree: GFX_focus_prc_remove_chiang_kai_shek
+Found focus icon never used in any focus tree: GFX_focus_prc_social_democracy
+Found focus icon never used in any focus tree: GFX_focus_prc_maoism
+Found focus icon never used in any focus tree: GFX_focus_generic_china1
+Found focus icon never used in any focus tree: GFX_focus_jap_strike_south
+Found focus icon never used in any focus tree: GFX_focus_jap_cast_the_die
+Found focus icon never used in any focus tree: GFX_focus_jap_zaibatsu
+Found focus icon never used in any focus tree: GFX_focus_jap_showa_restoration
+Found focus icon never used in any focus tree: GFX_focus_jap_pacific_guardian
+Found focus icon never used in any focus tree: GFX_focus_jap_manchurian_project
+Found focus icon never used in any focus tree: GFX_focus_jap_spiritual_mobilization
+Found focus icon never used in any focus tree: GFX_focus_jap_zero
+The state in116-Malta.txtdoes not have any cores
+The state in281-India.txtdoes not have any cores
+The state in309-Dutch SA.txtdoes not have any cores
+The state in314-El Salvador.txtdoes not have any cores
+The state in321-Goa.txtdoes not have any cores
+The state in39-Britain.txtdoes not have any cores
+The state in455-Jordan.txtdoes not have any cores
+The state in612-China 11.txtdoes not have any cores
+The state in633-Marshall Islands.txtdoes not have any cores
+The state in638-Guam.txtdoes not have any cores
+The state in695-Curacao.txtdoes not have any cores
+The state in701-Gambia.txtdoes not have any cores
+The state in703-Ascension.txtdoes not have any cores
+The state in704-Saint Helena.txtdoes not have any cores
+The state in706-Reunion.txtdoes not have any cores
+The state in707-Mauritius.txtdoes not have any cores
+The state in708-Comoro Islands.txtdoes not have any cores
+The state in709-Seychelles.txtdoes not have any cores
+The state in710-Diego Garcia.txtdoes not have any cores
+The state in711-Christmas Island.txtdoes not have any cores
+The state in712-Cocos Islands.txtdoes not have any cores
+The state in713-Kerguelen.txtdoes not have any cores
+The state in72-Zaolzie.txtdoes not have any cores
+The state in721-Portuguese Timor.txtdoes not have any cores
+The state in741-Cambodia.txtdoes not have any cores
+The state in742-Stalinabad.txtdoes not have any cores
+The state in743-Qingdao.txtdoes not have any cores
+The state in744-Xian.txtdoes not have any cores
+The state in745-Dalian.txtdoes not have any cores
+The state in746-Ordos.txtdoes not have any cores
+The state in747-Dali Bai.txtdoes not have any cores
+The state in748-Zunyi.txtdoes not have any cores
+The state in749-Huangshan.txtdoes not have any cores
+The state in750-Changde.txtdoes not have any cores
+The state in751-Liangshan.txtdoes not have any cores
+The state in752-Chamdo.txtdoes not have any cores
+The state in753-Gannan.txtdoes not have any cores
+The state in754-Golog.txtdoes not have any cores
+The state in755-Haixi.txtdoes not have any cores
+The state in756-Jiuquan.txtdoes not have any cores
+The state in757-Shigatse.txtdoes not have any cores
+The state in758-Ngari.txtdoes not have any cores
+The state in759-Kunlun.txtdoes not have any cores
+The state in760-Dabancheng.txtdoes not have any cores
+The state in761-Hulunbuir.txtdoes not have any cores
+The state in823-Isan.txtdoes not have any cores
+The state in842-Tegucigalpa.txtdoes not have any cores
