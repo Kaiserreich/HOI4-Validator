@@ -1,18 +1,7 @@
-﻿\history\units\DEI.txt division names group missing at division starting on line:1
-\history\units\DEI.txt division names group missing at division starting on line:17
-\history\units\DEI.txt division names group missing at division starting on line:36
-\history\units\DEI_bannelingenlegioen.txt division names group missing at division starting on line:1
-\history\units\DEI_reinforcements.txt division names group missing at division starting on line:1
-\history\units\DEI_resistance.txt division names group missing at division starting on line:1
-\history\units\unlock_heavy_tanks.txt division names group missing at division starting on line:1
+﻿\history\units\unlock_heavy_tanks.txt division names group missing at division starting on line:1
 \history\units\unlock_marines.txt division names group missing at division starting on line:1
 \history\units\unlock_mountineers.txt division names group missing at division starting on line:1
 \history\units\unlock_paratroopers.txt division names group missing at division starting on line:1
-\history\countries\DEI - Dutch East Indies.txt there's an unchanged KR general around line 103
-\history\countries\DEI - Dutch East Indies.txt there's an unchanged KR general around line 116
-\history\countries\DEI - Dutch East Indies.txt there's an unchanged KR general around line 129
-\events\KR_Canada.txt Brackets: Expecting: ']' but found '}' around line 3516
-\history\states\1047-Subei.txt Brackets: there are 1 opening bracket(s) without closing bracket(s)
 Double Spaces in Loc: 'SUPPLY_INFO' in: '\localisation\core_l_english.yml' at line 365
 Double Spaces in Loc: 'NAVAL_COMBAT_DIST_TO_ARRIVE' in: '\localisation\core_l_english.yml' at line 471
 Double Spaces in Loc: 'STATE_VIEW_WICTORY_POINTS_DESC' in: '\localisation\core_l_english.yml' at line 768
@@ -41,36 +30,6 @@ Duplicated Loc: 'COL_break_the_chains' in: '\localisation\KR_Colombia_l_english.
 Duplicated Loc: 'COL_break_the_chains_desc' in: '\localisation\KR_Colombia_l_english.yml' at line 33 and in: '\localisation\KR_Colombia_l_english.yml' at line 291
 Duplicated Loc: 'CSA_centralized_union' in: '\localisation\KR_Combined_Syndicates_of_America_l_english.yml' at line 61 and in: '\localisation\KR_Combined_Syndicates_of_America_l_english.yml' at line 269
 Duplicated Loc: 'CSA_centralized_union_desc' in: '\localisation\KR_Combined_Syndicates_of_America_l_english.yml' at line 62 and in: '\localisation\KR_Combined_Syndicates_of_America_l_english.yml' at line 270
-Duplicated Loc: 'DEI_totalist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2184 and in: '\localisation\KR_Countries_l_english.yml' at line 1770
-Duplicated Loc: 'DEI_totalist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2185 and in: '\localisation\KR_Countries_l_english.yml' at line 1771
-Duplicated Loc: 'DEI_totalist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2186 and in: '\localisation\KR_Countries_l_english.yml' at line 1772
-Duplicated Loc: 'DEI_syndicalist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2181 and in: '\localisation\KR_Countries_l_english.yml' at line 1773
-Duplicated Loc: 'DEI_syndicalist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2182 and in: '\localisation\KR_Countries_l_english.yml' at line 1774
-Duplicated Loc: 'DEI_syndicalist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2183 and in: '\localisation\KR_Countries_l_english.yml' at line 1775
-Duplicated Loc: 'DEI_radical_socialist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2169 and in: '\localisation\KR_Countries_l_english.yml' at line 1776
-Duplicated Loc: 'DEI_radical_socialist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2170 and in: '\localisation\KR_Countries_l_english.yml' at line 1777
-Duplicated Loc: 'DEI_radical_socialist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2171 and in: '\localisation\KR_Countries_l_english.yml' at line 1778
-Duplicated Loc: 'DEI_social_democrat' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2175 and in: '\localisation\KR_Countries_l_english.yml' at line 1779
-Duplicated Loc: 'DEI_social_democrat_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2176 and in: '\localisation\KR_Countries_l_english.yml' at line 1780
-Duplicated Loc: 'DEI_social_democrat_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2177 and in: '\localisation\KR_Countries_l_english.yml' at line 1781
-Duplicated Loc: 'DEI_social_liberal' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2178 and in: '\localisation\KR_Countries_l_english.yml' at line 1782
-Duplicated Loc: 'DEI_social_liberal_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2179 and in: '\localisation\KR_Countries_l_english.yml' at line 1783
-Duplicated Loc: 'DEI_social_liberal_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2180 and in: '\localisation\KR_Countries_l_english.yml' at line 1784
-Duplicated Loc: 'DEI_market_liberal' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2160 and in: '\localisation\KR_Countries_l_english.yml' at line 1785
-Duplicated Loc: 'DEI_market_liberal_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2161 and in: '\localisation\KR_Countries_l_english.yml' at line 1786
-Duplicated Loc: 'DEI_market_liberal_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2162 and in: '\localisation\KR_Countries_l_english.yml' at line 1787
-Duplicated Loc: 'DEI_social_conservative' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2172 and in: '\localisation\KR_Countries_l_english.yml' at line 1788
-Duplicated Loc: 'DEI_social_conservative_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2173 and in: '\localisation\KR_Countries_l_english.yml' at line 1789
-Duplicated Loc: 'DEI_social_conservative_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2174 and in: '\localisation\KR_Countries_l_english.yml' at line 1790
-Duplicated Loc: 'DEI_authoritarian_democrat' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2157 and in: '\localisation\KR_Countries_l_english.yml' at line 1791
-Duplicated Loc: 'DEI_authoritarian_democrat_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2158 and in: '\localisation\KR_Countries_l_english.yml' at line 1792
-Duplicated Loc: 'DEI_authoritarian_democrat_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2159 and in: '\localisation\KR_Countries_l_english.yml' at line 1793
-Duplicated Loc: 'DEI_paternal_autocrat' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2166 and in: '\localisation\KR_Countries_l_english.yml' at line 1794
-Duplicated Loc: 'DEI_paternal_autocrat_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2167 and in: '\localisation\KR_Countries_l_english.yml' at line 1795
-Duplicated Loc: 'DEI_paternal_autocrat_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2168 and in: '\localisation\KR_Countries_l_english.yml' at line 1796
-Duplicated Loc: 'DEI_national_populist' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2163 and in: '\localisation\KR_Countries_l_english.yml' at line 1797
-Duplicated Loc: 'DEI_national_populist_ADJ' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2164 and in: '\localisation\KR_Countries_l_english.yml' at line 1798
-Duplicated Loc: 'DEI_national_populist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 2165 and in: '\localisation\KR_Countries_l_english.yml' at line 1799
 Duplicated Loc: 'NCH_totalist' in: '\localisation\KR_Countries_l_english.yml' at line 4529 and in: '\localisation\KR_Countries_l_english.yml' at line 4530
 Duplicated Loc: 'NCH_totalist_ADJ' in: '\localisation\KR_Countries_l_english.yml' at line 4531 and in: '\localisation\KR_Countries_l_english.yml' at line 4532
 Duplicated Loc: 'NCH_totalist_DEF' in: '\localisation\KR_Countries_l_english.yml' at line 4533 and in: '\localisation\KR_Countries_l_english.yml' at line 4534
@@ -133,17 +92,6 @@ Duplicated Loc: 'RTS_national_populist_ADJ' in: '\localisation\KR_Countries_Cosm
 Duplicated Loc: 'RTS_national_populist_DEF' in: '\localisation\KR_Countries_Cosmetic_l_english.yml' at line 1231 and in: '\localisation\KR_Countries_l_english.yml' at line 5767
 Duplicated Loc: 'DAH_agaja' in: '\localisation\KR_Dahomey_l_english.yml' at line 46 and in: '\localisation\KR_Dahomey_l_english.yml' at line 99
 Duplicated Loc: 'DAH_salvage' in: '\localisation\KR_Dahomey_l_english.yml' at line 51 and in: '\localisation\KR_Dahomey_l_english.yml' at line 102
-Duplicated Loc: 'dei_random_followup.6.t' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 253 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 256
-Duplicated Loc: 'dei_random_followup.6.d' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 254 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 257
-Duplicated Loc: 'dei_random_followup.6.a' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 255 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 258
-Duplicated Loc: 'holex.35.t' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 401 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 407
-Duplicated Loc: 'holex.35.d' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 402 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 408
-Duplicated Loc: 'holex.35.a' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 403 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 409
-Duplicated Loc: 'holex.36.t' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 404 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 410
-Duplicated Loc: 'holex.36.d' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 405 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 411
-Duplicated Loc: 'holex.36.a' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 406 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 412
-Double Spaces in Loc: 'dei_bannelingenlegioen_spawns' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 787
-Duplicated Loc: 'holex_resistance_attack_civilian_fac' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 806 and in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 807
 Duplicated Loc: 'EGY_general_staff' in: '\localisation\KR_Egypt_l_english.yml' at line 117 and in: '\localisation\KR_Egypt_l_english.yml' at line 350
 Duplicated Loc: 'EGY_bombers_desc' in: '\localisation\KR_Egypt_l_english.yml' at line 395 and in: '\localisation\KR_Egypt_l_english.yml' at line 396
 Duplicated Loc: 'EMI_ducal_constitution' in: '\localisation\KR_Emilia_l_english.yml' at line 118 and in: '\localisation\KR_Emilia_l_english.yml' at line 128
@@ -184,16 +132,8 @@ Duplicated Loc: 'FLN_German_Monarch' in: '\localisation\KR_Flanders_l_english.ym
 Duplicated Loc: 'FLN_Grote_Doorsteek' in: '\localisation\KR_Flanders_l_english.yml' at line 74 and in: '\localisation\KR_Flanders_l_english.yml' at line 507
 Duplicated Loc: 'FLN_Flemish_Miners' in: '\localisation\KR_Flanders_l_english.yml' at line 76 and in: '\localisation\KR_Flanders_l_english.yml' at line 533
 Duplicated Loc: 'GAB_Cooperate_with_Dahomey_desc' in: '\localisation\KR_Gabon_l_english.yml' at line 25 and in: '\localisation\KR_Gabon_l_english.yml' at line 101
-Duplicated Loc: 'research_production' in: '\localisation\ideas_l_english.yml' at line 538 and in: '\localisation\KR_General_l_english.yml' at line 110
-Duplicated Loc: 'GER_ostwall' in: '\localisation\focus_l_english.yml' at line 274 and in: '\localisation\KR_Germany_l_english.yml' at line 539
-Duplicated Loc: 'GER_ostwall_desc' in: '\localisation\focus_l_english.yml' at line 275 and in: '\localisation\KR_Germany_l_english.yml' at line 540
 Duplicated Loc: 'HAW_hawaiian_revolution' in: '\localisation\KR_Hawaii_l_english.yml' at line 28 and in: '\localisation\KR_Hawaii_l_english.yml' at line 220
-Duplicated Loc: 'INC_infiltrate_the_north_decision' in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 792 and in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 814
-Duplicated Loc: 'INC_infiltrate_the_north_decision_desc' in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 793 and in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 815
-Duplicated Loc: 'INC_political_instruction_decision' in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 890 and in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 891
-Duplicated Loc: 'INC_finish_land_reform' in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 878 and in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 896
-Duplicated Loc: 'INC_land_reform_promise_mission' in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 869 and in: '\localisation\KR_Indochinese_Union_l_english.yml' at line 898
-Duplicated Loc: 'INS_idea_insulindian_national_revolution' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 719 and in: '\localisation\KR_Insulindia_l_english.yml' at line 4
+Duplicated Loc: 'INS_idea_insulindian_national_revolution' in: '\localisation\KR_Dutch_East_Indies_l_english.yml' at line 710 and in: '\localisation\KR_Insulindia_l_english.yml' at line 4
 Double Spaces in Loc: 'ins.17.d' in: '\localisation\KR_Insulindia_l_english.yml' at line 121
 Duplicated Loc: 'INS_kraton_administration' in: '\localisation\KR_Insulindia_l_english.yml' at line 17 and in: '\localisation\KR_Insulindia_l_english.yml' at line 524
 Duplicated Loc: 'IRE_AUTARKY' in: '\localisation\KR_Ireland_l_english.yml' at line 719 and in: '\localisation\KR_Ireland_l_english.yml' at line 968
@@ -680,25 +620,6 @@ Incorrect or false negative gfx key of CHI_portrait_Huang_Xing at line 195 in fi
 Wrongly spelled portrait: CHI_Portrait_Huang_Xing.tga in  file events\KR_Republic_of_China.txt at line 1356
 Wrongly spelled portrait: CHI_Portrait_Huang_Xing.tga in  file events\KR_Republic_of_China.txt at line 2370
 Didnt find portrait: Portrait_Italy_Marcello_Soleri.tga in  file events\KR_Republic_of_Italy.txt at line 535
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia.txt at line 89
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia.txt at line 107
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia.txt at line 206
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia.txt at line 743
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia.txt at line 791
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia.txt at line 819
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia.txt at line 939
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia.txt at line 963
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia.txt at line 1149
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia.txt at line 1166
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia.txt at line 1183
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia.txt at line 1203
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia.txt at line 1227
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia.txt at line 1251
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia.txt at line 1300
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia_Domestic.txt at line 9173
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia_Domestic.txt at line 9202
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia_Domestic.txt at line 9231
-Didnt find portrait: GFX_petain_NFA.dds in  file events\KR_Russia_Domestic.txt at line 9274
 Incorrect or false negative gfx key of Portrait_White_Ruthenia_Stanislav_Bulak_Balakhovich at line 20256 in file KR_Russia_Foreign.txt
 Incorrect or false negative gfx key of Portrait_White_Ruthenia_Stanislav_Bulak_Balakhovich at line 20266 in file KR_Russia_Foreign.txt
 Incorrect or false negative gfx key of Portrait_White_Ruthenia_Stanislav_Bulak_Balakhovich at line 20276 in file KR_Russia_Foreign.txt
@@ -745,165 +666,173 @@ Wrongly spelled portrait: CHI_Portrait_Huang_Xing.tga in  file events\KR_Yunnan.
 Didnt find portrait: Portrait_CHI_Chen_Jioming.tga in  file events\KR_Yunnan.txt at line 4386
 Wrongly spelled portrait: CHI_Portrait_Huang_Xing.tga in  file events\KR_Yunnan.txt at line 4495
 Unused event Gfx: INTRO_team at line 14 in file eventpics.gfx
-Duplicated gfx key Mukden in file eventpics.gfx at line 253
-Unused event Gfx: shanghai_police_patrol at line 305 in file eventpics.gfx
-Unused event Gfx: warlord_observer at line 321 in file eventpics.gfx
-Unused event Gfx: hong_kong_harbour at line 353 in file eventpics.gfx
-Unused event Gfx: fengtian_colonel at line 369 in file eventpics.gfx
-Unused event Gfx: zhang_xueliang_civil at line 373 in file eventpics.gfx
-Unused event Gfx: japan_voting at line 389 in file eventpics.gfx
-Unused event Gfx: japan_ambassador_kisaburo at line 394 in file eventpics.gfx
-Unused event Gfx: japan_crowd at line 409 in file eventpics.gfx
-Unused event Gfx: japan_revolt at line 434 in file eventpics.gfx
-Unused event Gfx: japan_rice_farmers at line 439 in file eventpics.gfx
-Unused event Gfx: japan_rising_sun at line 444 in file eventpics.gfx
-Unused event Gfx: japan_troops_gas at line 449 in file eventpics.gfx
-Unused event Gfx: japan_zero at line 454 in file eventpics.gfx
-Unused event Gfx: japanese_officer_saluting at line 469 in file eventpics.gfx
-Unused event Gfx: japanese_officers at line 474 in file eventpics.gfx
-Unused event Gfx: japanese_soldiers at line 479 in file eventpics.gfx
-Unused event Gfx: japanese_young_officers at line 489 in file eventpics.gfx
-Unused event Gfx: japan_rentaro at line 494 in file eventpics.gfx
-Unused event Gfx: japan_meeting at line 509 in file eventpics.gfx
-Duplicated gfx key japan_rikken_seiyukai in file eventpics.gfx at line 519
-Unused event Gfx: HOL_landwacht at line 563 in file eventpics.gfx
-Unused event Gfx: HOL_mijnbouw at line 599 in file eventpics.gfx
-Unused event Gfx: HOL_lichte_kruiser at line 603 in file eventpics.gfx
-Unused event Gfx: HOL_vliegdekschip at line 611 in file eventpics.gfx
-Unused event Gfx: HOL_torpedoboot at line 615 in file eventpics.gfx
-Unused event Gfx: NOR_andoya_rocketsite at line 621 in file eventpics.gfx
-Unused event Gfx: NOR_election_36_fedrelandslaget at line 653 in file eventpics.gfx
-Unused event Gfx: NOR_hirden_poster at line 669 in file eventpics.gfx
-Duplicated gfx key GFX_report_event_AST_parliament2 in file eventpics.gfx at line 973
-Unused event Gfx: GFX_OTT_victory at line 1213 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_MAF_zimmerman at line 1441 in file eventpics.gfx
-Unused event Gfx: GFX_DerKleinePrinz at line 1497 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_cambodia at line 1509 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_malaya at line 1513 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_siam at line 1517 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_VIE_fashion at line 1617 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_VIE_waifu at line 1629 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_VIE_waifu2 at line 1633 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Be_Careful at line 1671 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Schoolbook_Reform at line 1687 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Woman_Corps_Posters at line 1699 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Parliament_2 at line 1708 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Ratthaniyom_Decrees at line 1716 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Thai_Japan_Parliament at line 1720 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Treaty_signed at line 1724 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_1932_Revolution_3_Musketeers at line 1728 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_1932_Revolution_Motorized_Infantry at line 1736 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_1932_Revolution_Officers at line 1740 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_AA_Guns_Grand_Palace at line 1744 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Airforces at line 1752 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Bofors_Artillery at line 1764 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Armoured_Train at line 1768 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Prince at line 1784 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Rebel_Train at line 1788 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Rebel_Troops at line 1792 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Rebellion_Monument at line 1796 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Suicide_Train at line 1804 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Suicide_Train_2 at line 1808 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Vickers_Tank at line 1812 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Boworadet_Vickers_Tank_Gate at line 1816 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Canal_Digging at line 1824 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Carden_Lloyd_Tankette at line 1832 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Chulalongkorn_University at line 1844 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Chulalongkorn_University_Arts_Faculty at line 1848 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Chulalongkorn_University_Medical_Research at line 1852 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Dam_Construcion at line 1860 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Democracy_Monument_Openning at line 1864 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Democracy_Monument_Soldier at line 1868 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Ha-Go_Tank_Grand_Palace at line 1880 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Ha-Go_Tank_Parade at line 1884 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Khana_Ratsadon_1937 at line 1888 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Khana_Ratsadon_1944 at line 1892 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Lampang_Bridge_Bombing at line 1900 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Meeting_Dinner_Parliament at line 1908 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Military_Cadet_Officer at line 1912 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Ministry_of_Transportation at line 1916 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Admiral_Submarine at line 1920 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Coastal_Defense_Ship_SriAyutthaya at line 1924 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Coastal_Defense_Ship_Sukothai at line 1928 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Coastal_Defense_Ship_Thonburi_Survivors at line 1932 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Matchanu_Submarine at line 1936 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Matchanu_Submarine_2 at line 1940 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Royal_Barge_Ceremony at line 1944 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Sinsamuth_Submarine at line 1948 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Submarine_Construction at line 1952 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Torpedo_Boats at line 1956 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Navy_Wirun_Submarine at line 1960 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Phao_Sriyanond_Coup at line 1968 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Phraya_Phahon_Phonpayuhasena at line 1980 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Plane_Production_1 at line 1984 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Plane_Production_2 at line 1988 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Plane_Production_3 at line 1992 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Propaganda_Department at line 2008 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Railway_Bangkok_Station at line 2012 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_6_Tank_Prototype at line 2016 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_Canada at line 2024 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_German_Trip_Berlin at line 2036 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_German_Trip_Berlin_2 at line 2040 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_German_Trip_Car at line 2044 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_German_Trip_Troops_Inspection at line 2048 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_Graduation_event at line 2052 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_Japan_Trip at line 2056 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_Japan_Trip_Yasukuni at line 2060 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_NewYork at line 2064 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_Queen_Picnic at line 2068 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Rama_7_Throne at line 2072 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Road_Bureau at line 2076 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Royal_Mail at line 2080 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Sarit_Thanarat_Coup at line 2084 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_SPAAG_Boworadet_Rebellion_End at line 2096 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_SPAAG_Boworadet_Train at line 2100 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_SPAAG_Early_War_2 at line 2108 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Thai_Dance at line 2120 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Thai_Japan_Flag_Waving at line 2128 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Thai_Japan_Propaganda at line 2132 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Thai_Japan_Propaganda_2 at line 2136 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Thai_Japan_Propaganda_3 at line 2140 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Thai_Japan_Royal_Visit_Bangkok at line 2144 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Tin_Mining_Yala at line 2148 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Troops_Standby at line 2152 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Vickers_Tank at line 2156 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Wargame_Practice_Army_2 at line 2160 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Wargame_Practice_Army_Short at line 2164 in file eventpics.gfx
-Unused event Gfx: GFX_Siam_Woman_Corps at line 2168 in file eventpics.gfx
-Unused event Gfx: GFX_news_event_SAF_parliament at line 2246 in file eventpics.gfx
-Unused event Gfx: GFX_Protest_Peacefull at line 2302 in file eventpics.gfx
-Unused event Gfx: GFX_BWP at line 2322 in file eventpics.gfx
-Unused event Gfx: GFX_Justitiepaleis at line 2347 in file eventpics.gfx
-Unused event Gfx: GFX_Mons at line 2352 in file eventpics.gfx
-Unused event Gfx: GFX_Paleis at line 2362 in file eventpics.gfx
-Unused event Gfx: GFX_Paleis2 at line 2367 in file eventpics.gfx
-Unused event Gfx: GFX_Parlement at line 2372 in file eventpics.gfx
-Unused event Gfx: GFX_Tankswachten at line 2432 in file eventpics.gfx
-Unused event Gfx: GFX_Antwerp_Nurse at line 2437 in file eventpics.gfx
-Unused event Gfx: GFX_Dinant at line 2452 in file eventpics.gfx
-Unused event Gfx: GFX_Destroyer at line 2487 in file eventpics.gfx
-Unused event Gfx: GFX_Cruiser at line 2492 in file eventpics.gfx
-Unused event Gfx: GFX_Submarine at line 2497 in file eventpics.gfx
-Unused event Gfx: GFX_Verbod_21_July at line 2527 in file eventpics.gfx
-Duplicated gfx key GFX_21_July in file eventpics.gfx at line 2532
-Unused event Gfx: GFX_Latin_Empire at line 2571 in file eventpics.gfx
-Unused event Gfx: GFX_bel_11 at line 2595 in file eventpics.gfx
-Unused event Gfx: GFX_HOL_Albarda at line 2650 in file eventpics.gfx
-Unused event Gfx: GFX_HOL_dutch_army at line 2707 in file eventpics.gfx
-Unused event Gfx: GFX_HOL_dutch_army3 at line 2715 in file eventpics.gfx
-Unused event Gfx: GFX_HOL_dutch_army5 at line 2723 in file eventpics.gfx
-Unused event Gfx: GFX_HOL_dutch_police at line 2727 in file eventpics.gfx
-Unused event Gfx: GFX_HOL_landwacht4 at line 2783 in file eventpics.gfx
-Unused event Gfx: GFX_HOL_syndicalist_volunteers at line 2859 in file eventpics.gfx
-Unused event Gfx: GFX_HOL_progovernment_rally at line 2879 in file eventpics.gfx
-Unused event Gfx: GFX_Koningskwestie at line 2926 in file eventpics.gfx
-Unused event Gfx: GFX_La_Louviere at line 2938 in file eventpics.gfx
-Unused event Gfx: GFX_Force_Publique at line 2970 in file eventpics.gfx
-Unused event Gfx: GFX_Force_Publique2 at line 2974 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_EGY_egypt_army at line 3012 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_EGY_egypt_army_1 at line 3016 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_EGY_german_scouting_in_egypt at line 3060 in file eventpics.gfx
-Unused event Gfx: GFX_report_event_EGY_the_will_movie at line 3080 in file eventpics.gfx
+Unused event Gfx: shanghai_police_patrol at line 301 in file eventpics.gfx
+Unused event Gfx: warlord_observer at line 317 in file eventpics.gfx
+Unused event Gfx: hong_kong_harbour at line 349 in file eventpics.gfx
+Unused event Gfx: fengtian_colonel at line 365 in file eventpics.gfx
+Unused event Gfx: zhang_xueliang_civil at line 369 in file eventpics.gfx
+Unused event Gfx: japan_voting at line 385 in file eventpics.gfx
+Unused event Gfx: japan_ambassador_kisaburo at line 390 in file eventpics.gfx
+Unused event Gfx: japan_crowd at line 405 in file eventpics.gfx
+Unused event Gfx: japan_revolt at line 430 in file eventpics.gfx
+Unused event Gfx: japan_rice_farmers at line 435 in file eventpics.gfx
+Unused event Gfx: japan_rising_sun at line 440 in file eventpics.gfx
+Unused event Gfx: japan_troops_gas at line 445 in file eventpics.gfx
+Unused event Gfx: japan_zero at line 450 in file eventpics.gfx
+Unused event Gfx: japanese_officer_saluting at line 465 in file eventpics.gfx
+Unused event Gfx: japanese_officers at line 470 in file eventpics.gfx
+Unused event Gfx: japanese_soldiers at line 475 in file eventpics.gfx
+Unused event Gfx: japanese_young_officers at line 485 in file eventpics.gfx
+Unused event Gfx: japan_rentaro at line 490 in file eventpics.gfx
+Unused event Gfx: japan_meeting at line 505 in file eventpics.gfx
+Duplicated gfx key japan_rikken_seiyukai in file eventpics.gfx at line 515
+Unused event Gfx: HOL_landwacht at line 559 in file eventpics.gfx
+Unused event Gfx: HOL_mijnbouw at line 595 in file eventpics.gfx
+Unused event Gfx: HOL_lichte_kruiser at line 599 in file eventpics.gfx
+Unused event Gfx: HOL_vliegdekschip at line 607 in file eventpics.gfx
+Unused event Gfx: HOL_torpedoboot at line 611 in file eventpics.gfx
+Unused event Gfx: NOR_andoya_rocketsite at line 617 in file eventpics.gfx
+Unused event Gfx: NOR_election_36_fedrelandslaget at line 649 in file eventpics.gfx
+Unused event Gfx: NOR_hirden_poster at line 665 in file eventpics.gfx
+Duplicated gfx key GFX_report_event_AST_parliament2 in file eventpics.gfx at line 969
+Unused event Gfx: GFX_OTT_victory at line 1209 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_MAF_zimmerman at line 1437 in file eventpics.gfx
+Unused event Gfx: GFX_DerKleinePrinz at line 1493 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_cambodia at line 1505 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_malaya at line 1509 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_siam at line 1513 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_VIE_fashion at line 1613 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_VIE_waifu at line 1625 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_VIE_waifu2 at line 1629 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Be_Careful at line 1667 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Schoolbook_Reform at line 1683 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Woman_Corps_Posters at line 1695 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Parliament_2 at line 1704 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Ratthaniyom_Decrees at line 1712 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Thai_Japan_Parliament at line 1716 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Treaty_signed at line 1720 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_1932_Revolution_3_Musketeers at line 1724 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_1932_Revolution_Motorized_Infantry at line 1732 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_1932_Revolution_Officers at line 1736 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_AA_Guns_Grand_Palace at line 1740 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Airforces at line 1748 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Bofors_Artillery at line 1760 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Armoured_Train at line 1764 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Prince at line 1780 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Rebel_Train at line 1784 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Rebel_Troops at line 1788 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Rebellion_Monument at line 1792 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Suicide_Train at line 1800 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Suicide_Train_2 at line 1804 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Vickers_Tank at line 1808 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Boworadet_Vickers_Tank_Gate at line 1812 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Canal_Digging at line 1820 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Carden_Lloyd_Tankette at line 1828 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Chulalongkorn_University at line 1840 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Chulalongkorn_University_Arts_Faculty at line 1844 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Chulalongkorn_University_Medical_Research at line 1848 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Dam_Construcion at line 1856 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Democracy_Monument_Openning at line 1860 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Democracy_Monument_Soldier at line 1864 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Ha-Go_Tank_Grand_Palace at line 1876 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Ha-Go_Tank_Parade at line 1880 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Khana_Ratsadon_1937 at line 1884 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Khana_Ratsadon_1944 at line 1888 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Lampang_Bridge_Bombing at line 1896 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Meeting_Dinner_Parliament at line 1904 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Military_Cadet_Officer at line 1908 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Ministry_of_Transportation at line 1912 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Admiral_Submarine at line 1916 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Coastal_Defense_Ship_SriAyutthaya at line 1920 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Coastal_Defense_Ship_Sukothai at line 1924 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Coastal_Defense_Ship_Thonburi_Survivors at line 1928 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Matchanu_Submarine at line 1932 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Matchanu_Submarine_2 at line 1936 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Royal_Barge_Ceremony at line 1940 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Sinsamuth_Submarine at line 1944 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Submarine_Construction at line 1948 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Torpedo_Boats at line 1952 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Navy_Wirun_Submarine at line 1956 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Phao_Sriyanond_Coup at line 1964 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Phraya_Phahon_Phonpayuhasena at line 1976 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Plane_Production_1 at line 1980 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Plane_Production_2 at line 1984 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Plane_Production_3 at line 1988 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Propaganda_Department at line 2004 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Railway_Bangkok_Station at line 2008 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_6_Tank_Prototype at line 2012 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_Canada at line 2020 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_German_Trip_Berlin at line 2032 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_German_Trip_Berlin_2 at line 2036 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_German_Trip_Car at line 2040 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_German_Trip_Troops_Inspection at line 2044 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_Graduation_event at line 2048 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_Japan_Trip at line 2052 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_Japan_Trip_Yasukuni at line 2056 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_NewYork at line 2060 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_Queen_Picnic at line 2064 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Rama_7_Throne at line 2068 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Road_Bureau at line 2072 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Royal_Mail at line 2076 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Sarit_Thanarat_Coup at line 2080 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_SPAAG_Boworadet_Rebellion_End at line 2092 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_SPAAG_Boworadet_Train at line 2096 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_SPAAG_Early_War_2 at line 2104 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Thai_Dance at line 2116 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Thai_Japan_Flag_Waving at line 2124 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Thai_Japan_Propaganda at line 2128 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Thai_Japan_Propaganda_2 at line 2132 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Thai_Japan_Propaganda_3 at line 2136 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Thai_Japan_Royal_Visit_Bangkok at line 2140 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Tin_Mining_Yala at line 2144 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Troops_Standby at line 2148 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Vickers_Tank at line 2152 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Wargame_Practice_Army_2 at line 2156 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Wargame_Practice_Army_Short at line 2160 in file eventpics.gfx
+Unused event Gfx: GFX_Siam_Woman_Corps at line 2164 in file eventpics.gfx
+Unused event Gfx: GFX_news_event_SAF_parliament at line 2242 in file eventpics.gfx
+Unused event Gfx: GFX_Protest_Peacefull at line 2298 in file eventpics.gfx
+Unused event Gfx: GFX_BWP at line 2318 in file eventpics.gfx
+Unused event Gfx: GFX_Justitiepaleis at line 2343 in file eventpics.gfx
+Unused event Gfx: GFX_Mons at line 2348 in file eventpics.gfx
+Unused event Gfx: GFX_Paleis at line 2358 in file eventpics.gfx
+Unused event Gfx: GFX_Paleis2 at line 2363 in file eventpics.gfx
+Unused event Gfx: GFX_Parlement at line 2368 in file eventpics.gfx
+Unused event Gfx: GFX_Tankswachten at line 2428 in file eventpics.gfx
+Unused event Gfx: GFX_Antwerp_Nurse at line 2433 in file eventpics.gfx
+Unused event Gfx: GFX_Dinant at line 2448 in file eventpics.gfx
+Unused event Gfx: GFX_Destroyer at line 2483 in file eventpics.gfx
+Unused event Gfx: GFX_Cruiser at line 2488 in file eventpics.gfx
+Unused event Gfx: GFX_Submarine at line 2493 in file eventpics.gfx
+Unused event Gfx: GFX_Verbod_21_July at line 2523 in file eventpics.gfx
+Duplicated gfx key GFX_21_July in file eventpics.gfx at line 2528
+Unused event Gfx: GFX_Latin_Empire at line 2567 in file eventpics.gfx
+Unused event Gfx: GFX_bel_11 at line 2591 in file eventpics.gfx
+Unused event Gfx: GFX_HOL_Albarda at line 2646 in file eventpics.gfx
+Unused event Gfx: GFX_HOL_dutch_army at line 2703 in file eventpics.gfx
+Unused event Gfx: GFX_HOL_dutch_army3 at line 2711 in file eventpics.gfx
+Unused event Gfx: GFX_HOL_dutch_army5 at line 2719 in file eventpics.gfx
+Unused event Gfx: GFX_HOL_dutch_police at line 2723 in file eventpics.gfx
+Unused event Gfx: GFX_HOL_landwacht4 at line 2779 in file eventpics.gfx
+Unused event Gfx: GFX_HOL_syndicalist_volunteers at line 2855 in file eventpics.gfx
+Unused event Gfx: GFX_HOL_progovernment_rally at line 2875 in file eventpics.gfx
+Unused event Gfx: GFX_Koningskwestie at line 2922 in file eventpics.gfx
+Unused event Gfx: GFX_La_Louviere at line 2934 in file eventpics.gfx
+Unused event Gfx: GFX_Force_Publique at line 2966 in file eventpics.gfx
+Unused event Gfx: GFX_Force_Publique2 at line 2970 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_EGY_egypt_army at line 3008 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_EGY_egypt_army_1 at line 3012 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_EGY_german_scouting_in_egypt at line 3056 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_EGY_the_will_movie at line 3076 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_GRE_army at line 3096 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_GRE_athens at line 3100 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_GRE_crowd at line 3104 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_GRE_crowd2 at line 3108 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_GRE_demonstration at line 3112 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_GRE_metaxas at line 3116 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_GRE_parliament at line 3120 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_GRE_referendum at line 3124 in file eventpics.gfx
+Unused event Gfx: GFX_report_event_GRE_royal at line 3128 in file eventpics.gfx
 Unused event Gfx: americans_marching at line 6 in file eventpics_news_old.gfx
 Unused event Gfx: ausgleich_dip at line 14 in file eventpics_news_old.gfx
 Unused event Gfx: ausgleich_start at line 18 in file eventpics_news_old.gfx
@@ -1135,19 +1064,6 @@ GFX event key not found: NFA_Petain at line 4376 in file KR_Germany_Foreign.txt
 GFX event key not found: GFX_report_event_VIE_mass at line 3104 in file KR_Indochinese_Union.txt
 GFX event key not found: GFX_news_event_CoF_election_sorelians at line 9893 in file KR_Ireland.txt
 GFX event key not found: GFX_news_event_CoF_election_sorelians at line 9934 in file KR_Ireland.txt
-GFX event key not found: GFX_petain_NFA at line 14 in file KR_Literature.txt
-GFX event key not found: GFX_petain_NFA at line 36 in file KR_Literature.txt
-GFX event key not found: GFX_petain_NFA at line 58 in file KR_Literature.txt
-GFX event key not found: GFX_petain_NFA at line 90 in file KR_Literature.txt
-GFX event key not found: GFX_petain_NFA at line 144 in file KR_Literature.txt
-GFX event key not found: GFX_petain_NFA at line 160 in file KR_Literature.txt
-GFX event key not found: GFX_petain_NFA at line 176 in file KR_Literature.txt
-GFX event key not found: GFX_petain_NFA at line 192 in file KR_Literature.txt
-GFX event key not found: GFX_petain_NFA at line 216 in file KR_Literature.txt
-GFX event key not found: GFX_petain_NFA at line 240 in file KR_Literature.txt
-GFX event key not found: GFX_petain_NFA at line 262 in file KR_Literature.txt
-GFX event key not found: GFX_petain_NFA at line 284 in file KR_Literature.txt
-GFX event key not found: GFX_petain_NFA at line 331 in file KR_Literature.txt
 GFX event key not found: GFX_lithuania at line 16 in file KR_Lithuania.txt
 GFX event key not found: GFX_lithuania at line 32 in file KR_Lithuania.txt
 GFX event key not found: GFX_lithuania at line 49 in file KR_Lithuania.txt
@@ -1177,170 +1093,8 @@ GFX event key not found: LIT_nationalism at line 774 in file KR_Lithuania.txt
 GFX event key not found: LIT_nationalism at line 800 in file KR_Lithuania.txt
 GFX event key not found: LIT_nationalism at line 821 in file KR_Lithuania.txt
 GFX event key not found: GFX_seinius at line 1054 in file KR_Lithuania.txt
-GFX event key not found: GFX_petain_NFA at line 16 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 34 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 55 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 136 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 217 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 260 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 286 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 319 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 361 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 387 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 429 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 463 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 491 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 638 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 928 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 961 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 994 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 1023 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 1167 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 1460 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 1489 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 1587 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 1876 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 1901 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 1999 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2288 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2322 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2403 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2560 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2643 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2662 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2685 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2706 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2724 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2742 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2757 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2775 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2792 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2820 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2859 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2924 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2963 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 2980 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3009 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3030 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3059 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3081 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3106 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3131 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3161 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3205 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3243 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3268 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3404 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3429 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3455 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3510 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3546 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3575 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3604 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3726 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3840 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3881 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3909 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3926 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3952 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 3996 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 4032 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 4052 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 4075 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 4117 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 4234 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 4412 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 4534 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 4643 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 4660 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 4874 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 4890 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 4909 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 4927 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 4945 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 4994 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5043 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5082 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5121 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5163 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5204 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5229 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5246 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5277 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5308 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5339 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5370 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5401 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5432 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5448 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5501 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5554 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5604 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5638 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5672 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5706 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5753 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5783 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5806 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5831 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5856 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5872 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5894 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5929 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5970 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 5993 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6009 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6036 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6066 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6105 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6121 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6152 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6232 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6271 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6302 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6346 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6394 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6462 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6517 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6558 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6592 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6617 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6657 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6696 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6712 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6730 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6811 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6835 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6877 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6914 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6930 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 6959 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 7003 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 7063 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 7092 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 7113 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 7165 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 7195 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 7240 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 7300 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 7352 in file KR_Nationalist_France.txt
-GFX event key not found: GFX_petain_NFA at line 7386 in file KR_Nationalist_France.txt
 GFX event key not found: GFX_Amcivwar_generic4 at line 17 in file KR_New_England.txt
 GFX event key not found: GFX_Amcivwar_generic4 at line 68 in file KR_New_England.txt
-GFX event key not found: GFX_petain_NFA at line 3311 in file KR_Norway.txt
-GFX event key not found: GFX_petain_NFA at line 3366 in file KR_Norway.txt
-GFX event key not found: GFX_petain_NFA at line 3416 in file KR_Norway.txt
-GFX event key not found: GFX_petain_NFA at line 3472 in file KR_Norway.txt
-GFX event key not found: GFX_petain_NFA at line 3703 in file KR_Norway.txt
-GFX event key not found: GFX_petain_NFA at line 3917 in file KR_Norway.txt
-GFX event key not found: GFX_petain_NFA at line 3970 in file KR_Norway.txt
-GFX event key not found: GFX_petain_NFA at line 4051 in file KR_Norway.txt
-GFX event key not found: GFX_petain_NFA at line 4103 in file KR_Norway.txt
-GFX event key not found: GFX_petain_NFA at line 4262 in file KR_Norway.txt
-GFX event key not found: GFX_petain_NFA at line 4281 in file KR_Norway.txt
-GFX event key not found: GFX_petain_NFA at line 4383 in file KR_Norway.txt
-GFX event key not found: GFX_petain_NFA at line 4550 in file KR_Norway.txt
-GFX event key not found: GFX_petain_NFA at line 4766 in file KR_Norway.txt
 GFX event key not found: GFX_bra_vote at line 17 in file KR_Paraguay.txt
 GFX event key not found: GFX_bra_vote at line 31 in file KR_Peru.txt
 GFX event key not found: GFX_bra_vote at line 181 in file KR_Peru.txt
@@ -1348,568 +1102,8 @@ GFX event key not found: GFX_country_event_PHL_manila_uprising at line 2542 in f
 GFX event key not found: GFX_country_event_PHL_manila_uprising at line 2569 in file KR_Philippines.txt
 GFX event key not found: GFX_bra_vote at line 14 in file KR_Piratini.txt
 GFX event key not found: report_event_IRE_women_pilots at line 1178 in file KR_Republic_of_Italy.txt
-GFX event key not found: GFX_petain_NFA at line 19 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 70 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA.dds at line 89 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA.dds at line 107 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 142 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 187 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA.dds at line 206 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 249 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 553 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 617 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 664 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 725 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA.dds at line 743 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA.dds at line 791 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA.dds at line 819 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA.dds at line 939 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA.dds at line 963 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA.dds at line 1149 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA.dds at line 1166 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA.dds at line 1183 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA.dds at line 1203 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA.dds at line 1227 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA.dds at line 1251 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA.dds at line 1300 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 1363 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 1387 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 1411 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 1435 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 1505 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 1573 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 1644 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 1710 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 1776 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 1842 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 2850 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 3030 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 3210 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 3264 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 3353 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 3436 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 3678 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 3699 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 3720 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 3774 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 3933 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 4003 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 4122 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 4216 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 4296 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 4541 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 4789 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 5037 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 5216 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 5263 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 5351 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 5399 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 5452 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 5499 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 5567 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 5614 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 5666 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 5713 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 5786 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 5833 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 5888 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 5958 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6023 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6048 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6084 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6153 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6219 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6276 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6311 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6348 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6405 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6457 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6651 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6673 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6690 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6715 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6748 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6820 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6842 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6901 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 6986 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7009 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7036 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7204 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7252 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7300 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7367 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7434 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7526 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7584 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7607 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7623 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7681 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7791 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7830 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7856 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7926 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7960 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 7990 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 8025 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 8079 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 8116 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 8179 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 8196 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 8233 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 8322 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 8404 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 8441 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 8457 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 8550 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 8608 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 8633 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 8649 in file KR_Russia.txt
-GFX event key not found: GFX_petain_NFA at line 8678 in file KR_Russia.txt
 GFX event key not found: GFX_Russia_Merezhkovsky at line 8459 in file KR_Russia_Domestic.txt
-GFX event key not found: GFX_petain_NFA at line 9049 in file KR_Russia_Domestic.txt
 GFX event key not found: GFX_Russia_Merezhkovsky at line 9144 in file KR_Russia_Domestic.txt
-GFX event key not found: GFX_petain_NFA.dds at line 9173 in file KR_Russia_Domestic.txt
-GFX event key not found: GFX_petain_NFA.dds at line 9202 in file KR_Russia_Domestic.txt
-GFX event key not found: GFX_petain_NFA.dds at line 9231 in file KR_Russia_Domestic.txt
-GFX event key not found: GFX_petain_NFA.dds at line 9274 in file KR_Russia_Domestic.txt
-GFX event key not found: GFX_petain_NFA at line 19 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 63 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 128 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 189 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 215 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 259 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 284 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 366 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 448 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 468 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 542 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 659 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 737 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 815 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 845 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 884 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 995 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 1034 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 1288 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 1333 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 1371 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 1409 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 1577 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 1649 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 1903 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 1948 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 1990 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2032 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2076 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2101 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2185 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2237 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2287 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2332 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2352 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2474 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2550 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2603 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2644 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2672 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2700 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2755 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2787 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2841 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2873 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 2986 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 3043 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 3103 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 3162 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 3222 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 3281 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 3369 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 3454 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 3493 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 3575 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 3596 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 3806 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 3826 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 3846 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 3866 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 3950 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 3993 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 4157 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 4235 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 4273 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 4354 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 4449 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 4485 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 4526 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 4571 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 4636 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 4698 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 4715 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 4966 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 4982 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5082 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5138 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5209 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5233 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5253 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5272 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5369 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5433 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5527 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5577 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5642 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5706 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5740 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5813 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5860 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5907 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5945 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 5986 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 6025 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 6126 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 6176 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 6201 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 6771 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 6884 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 6916 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 6940 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 8654 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 8704 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 8728 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 9179 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 9229 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 9250 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 9296 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 9337 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 9381 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 9418 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 9457 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 9553 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 9635 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 9661 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 9922 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 10202 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 10257 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 10312 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 10333 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 10354 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 10394 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 10432 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 10492 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 10527 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 10587 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 10623 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 10652 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 10681 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 10718 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 10755 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 10807 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 11061 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 11315 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 11387 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 11483 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 11527 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 11614 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 11665 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 11710 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 11797 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 11843 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 11954 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12006 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12051 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12226 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12292 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12313 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12360 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12381 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12429 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12653 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12673 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12699 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12743 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12810 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12846 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12885 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12900 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12932 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 12974 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13014 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13058 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13091 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13126 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13168 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13257 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13319 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13356 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13398 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13441 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13495 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13536 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13566 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13601 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13641 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13673 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13704 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13752 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13793 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13812 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13847 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13888 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13905 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 13985 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14031 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14050 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14085 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14121 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14150 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14181 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14227 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14244 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14320 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14469 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14544 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14583 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14622 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14771 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14808 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14848 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14884 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14925 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 14961 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15002 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15033 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15088 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15105 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15126 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15159 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15176 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15215 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15264 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15326 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15373 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15422 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15439 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15492 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15562 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15596 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15660 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15708 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15725 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15793 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 15925 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 16007 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 16085 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 16163 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 16184 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 16311 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 16395 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 16479 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 16582 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 16709 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 16744 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 16778 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 16830 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 16880 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 16901 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 16954 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 17053 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 17120 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 17173 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 17272 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 17338 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 17414 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 17486 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 17563 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 17625 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 17731 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 17747 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 17763 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 17834 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 17908 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 17945 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 17984 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18048 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18064 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18138 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18161 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18214 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18297 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18313 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18328 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18363 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18441 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18489 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18561 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18608 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18656 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18728 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18775 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18823 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18895 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 18942 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 19387 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 19423 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 19459 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 19495 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 19531 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 19614 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 19710 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 19747 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 19784 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 19825 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 20186 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 20244 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 20404 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 20431 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 20474 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 20498 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 20755 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 20813 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 20973 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 21015 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 21088 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 21120 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 21385 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 21439 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 21493 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 21511 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 21528 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 21569 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 21608 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 21663 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 21699 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 21754 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 21806 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 21917 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22013 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22069 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22179 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22222 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22286 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22338 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22411 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22448 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22530 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22567 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22587 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22660 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22696 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22757 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22817 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22838 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22900 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22939 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 22965 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 23018 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 23071 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 23130 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 23183 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 23206 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 23274 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 23366 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 23396 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 23491 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 23531 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 23582 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 23674 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 23704 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 23799 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 23839 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 23890 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 23958 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 24055 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 24120 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 24151 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 24169 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 24259 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 24276 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 24308 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 24359 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 24453 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 24484 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 24502 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 24567 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 24657 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 24674 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 24706 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 24740 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 24791 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25004 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25235 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25347 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25429 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25445 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25479 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25495 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25577 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25593 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25627 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25643 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25727 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25746 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25780 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25796 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25843 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25859 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25943 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25962 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 25996 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 26012 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 26059 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 26125 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 26175 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 26214 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 26270 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 26306 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 26356 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 26372 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 26448 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 26878 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 26944 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 26984 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 27037 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 27077 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 27143 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 27189 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 27255 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 27295 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 27361 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 27408 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 27461 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 27501 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 27611 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 27694 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 27734 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 27758 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 27860 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 27922 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 27983 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 28036 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 28097 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 28150 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 28212 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 28249 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 28368 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 28399 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 28443 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 28538 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 28568 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 28636 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 28666 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 28792 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 28827 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 28888 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 28940 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 28992 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 29044 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 29389 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 29442 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 29477 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 29497 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 29515 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 29572 in file KR_Russia_Foreign.txt
-GFX event key not found: GFX_petain_NFA at line 29602 in file KR_Russia_Foreign.txt
 GFX event key not found: GFX_report_RoyalPloughingCeremony at line 4226 in file KR_Siam_New.txt
 GFX event key not found: GFX_report_RoyalPloughingCeremony at line 4259 in file KR_Siam_New.txt
 GFX event key not found: GFX_report_RoyalPloughingCeremony at line 4304 in file KR_Siam_New.txt
@@ -2192,6 +1386,7 @@ The state in455-Jordan.txtdoes not have any cores
 The state in612-China 11.txtdoes not have any cores
 The state in633-Marshall Islands.txtdoes not have any cores
 The state in638-Guam.txtdoes not have any cores
+The state in679-Hejaz.txtdoes not have any cores
 The state in695-Curacao.txtdoes not have any cores
 The state in701-Gambia.txtdoes not have any cores
 The state in703-Ascension.txtdoes not have any cores
@@ -2220,6 +1415,7 @@ The state in751-Liangshan.txtdoes not have any cores
 The state in752-Chamdo.txtdoes not have any cores
 The state in753-Gannan.txtdoes not have any cores
 The state in754-Golog.txtdoes not have any cores
+The state in754-Medina.txtdoes not have any cores
 The state in755-Haixi.txtdoes not have any cores
 The state in756-Jiuquan.txtdoes not have any cores
 The state in757-Shigatse.txtdoes not have any cores
