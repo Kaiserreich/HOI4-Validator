@@ -528,7 +528,7 @@ def focus_tree_icons(tree_path, hoi4_path, output_file, mod_path, tree_gfx, gfx_
                     line = line.split('=')[1].strip()
                     found_gfx_in_tree.append(line)
                     if finddup(gfx_names, line) is False:
-                        output_file.write("Found focus icon \"" + line + "\" not declared in " + filename + " in line: " + line_number.__str__())
+                        output_file.write("Found focus icon \"" + line + "\" not declared in " + filename + " in line: " + line_number.__str__() +"\n")
     for string in kr_gfx_names:
         if finddup(found_gfx_in_tree, string) is False:
-            output_file.write("Found focus icon never used in any focus tree: " + string)
+            output_file.write("Found focus icon never used in any focus tree: " + string + "\n")
