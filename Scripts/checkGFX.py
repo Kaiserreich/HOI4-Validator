@@ -410,7 +410,7 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
                     if finddup(decisions_keys, temp_string) is False:
                         if finddup(decisions_keys_full, temp_string) is False:
                             output_file.write("Didn't find icon decisions/ Wrong type used " + temp_string + " in file " + filename + " at " + line_number.__str__() + ". Did you forget to add categories_ to the icon name?\n")
-                            print("Didn't find icon decisions " + temp_string + " in file " + filename + " at " + line_number.__str__())
+                            #print("Didn't find icon decisions " + temp_string + " in file " + filename + " at " + line_number.__str__())
             if 'picture' in line:
                 if line.strip().startswith('#') is False:
                     if '#' in line:
@@ -419,7 +419,7 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
                     decisions_found.append(temp_string)
                     if finddup(decisions_keys_full, temp_string) is False:
                         output_file.write("Didn't find icon decisions/ Wrong type used " + temp_string + " in file " + filename + " at " + line_number.__str__() + ". Did you forget to add categories_ to the icon name?\n")
-                        print("Didn't find picture decisions " + temp_string + " in file " + filename + " at " + line_number.__str__())
+                        #print("Didn't find picture decisions " + temp_string + " in file " + filename + " at " + line_number.__str__())
 
 
     #Check if KReys are used
@@ -456,6 +456,8 @@ def focus_tree_icons(tree_path, hoi4_path, output_file, mod_path, tree_gfx, gfx_
             file = open(gfx_files + "\\" + filename, 'r', 'utf-8')
             lines = file.readlines()
             for line in lines:
+                if 'GFX_focus_jap_zero' in line:
+                    print(line + ", " + filename)
                 if 'name' in line:
                     temp_string = line.strip()
                     if temp_string.startswith('#'):
@@ -491,7 +493,7 @@ def focus_tree_icons(tree_path, hoi4_path, output_file, mod_path, tree_gfx, gfx_
             #print("Found focus texture not used " + filename[:len(filename)-4])
             output_file.write("Found focus texture not used " + filename[:len(filename)-4] + "\n")
 
-    kr_gfx_names = gfx_names
+    kr_gfx_names = gfx_names.copy()
     #append vanilla stuff
     file.close()
     file = open(hoi4_path + "\\interface\\goals.gfx", 'r', 'utf-8')
@@ -506,6 +508,7 @@ def focus_tree_icons(tree_path, hoi4_path, output_file, mod_path, tree_gfx, gfx_
                     line = line.split('#')[0]
             line = line.split('"')[1]
             gfx_names.append(line)
+
 
     #start scrubbing
     found_gfx_in_tree = []
@@ -529,6 +532,7 @@ def focus_tree_icons(tree_path, hoi4_path, output_file, mod_path, tree_gfx, gfx_
                     found_gfx_in_tree.append(line)
                     if finddup(gfx_names, line) is False:
                         output_file.write("Found focus icon \"" + line + "\" not declared in " + filename + " in line: " + line_number.__str__() +"\n")
+
     for string in kr_gfx_names:
         if finddup(found_gfx_in_tree, string) is False:
             output_file.write("Found focus icon never used in any focus tree: " + string + "\n")
