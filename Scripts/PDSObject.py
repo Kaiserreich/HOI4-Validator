@@ -1,6 +1,17 @@
 import enum
 import re
+from logging import log
 
+def auto_str(cls):
+    def __str__(self):
+        return '%s(%s)' % (
+            type(self).__name__,
+            ''.join('\n\t%s=%s' % item for item in vars(self).items())
+        )
+    cls.__str__ = __str__
+    return cls
+
+@auto_str
 class PDSEvent:
     def __init__(self, event_id, event_type, title, desc, picture, is_triggered_only, fire_only_once, hidden, mean_time_to_happen, trigger, immediate, options):
         self.event_id = event_id
@@ -23,17 +34,19 @@ class PDSEvent:
         self.options = options
         self.references = []
 
+@auto_str
 class PDSScriptedEffect:
     def __init__(self, name, effect):
         self.name = name
         self.effect = effect
 
+@auto_str
 class PDSScriptedTrigger:
     def __init__(self, name, trigger):
         self.name = name
         self.trigger = trigger
 
-
+@auto_str
 class PDSFocus:
     def __init__(self, focus_id, is_shared, focus_tree, icon, prerequisite, mutually_exclusive, available, bypass, allow_branch, x, y, relative_position_id, offset, cost, ai_will_do, completion_reward, completion_tooltip, cancel_if_invalid, continue_if_invalid, available_if_capitulated):
         self.focus_id = focus_id
@@ -63,7 +76,7 @@ class PDSFocus:
         self.continue_if_invalid = continue_if_invalid
         self.available_if_capitulated = available_if_capitulated
 
-
+@auto_str
 class PDSFocusTree:
     def __init__(self, focus_tree_id, country, default, continuous_focus_position):
         self.focus_tree_id = focus_tree_id
@@ -74,6 +87,33 @@ class PDSFocusTree:
             continuous_focus_position = (next(item[2] for item in continuous_focus_position if len(item) == 3 and item[0] == "x"), next(item[2] for item in continuous_focus_position if len(item) == 3 and item[0] == "y"))
         self.focuses = dict()
         self.shared_focuses = set()
+
+@auto_str
+class PDSIdea:
+    def __init__(self, idea_id, slot, picture, level, cost, removal_cost, allowed, allowed_civil_war, allowed_to_remove, available, ai_will_do, on_add, on_remove, do_effect, equipment_bonus, research_bonus, modifier, targeted_modifier, rule, traits, cancel_if_invalid, default):
+        self.idea_id = idea_id
+        self.slot = slot
+        self.picture = picture
+        self.level = level
+        self.cost = cost
+        self.removal_cost = removal_cost
+        self.allowed = allowed
+        self.allowed_civil_war = allowed_civil_war
+        self.allowed_to_remove = allowed_to_remove
+        self.available = available
+        self.ai_will_do = ai_will_do
+        self.on_add = on_add
+        self.on_remove = on_remove
+        self.do_effect = do_effect
+        self.equipment_bonus = equipment_bonus
+        self.research_bonus = research_bonus
+        self.modifier = modifier
+        self.targeted_modifier = targeted_modifier
+        self.rule = rule
+        self.traits = traits
+        self.cancel_if_invalid = cancel_if_invalid
+        self.default = default
+
 '''
 class PDSDecision:
     #TODO
@@ -85,9 +125,6 @@ class PDSCountryHistory:
     #TODO
 
 class PDSStateHistory:
-    #TODO
-
-class PDSIdea:
     #TODO
 
 class PDSGFX:
