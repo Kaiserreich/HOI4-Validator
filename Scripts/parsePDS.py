@@ -3,18 +3,27 @@
 
 # http://pyparsing.wikispaces.com/HowToUsePyparsing
 
+import psutil
+from memory_profiler import profile
 from pyparsing import *
+ParserElement.enablePackrat()
 import os
+import sys
 import time
 from PDSObject import *
 from os import listdir
 from openFile import open_file
-from logging import log
+from validator_logging import LOGGER as Logger
+from validator_logging import LogLevel
+import pathos
+import gc
+from collections import defaultdict
 
 def make_string_lowercase(s,l,t):
-    return t[0].lower()
+    if not len(t[0]) == 3:
+        return t[0].lower()
 
-def parse_PDS_script(string): 
+class PDSParser():
     allowed_chars = srange(r"[':a-zA-Z0-9._-]")
     EQUAL = Literal("=")
     OPERATOR = oneOf("< > =")
@@ -38,11 +47,63 @@ def parse_PDS_script(string):
     pds_members << OneOrMore(pds_member)
     pds_list_members << (pds_members | ZeroOrMore(pds_value))
 
+    pds_member.ignore(pythonStyleComment)
     pds_members.ignore(pythonStyleComment)
-    pds_members.enablePackrat()
 
-    string = pds_members.parseString(string, True)
-    return(string)
+    def parse_PDS_script(self, string): 
+        if not string.strip():
+            return string
+        string = self.pds_members.parseString(string, True)
+        #gc.collect()
+        return(string)
+
+PARSER = PDSParser()
+PREPARSE_LOCK = pathos.helpers.mp.Lock()
+def preparse_PDS_script(string, start, end, lock=PREPARSE_LOCK, use_category=True):
+    blocks = defaultdict(list) if use_category else []
+    open_braces = 0
+    start_idx_set = False
+    start_idx = 0
+    end_idx_set = False
+    end_idx = 0
+    if use_category:
+        category = ""
+        current_category = ""
+    for idx, c in enumerate(string):
+        if c == '}':
+            open_braces -= 1
+
+        if open_braces == start:
+            if use_category:
+                if category:
+                    current_category = category.strip().split()[-2]
+                category = ""
+            if not start_idx_set:
+                start_idx = idx
+                start_idx_set = True
+            end_idx_set = False
+        
+        if c == '{':
+            open_braces += 1
+
+        if use_category and open_braces == end:
+            category += c
+
+        if open_braces == end:
+            if not end_idx_set:
+                end_idx = idx
+                end_idx_set = True
+            if end_idx > start_idx and start_idx_set:
+                block = string[start_idx:end_idx]
+                if re.sub("#.*", "", block).strip():
+                    lock.acquire()
+                    if use_category:
+                        blocks[current_category].append(block)
+                    else:
+                        blocks.append(block)
+                    lock.release()
+                start_idx_set = False
+    return blocks
 
 def parse_PDS_localisation(string):
     allowed_chars = srange(r"['a-zA-Z0-9._-]")
@@ -64,15 +125,15 @@ def get_bool_from_yes_no_str(string):
     return True if string == "yes" else False
 
 def get_contents_of_command(command, collection, default, length=3):
-    return next((item[2] for item in collection if len(item) == length and item[0] == command), default),
+    return next((item[2] for item in collection if len(item) == length and item[0] == command), default)
 
 def get_contents_of_multiple_commands(command, collection, default, length=3):
     lst = [item[2] for item in collection if len(item) == length and item[0] == command]
     return lst if lst else default
 
 def parse_localisation(loc_file, loc_dict):
-    log("Reading file %s" % loc_file)
-    loc_file = open_file(loc_file).read()
+    Logger.log("Reading file %s" % loc_file, level=LogLevel.Info)
+    loc_file = open_file(loc_file)
 
     if not loc_file.strip():
         return
@@ -84,13 +145,13 @@ def parse_localisation(loc_file, loc_dict):
 def parse_event_file(event_file, events_dict):
     namespaces = set()
 
-    log("Reading file %s" % event_file)
-    event_file = open_file(event_file).read()
+    Logger.log("Reading file %s" % event_file, level=LogLevel.Info)
+    event_file = open_file(event_file)
 
     if not event_file.strip():
         return
 
-    parsed_event_file = parse_PDS_script(event_file)
+    parsed_event_file = PARSER.parse_PDS_script(event_file)
     for item in [x[2] for x in parsed_event_file if (len(x) == 3 and x[0]== "add_namespace")]:
         namespaces.add(item)
 
@@ -118,76 +179,78 @@ def parse_event_file(event_file, events_dict):
         if not event.namespace in namespaces:
             raise ValueError('Event %s namespace %s is not in file\'s namespaces.' % (event.event_id, event.namespace))
         events_dict[event.event_id] = event
-    log(events_dict)
+    Logger.log(events_dict, level=LogLevel.Debug)
 
 def parse_scripted_effect_file(scripted_effect_file, scripted_effects_dict):
 
-    log("Reading file %s" % scripted_effect_file)
-    scripted_effect_file = open_file(scripted_effect_file).read()
+    Logger.log("Reading file %s" % scripted_effect_file, level=LogLevel.Info)
+    scripted_effect_file = open_file(scripted_effect_file)
 
     if not scripted_effect_file.strip():
         return
 
-    parsed_scripted_effect_file = parse_PDS_script(scripted_effect_file)
+    parsed_scripted_effect_file = PARSER.parse_PDS_script(scripted_effect_file)
     for item in [x for x in parsed_scripted_effect_file]:
         scripted_effect = PDSScriptedEffect(item[0], item[2])
         scripted_effects_dict[item[0]] = scripted_effect
 
 def parse_scripted_trigger_file(scripted_trigger_file, scripted_triggers_dict):
 
-    log("Reading file %s" % scripted_trigger_file)
-    scripted_trigger_file = open_file(scripted_trigger_file).read()
+    Logger.log("Reading file %s" % scripted_trigger_file, level=LogLevel.Info)
+    scripted_trigger_file = open_file(scripted_trigger_file)
 
     if not scripted_trigger_file.strip():
         return
 
-    parsed_scripted_trigger_file = parse_PDS_script(scripted_trigger_file)
+    parsed_scripted_trigger_file = PARSER.parse_PDS_script(scripted_trigger_file)
     for item in [x for x in parsed_scripted_trigger_file]:
         scripted_trigger = PDSScriptedTrigger(item[0], item[2])
         scripted_triggers_dict[item[0]] = scripted_trigger
 
-def parse_focus_file(focus_file, focuses_dict, focus_tree_dict):
-    
-    log("Reading file %s" % focus_file)
-    focus_file = open_file(focus_file).read()
+def preparse_focus_file(focus_file):
+    Logger.log("Reading file %s" % focus_file, level=LogLevel.Info)
+    focus_file = open_file(focus_file)
 
     if not focus_file.strip():
         return
 
-    focus_contents_file = parse_PDS_script(focus_file)
-    #log(focus_contents_file)
+    focuses_in_focus_trees = defaultdict(list)
+    preparsed_focuses = preparse_PDS_script(focus_file, 1, 0)
+    if 'focus_tree' in preparsed_focuses:
+        for item in preparsed_focuses['focus_tree']:
+            focus_tree_id = PARSER.parse_PDS_script(re.search(r"id\s*=\s*.*\b", item).group(0))[0][2]
+            assert focus_tree_id != 'shared_focus'
+            focuses_in_focus_trees[focus_tree_id].append(preparse_PDS_script(item, 1, 0))
+        for key, lst in focuses_in_focus_trees.items():
+            for dct in lst:
+                if dct:
+                    for _, value in dct.items():
+                        preparsed_focuses[key].extend(value)
+    preparsed_focuses.pop('focus_tree', None)
+    return preparsed_focuses
 
-    for item in focus_contents_file:
-        #log(item)
-        if item[0] == 'focus_tree':
-            focus_tree_id = next(item_2[2] for item_2 in item[2] if len(item_2) == 3 and item_2[0] == "id")
-            focus_tree = PDSFocusTree(
-                focus_tree_id=focus_tree_id,
-                country=get_contents_of_command("country", item[2], None),
-                default=get_bool_from_yes_no_str(get_contents_of_command("default", item[2], False)),
-                continuous_focus_position=get_contents_of_command("continuous_focus_position", item[2], None)
-            )
-            focus_tree_dict[focus_tree_id] = focus_tree
-            for item in [x for x in item[2] if (x and x[0] == "focus")]:
-                focus = create_focus(item, focus_tree_id)
-                focuses_dict[focus.focus_id] = focus
-                focus_tree.focuses[focus.focus_id] = focus
-                log(focus)
-            for item in [x for x in item[2] if (x and x[0] == "shared_focus")]:
-                focus_tree.shared_focuses.add(item[2])
-        elif item[0] == 'focus' or item[0] == 'shared_focus':
-            try:
-                focus = create_focus(item[0], None)
-                focuses_dict[focus.focus_id] = focus
-            except ValueError:
-                #handle somehow
-                pass
+
+def parse_focus(key, value):
+    value = PARSER.parse_PDS_script(value)
+    #Logger.log(focus_contents_file)
+    focuses_dict = dict()
+    focuse_trees_dict = defaultdict(list)
+    try:
+        focus = create_focus(value, key)
+        if focus:
+            focuses_dict[focus.focus_id] = focus
+            focuse_trees_dict[key].append(focus)
+    except ValueError:
+        #handle somehow
+        pass
+    return (focuses_dict, focuse_trees_dict)
 
 def create_focus(focus_contents, focus_tree):
-    is_shared = focus_contents[0] == 'shared_focus'
-    if is_shared and not focus_tree:
-        raise ValueError('focus %s is not shared and outside a focus tree' % next(item[2] for item in focus_contents if len(item) == 3 and item[0] == "id"))
-    focus_contents = focus_contents[2]
+    #Logger.log("%s %s" % (get_contents_of_command("id", focus_contents, None), focus_tree))
+    if not get_contents_of_command("id", focus_contents, None):
+        # handle
+        return
+    is_shared = focus_tree == 'shared_focus'
     focus = PDSFocus(
         focus_id=get_contents_of_command("id", focus_contents, None),
         is_shared=is_shared,
@@ -204,6 +267,7 @@ def create_focus(focus_contents, focus_tree):
         relative_position_id=get_contents_of_command("relative_position_id", focus_contents, None),
         offset=get_contents_of_command("offset", focus_contents, None),
         ai_will_do=get_contents_of_command("ai_will_do", focus_contents, None),
+        select_effect=get_contents_of_command("select_effect", focus_contents, None),
         completion_reward=get_contents_of_command("completion_reward", focus_contents, None),
         completion_tooltip=get_contents_of_command("completion_tooltip", focus_contents, None),
         cancel_if_invalid=get_bool_from_yes_no_str(get_contents_of_command("cancel_if_invalid", focus_contents, False)),
@@ -212,28 +276,32 @@ def create_focus(focus_contents, focus_tree):
     )
     return focus
 
-def parse_idea_file(idea_file, ideas_dict, idea_slots_dict):
-    
-    log("Reading file %s" % idea_file)
-    idea_file = open_file(idea_file).read()
+#@profile
+def preparse_idea_file(idea_file):
+    Logger.log("Reading file %s" % idea_file, level=LogLevel.Info)
+    idea_file = open_file(idea_file)
 
     if not idea_file.strip():
         return
 
-    parsed_idea_file = parse_PDS_script(idea_file)
+    return preparse_PDS_script(idea_file, 2, 1)
 
-    for item in parsed_idea_file:
-        if item[0] == 'ideas':
-            for item_2 in item[2]:
-                slot = item_2[0]
-                for item_3 in item_2[2]:
-                    idea_id = item_3[0]
-                    idea = create_idea(idea_id, slot, item_3[2])
-                    ideas_dict[idea_id] = idea
-                    idea_slots_dict[slot].append(idea)
-
+def parse_idea(key, value):
+    slot = key
+    ideas = dict()
+    idea_slots = defaultdict(list)
+    for item in value:
+        parsed_idea = PARSER.parse_PDS_script(item)
+        for item_2 in parsed_idea:
+            if isinstance(item_2[2], ParseResults):
+                idea_id = item_2[0]
+                idea = create_idea(idea_id, slot, item_2[2])
+                ideas[idea_id] = idea
+                idea_slots[slot].append(idea)
+    return (ideas, idea_slots)
 
 def create_idea(idea_id, slot, idea_contents):
+    Logger.log("%s %s" % (idea_id, slot))
     idea = PDSIdea(
         idea_id=idea_id,
         slot=slot,

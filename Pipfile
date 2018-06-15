@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pyparsing = "*"
+memory-profiler = "*"
+pathos = "*"
+
+[requires]
+python_version = "3.6.5"
+
+[dev-packages]

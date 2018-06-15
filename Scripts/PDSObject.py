@@ -1,6 +1,6 @@
 import enum
 import re
-from logging import log
+from validator_logging import LOGGER as Logger
 
 def auto_str(cls):
     def __str__(self):
@@ -48,7 +48,7 @@ class PDSScriptedTrigger:
 
 @auto_str
 class PDSFocus:
-    def __init__(self, focus_id, is_shared, focus_tree, icon, prerequisite, mutually_exclusive, available, bypass, allow_branch, x, y, relative_position_id, offset, cost, ai_will_do, completion_reward, completion_tooltip, cancel_if_invalid, continue_if_invalid, available_if_capitulated):
+    def __init__(self, focus_id, is_shared, focus_tree, icon, prerequisite, mutually_exclusive, available, bypass, allow_branch, x, y, relative_position_id, offset, cost, ai_will_do, select_effect, completion_reward, completion_tooltip, cancel_if_invalid, continue_if_invalid, available_if_capitulated):
         self.focus_id = focus_id
         self.is_shared = is_shared
         self.focus_tree = focus_tree
@@ -57,9 +57,11 @@ class PDSFocus:
         if prerequisite:
             for idx, item in enumerate(prerequisite):
                 prerequisite[idx] = [x[2] for x in item]
+            prerequisite = [item for sublist in prerequisite for item in sublist]
         self.mutually_exclusive = mutually_exclusive
         if mutually_exclusive:
             mutually_exclusive = [x[2] for x in mutually_exclusive]
+            mutually_exclusive = [item for sublist in mutually_exclusive for item in sublist]
         self.available = available
         self.bypass = bypass
         self.allow_branch = allow_branch
@@ -70,6 +72,7 @@ class PDSFocus:
         self.relative_position_id = relative_position_id
         self.offset = offset
         self.ai_will_do = ai_will_do
+        self.select_effect = select_effect
         self.completion_reward = completion_reward
         self.completion_tooltip = completion_tooltip
         self.cancel_if_invalid = cancel_if_invalid

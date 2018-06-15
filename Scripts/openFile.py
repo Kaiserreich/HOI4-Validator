@@ -1,11 +1,13 @@
 from codecs import open
 
 def open_file(path):
-    file = open(path, 'r', 'utf-8-sig')
     try:
-        file.read()
+        with open(path, 'r', 'utf-8-sig') as f:
+            fle = f.read()
     except Exception as inst:
-        file = open(path, 'r', 'ANSI')
+        with open(path, 'r', 'ANSI') as f:
+            fle = f.read()
     else:
-        file = open(path, 'r', 'utf-8-sig')
-    return file
+        with open(path, 'r', 'utf-8-sig') as f:
+            fle = f.read()
+    return fle
