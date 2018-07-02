@@ -137,13 +137,14 @@ def event(cpath):
                         triggered = True
                         new_event = False
                 if line.strip().startswith('id') and new_event is True and 'immediate = {log =' not in lines[line_number+1]:
-                    if triggered is False:
-                        new_event = False
-                        event_id = line.split('=')[1].strip()
-                        idss.append(event_id)
-                        ids.append(line_number)
-                    else:
-                        triggered = False
+                    if 'log = ' not in lines[line_number+1]:
+                        if triggered is False:
+                            new_event = False
+                            event_id = line.split('=')[1].strip()
+                            idss.append(event_id)
+                            ids.append(line_number)
+                        else:
+                            triggered = False
             time1 = time.time() - timestart
             line_number = 0
             outputfile = open(cpath + "\\events\\" + filename, 'w', 'utf-8-sig')
