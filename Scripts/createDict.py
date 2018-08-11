@@ -2,9 +2,9 @@ from os import listdir
 from openFile import open_file
 
 def create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped):
-    filterstrings.append('#')
+    filterstrings.append('#') #ignore comments
     for filename in listdir(path):
-        if ".txt" in filename:
+        if ".txt" in filename: #this makes sure it's not a folder
             current_line = 0
             file = open_file(path + '\\' + filename)
             line = file.readline()
@@ -14,12 +14,12 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                 isin = False
                 while i < len(searchstrings):
                     if searchstrings[i] in line:
-                        isin = True
+                        isin = True #checking to see if it has stuff that means it should be checked
                     i = i+1
                 i = 0
                 while i < len(filterstrings):
                     if filterstrings[i] in line:
-                        isin = False
+                        isin = False #checking to see if it's being filtered for one reason or another
                     i = i+1
                 if isin:
                     #this means line is oob being called, so we need to add it to the dictionary
