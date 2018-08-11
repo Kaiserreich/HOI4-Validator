@@ -10,15 +10,15 @@ def check_for_missing_OOB(path, output_file):
     linedict = {}
     filedict = {}
     searchstrings = ['OOB = ', 'load_oob = ']
-    oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, 'oob')
+    oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, [], 'oob')
     path = originalpath + "\\events"
-    oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, 'oob')
+    oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, [], 'oob')
     path = originalpath + "\\common\\national_focus"
-    oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, 'oob')
+    oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, [], 'oob')
     path = originalpath + "\\common\\scripted_effects"
-    oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, 'oob')
+    oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, [], 'oob')
     path = originalpath + "\\common\\decisions"
-    oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, 'oob')
+    oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, [], 'oob')
     finaldict = actually_check_for_missing_oob(originalpath, oobdict)
     for key in finaldict:
         if finaldict[key] == False:
