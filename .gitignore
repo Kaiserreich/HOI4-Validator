@@ -10,3 +10,5 @@ settings.txt
 *.pyc
 validator.txt
 *.pyc
+*.pyc
+__pycache__/start.cpython-36.pyc
