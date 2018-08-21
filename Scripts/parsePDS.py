@@ -24,7 +24,7 @@ def make_string_lowercase(s,l,t):
         return t[0].lower()
 
 class PDSParser():
-    allowed_chars = srange(r"[':a-zA-Z0-9._-]")
+    allowed_chars = srange("[':a-zA-Z0-9._\-@]")
     EQUAL = Literal("=")
     OPERATOR = oneOf("< > =")
     LBRACE = Literal("{").suppress()
@@ -42,17 +42,19 @@ class PDSParser():
     pds_list = Group(LBRACE + pds_list_members + RBRACE)
     pds_object << (pds_string("pds_quoted_argument") | pds_name("pds_agrument") | pds_list("pds_list"))
     pds_value << (pds_string("pds_quoted_list_item") | pds_name("pds_list_item"))
-    pds_numerical_or_value = ((OPERATOR("pds_operator") + (pds_numerical("pds_numerical") ^ pds_date("pds_date"))) ^ (EQUAL + pds_object))
-    pds_member << Group(pds_name("pds_command").setParseAction(make_string_lowercase) + pds_numerical_or_value)
+    pds_numerical_or_value = (OPERATOR("pds_operator") + (pds_numerical("pds_numerical") ^ pds_date("pds_date") ^ pds_object("pds_object")))
+    pds_member << Group((pds_name("pds_command").setParseAction(make_string_lowercase) | pds_string("pds_quoted_argument")) + pds_numerical_or_value)
     pds_members << OneOrMore(pds_member)
     pds_list_members << (pds_members | ZeroOrMore(pds_value))
 
     pds_member.ignore(pythonStyleComment)
     pds_members.ignore(pythonStyleComment)
+    #pds_members.setDebug()
 
     def parse_PDS_script(self, string): 
         if not string.strip():
             return string
+        #Logger.log(string[:100])
         string = self.pds_members.parseString(string, True)
         #gc.collect()
         return(string)
@@ -66,10 +68,22 @@ def preparse_PDS_script(string, start, end, lock=PREPARSE_LOCK, use_category=Tru
     start_idx = 0
     end_idx_set = False
     end_idx = 0
+    is_comment = False
+    is_quoted = False #Stop-gap
     if use_category:
         category = ""
         current_category = ""
+    string = re.sub(r"#.*\n", "", string).strip()
+    string = re.sub(r"\blog\b\s*=\s*\".*?\"", "", string)
     for idx, c in enumerate(string):
+        if c == '#':
+            is_comment = True
+
+        if is_comment:
+            if c == '\n':
+                is_comment = False
+            continue
+
         if c == '}':
             open_braces -= 1
 
@@ -95,7 +109,8 @@ def preparse_PDS_script(string, start, end, lock=PREPARSE_LOCK, use_category=Tru
                 end_idx_set = True
             if end_idx > start_idx and start_idx_set:
                 block = string[start_idx:end_idx]
-                if re.sub("#.*", "", block).strip():
+                block = block.strip()
+                if block:
                     lock.acquire()
                     if use_category:
                         blocks[current_category].append(block)
@@ -213,21 +228,42 @@ def preparse_focus_file(focus_file):
 
     if not focus_file.strip():
         return
-
     focuses_in_focus_trees = defaultdict(list)
     preparsed_focuses = preparse_PDS_script(focus_file, 1, 0)
+    focus_tree_properties = defaultdict(list)
     if 'focus_tree' in preparsed_focuses:
         for item in preparsed_focuses['focus_tree']:
-            focus_tree_id = PARSER.parse_PDS_script(re.search(r"id\s*=\s*.*\b", item).group(0))[0][2]
+            focus_tree_id = PARSER.parse_PDS_script(re.search(r"\bid\s*=\s*.*\b", item).group(0))[0][2]
+            if focus_tree_id == 'focus':
+                Logger.log(focus_tree_id, preparsed_focuses)
             assert focus_tree_id != 'shared_focus'
+            shared_focus_ids_temp = set()
+            for shared_focus_id in re.findall(r"\bshared_focus\s*=\s*.*\b", item):
+                shared_focus_ids_temp.add(PARSER.parse_PDS_script(shared_focus_id)[0][2])
+            try:
+                default = get_bool_from_yes_no_str(PARSER.parse_PDS_script(re.search(r"\bdefault\s*=\s*.*\b", item).group(0))[0][2])
+            except:
+                default = False
             focuses_in_focus_trees[focus_tree_id].append(preparse_PDS_script(item, 1, 0))
+            country = PARSER.parse_PDS_script(focuses_in_focus_trees[focus_tree_id][0]['country'][0])
+            try:
+                continuous_focus_position = PARSER.parse_PDS_script(focuses_in_focus_trees[focus_tree_id][0]['continuous_focus_position'])
+            except:
+                continuous_focus_position = None
+
+            focus_tree_properties[focus_tree_id].append(country)
+            focus_tree_properties[focus_tree_id].append(default)
+            focus_tree_properties[focus_tree_id].append(continuous_focus_position)
+            focus_tree_properties[focus_tree_id].append(shared_focus_ids_temp)
+
         for key, lst in focuses_in_focus_trees.items():
             for dct in lst:
                 if dct:
                     for _, value in dct.items():
                         preparsed_focuses[key].extend(value)
     preparsed_focuses.pop('focus_tree', None)
-    return preparsed_focuses
+    #Logger.log(preparsed_focuses)
+    return (preparsed_focuses, focus_tree_properties)
 
 
 def parse_focus(key, value):

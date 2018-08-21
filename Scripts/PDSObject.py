@@ -71,6 +71,11 @@ class PDSFocus:
         self.real_y = y
         self.relative_position_id = relative_position_id
         self.offset = offset
+        self.cost = cost
+        if not cost:
+            self.cost = 10.0
+        else:
+            self.cost = float(cost)
         self.ai_will_do = ai_will_do
         self.select_effect = select_effect
         self.completion_reward = completion_reward
@@ -78,6 +83,9 @@ class PDSFocus:
         self.cancel_if_invalid = cancel_if_invalid
         self.continue_if_invalid = continue_if_invalid
         self.available_if_capitulated = available_if_capitulated
+    
+    def __repr__(self):
+        return "<PDSFocus \'%s\'>" % self.focus_id
 
 @auto_str
 class PDSFocusTree:
