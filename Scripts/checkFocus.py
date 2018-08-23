@@ -1,6 +1,7 @@
 from os import listdir
 from openFile import open_file
 from createDict import create_search_dict, strip_focus
+from timedFunction import timed
 
 
 def actually_check_for_missing_focus(path, focusdict):
@@ -16,6 +17,7 @@ def actually_check_for_missing_focus(path, focusdict):
             line = file.readline()
     return returndict
 
+@timed
 def check_for_missing_focus(path, output_file):
     #this creates a dict of all the focuses that are referenced
     path+="\\common\\national_focus"

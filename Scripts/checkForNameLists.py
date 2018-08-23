@@ -2,10 +2,11 @@ from os import listdir
 from os import path
 import re
 from openFile import open_file
+from timedFunction import timed
 
 # Note that it will produce false positives for unused tags
 
-
+@timed
 def check_for_name_lists(file_path, output_file):
     unit_types = ["light_armor", "medium_armor", "heavy_armor", "modern_armor", "paratrooper",
                   "marine", "mountaineers", "infantry", "cavalry", "motorized", "mechanized"]

@@ -1,5 +1,5 @@
 from os import listdir
-import time
+from timedFunction import timed
 from openFile import open_file
 
 
@@ -11,8 +11,9 @@ def check_and_strip(string, _range):
             return True
     return False
 
+
+@timed
 def check_for_double_locs(path, output_file):
-    t0 = time.time()
     path += "\\localisation"
     list_loc = {}
     for filename in listdir(path):
@@ -37,6 +38,4 @@ def check_for_double_locs(path, output_file):
                         #print("Double Spaces in Loc: '" + loc + "' in: '\\localisation\\" + filename + "' at line " + str(current_line))
                         output_file.write("Double Spaces in Loc: '" + loc + "' in: '\\localisation\\" + filename + "' at line " + str(current_line) + "\n")
                 line = file.readline()
-                current_line += 1    
-    t0 = time.time() - t0
-    print("Time taken for Locs script: " + (t0*1000).__str__() + " ms")
+                current_line += 1

@@ -1,7 +1,8 @@
 from os import listdir
 from codecs import open
+from timedFunction import timed
 
-
+@timed
 def missing_divisions_names_group (path, output_file):
     path += "\\history\\units"
     for filename in listdir(path):

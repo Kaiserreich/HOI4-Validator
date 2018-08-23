@@ -1,16 +1,16 @@
 from os import listdir
 from os.path import isdir
-import time
+from timedFunction import timed
 from openFile import open_file
 
+
+@timed
 def check_brackets(path, output_file):
-    t0 = time.time()
     check(path, output_file, "\\events")
     check(path, output_file, "\\common")
     check(path, output_file, "\\interface")
     check(path, output_file, "\\history")
-    t0 = time.time() - t0
-    print("Time taken for Brackets script: " + (t0*1000).__str__() + " ms")
+
 
 def check(path, output_file, sub_path):
     original_path = path

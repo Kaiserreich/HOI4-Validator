@@ -1,7 +1,9 @@
 from os import listdir
 from openFile import open_file
 from createDict import create_search_dict
+from timedFunction import timed
 
+@timed
 def check_for_missing_OOB(path, output_file):
     originalpath = path
     #this creates a dict of all the oobs that are referenced

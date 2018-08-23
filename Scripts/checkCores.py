@@ -1,7 +1,9 @@
 from os import listdir
 from openFile import open_file
+from timedFunction import timed
 
 
+@timed
 def check_for_missing_cores(path, output_file):
     path+="\\history\\states"
     filelist = []

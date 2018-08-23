@@ -1,6 +1,9 @@
 from os import listdir
 from openFile import open_file
+from timedFunction import timed
 
+
+@timed
 def check_for_old_generals(path, output_file):
     check(path, output_file, "\\history\\countries", 'utf-8-sig')
     check(path, output_file, "\\events", 'utf-8-sig')

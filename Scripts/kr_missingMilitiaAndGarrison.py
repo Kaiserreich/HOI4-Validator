@@ -1,7 +1,8 @@
 from os import listdir
 from codecs import open
+from timedFunction import timed
 
-
+@timed
 def kr_missing_militia_and_garrison (path, output_file):
     path += "\\common\\units\\names_divisions"
     for filename in listdir(path):
