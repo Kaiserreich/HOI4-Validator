@@ -32,7 +32,11 @@ def event(cpath):
             size = os.path.getsize(cpath + "\\events\\" + filename)
             if size < 100:
                 continue
-            lines = outputfile.readlines()
+            try:
+                lines = outputfile.readlines()
+            except UnicodeDecodeError:
+                print(filename)
+                continue
             outputfile.close()
             outputfile = open(cpath + "\\events\\" + filename, 'w', 'utf-8-sig')
             outputfile.truncate()
@@ -40,7 +44,10 @@ def event(cpath):
                 if 'immediate = {log = ' not in line:
                     outputfile.write(line)
                 else:
-                    outputfile.write("")
+                    if '}' in line:
+                        outputfile.write("")
+                    else:
+                        outputfile.write("\timmediate = {\n")
 
 def idea(cpath):
     # immediate = {log = "[Root.GetName]: event "+ id + "\n"}  # autolog
@@ -77,7 +84,10 @@ def decision(cpath):
                 if 'log = "[GetDateText]' not in line:
                     outputfile.write(line)
                 else:
-                    outputfile.write("")
+                    if 'complete_effect' in line:
+                        outputfile.write("complete_effect = {\n\t\t}\n")
+                    else:
+                        outputfile.write("")
 
 
 def main():

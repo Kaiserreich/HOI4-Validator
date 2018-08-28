@@ -106,7 +106,11 @@ def event(cpath):
     for filename in listdir(cpath + "\\events"):
         if ".txt" in filename:
             file = open(cpath + "\\events\\" + filename, 'r', 'utf-8-sig')
-            lines = file.readlines()
+            try:
+                lines = file.readlines()
+            except UnicodeDecodeError:
+                print(filename)
+                continue
             size = os.path.getsize(cpath + "\\events\\" + filename)
             if size < 100:
                 continue
@@ -152,13 +156,15 @@ def event(cpath):
             for line in lines:
                 line_number += 1
                 if line_number in ids:
+                    extra = ""
                     event_id = idss[ids.index(line_number)]
                     if '#' in event_id:
                         event_id = event_id.split('#')[0].strip()
+                        extra = "#" + event_id.split('#')[len(event_id.split('#'))-1].strip()
                     if '.' not in event_id:
                         outputfile.write(line)
                         continue
-                    replacement_text = "\tid = " + event_id + "\n\timmediate = {log = \"[GetDateText]: [Root.GetName]: event " + event_id + "\"}\n"
+                    replacement_text = "\tid = " + event_id + extra + "\n\timmediate = {log = \"[GetDateText]: [Root.GetName]: event " + event_id + "\"}\n"
                     outputfile.write(replacement_text)
                     #print("Inserted loc at {0} in file {1}".format(line_number.__str__(), filename))
                 else:
@@ -209,8 +215,11 @@ def idea(cpath):
             for line in lines:
                 line_number += 1
                 if line_number in ids:
+                    extra = ""
+                    if '#' in line:
+                        extra = "#" + line.split('#')[1].strip()
                     idea_id = line.split('=')[0].strip()
-                    replacement_text = "\t\t" + idea_id + " = {\n\t\t\ton_add = {log = \"[GetDateText]: [Root.GetName]: add idea " + idea_id + "\"}\n"
+                    replacement_text = "\t\t" + idea_id + " = {" + extra + "\n\t\t\ton_add = {log = \"[GetDateText]: [Root.GetName]: add idea " + idea_id + "\"}\n"
                     outputfile.write(replacement_text)
                     #print("Inserted loc at {0} in file {1}".format(line_number.__str__(), filename))
                 else:
@@ -248,6 +257,7 @@ def decision(cpath):
             idsss = [] #line numbers of remove effect
             idssss = [] #line numbers of imteout_effect
             timestart = time.time()
+            found_one = False
             for line in lines:
                 line_number += 1
                 if '#' in line:
@@ -257,18 +267,26 @@ def decision(cpath):
                         line = line.split('#')[0]
                 if '= {' in line or '={' in line:
                     if level == 1:
+                        if found_one is False:
+                            try:
+                                ids.pop()
+                            except IndexError:
+                                found_one = False
+                        else:
+                            found_one = False
                         ids.append(line.split('=')[0].strip())
                 if 'complete_effect' in line:
-                    if 'log = \"[GetDateText]:' not in lines[line_number]:
+                    if 'log = \"[GetDateText]:' not in lines[line_number] or 'log = \"[GetDateText]:' not in line:
                         idss.append(line_number)
-                    else:
-                        ids.pop()
+                        found_one = True
                 if 'remove_effect' in line:
-                    if 'log = \"[GetDateText]' not in lines[line_number]:
+                    if 'log = \"[GetDateText]:' not in lines[line_number] or 'log = \"[GetDateText]:' not in line:
                         idsss.append(line_number)
+                        found_one = True
                 if 'timeout_effect' in line:
-                    if 'log = \"[GetDateText]' not in lines[line_number]:
+                    if 'log = \"[GetDateText]:' not in lines[line_number] or 'log = \"[GetDateText]:' not in line:
                         idssss.append(line_number)
+                        found_one = True
                 if '{' in line:
                     level += line.count('{')
                 if '}' in line:
@@ -281,13 +299,34 @@ def decision(cpath):
             outputfile.truncate()
             dec_id = ""
             dec_bu = ""
+            index_wip = 0
+            level = 0
             for line in lines:
                 line_number += 1
-                if line_number in idss:
-                    dec_id = ids[idss.index(line_number)]
-                    backup_index = ids.index(dec_id)
+                if line.strip().startswith('#'):
+                    outputfile.write(line)
+                    continue
+                if '= {' in line or '={' in line:
+                    if level == 1:
+                        try:
+                            dec_id = ids[index_wip]
+                        except IndexError:
+                            print(filename + ", " + line_number.__str__() + ", " + index_wip.__str__())
+                        index_wip += 1
+                if line_number in idss or line_number in idsss or line_number in idssss:
+                    # if line_number in idss:
+                    #     dec_id = ids[idss.index(line_number)]
+                    #     backup_index = ids.index(dec_id)
+                    # if line_number in idsss:
+                    #     dec_id = ids[idsss.index(line_number)]
+                    #     backup_index = ids.index(dec_id)
+                    # if line_number in idssss:
+                    #     dec_id = ids[idssss.index(line_number)]
+                    #     backup_index = ids.index(dec_id)
+
                     if dec_id in ["{", "}"]:
                         dec_id = "Error, focus name not found"
+                if line_number in idss:
                     if '}' in line:
                         temp = line.split("{")
                         replacement_text = temp[0] + "{\n\n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Decision " + dec_id + "\"\n" + "{".join(temp)[len(temp[0])+1:] + "\n"
@@ -318,6 +357,14 @@ def decision(cpath):
                     #print("Inserted remove loc at {0} in file {1}".format(line_number.__str__(), filename))
                 else:
                     outputfile.write(line)
+                if '#' in line:
+                    line_2 = line.split('#')[0]
+                else:
+                    line_2 = line
+                if '{' in line_2:
+                    level += line.count('{')
+                if '}' in line_2:
+                    level -= line.count('}')
             time2 = time.time() - timestart - time1
 
             #print(filename + " 1: %.3f ms  2: %.3f ms" % (time1*1000, time2*1000))
