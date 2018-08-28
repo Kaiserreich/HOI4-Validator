@@ -26,6 +26,5 @@ def check_for_missing_cores(path, output_file):
     i = 0
     while (i < len(filelist)):
         result = "The state in " + filelist[i] + " does not have any cores\n"
-        print(result)
         output_file.write(result)
         i += 1
