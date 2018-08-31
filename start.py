@@ -17,6 +17,7 @@ from checkFocus import check_for_missing_focus
 from checkCores import check_for_missing_cores
 from checkOOB import check_for_missing_OOB
 from checkEvents import check_events
+from checkEndlines import check_endlines
 
 
 # output file initialisation
@@ -36,6 +37,7 @@ def start(mod_path, hoi4_path):
     check_for_missing_cores(mod_path, output_file)
     check_for_missing_OOB(mod_path, output_file)
     check_events(mod_path, output_file)
+    check_endlines(mod_path, output_file)
     t0 = time.time() - t0
     print("Total time taken: " + (t0*1000).__str__() + " ms")
 

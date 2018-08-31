@@ -1,6 +1,6 @@
 import unittest
 
-from checkEvents import find_indices_of_new_lines
+from findNewlineIndices import find_indices_of_new_lines
 
 
 class TestFindIndicesOfNewLines(unittest.TestCase):

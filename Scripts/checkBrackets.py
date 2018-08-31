@@ -2,6 +2,7 @@ from os import listdir
 from os.path import isdir
 from timedFunction import timed
 from openFile import open_file
+from removeComments import remove_comments
 
 
 @timed
