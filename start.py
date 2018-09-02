@@ -20,6 +20,7 @@ from checkEvents import check_events
 from checkEndlines import check_endlines
 from checkGeneral import check_for_missing_General
 from checkForEqualsNo import check_for_equals_no
+from checkUnusedOOB import check_for_unused_OOB
 
 
 # output file initialisation
@@ -42,6 +43,7 @@ def start(mod_path, hoi4_path):
     check_endlines(mod_path, output_file)
     check_for_missing_General(mod_path, output_file)
     check_for_equals_no(mod_path, output_file)
+    check_for_unused_OOB(mod_path, output_file)
     t0 = time.time() - t0
     print("Total time taken: " + (t0*1000).__str__() + " ms")
 

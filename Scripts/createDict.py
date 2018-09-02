@@ -39,6 +39,7 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                     #this means line is oob being called, so we need to add it to the dictionary
                     if thingstripped == 'oob':
                         maintext = stripOOB(line)
+                        #print(maintext)
                         if maintext != 'empty' and maintext != "" and (maintext in maindict) == False:
                             maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
                     elif thingstripped == 'general':
@@ -69,12 +70,17 @@ def insertdict(maindict, linedict, filedict, maintext, current_line, filename, p
     return maindict, linedict, filedict
 
 def stripOOB(line):
+    #if 'OTT' in line: Debug related code, ignore this
+    #    print(line)
     if ("load_oob" in line):
         foundline = line.split("load_oob = ")[1].strip()
-    else:
+    elif ("OOB = " in line):
         foundline = line.split("OOB = ")[1].strip()
+    else:
+        foundline = line.split("oob = ")[1].strip()
     anewline = foundline.replace("load_oob = ", "")
     newline = anewline.replace("OOB = ","")
+    newline = newline.replace("oob = ","")
     nextline = newline.replace("\"","")
     tfinalline = nextline.replace("\n","")
     removeeffect1 = tfinalline.replace("hidden_effect = { ", "")

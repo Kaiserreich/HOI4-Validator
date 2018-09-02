@@ -11,7 +11,7 @@ def check_for_missing_OOB(path, output_file):
     oobdict = {}
     linedict = {}
     filedict = {}
-    searchstrings = ['OOB = ', 'load_oob = ']
+    searchstrings = ['OOB = ', 'load_oob = ','oob = ']
     filterstrings = []
     thingstripped = 'oob'
     path+="\\history\\countries"
