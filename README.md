@@ -46,7 +46,7 @@ missing_divisions_names_group(path, outputFile)
 
 Note: for debug purposes, use:
 
-py console_start.py --C:\Users\sheehanmilesk\Documents\kaiserreich --C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV
+py console_start.py --Mod Location --HoI4 Location 
 
 to run the scripts
 
