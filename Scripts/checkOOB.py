@@ -16,7 +16,7 @@ def check_for_missing_OOB(path, output_file):
     thingstripped = 'oob'
     path+="\\history\\countries"
     maindict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, filterstrings, thingstripped)
-    oobdict, linedict, filedict =search_effects(originalpath, oobdict, linedict, filedict, searchstrings, filterstrings, thingstripped)
+    oobdict, linedict, filedict =search_effects(oobdict, linedict, filedict, originalpath, searchstrings, filterstrings, thingstripped)
     finaldict = actually_check_for_missing_oob(originalpath, oobdict)
     for key in finaldict:
         if finaldict[key] == False:

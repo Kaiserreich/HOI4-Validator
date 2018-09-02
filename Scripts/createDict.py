@@ -3,8 +3,8 @@ from openFile import open_file
 
 
 
-def search_effects(originalpath, maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped):
-
+def search_effects(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped):
+    originalpath = path
     path = originalpath + "\\events"
     maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings,thingstripped)
     path = originalpath + "\\common\\national_focus"
