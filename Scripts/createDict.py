@@ -40,26 +40,31 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                     if thingstripped == 'oob':
                         maintext = stripOOB(line)
                         if maintext != 'empty' and maintext != "" and (maintext in maindict) == False:
-                            maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename)
+                            maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
+                    if thingstripped == 'general':
+                        maintext = stripGeneral(line)
+                        if maintext != 'empty' and maintext != "" and (maintext in maindict) == False:
+                            maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
+
                     elif thingstripped == 'focus':
                         if 'has_completed_focus' in line:
                             maintext = strip_focus(line, 1, 'has_completed_focus =')
                             if (maintext in maindict) == False and maintext != "":
-                                maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename)
+                                maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
                         else:
                             linelist = line.split(' focus =')
                             for posfocus in linelist:
                                 maintext = strip_focus(posfocus, 0, '=')
                                 if (maintext in maindict) == False and maintext != "":
-                                    maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename)
+                                    maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
                 line = file.readline()
                 current_line += 1
     return maindict, linedict, filedict
 
-def insertdict(maindict, linedict, filedict, maintext, current_line, filename):
+def insertdict(maindict, linedict, filedict, maintext, current_line, filename, path):
     maindict[maintext] = False
     linedict[maintext] = current_line
-    filedict[maintext] = filename
+    filedict[maintext] = path + '\\' + filename
     return maindict, linedict, filedict
 
 def stripOOB(line):
@@ -79,7 +84,14 @@ def stripOOB(line):
     lastline = finalline.strip()
     reallastline = lastline.split(" ")[0].strip()
     return reallastline
-
+def stripGeneral(line):
+    if ("has_unit_leader" in line):
+        foundline = line.split("has_unit_leader = ")[1].strip()
+    else:
+        foundline = line.split("remove_unit_leader = ")[1].strip()
+    if(" }") in foundline:
+        foundline = foundline.split(" }")[0].strip()
+    return foundline
 
 def strip_focus(focustext, value, splittext):
     #this strips the focus of surrounding text
