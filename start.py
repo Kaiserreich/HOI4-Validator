@@ -41,7 +41,7 @@ def start(mod_path, hoi4_path):
     check_events(mod_path, output_file)
     check_endlines(mod_path, output_file)
     check_for_missing_General(mod_path, output_file)
-    #check_for_equals_no(mod_path, output_file) #dummied out because no-one has told me what specific places need to be searched just yet
+    check_for_equals_no(mod_path, output_file)
     t0 = time.time() - t0
     print("Total time taken: " + (t0*1000).__str__() + " ms")
 

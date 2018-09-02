@@ -1,4 +1,4 @@
-from createDict import search_effects
+from createDict import create_search_dict
 from timedFunction import timed
 
 @timed
@@ -12,8 +12,10 @@ def check_for_equals_no(path, output_file):
     searchstrings = ['= no']
     filterstrings = []
     thingstripped = '=no'
-    nodict, linedict, filedict =search_effects(nodict, linedict, filedict, originalpath, searchstrings, filterstrings, thingstripped)
-    #create_general_list(originalpath, output_file)
+    path = originalpath + "\\common\\national_focus"
+    nodict, linedict, filedict = create_search_dict(nodict, linedict, filedict, path, searchstrings, filterstrings, thingstripped)
+    path = originalpath + "\\common\\decisions"
+    nodict, linedict, filedict = create_search_dict(nodict, linedict, filedict, path, searchstrings, filterstrings, thingstripped)
     for key in nodict:
         result = "= no is used in file " + filedict[key] + " on line " + str(linedict[key]) + ". Don't do that.\n"
         #print(result)

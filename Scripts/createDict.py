@@ -46,7 +46,7 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                         if maintext != 'empty' and maintext != "" and (maintext in maindict) == False:
                             maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
                     elif thingstripped == '=no':
-                        maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
+                        maindict, linedict, filedict = insertdict(maindict, linedict, filedict, line, current_line, filename, path)
                     elif thingstripped == 'focus':
                         if 'has_completed_focus' in line:
                             maintext = strip_focus(line, 1, 'has_completed_focus =')
