@@ -1,26 +1,22 @@
 from os import listdir
 from openFile import open_file
 from createDict import create_search_dict
+from createDict import search_effects
 from timedFunction import timed
 
 @timed
 def check_for_missing_OOB(path, output_file):
     originalpath = path
     #this creates a dict of all the oobs that are referenced
-    path+="\\history\\countries"
     oobdict = {}
     linedict = {}
     filedict = {}
     searchstrings = ['OOB = ', 'load_oob = ']
-    oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, [], 'oob')
-    path = originalpath + "\\events"
-    oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, [], 'oob')
-    path = originalpath + "\\common\\national_focus"
-    oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, [], 'oob')
-    path = originalpath + "\\common\\scripted_effects"
-    oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, [], 'oob')
-    path = originalpath + "\\common\\decisions"
-    oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, [], 'oob')
+    filterstrings = []
+    thingstripped = 'oob'
+    path+="\\history\\countries"
+    maindict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, filterstrings, thingstripped)
+    oobdict, linedict, filedict =search_effects(originalpath, oobdict, linedict, filedict, searchstrings, filterstrings, thingstripped)
     finaldict = actually_check_for_missing_oob(originalpath, oobdict)
     for key in finaldict:
         if finaldict[key] == False:

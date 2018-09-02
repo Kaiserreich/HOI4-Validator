@@ -1,6 +1,20 @@
 from os import listdir
 from openFile import open_file
 
+
+
+def search_effects(originalpath, maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped):
+
+    path = originalpath + "\\events"
+    maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings,thingstripped)
+    path = originalpath + "\\common\\national_focus"
+    maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped)
+    path = originalpath + "\\common\\scripted_effects"
+    maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings,thingstripped)
+    path = originalpath + "\\common\\decisions"
+    maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped)
+    return maindict, linedict, filedict
+
 def create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped):
     filterstrings.append('#') #ignore comments
     for filename in listdir(path):

@@ -12,3 +12,5 @@ validator.txt
 *.pyc
 *.pyc
 __pycache__/start.cpython-36.pyc
+*.txt
+*.pyc
