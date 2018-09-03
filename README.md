@@ -19,6 +19,7 @@ validator.exe --C:\Users\ZankSucks\Documents\Paradox Interactive\Hearts of Iron 
 
 
 CURRENT FEATURES:
+
 	Checks for divisions without namelists.
 	
 	Checks for tags whose namelists do not have names for garissons and militia.
