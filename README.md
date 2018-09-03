@@ -1,10 +1,7 @@
 # PDS-Validator
 Home of the up and coming validator for Hearts of Iron 4, help is always welcome!
 
-GUIDE by Roparex:
-
-
-HOW TO USE:
+How to use:
 
 Open the validatorGUI.exe and fill in the blanks with the directory with your mod and the directory with Hoi4 on it and press run. After a few seconds another window will appear telling you it finished.
 (Requires the latest .NET, should be autoinstalled on windows 10)
