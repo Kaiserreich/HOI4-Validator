@@ -16,6 +16,37 @@ Example:
 
 validator.exe --C:\Users\ZankSucks\Documents\Paradox Interactive\Hearts of Iron IV\mod\Kaiserreich --C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV
 
+CURRENT FEATURES:
+Checks for divisions without names.
+
+Checks for generals that use the pre-waking the tiger system. (Or, rather, checks for generals that have comments on them that say they use the pre-waking the tiger system)
+
+Checks for tags that lack namelists
+
+Checks to make sure that the right brackets are used, as well as that there is always an even number of brackets.
+
+Checks for locs that have been defined more than once
+
+Checks for missing graphics
+
+Checks for missing focuses
+
+Checks for states that do not have cores on them at game start
+
+Checks for OOBs that are referenced but don't exist
+
+Checks to make sure events have pictures
+
+Checks to make sure endlines are properly spaced
+
+Checks to make sure that generals referenced actually exist
+
+Produces a list of all general IDs currently in use
+
+Checks to see if = no is used in a place where that would cause an issue with a tooltip
+
+Checks for OOBs that are defined but not used.
+
 
  
 HOW TO CONTRIBUTE:
@@ -70,6 +101,8 @@ pyinstaller --version
 You will now have the new validator.exe in the project root.
 
 Try and do this before every push, so we always have the latest.exe for our users.
+
+When you add a feature, please remember to add it to the feature list in this document.
 
 Have fun coding!
 
