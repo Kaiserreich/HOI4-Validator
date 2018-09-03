@@ -25,7 +25,7 @@ def check_for_unused_OOB(path, output_file):
     for key in finaldict:
         if finaldict[key] == False:
             result = "The oob " + key + " is not used by anything.\n"
-            print(result)
+            #print(result)
             output_file.write(result)
 
 def actually_check_for_unused_oob(path, oobdict):

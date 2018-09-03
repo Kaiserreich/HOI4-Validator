@@ -19,7 +19,7 @@ def check_for_missing_General(path, output_file):
     for key in finaldict:
         if finaldict[key] == False:
             result = "The leader " + key + " referenced in file " + filedict[key] + " on line " + str(linedict[key]) + " does not exist.\n"
-            print(result)
+            #print(result)
             output_file.write(result)
 
 def actually_check_for_missing_general(originalpath, generaldict):
