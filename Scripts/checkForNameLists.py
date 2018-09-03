@@ -21,7 +21,7 @@ def check_for_name_lists(file_path, output_file):
             file = open_file(aux_path + '\\' + filename)
             line = file.readline()
             level = 0
-
+            unitnameset = False
             while line:
 
                 if level == 1:
@@ -29,9 +29,10 @@ def check_for_name_lists(file_path, output_file):
                     for word in split_line:
                         if word.isalpha():
                             unit_name = word
+                            unitnameset = True
                             break
 
-                if level == 2 and "group =" in line:
+                if level == 2 and "group =" in line and unitnameset:
                     if "support" not in line and unit_name not in unit_types:
                         unit_types.append(unit_name)
 

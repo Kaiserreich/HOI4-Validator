@@ -84,8 +84,8 @@ def create_general_list(originalpath, output_file):
                             if generalid != '':
                                 #print(ingeneral)
                                 if (generalid in allgeneraldict) == False:
-                                    splittext = "C:\\Users\\sheehanmilesk\\Documents\\kaiserreich\\"
-                                    printtext = path + "\\" + filename + " uses "+generalid
+                                    splittext = originalpath
+                                    printtext = path + "\\" + filename + " uses general id "+generalid
                                     result = printtext.split(splittext)[1]
                                     #print(result)
                                     output_file.write(result)
