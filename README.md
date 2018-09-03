@@ -3,6 +3,7 @@ Home of the up and coming validator for Hearts of Iron 4, help is always welcome
 
 GUIDE by Roparex:
 
+
 HOW TO USE:
 
 Open the validatorGUI.exe and fill in the blanks with the directory with your mod and the directory with Hoi4 on it and press run. After a few seconds another window will appear telling you it finished.
@@ -16,36 +17,39 @@ Example:
 
 validator.exe --C:\Users\ZankSucks\Documents\Paradox Interactive\Hearts of Iron IV\mod\Kaiserreich --C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV
 
+
 CURRENT FEATURES:
-Checks for divisions without names.
+	Checks for divisions without namelists.
+	
+	Checks for tags whose namelists do not have names for garissons and militia.
 
-Checks for generals that use the pre-waking the tiger system. (Or, rather, checks for generals that have comments on them that say they use the pre-waking the tiger system)
+	Checks for generals that use the pre-waking the tiger system. (Or, rather, checks for generals that have comments on them that say they use the pre-waking the tiger system)
 
-Checks for tags that lack namelists
+	Checks for tags that lack namelists
 
-Checks to make sure that the right brackets are used, as well as that there is always an even number of brackets.
+	Checks to make sure that the right brackets are used, as well as that there is always an even number of brackets.
 
-Checks for locs that have been defined more than once
+	Checks for locs that have been defined more than once
 
-Checks for missing graphics
+	Checks for missing graphics
 
-Checks for missing focuses
+	Checks for missing focuses
 
-Checks for states that do not have cores on them at game start
+	Checks for states that do not have cores on them at game start
 
-Checks for OOBs that are referenced but don't exist
+	Checks for OOBs that are referenced but don't exist
 
-Checks to make sure events have pictures
+	Checks to make sure events have pictures
 
-Checks to make sure endlines are properly spaced
+	Checks to make sure endlines are properly spaced
 
-Checks to make sure that generals referenced actually exist
+	Checks to make sure that generals referenced actually exist
 
-Produces a list of all general IDs currently in use
+	Produces a list of all general IDs currently in use
 
-Checks to see if = no is used in a place where that would cause an issue with a tooltip
+	Checks to see if = no is used in a place where that would cause an issue with a tooltip
 
-Checks for OOBs that are defined but not used.
+	Checks for OOBs that are defined but not used.
 
 
  
@@ -80,6 +84,7 @@ Note: for debug purposes, use:
 py console_start.py --Mod Location --HoI4 Location 
 
 to run the scripts
+
 
 
 HOW TO BUILD STANDALONE EXECUTABLE:
