@@ -4,6 +4,7 @@ from os import path
 from codecs import open
 from timedFunction import timed
 
+from openFile import open_file
 
 @timed
 def check_for_missing_gfx(file_path, output_file, hoi4_path):
@@ -100,7 +101,7 @@ def fill_tag_array(internal_path, cosmetics):
 
     #Find Normal Tags
     tags_path = internal_path + "\\common\\country_tags\\00_countries.txt"
-    file = open(tags_path, 'r', 'ansi')
+    file = open_file(tags_path)
     #print("Reading: " + file.name)
     lines = file.readlines()
 
@@ -119,7 +120,7 @@ def fill_tag_array(internal_path, cosmetics):
             for filename in listdir(dirs):
                 if 'categories' in filename:
                     continue
-                file = open(dirs + "\\" + filename, 'r', 'utf-8')
+                file = open_file(dirs + "\\" + filename)
                 lines = file.readlines()
                 for string in lines:
                     if 'set_cosmetic_tag' in string and string.strip().startswith('#') is False and '{' not in string:
@@ -230,7 +231,7 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
             if 'categories' in file_name:
                 continue
             line_number = 0
-            file = open(dir + "\\" + file_name, 'r', 'utf-8')
+            file = open_file(dir + "\\" + file_name)
             lines = file.readlines()
             for line in lines:
                 line_number += 1
@@ -279,7 +280,7 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
                 file = open(interface_path + "\\" + file_name, 'r', 'utf-8')
                 vanilla = 0
             else:
-                file = open(hoi4path + "\\interface\\" + file_name, 'r', 'utf-8')
+                file = open_file(hoi4path + "\\interface\\" + file_name)
                 vanilla = 1
             lines = file.readlines()
             for line in lines:
@@ -306,7 +307,7 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
     #GFX keys in events that arent initialised
     for file_name in listdir(event_path):
         line_number = 0
-        file = open(event_path + "\\" + file_name, 'r', 'utf-8')
+        file = open_file(event_path + "\\" + file_name)
         lines = file.readlines()
         for line in lines:
             line_number += 1
@@ -513,7 +514,7 @@ def focus_tree_icons(tree_path, hoi4_path, output_file, mod_path, tree_gfx, gfx_
         size = path.getsize(tree_path + "\\" + filename)
         if size < 100:
             continue
-        file = open(tree_path + "\\" + filename, 'r', 'utf-8')
+        file = open_file(tree_path + "\\" + filename)
         lines = file.readlines()
         line_number = 0
         for line in lines:
@@ -524,7 +525,7 @@ def focus_tree_icons(tree_path, hoi4_path, output_file, mod_path, tree_gfx, gfx_
                         continue
                     else:
                         line = line.split('#')[0]
-                if line.strip() is not "":
+                if line.strip() is not "" and '=' in line:
                     line = line.split('=')[1].strip()
                     found_gfx_in_tree.append(line)
                     if finddup(gfx_names, line) is False:

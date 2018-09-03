@@ -1,5 +1,4 @@
 from os import listdir
-from openFile import open_file
 from createDict import create_search_dict
 from createDict import search_effects
 from timedFunction import timed
