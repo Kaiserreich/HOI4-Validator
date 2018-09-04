@@ -10,6 +10,7 @@ def check_for_missing_cores(path, output_file):
     for filename in listdir(path):
         #this loops through all the states
         hascore = False
+        allempty = True
         current_line = 0
         file = open_file(path + '\\' + filename)
         line = file.readline()
@@ -18,13 +19,16 @@ def check_for_missing_cores(path, output_file):
             if ('add_core_of = ' in line):
                 #this means there is a core in the state
                 hascore = True
+            if line != '':
+                allempty = False
             line = file.readline()
             current_line += 1
-        if hascore ==  False:
+        if hascore ==  False and allempty == False:
             #all states without cores are added to the list
             filelist.append(filename)
     i = 0
     while (i < len(filelist)):
         result = "The state in " + filelist[i] + " does not have any cores\n"
+        #print(result)
         output_file.write(result)
         i += 1
