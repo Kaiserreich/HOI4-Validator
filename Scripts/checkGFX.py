@@ -389,7 +389,7 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
                         if finddup(decisions_keys_full, temp_string) is False:
                             output_file.write("Didn't find icon decisions " + temp_string + " in file " + filename + " at " + line_number.__str__() + "\n")
                         else:
-                            output_file.write("Key for decisions wronly written (did you add or remove GFX_categories/GFX decisions)" + temp_string + " in file " + filename + " at " + line_number.__str__() + "\n")
+                            output_file.write("Key for decisions wrongly written (did you add or remove GFX_categories/GFX decisions)" + temp_string + " in file " + filename + " at " + line_number.__str__() + "\n")
 
 
 
