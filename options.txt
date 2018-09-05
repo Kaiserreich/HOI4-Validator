@@ -1,4 +1,4 @@
-#to turn off a feature, replace 'yes' with 'no'. The ones that are already set to no are broken and crash the validator, do not set them to yes.
+#to turn off a feature, replace 'yes' with 'no'. The ones that are already set to no are broken, do not set them to yes.
 #this checks for divisions with missing namegroups
 check_missing_division_name_group = yes
 #this checks for comments indicating a general has been updated. It does not check for unupdated generals, just comments.
@@ -25,7 +25,7 @@ check_endlines = yes
 check_generals = yes
 #this lists the ID of all unique generals
 list_general_ids = yes
-#this checks to make sure = no is not used anywhere where it would screw up a tooltip
-check_for_equals_no = yes
+#this checks to make sure = no is not used anywhere where it would screw up a tooltip.
+check_for_equals_no = no
 #this checks for unused oobs
 check_for_unused_oobs = yes

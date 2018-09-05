@@ -87,6 +87,8 @@ def create_general_list(originalpath, output_file):
                                     splittext = originalpath
                                     printtext = path + "\\" + filename + " uses general id "+generalid + '\n'
                                     result = printtext.split(splittext)[1]
+                                    if '\n' in result == False:
+                                        result += '\n'
                                     #print(result)
                                     output_file.write(result)
                                     allgeneraldict[generalid] = True
