@@ -15,7 +15,7 @@ def search_effects(maindict, linedict, filedict, path, searchstrings, filterstri
     maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped)
     return maindict, linedict, filedict
 
-def create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped):
+def create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped, **kwargs):
     filterstrings.append('#') #ignore comments
     for filename in listdir(path):
         if ".txt" in filename: #this makes sure it's not a folder
@@ -28,7 +28,13 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                 isin = False
                 while i < len(searchstrings):
                     if searchstrings[i] in line:
-                        isin = True #checking to see if it has stuff that means it should be checked
+                        try:
+                            searchstrings2 = kwargs.get('searchstrings2')
+                            for item in searchstrings2:
+                                if item in line:
+                                    isin = True
+                        except TypeError:
+                            isin = True #checking to see if it has stuff that means it should be checked
                     i = i+1
                 i = 0
                 while i < len(filterstrings):
