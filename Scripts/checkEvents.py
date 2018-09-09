@@ -16,8 +16,15 @@ def check_events(mod_path, output_file):
         for event, start_line in events_gen(contents):
             if 'ai_chance' in event and event.count('option =') == 1:
                 output_file.write("ai_chance present in event starting at " + str(start_line) + ' in ' + filename + 'but there is only one option.\n')
-            if 'hidden = yes' not in event and 'picture =' not in event:
-                output_file.write("No picture for event starting at " + str(start_line) + ' in ' + filename + '.\n')
+            if 'hidden = yes' not in event:
+                if 'picture =' not in event:
+                    output_file.write("No picture for event starting at " + str(start_line) + ' in ' + filename + '.\n')
+                if 'title =' not in event:
+                    output_file.write('No title for event starting at ' + str(start_line) + ' in ' + filename + '.\n')
+                if 'desc =' not in event:
+                    output_file.write('No description for event starting at ' + str(start_line) + ' in ' + filename + '.\n')
+                if 'option =' not in event:
+                    output_file.write('No option for event starting at ' + str(start_line) + ' in ' + filename + '.\n')
             if 'hidden = yes' in event:
                 if 'picture =' in event:
                     output_file.write("Hidden event at " + str(start_line) + ' in ' + filename + ' has a picture.\n')
