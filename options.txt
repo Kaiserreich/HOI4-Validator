@@ -29,3 +29,5 @@ list_general_ids = yes
 check_for_equals_no = yes
 #this checks for unused oobs
 check_for_unused_oobs = yes
+#This checks for missing localization. Currently just events and focuses though.
+check_for_missing_loc = yes
