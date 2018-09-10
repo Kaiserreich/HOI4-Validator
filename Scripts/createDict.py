@@ -3,30 +3,45 @@ from openFile import open_file
 
 
 
-def search_effects(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped):
+def search_effects(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped, **kwargs):
     originalpath = path
     path = originalpath + "\\events"
-    maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings,thingstripped)
+    maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings,thingstripped, **kwargs)
     path = originalpath + "\\common\\national_focus"
-    maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped)
+    maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped, **kwargs)
     path = originalpath + "\\common\\scripted_effects"
-    maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings,thingstripped)
+    maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings,thingstripped, **kwargs)
     path = originalpath + "\\common\\decisions"
-    maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped)
+    maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped, **kwargs)
     return maindict, linedict, filedict
 
 def create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped, **kwargs):
     filterstrings.append('#') #ignore comments
+    focussearch = False
+    eventsearch = False
+    if thingstripped == 'lockey':
+        if "id =" in searchstrings:
+            focussearch = True
+        elif 'events' in path:
+            eventsearch = True
     for filename in listdir(path):
         if ".txt" in filename: #this makes sure it's not a folder
+            hasoccured = False
+            eventyes = False
             current_line = 0
             file = open_file(path + '\\' + filename)
             line = file.readline()
             current_line += 1
+            eventdeep = 0
             while line:
                 i = 0
                 isin = False
                 while i < len(searchstrings):
+                    if focussearch == True:
+                        if 'event' in line:
+                            eventyes = True
+                        if '{' in line:
+                            eventdeep = eventdeep + 1
                     if searchstrings[i] in line:
                         try:
                             searchstrings2 = kwargs.get('searchstrings2')
@@ -35,6 +50,13 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                                     isin = True
                         except TypeError:
                             isin = True #checking to see if it has stuff that means it should be checked
+                    if focussearch == True:
+                        if eventyes == True:
+                            isin = False
+                        if '}' in line:
+                            eventdeep = eventdeep -1
+                        if eventdeep == 0:
+                            eventyes = False
                     i = i+1
                 i = 0
                 while i < len(filterstrings):
@@ -43,6 +65,20 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                     i = i+1
                 if isin:
                     #this means line is oob being called, so we need to add it to the dictionary
+                    if thingstripped == 'lockey':
+                        if focussearch == True:
+                            if hasoccured == True:
+                                maintext = eventlocstrip(line)
+                                if (maintext in maindict) == False and maintext != 'yes' and maintext != 'no':
+                                    #print(maintext)
+                                    maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
+                                    maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext+"_desc", current_line, filename, path)
+                            else:
+                                hasoccured = True
+                        elif eventsearch == True:
+                            maintext = line.split(' = ')[1].strip()
+                            maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
+
                     if thingstripped == 'oob':
                         maintext = stripOOB(line)
                         #print(maintext)
@@ -68,6 +104,11 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                 line = file.readline()
                 current_line += 1
     return maindict, linedict, filedict
+
+def eventlocstrip(line):
+    maintext = line.split("id =")[1].strip()
+    maintext = maintext.split(" ")[0].strip()
+    return maintext
 
 def insertdict(maindict, linedict, filedict, maintext, current_line, filename, path):
     maindict[maintext] = False
@@ -97,6 +138,7 @@ def stripOOB(line):
     lastline = finalline.strip()
     reallastline = lastline.split(" ")[0].strip()
     return reallastline
+
 def stripGeneral(line):
     if ("has_unit_leader" in line):
         foundline = line.split("has_unit_leader = ")[1].strip()

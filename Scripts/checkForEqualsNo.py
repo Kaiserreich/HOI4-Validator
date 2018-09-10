@@ -5,7 +5,6 @@ from os import listdir
 
 
 @timed
-
 def check_for_equals_no(path, output_file):
     originalpath = path
     nodict = {}
@@ -28,7 +27,7 @@ def check_for_equals_no(path, output_file):
 def find_scripted_triggers(path):
     path += "\\common\\scripted_triggers"
     triggerlist = []
-    print("finding scripted triggers")
+    #print("finding scripted triggers")
     for filename in listdir(path):
         #print(filename)
         if '.txt' in filename:
