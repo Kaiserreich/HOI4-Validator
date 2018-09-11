@@ -25,6 +25,8 @@ def check_events(mod_path, output_file):
                     output_file.write('No description for event starting at ' + str(start_line) + ' in ' + filename + '.\n')
                 if 'option =' not in event:
                     output_file.write('No option for event starting at ' + str(start_line) + ' in ' + filename + '.\n')
+                if 'load_oob' in event and 'custom_effect_tooltip' not in event:
+                    output_file.write('Load_oob effect in event at line ' + str(start_line) + ' in ' + filename + ' needs a custom tooltip.\n')
             if 'hidden = yes' in event:
                 if 'picture =' in event:
                     output_file.write("Hidden event at " + str(start_line) + ' in ' + filename + ' has a picture.\n')
