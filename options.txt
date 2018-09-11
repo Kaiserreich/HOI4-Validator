@@ -26,6 +26,8 @@ check_generals = yes
 #this lists the ID of all unique generals
 list_general_ids = yes
 #this checks to make sure = no is not used anywhere where it would screw up a tooltip.
-check_for_equals_no = no
+check_for_equals_no = yes
 #this checks for unused oobs
 check_for_unused_oobs = yes
+#This checks for missing localization. Currently just events and focuses though.
+check_for_missing_loc = yes

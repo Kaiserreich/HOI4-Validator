@@ -21,6 +21,7 @@ from checkEndlines import check_endlines
 from checkGeneral import check_for_missing_General, create_general_list
 from checkForEqualsNo import check_for_equals_no
 from checkUnusedOOB import check_for_unused_OOB
+from checkMissingLoc import check_for_missing_loc
 
 
 # output file initialisation
@@ -75,6 +76,8 @@ def start(mod_path, hoi4_path):
         check_for_equals_no(mod_path, output_file)
     if optionsdict["check_for_unused_oobs"]:
         check_for_unused_OOB(mod_path, output_file)
+    if optionsdict["check_for_missing_loc"]:
+        check_for_missing_loc(mod_path, output_file)
     t0 = time.time() - t0
     print("Total time taken: " + (t0*1000).__str__() + " ms")
 
