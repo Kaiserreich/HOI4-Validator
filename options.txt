@@ -31,3 +31,5 @@ check_for_equals_no = yes
 check_for_unused_oobs = yes
 #This checks for missing localization. Currently just events and focuses though.
 check_for_missing_loc = yes
+#This checks that each diplo relations effect checks that its subject still exists.
+check_for_alive_checks = yes

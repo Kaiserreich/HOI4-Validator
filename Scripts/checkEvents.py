@@ -1,6 +1,7 @@
 import bisect
 import collections
 
+from changeInScopeLevel import change_in_scope_level
 from findNewlineIndices import find_indices_of_new_lines
 from stringAndFileFromPath import files_as_strings_from_path_gen
 from timedFunction import timed
@@ -22,14 +23,6 @@ def check_events(mod_path, output_file):
                 potential_end_index += 1
                 scope_level += change_in_scope_level(string[potential_end_index])
             return potential_end_index
-
-        def change_in_scope_level(char):
-            if char == '{':
-                return 1
-            elif char == '}':
-                return -1
-            else:
-                return 0
 
         search_terms = ['news_event', 'country_event']
         indices_of_newlines = find_indices_of_new_lines(string)
