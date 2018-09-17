@@ -33,3 +33,5 @@ check_for_unused_oobs = yes
 check_for_missing_loc = yes
 #This checks that each diplo relations effect checks that its subject still exists.
 check_for_alive_checks = yes
+#This checks for missing '='.
+check_for_missing_equals = yes

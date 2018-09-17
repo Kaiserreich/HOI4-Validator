@@ -49,6 +49,8 @@ CURRENT FEATURES:
 
 	Checks for OOBs that are defined but not used.
 
+	Checks for missing '='.
+
 
  
 HOW TO CONTRIBUTE:
