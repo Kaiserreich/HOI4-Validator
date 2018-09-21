@@ -35,3 +35,5 @@ check_for_missing_loc = yes
 check_for_alive_checks = yes
 #This checks for missing '='.
 check_for_missing_equals = yes
+#This checks that each event or focus id is only defined once
+check_for_duplicate_ids = yes
