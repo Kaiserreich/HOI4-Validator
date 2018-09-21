@@ -10,7 +10,8 @@ def check_missing_equals(mod_path, output_file):
     for directory in directories:
         path = mod_path + directory
         for contents, filename in files_as_strings_from_path_gen(path):
-            bugs += [bug for bug in missing_equals_gen(contents, filename)]
+            if "credits.txt" not in filename:
+                bugs += [bug for bug in missing_equals_gen(contents, filename)]
 
     for bug in bugs:
         output_file.write(bug.description + ' at line ' + str(bug.line) + ' in ' + bug.filename + '\n')
