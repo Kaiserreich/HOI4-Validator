@@ -80,7 +80,7 @@ def start(mod_path, hoi4_path):
     if optionsdict["check_for_unused_oobs"]:
         check_for_unused_OOB(mod_path, output_file)
     if optionsdict["check_for_missing_loc"]:
-        check_for_missing_loc(mod_path, output_file)
+        check_for_missing_loc(mod_path, output_file, optionsdict)
     if optionsdict["check_for_alive_checks"]:
         check_alive_check(mod_path, output_file)
     if optionsdict["check_for_missing_equals"]:

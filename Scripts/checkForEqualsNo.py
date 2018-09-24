@@ -11,7 +11,7 @@ def check_for_equals_no(path, output_file):
     linedict = {}
     filedict = {}
     searchstrings = ['= no']
-    filterstrings = []
+    filterstrings = ['research_cost', 'start_year']
     thingstripped = '=no'
     triggerlist = find_scripted_triggers(originalpath)
     path = originalpath + "\\common\\national_focus"
@@ -20,7 +20,7 @@ def check_for_equals_no(path, output_file):
     nodict, linedict, filedict = create_search_dict(nodict, linedict, filedict, path, searchstrings, filterstrings, thingstripped, searchstrings2 = triggerlist)
     for key in nodict:
         result = "= no is used in file " + filedict[key] + " on line " + str(linedict[key]) + ". Don't do that.\n"
-        print(result)
+        #print(result)
         output_file.write(result)
 
 

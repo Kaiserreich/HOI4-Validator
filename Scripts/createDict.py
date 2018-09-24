@@ -19,13 +19,32 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
     filterstrings.append('#') #ignore comments
     focussearch = False
     eventsearch = False
+    techsearch = False
+    skipfiles = []
+    try:
+        skipfiles = kwargs.get('skipfiles')
+        for name in skipfiles:
+            break
+        filterfiles = True
+    except:
+        filterfiles = False
     if thingstripped == 'lockey':
         if "id =" in searchstrings:
             focussearch = True
         elif 'events' in path:
             eventsearch = True
+        elif 'technologies' in path:
+            techsearch = True
     for filename in listdir(path):
+        shouldcontinue = False
         if ".txt" in filename: #this makes sure it's not a folder
+            if filterfiles: #checking to make sure it's not in a file we're not supposed to check
+                for name in skipfiles:
+                    if name == filename:
+                        #print("in should continue for " + filename)
+                        shouldcontinue = True
+            if shouldcontinue == True:
+                continue
             hasoccured = False
             eventyes = False
             current_line = 0
@@ -33,11 +52,12 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
             line = file.readline()
             current_line += 1
             eventdeep = 0
+            nextline = False
             while line:
                 i = 0
                 isin = False
                 while i < len(searchstrings):
-                    if focussearch == True:
+                    if focussearch == True or techsearch == True:
                         if 'event' in line:
                             eventyes = True
                         if '{' in line:
@@ -50,13 +70,19 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                                     isin = True
                         except TypeError:
                             isin = True #checking to see if it has stuff that means it should be checked
-                    if focussearch == True:
-                        if eventyes == True:
-                            isin = False
+                    if focussearch == True or techsearch == True:
                         if '}' in line:
                             eventdeep = eventdeep -1
-                        if eventdeep == 0:
-                            eventyes = False
+                        if focussearch == True:
+                            if eventyes == True:
+                                isin = False
+                            if eventdeep == 0:
+                                eventyes = False
+                        elif techsearch == True:
+                            if eventdeep != 3:
+                                isin = False
+                            if nextline == True:
+                                isin = True
                     i = i+1
                 i = 0
                 while i < len(filterstrings):
@@ -64,7 +90,7 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                         isin = False #checking to see if it's being filtered for one reason or another
                     i = i+1
                 if isin:
-                    #this means line is oob being called, so we need to add it to the dictionary
+                    #this means line is a thing being called, so we need to add it to the dictionary
                     if thingstripped == 'lockey':
                         if focussearch == True:
                             if hasoccured == True:
@@ -78,7 +104,18 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                         elif eventsearch == True:
                             maintext = line.split(' = ')[1].strip()
                             maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
-
+                        elif techsearch == True:
+                            if nextline == False:
+                                #print("nextline to true")
+                                nextline = True
+                            else:
+                                maintext = line.strip()
+                                #print(maintext)
+                                maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
+                                maintext = maintext + "_desc"
+                                #print(maintext)
+                                maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
+                                nextline = False
                     if thingstripped == 'oob':
                         maintext = stripOOB(line)
                         #print(maintext)
