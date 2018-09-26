@@ -15,6 +15,8 @@ def check_for_missing_loc(path, output_file, searchdict):
     filtereventstrings = ['\"', "set_province_name", "reset_state_name", "set_state_name","add_named_threat",'{ideology']
     searchtechstrings = ['enable_equipments =']
     filtertechstrings = []
+    searchdecisionstrings = ['= {']
+    filterdecisionstrings = ['ai_will_do', 'allowed', 'modifier', 'available', 'visible', 'highlight_states', 'cancel_trigger']
     thingstripped = 'lockey'
     loclist = find_locs(originalpath)
     skipfiles = []
@@ -45,12 +47,13 @@ def check_for_missing_loc(path, output_file, searchdict):
     path = originalpath +'\\events'
     nodict, linedict, filedict =create_search_dict(nodict, linedict, filedict, path, searcheventstrings, filtereventstrings, thingstripped)
     path = originalpath +'\\common\\technologies'
-    nodict, linedict, filedict =create_search_dict(nodict, linedict, filedict, path, searchtechstrings, filtertechstrings, thingstripped, skipfiles = skipfiles)
-
+    nodict, linedict, filedict =create_search_dict(nodict, linedict, filedict, path, searchtechstrings, filtertechstrings, thingstripped, skipfiles = skipfiles) #skipfiles is added so that way it can skip tech files that are identical to vanilla
+    path = originalpath +'\\common\\decisions'
+    nodict, linedict, filedict =create_search_dict(nodict, linedict, filedict, path, searchdecisionstrings, filterdecisionstrings, thingstripped)
     for key in nodict:
         if (key in loclist) == False:
             result = "loc key " + key +" in file " +filedict[key] + " on line " + str(linedict[key]) + " is missing\n"
-            #if ('focus' in filedict[key]) == False and ('events' in filedict[key]) == False:
+            #if ('decision' in filedict[key]):
                 #print(result)
             output_file.write(result)
 

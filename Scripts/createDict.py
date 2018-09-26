@@ -20,6 +20,8 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
     focussearch = False
     eventsearch = False
     techsearch = False
+    needdepth = False
+    decisionsearch = False
     skipfiles = []
     try:
         skipfiles = kwargs.get('skipfiles')
@@ -35,6 +37,10 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
             eventsearch = True
         elif 'technologies' in path:
             techsearch = True
+        elif 'decisions' in path:
+            decisionsearch = True
+    if focussearch == True or techsearch == True or decisionsearch == True:
+        needdepth = True
     for filename in listdir(path):
         shouldcontinue = False
         if ".txt" in filename: #this makes sure it's not a folder
@@ -57,11 +63,11 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                 i = 0
                 isin = False
                 while i < len(searchstrings):
-                    if focussearch == True or techsearch == True:
+                    if needdepth:
                         if 'event' in line:
                             eventyes = True
                         if '{' in line:
-                            eventdeep = eventdeep + 1
+                            eventdeep = eventdeep + line.count('{')
                     if searchstrings[i] in line:
                         try:
                             searchstrings2 = kwargs.get('searchstrings2')
@@ -70,9 +76,9 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                                     isin = True
                         except TypeError:
                             isin = True #checking to see if it has stuff that means it should be checked
-                    if focussearch == True or techsearch == True:
+                    if needdepth:
                         if '}' in line:
-                            eventdeep = eventdeep -1
+                            eventdeep = eventdeep - line.count('}')
                         if focussearch == True:
                             if eventyes == True:
                                 isin = False
@@ -83,6 +89,9 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                                 isin = False
                             if nextline == True:
                                 isin = True
+                        elif decisionsearch == True:
+                            if eventdeep != 2:
+                                isin = False
                     i = i+1
                 i = 0
                 while i < len(filterstrings):
@@ -97,8 +106,7 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                                 maintext = eventlocstrip(line)
                                 if (maintext in maindict) == False and maintext != 'yes' and maintext != 'no':
                                     #print(maintext)
-                                    maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
-                                    maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext+"_desc", current_line, filename, path)
+                                    maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path, desc=True)
                             else:
                                 hasoccured = True
                         elif eventsearch == True:
@@ -111,11 +119,12 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                             else:
                                 maintext = line.strip()
                                 #print(maintext)
-                                maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
-                                maintext = maintext + "_desc"
-                                #print(maintext)
-                                maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
+                                maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path, desc=True)
                                 nextline = False
+                        elif decisionsearch == True:
+                                maintext = line.split(' = {')[0].strip()
+                                #print(maintext)
+                                maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path, desc=True)
                     if thingstripped == 'oob':
                         maintext = stripOOB(line)
                         #print(maintext)
@@ -147,10 +156,15 @@ def eventlocstrip(line):
     maintext = maintext.split(" ")[0].strip()
     return maintext
 
-def insertdict(maindict, linedict, filedict, maintext, current_line, filename, path):
+def insertdict(maindict, linedict, filedict, maintext, current_line, filename, path, **kwargs):
     maindict[maintext] = False
     linedict[maintext] = current_line
     filedict[maintext] = path + '\\' + filename
+    if 'desc' in kwargs:
+        newtext = maintext+"_desc"
+        maindict[newtext] = False
+        linedict[newtext] = current_line
+        filedict[newtext] = path + '\\' + filename
     return maindict, linedict, filedict
 
 def stripOOB(line):
