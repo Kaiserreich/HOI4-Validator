@@ -37,17 +37,5 @@ check_for_alive_checks = yes
 check_for_missing_equals = yes
 #This checks that each event or focus id is only defined once
 check_for_duplicate_ids = yes
-
-#Tech options: this specifies which techs have been modified. If set to no, it will assume the contents of the file (if it exists) are identical to vanilla
-#as this was made for kaiserreich, which only modifies naval techs, this only checks naval tech
-check_air_doctrine_loc = no
-check_air_tech_loc = no
-check_armor_loc = no
-check_artillery_loc = no
-check_electro_mechanical_eng_loc = no
-check_industry_loc = no
-check_infantry_loc = no
-check_land_doctrine_loc = no
-check_naval_loc = yes
-check_naval_doctrine_loc = no
-check_support_loc = no
+#This checks that every event that is called is defined and that every non-MTTH event is called at least once
+check_for_event_use = yes

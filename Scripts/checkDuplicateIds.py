@@ -55,12 +55,12 @@ def find_id(string):
         next_id_index = string.find('id', index)
         if next_id_index == -1:
             return ''
-        elif string[next_id_index-1] in ' \n\t':
+        elif string[next_id_index-1] in ' \r\n\t':
             id_start = next_id_index + 2
             while not string[id_start].isalnum():
                 id_start += 1
             id_end = id_start
-            while not string[id_end] in ' \n\t':
+            while not string[id_end] in ' \r\n\t}':
                 id_end += 1
             return string[id_start:id_end]
         else:

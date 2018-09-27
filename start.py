@@ -25,6 +25,7 @@ from checkMissingLoc import check_for_missing_loc
 from checkAliveCheck import check_alive_check
 from checkMissingEquals import check_missing_equals
 from checkDuplicateIds import check_duplicate_ids
+from checkEventUsage import check_event_usage
 
 
 # output file initialisation
@@ -87,6 +88,8 @@ def start(mod_path, hoi4_path):
         check_missing_equals(mod_path, output_file)
     if optionsdict["check_for_duplicate_ids"]:
         check_duplicate_ids(mod_path, output_file)
+    if optionsdict["check_for_event_use"]:
+        check_event_usage(mod_path, output_file)
 
     t0 = time.time() - t0
     print("Total time taken: " + (t0*1000).__str__() + " ms")
