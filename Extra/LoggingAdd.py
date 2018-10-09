@@ -280,19 +280,16 @@ def decision(cpath):
                             found_one = False
                         ids.append(line.split('=')[0].strip())
                 if 'complete_effect' in line:
-                    if '[Root.GetName]:' not in lines[line_number] or 'log = \"[GetDateText]:' not in line:
-                        if '[Root.GetName]: Decision ' not in lines[line_number]:
+                    if '[Root.GetName]:' not in lines[line_number] and 'log = \"[GetDateText]:' not in line:
                             print(lines[line_number])
                             idss.append(line_number)
                             found_one = True
                 if 'remove_effect' in line:
-                    if 'log = \"[GetDateText]:' not in lines[line_number] or 'log = \"[GetDateText]:' not in line:
-                        if '[Root.GetName]: Decision ' not in lines[line_number]:
+                    if 'log = \"[GetDateText]:' not in lines[line_number] and 'log = \"[GetDateText]:' not in line:
                             idsss.append(line_number)
                             found_one = True
                 if 'timeout_effect' in line:
-                    if 'log = \"[GetDateText]:' not in lines[line_number] or 'log = \"[GetDateText]:' not in line:
-                        if '[Root.GetName]: Decision ' not in lines[line_number]:
+                    if 'log = \"[GetDateText]:' not in lines[line_number] and 'log = \"[GetDateText]:' not in line:
                             idssss.append(line_number)
                             found_one = True
                 if '{' in line:
