@@ -313,19 +313,8 @@ def decision(cpath):
                         except IndexError:
                             print(filename + ", " + line_number.__str__() + ", " + index_wip.__str__())
                         index_wip += 1
-                if line_number in idss or line_number in idsss or line_number in idssss:
-                    # if line_number in idss:
-                    #     dec_id = ids[idss.index(line_number)]
-                    #     backup_index = ids.index(dec_id)
-                    # if line_number in idsss:
-                    #     dec_id = ids[idsss.index(line_number)]
-                    #     backup_index = ids.index(dec_id)
-                    # if line_number in idssss:
-                    #     dec_id = ids[idssss.index(line_number)]
-                    #     backup_index = ids.index(dec_id)
-
-                    if dec_id in ["{", "}"]:
-                        dec_id = "Error, focus name not found"
+                if dec_id in ["{", "}"]:
+                    dec_id = "Error, focus name not found"
                 if line_number in idss:
                     if '}' in line:
                         temp = line.split("{")
