@@ -16,7 +16,7 @@ def check_events(mod_path, output_file):
     events_directory = '/events/'
     path = mod_path + events_directory
     for contents, filename in files_as_strings_from_path_gen(path):
-        for event, start_line in events_gen(contents):
+        for event, start_line in scope_gen(contents, ['news_event', 'country_event']):
             if 'ai_chance' in event and event.count('option =') == 1:
                 bugs.append(Bug('\"ai_chance\" with only one option in event', start_line, filename))
             if 'hidden = yes' not in event:
@@ -44,7 +44,7 @@ def check_events(mod_path, output_file):
         output_file.write(bug.description + ' at line ' + str(bug.line) + ' in ' + bug.filename + '\n')
 
 
-def events_gen(string):
+def scope_gen(string, search_terms):
 
     def find_end_index(string, start_index):
         potential_end_index = start_index + 1
@@ -61,7 +61,6 @@ def events_gen(string):
         else:
             return string[index-1] in ' \n\t'
 
-    search_terms = ['news_event', 'country_event']
     indices_of_newlines = find_indices_of_new_lines(string)
     index = -1
     while True:

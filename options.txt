@@ -30,7 +30,7 @@ check_for_equals_no = yes
 #this checks for unused oobs
 check_for_unused_oobs = yes
 #This checks for missing localization. Currently just events and focuses though.
-check_for_missing_loc = yes
+check_for_missing_loc = no
 #This checks that each diplo relations effect checks that its subject still exists.
 check_for_alive_checks = yes
 #This checks for missing '='.
@@ -39,3 +39,5 @@ check_for_missing_equals = yes
 check_for_duplicate_ids = yes
 #This checks that every event that is called is defined and that every non-MTTH event is called at least once
 check_for_event_use = yes
+#This checks that flags that are used or changed are ever set and vice versa.
+check_flag_usage = yes
