@@ -5,6 +5,9 @@ import time
 import os
 import re
 
+#TODO
+#Technology
+#State Changes (no need, generic)
 
 
 def check_triggered(line_number, lines):
@@ -75,7 +78,7 @@ def focus(cpath):
                         ids.pop()
             time1 = time.time() - timestart
             line_number = 0
-
+            file.close()
             outputfile = open(cpath + "\\common\\national_focus\\" + filename, 'w', 'utf-8')
             outputfile.truncate()
             for line in lines:
@@ -151,6 +154,7 @@ def event(cpath):
                             triggered = False
             time1 = time.time() - timestart
             line_number = 0
+            file.close()
             outputfile = open(cpath + "\\events\\" + filename, 'w', 'utf-8-sig')
             outputfile.truncate()
             for line in lines:
@@ -208,7 +212,7 @@ def idea(cpath):
                     level += line.count('{')
                 if '}' in line:
                     level -= line.count('}')
-
+            file.close()
             line_number = 0
             outputfile = open(cpath + "\\common\\ideas\\" + filename, 'w', 'utf-8')
             outputfile.truncate()
@@ -276,31 +280,44 @@ def decision(cpath):
                             found_one = False
                         ids.append(line.split('=')[0].strip())
                 if 'complete_effect' in line:
-                    if 'log = \"[GetDateText]:' not in lines[line_number] or 'log = \"[GetDateText]:' not in line:
-                        idss.append(line_number)
-                        found_one = True
+                    if '[Root.GetName]:' not in lines[line_number] or 'log = \"[GetDateText]:' not in line:
+                        if '[Root.GetName]: Decision ' not in lines[line_number]:
+                            print(lines[line_number])
+                            idss.append(line_number)
+                            found_one = True
                 if 'remove_effect' in line:
                     if 'log = \"[GetDateText]:' not in lines[line_number] or 'log = \"[GetDateText]:' not in line:
-                        idsss.append(line_number)
-                        found_one = True
+                        if '[Root.GetName]: Decision ' not in lines[line_number]:
+                            idsss.append(line_number)
+                            found_one = True
                 if 'timeout_effect' in line:
                     if 'log = \"[GetDateText]:' not in lines[line_number] or 'log = \"[GetDateText]:' not in line:
-                        idssss.append(line_number)
-                        found_one = True
+                        if '[Root.GetName]: Decision ' not in lines[line_number]:
+                            idssss.append(line_number)
+                            found_one = True
                 if '{' in line:
                     level += line.count('{')
                 if '}' in line:
                     level -= line.count('}')
-
+            if found_one is False:
+                try:
+                    ids.pop()
+                except IndexError:
+                    found_one = False
+            file.close()
             time1 = time.time() - timestart
             line_number = 0
             backup_index = 0
+            if ids == []:
+                continue
             outputfile = open(cpath + "\\common\\decisions\\" + filename, 'w', 'utf-8')
             outputfile.truncate()
             dec_id = ""
             dec_bu = ""
             index_wip = 0
             level = 0
+            if ids == []:
+                continue
             for line in lines:
                 line_number += 1
                 if line.strip().startswith('#'):
@@ -360,7 +377,59 @@ def decision(cpath):
             ttime += time1 + time2
     return ttime
 
+def tech(cpath):
+    ttime = time.time()
 
+    # on_research_complete = {  log = "[GetDateText] [Root.GetName]: add tech advanced_light_spaa"}
+    for filename in listdir(cpath + "\\common\\technologies"):
+        if ".txt" in filename:
+            file = open(cpath + "\\common\\technologies\\" + filename, 'r', 'utf-8')
+            size = os.path.getsize(cpath + "\\common\\technologies\\" + filename)
+            if size < 100:
+                continue
+            lines = file.readlines()
+            line_number = 0
+            level = 0
+            ids = []
+            for line in lines:
+                line_number += 1
+                if '#' in line:
+                    if line.strip().startswith("#") is True:
+                        continue
+                    else:
+                        line = line.split('#')[0]
+
+                if '= {' in line:
+                    if level == 1:
+                        if 'on_research_complete = {log = ' not in lines[line_number]:
+                            #print(line.split('=')[0].strip())
+                            ids.append(line_number)
+
+                if '{' in line:
+                    level += line.count('{')
+                if '}' in line:
+                    level -= line.count('}')
+
+            file.close()
+            line_number = 0
+            outputfile = open(cpath + "\\common\\technologies\\" + filename, 'w', 'utf-8')
+            outputfile.truncate()
+            for line in lines:
+                line_number += 1
+                if line_number in ids:
+                    extra = ""
+                    if '#' in line:
+                        extra = "#" + line.split('#')[1].strip()
+                    idea_id = line.split('=')[0].strip()
+                    replacement_text = "\t" + idea_id + " = {" + extra + "\n\t\ton_research_complete = {log = \"[GetDateText]: [Root.GetName]: add tech " + idea_id + "\"}\n"
+                    outputfile.write(replacement_text)
+                    #print("Inserted loc at {0} in file {1}".format(line_number.__str__(), filename))
+                else:
+                    outputfile.write(line)
+
+
+
+    return time.time() - ttime
 
 def main():
     cpath = sys.argv[1]
@@ -377,6 +446,7 @@ def main():
     ttime += focus(cpath)
     ttime += idea(cpath)
     ttime += decision(cpath)
+    ttime += tech(cpath)
     print("Total Time: %.3f ms" % (ttime * 1000))
 
 if __name__ == "__main__":

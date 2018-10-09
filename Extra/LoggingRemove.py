@@ -4,6 +4,31 @@ from os import listdir
 import os
 
 
+def tech(cpath):
+    #on_research_complete = {  log = "[GetDateText] [Root.GetName]: add tech advanced_light_spaa"}
+    for filename in listdir(cpath + "\\common\\technologies"):
+        outputfile = open(cpath + "\\common\\technologies\\" + filename, 'r', 'utf-8')
+        size = os.path.getsize(cpath + "\\common\\technologies\\" + filename)
+        if size < 100:
+            continue
+        lines = outputfile.readlines()
+        outputfile.close()
+        outputfile = open(cpath + "\\common\\technologies\\" + filename, 'w', 'utf-8')
+        outputfile.truncate()
+
+        for x in range(len(lines)):
+            line = lines[x]
+            #print(x.__str__()+":", line[:-1])
+            if 'log = "[GetDateText]' in line:
+                outputfile.write("")
+            elif 'on_research_complete' in line and 'log = "[GetDateText]' in lines[x+1] and ( '}' in lines[x+2] or '}' in lines[x+1]):
+                print("Deleted logging at line", x, "in file", filename)
+                outputfile.write("")
+            elif 'log = "[GetDateText]' in lines[x-1]and '}' in line:
+                outputfile.write("")
+            else:
+                outputfile.write(line)
+
 def focus(cpath):
     #immediate = {log = "Focus id: "+ id + "\n"}  # autolog
     for filename in listdir(cpath + "\\common\\national_focus"):
@@ -104,6 +129,7 @@ def main():
     focus(cpath)
     idea(cpath)
     decision(cpath)
+    tech(cpath)
 
 if __name__ == "__main__":
     main()
