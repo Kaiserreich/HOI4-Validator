@@ -41,3 +41,5 @@ check_for_duplicate_ids = yes
 check_for_event_use = yes
 #This checks that flags that are used or changed are ever set and vice versa.
 check_flag_usage = yes
+#This checks that ideas are ever added if used
+check_idea_usage = yes
