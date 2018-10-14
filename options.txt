@@ -1,6 +1,8 @@
 #to turn off a feature, replace 'yes' with 'no'. The ones that are already set to no are broken, do not set them to yes.
 #this checks for divisions with missing namegroups
 check_missing_division_name_group = yes
+#this makes the check for missing namegroups skip files with 'unlock' in their name (such as unlock_marines.txt) to avoid giving false positives on OOBs that are used to unlock templates
+skip_unlock = yes
 #this checks for comments indicating a general has been updated. It does not check for unupdated generals, just comments.
 check_for_old_generals = yes
 #this checks for tags without namelists

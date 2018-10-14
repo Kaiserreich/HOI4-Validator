@@ -53,7 +53,7 @@ def start(mod_path, hoi4_path):
     options_file.close()
     output_file = open("validator.txt", 'w', 'utf-8-sig')
     if optionsdict["check_missing_division_name_group"]:
-        missing_divisions_names_group(mod_path, output_file)
+        missing_divisions_names_group(mod_path, output_file, optionsdict["skip_unlock"])
     if optionsdict["check_for_old_generals"]:
         check_for_old_generals(mod_path, output_file)
     if optionsdict["check_for_name_lists"]:
