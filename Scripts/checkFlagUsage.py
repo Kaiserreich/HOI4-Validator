@@ -5,7 +5,7 @@ from scopeGen import scope_gen
 from stringAndFileFromPath import files_as_strings_from_path_gen
 from checkEvents import Bug
 from fieldContentsGen import field_contents_gen
-
+import os
 Flag = collections.namedtuple('Flag', 'name start_line filename')
 
 
@@ -24,9 +24,9 @@ def check_flag_usage(mod_path, output_file):
     state_flags_checked = []
     state_flags_cleared = []
 
-    flag_set_directories = ['//events', '//common//decisions', '//common//scripted_effects',
-                            '//common//national_focuses', '//history//countries', '//common//on_actions']
-    paths = [mod_path + directory for directory in flag_set_directories]
+    flag_set_directories = ['events', 'common//decisions', 'common//scripted_effects',
+                            'common//national_focuses', 'history//countries', 'common//on_actions']
+    paths = [os.path.join(mod_path,directory) for directory in flag_set_directories] #will this work on non-windows systems? I don't know, but changing this thing to work in another way is way too much effort
     for path in paths:
         for contents, filename in files_as_strings_from_path_gen(path):
             for flag, start_line in field_contents_gen(contents, 'set_global_flag'):
@@ -62,12 +62,12 @@ def check_flag_usage(mod_path, output_file):
                 if flag not in state_flags_cleared:
                     state_flags_cleared += [Flag(flag, start_line, filename)]
 
-    flag_checking_directories = ['//events', '//common//decisions', '//common//scripted_triggers',
-                                 '//common//scripted localisation', '//common//national_focuses',
-                                 '//common//on_actions', '//common//ai_peace', '//common//ai_strategy',
-                                 '//common//ai_strategy_plans', '//common//autonomous_states', '//common//ideas',
-                                 '//common//technologies']
-    paths = [mod_path + directory for directory in flag_checking_directories]
+    flag_checking_directories = ['events', 'common//decisions', 'common//scripted_triggers',
+                                 'common//scripted localisation', 'common//national_focuses',
+                                 'common//on_actions', 'common//ai_peace', 'common//ai_strategy',
+                                 'common//ai_strategy_plans', 'common//autonomous_states', 'common//ideas',
+                                 'common//technologies']
+    paths = [os.path.join(mod_path,directory)  for directory in flag_checking_directories]
     for path in paths:
         for contents, filename in files_as_strings_from_path_gen(path):
             for flag, start_line in field_contents_gen(contents, 'has_global_flag'):

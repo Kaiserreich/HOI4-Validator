@@ -2,13 +2,13 @@ from os import listdir
 from openFile import open_file
 from createDict import create_search_dict, strip_focus
 from timedFunction import timed
-
+import os
 
 def actually_check_for_missing_focus(path, focusdict):
     #this heads through the files. Every time it sees a focus, it sets that focus's value in returndict to true
     returndict = focusdict
     for filename in listdir(path):
-        file = open_file(path + '\\' + filename)
+        file = open_file(os.path.join(path, filename))
         line = file.readline()
         while line:
             if 'id = ' in line and ('event' in line) == False and ('.' in line) == False:
@@ -20,7 +20,7 @@ def actually_check_for_missing_focus(path, focusdict):
 @timed
 def check_for_missing_focus(path, output_file):
     #this creates a dict of all the focuses that are referenced
-    path+="\\common\\national_focus"
+    path = os.path.join(os.path.join(path, 'common'), 'national_focus')
     focusdict = {}
     linedict = {}
     filedict = {}

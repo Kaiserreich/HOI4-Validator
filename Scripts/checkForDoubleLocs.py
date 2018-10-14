@@ -1,4 +1,4 @@
-from os import listdir
+import os
 from timedFunction import timed
 from openFile import open_file
 
@@ -14,20 +14,20 @@ def check_and_strip(string, _range):
 
 @timed
 def check_for_double_locs(path, output_file):
-    path += "\\localisation"
+    path = os.path.join(path, "localisation")
     list_loc = {}
     subfolderlist = []
-    for filename in listdir(path):
+    for filename in os.listdir(path):
         if '.yml' in filename:
-            file = open_file(path + '\\' + filename)
+            file = open_file(os.path.join(path, filename))
             list_loc = linecheck(file, output_file, filename, list_loc, '')
         else:
             subfolderlist.append(filename)
     for subfolder in subfolderlist:
-        newpath = path+ '\\' + subfolder
-        for filename in listdir(newpath):
+        newpath = os.path.join(path, subfolder)
+        for filename in os.listdir(newpath):
             if '.yml' in filename:
-                file = open_file(newpath + '\\' + filename)
+                file = open_file(os.path.join(newpath,filename))
                 list_loc = linecheck(file, output_file, filename, list_loc, subfolder)
 
 def linecheck(file, output_file, filename, list_loc, subfolder):

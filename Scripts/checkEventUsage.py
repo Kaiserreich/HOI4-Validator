@@ -7,7 +7,7 @@ from scopeGen import scope_gen
 from checkDuplicateIds import find_contents_of_field
 
 Event = collections.namedtuple('Event', 'id start_line filename')
-
+import os
 @timed
 def check_event_usage(mod_path, output_file):
 
@@ -17,7 +17,7 @@ def check_event_usage(mod_path, output_file):
     called_ids = []
     called_events = []
     events_directory = '/events/'
-    path = mod_path + events_directory
+    path = os.path.join(mod_path,"events")
     for contents, filename in files_as_strings_from_path_gen(path):
         for event, start_line in scope_gen(contents, ['news_event', 'country_event']):
             event_id = find_contents_of_field(event, 'id')
@@ -31,14 +31,15 @@ def check_event_usage(mod_path, output_file):
                     called_ids += [called_event_id]
                     called_events += [Event(called_event_id, called_event_start_line+start_line-1, events_directory+filename)]
 
-    directories_that_can_call_events = ['/common/national_focus/', '/common/on_actions/']
+    directories_that_can_call_events = ['national_focus', 'on_actions']
     for subdir in directories_that_can_call_events:
-        for contents, filename in files_as_strings_from_path_gen(mod_path + subdir):
+        path = os.path.join(os.path.join(mod_path, 'common'), subdir)
+        for contents, filename in files_as_strings_from_path_gen(path):
             for event, start_line in scope_gen(contents, ['news_event', 'country_event']):
                 called_event_id = find_contents_of_field(event, 'id')
                 if called_event_id:
                     called_ids += [called_event_id]
-                    called_events += [Event(find_contents_of_field(event, 'id'), start_line, subdir + filename)]
+                    called_events += [Event(find_contents_of_field(event, 'id'), start_line, 'common/'+subdir + filename)]
 
     bugs = []
     called_ids_set = set(called_ids)

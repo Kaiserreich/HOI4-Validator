@@ -3,6 +3,7 @@ import collections
 from scopeGen import scope_gen
 from stringAndFileFromPath import files_as_strings_from_path_gen
 from timedFunction import timed
+import os
 
 Bug = collections.namedtuple('Bug', 'description line filename')
 
@@ -11,8 +12,7 @@ Bug = collections.namedtuple('Bug', 'description line filename')
 def check_events(mod_path, output_file):
 
     bugs = []
-    events_directory = '/events/'
-    path = mod_path + events_directory
+    path = os.path.join(mod_path,"events")
     for contents, filename in files_as_strings_from_path_gen(path):
         for event, start_line in scope_gen(contents, ['news_event', 'country_event']):
             if 'ai_chance' in event and event.count('option =') == 1:

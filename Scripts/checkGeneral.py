@@ -1,4 +1,4 @@
-from os import listdir
+import os
 from openFile import open_file
 from createDict import search_effects
 from timedFunction import timed
@@ -15,7 +15,6 @@ def check_for_missing_General(path, output_file):
     thingstripped = 'general'
     generaldict, linedict, filedict =search_effects(generaldict, linedict, filedict, originalpath, searchstrings, filterstrings, thingstripped)
     finaldict = actually_check_for_missing_general(originalpath, generaldict)
-    #create_general_list(originalpath, output_file)
     for key in finaldict:
         if finaldict[key] == False:
             result = "The leader " + key + " referenced in file " + filedict[key] + " on line " + str(linedict[key]) + " does not exist.\n"
@@ -23,14 +22,15 @@ def check_for_missing_General(path, output_file):
             output_file.write(result)
 
 def actually_check_for_missing_general(originalpath, generaldict):
+    commonpath = os.path.join(originalpath, 'common')
     #this heads through the files. Every time it sees a general, it sets that general's value in returndict to true
-    pathlist = [originalpath+"\\history\\countries", originalpath + "\\events", originalpath + "\\common\\national_focus", originalpath + "\\common\\scripted_effects", originalpath + "\\common\\decisions"]
+    pathlist = [os.path.join(os.path.join(originalpath, 'history'),"countries"), os.path.join(originalpath, "events"), os.path.join(commonpath, "national_focus"), os.path.join(commonpath, "scripted_effects"),  os.path.join(commonpath, "decisions")]
     returndict = generaldict
     SettingTraits = False
     for path in pathlist:
-        for filename in listdir(path):
+        for filename in os.listdir(path):
             if ".txt" in filename:
-                file = open_file(path + '\\' + filename)
+                file = open_file(os.path.join(path,filename))
                 line = file.readline()
                 ingeneral = False
                 while line:
@@ -55,44 +55,6 @@ def actually_check_for_missing_general(originalpath, generaldict):
                             ingeneral = False
                     line = file.readline()
     return returndict
-
-def create_general_list(originalpath, output_file):
-    #this heads through the files. Every time it sees a general, it prints that general's ID and the file the general was found in in order to produce that list I was asked for earlier
-    pathlist = [originalpath+"\\history\\countries", originalpath + "\\events", originalpath + "\\common\\national_focus", originalpath + "\\common\\scripted_effects", originalpath + "\\common\\decisions"]
-    allgeneraldict ={}
-    SettingTraits = False
-    for path in pathlist:
-        for filename in listdir(path):
-            if ".txt" in filename:
-                file = open_file(path + '\\' + filename)
-                line = file.readline()
-                ingeneral = False
-                while line:
-                    if ingeneral == False:
-                        if 'create_corps_commander' in line or 'create_field_marshal' in line or 'create_navy_leader' in line:
-                            ingeneral = True
-                    else:
-                        if 'traits =' in line:
-                            SettingTraits = True
-                        if '}' in line:
-                            if SettingTraits == False:
-                                ingeneral = False
-                            else:
-                                SettingTraits = False
-                        if 'id =' in line:
-                            generalid = strip_created_general(line)
-                            if generalid != '':
-                                #print(ingeneral)
-                                if (generalid in allgeneraldict) == False:
-                                    splittext = originalpath
-                                    printtext = path + "\\" + filename + " uses general id "+generalid + '\n'
-                                    result = printtext.split(splittext)[1]
-                                    if '\n' in result == False:
-                                        result += '\n'
-                                    #print(result)
-                                    output_file.write(result)
-                                    allgeneraldict[generalid] = True
-                    line = file.readline()
 
 def strip_created_general(line):
     #print(line)

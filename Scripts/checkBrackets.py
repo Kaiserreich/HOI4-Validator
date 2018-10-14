@@ -3,25 +3,25 @@ from os.path import isdir
 from timedFunction import timed
 from openFile import open_file
 from removeComments import remove_comments
-
+import os
 
 @timed
 def check_brackets(path, output_file):
-    check(path, output_file, "\\events")
-    check(path, output_file, "\\common")
-    check(path, output_file, "\\interface")
-    check(path, output_file, "\\history")
+    check(path, output_file, "events")
+    check(path, output_file, "common")
+    check(path, output_file, "interface")
+    check(path, output_file, "history")
 
 
 def check(path, output_file, sub_path):
     original_path = path
-    path += sub_path
+    path = os.path.join(path,sub_path)
     for filename in listdir(path):
-        if(isdir(path + '\\' + filename)):
-            check(original_path, output_file, sub_path + '\\' + filename)
+        if(isdir(os.path.join(path,filename))):
+            check(original_path, output_file, os.path.join(path,filename))
             continue
         current_line = 0
-        file = open_file(path + '\\' + filename)
+        file = open_file(os.path.join(path,filename))
         line = file.readline()
         current_line += 1
         stack = []

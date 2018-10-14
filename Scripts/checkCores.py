@@ -1,11 +1,11 @@
 from os import listdir
 from openFile import open_file
 from timedFunction import timed
-
+import os
 
 @timed
 def check_for_missing_cores(path, output_file):
-    path+="\\history\\states"
+    path = os.path.join(os.path.join(path, "history"), "states")
     filelist = []
     for filename in listdir(path):
         #this loops through all the states

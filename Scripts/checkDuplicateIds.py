@@ -4,15 +4,14 @@ from findNewlineIndices import find_indices_of_new_lines
 from timedFunction import timed
 from stringAndFileFromPath import files_as_strings_from_path_gen
 from changeInScopeLevel import change_in_scope_level
-
+import os
 
 @timed
 def check_duplicate_ids(mod_path, output_file):
     bugs = []
     id_set = set()
-    directories = ['/events/', '/common/national_focus/']
-    for directory in directories:
-        path = mod_path + directory
+    directories = [os.path.join("events"), os.path.join(os.path.join(mod_path, "common"), "national_focus")]
+    for path in directories:
         for contents, filename in files_as_strings_from_path_gen(path):
             for id_tag, line_number in duplicate_ids_gen(contents):
                 if id_tag in id_set:

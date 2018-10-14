@@ -1,17 +1,18 @@
-from os import listdir
+import os
 from openFile import open_file
 
 
 
 def search_effects(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped, **kwargs):
     originalpath = path
-    path = originalpath + "\\events"
+    path = os.path.join(originalpath, "events")
     maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings,thingstripped, **kwargs)
-    path = originalpath + "\\common\\national_focus"
+    commonpath = os.path.join(originalpath, "common")
+    path = os.path.join(commonpath, "national_focus")
     maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped, **kwargs)
-    path = originalpath + "\\common\\scripted_effects"
+    path = os.path.join(commonpath, "scripted_effects")
     maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings,thingstripped, **kwargs)
-    path = originalpath + "\\common\\decisions"
+    path = os.path.join(commonpath, "decisions")
     maindict, linedict, filedict = create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped, **kwargs)
     return maindict, linedict, filedict
 
@@ -41,7 +42,7 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
             decisionsearch = True
     if focussearch == True or techsearch == True or decisionsearch == True:
         needdepth = True
-    for filename in listdir(path):
+    for filename in os.listdir(path):
         shouldcontinue = False
         if ".txt" in filename: #this makes sure it's not a folder
             if filterfiles: #checking to make sure it's not in a file we're not supposed to check
@@ -54,7 +55,7 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
             hasoccured = False
             eventyes = False
             current_line = 0
-            file = open_file(path + '\\' + filename)
+            file = open_file(os.path.join(path, filename))
             line = file.readline()
             current_line += 1
             eventdeep = 0

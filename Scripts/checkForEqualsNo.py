@@ -1,8 +1,7 @@
 from createDict import create_search_dict
 from timedFunction import timed
 from openFile import open_file
-from os import listdir
-
+import os
 
 @timed
 def check_for_equals_no(path, output_file):
@@ -14,9 +13,10 @@ def check_for_equals_no(path, output_file):
     filterstrings = ['research_cost', 'start_year']
     thingstripped = '=no'
     triggerlist = find_scripted_triggers(originalpath)
-    path = originalpath + "\\common\\national_focus"
+    commonpath = os.path.join(originalpath, 'common')
+    path = os.path.join(commonpath, 'national_focus')
     nodict, linedict, filedict = create_search_dict(nodict, linedict, filedict, path, searchstrings, filterstrings, thingstripped, searchstrings2 = triggerlist)
-    path = originalpath + "\\common\\decisions"
+    path = os.path.join(commonpath, 'decisions')
     nodict, linedict, filedict = create_search_dict(nodict, linedict, filedict, path, searchstrings, filterstrings, thingstripped, searchstrings2 = triggerlist)
     for key in nodict:
         result = "= no is used in file " + filedict[key] + " on line " + str(linedict[key]) + ". Don't do that.\n"
@@ -26,12 +26,13 @@ def check_for_equals_no(path, output_file):
 
 def find_scripted_triggers(path):
     path += "\\common\\scripted_triggers"
+    path = os.path.join(os.path.join(path, "common"), 'scripted_triggers')
     triggerlist = []
     #print("finding scripted triggers")
-    for filename in listdir(path):
+    for filename in os.listdir(path):
         #print(filename)
         if '.txt' in filename:
-            file = open_file(path + "\\" + filename)
+            file = open_file(os.path.join(path, filename))
             depth = 0;
             for line in file:
                 if depth == 0 and '=' in line:

@@ -1,7 +1,7 @@
 from timedFunction import timed
 from checkEvents import Bug
 from stringAndFileFromPath import files_as_strings_from_path_gen
-
+import os
 
 @timed
 def check_endlines(path, output_file):
@@ -26,7 +26,7 @@ def check_endlines(path, output_file):
                             yield Bug('Space after newline', current_line, filename)
 
     bugs = []
-    path += '\\localisation\\'
+    path = os.path.join(path,"localisation")
     for string, filename in files_as_strings_from_path_gen(path):
         bugs += [bug for bug in check_newlines_in_string(filename, string)]
 

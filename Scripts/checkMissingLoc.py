@@ -1,6 +1,6 @@
 from timedFunction import timed
 from createDict import create_search_dict
-from os import listdir
+import os
 from openFile import open_file
 
 @timed
@@ -12,7 +12,7 @@ def check_for_missing_loc(path, output_file, searchdict):
     searchfocusstrings = ['id =']
     filterfocusstrings = ['event']
     searcheventstrings = ['title =', 'desc =', 'name =']
-    filtereventstrings = ['\"', "set_province_name", "reset_state_name", "set_state_name","add_named_threat",'{ideology']
+    filtereventstrings = ['\"', "set_province_name", "reset_state_name", "set_state_name","add_named_threat",'{ideology', '{ ideology']
     searchtechstrings = ['enable_equipments =']
     filtertechstrings = []
     searchdecisionstrings = ['= {']
@@ -42,13 +42,14 @@ def check_for_missing_loc(path, output_file, searchdict):
         skipfiles.append("naval_doctrine.txt")
     if not searchdict['check_support_loc']:
         skipfiles.append("support.txt")
-    path = originalpath +'\\common\\national_focus'
+    commonpath = os.path.join(originalpath, 'common')
+    path = os.path.join(commonpath, 'national_focus')
     nodict, linedict, filedict =create_search_dict(nodict, linedict, filedict, path, searchfocusstrings, filterfocusstrings, thingstripped)
-    path = originalpath +'\\events'
+    path = os.path.join(originalpath, 'events')
     nodict, linedict, filedict =create_search_dict(nodict, linedict, filedict, path, searcheventstrings, filtereventstrings, thingstripped)
-    path = originalpath +'\\common\\technologies'
+    path = os.path.join(commonpath, 'technologies')
     nodict, linedict, filedict =create_search_dict(nodict, linedict, filedict, path, searchtechstrings, filtertechstrings, thingstripped, skipfiles = skipfiles) #skipfiles is added so that way it can skip tech files that are identical to vanilla
-    path = originalpath +'\\common\\decisions'
+    path = os.path.join(commonpath, 'decisions')
     nodict, linedict, filedict =create_search_dict(nodict, linedict, filedict, path, searchdecisionstrings, filterdecisionstrings, thingstripped)
     for key in nodict:
         if (key in loclist) == False:
@@ -58,17 +59,17 @@ def check_for_missing_loc(path, output_file, searchdict):
             output_file.write(result)
 
 def find_locs(path):
-    path = path+"\\" + "localisation"
-    loclist = []
+    path = os.path.join(path,"localisation")
+    locset = {}
     #print("finding scripted triggers")
-    for filename in listdir(path):
+    for filename in os.listdir(path):
         #print(filename)
         if '.yml' in filename:
-            file = open_file(path + "\\" + filename)
+            file = open_file(os.path.join(path,filename))
             for line in file:
                 if ':0' in line:
                     loc = line.split(':0')[0].strip()
                     loc = loc.strip()
                     #print(loc)
-                    loclist.append(loc)
-    return loclist
+                    locset.add(loc)
+    return locset

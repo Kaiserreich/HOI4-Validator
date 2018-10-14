@@ -2,7 +2,7 @@ from os import listdir
 from openFile import open_file
 from timedFunction import timed
 
-
+#not updated to use os.path.join because this function is silly and probably won't be used in the future
 @timed
 def check_for_old_generals(path, output_file):
     check(path, output_file, "\\history\\countries", 'utf-8-sig')

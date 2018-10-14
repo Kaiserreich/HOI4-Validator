@@ -17,8 +17,8 @@ def check_for_name_lists(file_path, output_file):
     aux_path = file_path + "\\common\\units"
 
     for filename in listdir(aux_path):
-        if path.isfile(aux_path + '\\' + filename):
-            file = open_file(aux_path + '\\' + filename)
+        if path.isfile(path.join(aux_path, filename)):
+            file = open_file(path.join(aux_path, filename))
             line = file.readline()
             level = 0
             unitnameset = False
@@ -45,10 +45,10 @@ def check_for_name_lists(file_path, output_file):
                 line = file.readline()
 
     # Step 2: read ALL THE TAGS
+    commonpath = path.join(file_path, "common")
+    aux_path = path.join(commonpath, "country_tags")
 
-    aux_path = file_path + "\\common\\country_tags"
-
-    file = open_file(aux_path + '\\' + "00_countries.txt")
+    file = open_file(path.join(aux_path, "00_countries.txt"))
     line = file.readline()
 
     while line:
@@ -69,11 +69,10 @@ def check_for_name_lists(file_path, output_file):
 
     # Step 4: Start reading namelist files, to remove unit types as needed
 
-    aux_path = file_path + "\\common\\units\\names_divisions"
-
+    aux_path = path.join(path.join(commonpath, 'units'), 'names_divisions')
     for filename in listdir(aux_path):
         level = 0
-        file = open_file(aux_path + '\\' + filename)
+        file = open_file(path.join(aux_path, filename))
         line = file.readline()
         current_tags = list()
         current_unit_types = list()

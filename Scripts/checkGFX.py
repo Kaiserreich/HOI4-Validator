@@ -54,30 +54,32 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
     #   Companies:
     #Other:
     #   Miscased: Done (Only relevant for leader portraits so far)
+    common_path = path.join(file_path, "common")
+    gfx_path = path.join(file_path, "gfx")
+    interface_path = path.join(file_path, "interface")
 
-    interface_path = file_path + "\\interface"
+    tree_path = path.join(common_path, "national_focus")
+    tree_gfx_path =path.join(path.join(gfx_path, 'interface'), 'goals')
 
-    tree_path = file_path + "\\common\\national_focus"
-    tree_gfx_path = file_path + "\\gfx\\interface\\goals"
+    decisions_path = path.join(common_path, 'decisions')
 
-    decisions_path = file_path + "\\common\\decisions"
+    #scripted_triggers_path = file_path + "\\common\\scripted_effects"
+    #Joke's on you, whoever wrote this script, I don't have to update this to work on linux if you never call it
 
-    scripted_triggers_path = file_path + "\\common\\scripted_effects"
+    event_path = path.join(file_path, 'events')
+    event_gfx_path =path.join(file_path, "event_pictures")
 
-    event_path = file_path + "\\events"
-    event_gfx_path = file_path + "\\gfx\\event_pictures"
+    #ideas_gfx_path = file_path + "\\gfx\\interface\\ideas"
+    #ideas_gfx_path = file_path + "\\common\\ideas" #also for ministers
 
-    ideas_gfx_path = file_path + "\\gfx\\interface\\ideas"
-    ideas_gfx_path = file_path + "\\common\\ideas" #also for ministers
+    #ministers_gfx_path = file_path + "\\gfx\\interface\\ministers"
 
-    ministers_gfx_path = file_path + "\\gfx\\interface\\ministers"
+    #tech_gfx_path = file_path + "\\gfx\\interface\\technologies"
 
-    tech_gfx_path = file_path + "\\gfx\\interface\\technologies"
+    leaders_gfx_path = path.join(gfx_path, "leaders")
+    country_history_path = path.join(path.join(common_path, 'history'), 'countries')
 
-    leaders_gfx_path = file_path + "\\gfx\\leaders"
-    country_history_path = file_path + "\\history\\countries"
-
-    flags_gfx_path = file_path + "\\gfx\\flags"
+    flags_gfx_path = path.join(gfx_path, "flags")
 
     check_flags(flags_gfx_path, output_file, file_path)
 
@@ -92,15 +94,16 @@ def fill_tag_array(internal_path, cosmetics):
     # 2 = both
 
     tags = []
-    event_path = internal_path + "\\events"
-    tree_path = internal_path + "\\common\\national_focus"
-    decisions_path = internal_path + "\\common\\decisions"
-    scripted_triggers_path = internal_path + "\\common\\scripted_effects"
+    common_path = path.join(internal_path, "common")
+    event_path = path.join(internal_path, 'events')
+    tree_path = path.join(common_path, "national_focus")
+    decisions_path = path.join(common_path, 'decisions')
+    scripted_triggers_path = path.join(common_path, "scripted_effects")
 
     cosmetic_tag_dirs = [event_path, decisions_path, tree_path, scripted_triggers_path]
 
     #Find Normal Tags
-    tags_path = internal_path + "\\common\\country_tags\\00_countries.txt"
+    tags_path =path.join(path.join(common_path, 'country_tags'), '00_countries.txt')
     file = open_file(tags_path)
     #print("Reading: " + file.name)
     lines = file.readlines()
@@ -120,7 +123,7 @@ def fill_tag_array(internal_path, cosmetics):
             for filename in listdir(dirs):
                 if 'categories' in filename:
                     continue
-                file = open_file(dirs + "\\" + filename)
+                file = open_file(path.join(dirs, filename))
                 lines = file.readlines()
                 for string in lines:
                     if 'set_cosmetic_tag' in string and string.strip().startswith('#') is False and '{' not in string:
@@ -231,7 +234,7 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
             if 'categories' in file_name:
                 continue
             line_number = 0
-            file = open_file(dir + "\\" + file_name)
+            file = open_file(path.join(dir, file_name))
             lines = file.readlines()
             for line in lines:
                 line_number += 1
@@ -277,10 +280,10 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
         if "event" in file_name and 'gfx' in file_name:
             line_number = 0
             if file_name != "eventpictures.gfx":
-                file = open(interface_path + "\\" + file_name, 'r', 'utf-8')
+                file = open(path.join(interface_path, file_name), 'r', 'utf-8')
                 vanilla = 0
             else:
-                file = open_file(hoi4path + "\\interface\\" + file_name)
+                file = open_file(path.join(path.join(hoi4path, 'interface'), file_name))
                 vanilla = 1
             lines = file.readlines()
             for line in lines:
@@ -307,7 +310,7 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
     #GFX keys in events that arent initialised
     for file_name in listdir(event_path):
         line_number = 0
-        file = open_file(event_path + "\\" + file_name)
+        file = open_file(path.join(event_path, file_name))
         lines = file.readlines()
         for line in lines:
             line_number += 1
@@ -340,7 +343,7 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
     #Fill Decisions keys
     decisions_keys = []
     decisions_keys_full = []
-    file = open(hoi4path + "\\interface\\decisions.gfx")
+    file = open(path.join(path.join(hoi4path, "interface"),"decisions.gfx"))
     lines = file.readlines()
     for line in lines:
         if '#' in line:
@@ -356,7 +359,7 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
                 decisions_keys.append(temp_string)
     for filenames in listdir(interface_path):
         if 'decisions' in filenames:
-            file = open(interface_path + "\\" + filenames)
+            file = open(path.join(interface_path,filenames))
             lines = file.readlines()
             for line in lines:
                 if 'name' in line:
@@ -375,7 +378,7 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
     for filename in listdir(decisions_path):
         if 'categories' in filename:
             continue
-        file = open(decisions_path + "\\" + filename)
+        file = open(path.join(decisions_path,filename))
         lines = file.readlines()
         for line in lines:
             line_number += 1
@@ -394,8 +397,8 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
 
 
 
-    for filename in listdir(decisions_path + "\\categories"):
-        file = open(decisions_path + "\\categories\\" + filename)
+    for filename in listdir(path.join(decisions_path, "categories")):
+        file = open(path.join(path.join(decisions_path, "categories"), filename))
         lines = file.readlines()
         for line in lines:
             line_number += 1
@@ -423,7 +426,7 @@ def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_fi
     #Check if KReys are used
     for filenames in listdir(interface_path):
         if 'decisions' in filenames:
-            file = open(interface_path + "\\" + filenames)
+            file = open(path.join(interface_path, filenames))
             lines = file.readlines()
             for line in lines:
                 if 'name' in line:
@@ -451,7 +454,7 @@ def focus_tree_icons(tree_path, hoi4_path, output_file, mod_path, tree_gfx, gfx_
     gfx_names = []
     for filename in listdir(gfx_files):
         if 'goals' in filename and 'shine' not in filename:
-            file = open(gfx_files + "\\" + filename, 'r', 'utf-8')
+            file = open(path.join(gfx_files, filename), 'r', 'utf-8')
             lines = file.readlines()
             for line in lines:
                 if 'GFX_focus_jap_zero' in line:
@@ -494,7 +497,7 @@ def focus_tree_icons(tree_path, hoi4_path, output_file, mod_path, tree_gfx, gfx_
     kr_gfx_names = gfx_names.copy()
     #append vanilla stuff
     file.close()
-    file = open(hoi4_path + "\\interface\\goals.gfx", 'r', 'utf-8')
+    file = open(path.join(path.join(hoi4_path, "interface"), "goals.gfx"), 'r', 'utf-8')
     lines = file.readlines()
     for line in lines:
         if 'name' in line:
@@ -511,10 +514,10 @@ def focus_tree_icons(tree_path, hoi4_path, output_file, mod_path, tree_gfx, gfx_
     #start scrubbing
     found_gfx_in_tree = []
     for filename in listdir(tree_path):
-        size = path.getsize(tree_path + "\\" + filename)
+        size = path.getsize(path.join(tree_path, filename))
         if size < 100:
             continue
-        file = open_file(tree_path + "\\" + filename)
+        file = open_file(path.join(tree_path, filename))
         lines = file.readlines()
         line_number = 0
         for line in lines:

@@ -5,11 +5,11 @@ from findNewlineIndices import find_indices_of_new_lines
 from changeInScopeLevel import change_in_scope_level
 from checkEvents import Bug
 from timedFunction import timed
-
+import os
 
 @timed
 def check_alive_check(path, output_file):
-    path += '\\events\\'
+    path = os.path.join(path, "events")
     for string, filename in files_as_strings_from_path_gen(path):
         for bug in missing_alive_check_gen(string, filename):
             output_file.write(bug.description + ' at line ' + str(bug.line) + ' in ' + bug.filename + '\n')
