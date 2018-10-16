@@ -5,14 +5,14 @@ import os
 
 @timed
 def check_for_missing_cores(path, output_file):
-    path = os.path.join(os.path.join(path, "history"), "states")
+    path = os.path.join(path, "history", "states")
     filelist = []
     for filename in listdir(path):
         #this loops through all the states
         hascore = False
         allempty = True
         current_line = 0
-        file = open_file(path + '\\' + filename)
+        file = open_file(os.path.join(path, filename))
         line = file.readline()
         current_line += 1
         while line:

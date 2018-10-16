@@ -1,11 +1,11 @@
-from os import listdir
+import os
 from codecs import open
 from timedFunction import timed
 
 @timed
 def missing_divisions_names_group (path, output_file, skipunlock):
-    path += "\\history\\units"
-    for filename in listdir(path):
+    path = os.path.join(path, 'history', 'units')
+    for filename in os.listdir(path):
         if 'unlock' not in filename or skipunlock == False:
             file = open(path + '\\' + filename, 'r', 'ansi')
             line = file.readline()

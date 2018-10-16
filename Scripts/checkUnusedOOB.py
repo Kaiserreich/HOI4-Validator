@@ -1,5 +1,4 @@
-from os import listdir
-from openFile import open_file
+import os
 from createDict import create_search_dict
 from createDict import search_effects
 from timedFunction import timed
@@ -15,7 +14,7 @@ def check_for_unused_OOB(path, output_file):
     searchstrings = ['OOB = ', 'load_oob = ', 'oob = ']
     filterstrings = []
     thingstripped = 'oob'
-    path+="\\history\\countries"
+    path = os.path.join(path, 'history', 'countries')
     finaldict = actually_check_for_unused_oob(originalpath, newoobdict)
     oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, filterstrings, thingstripped)
     oobdict, linedict, filedict =search_effects(oobdict, linedict, filedict, originalpath, searchstrings, filterstrings, thingstripped)
@@ -30,8 +29,8 @@ def check_for_unused_OOB(path, output_file):
 
 def actually_check_for_unused_oob(path, oobdict):
     returndict = oobdict
-    path+="\\history\\units"
-    for filename in listdir(path):
+    path = os.path.join(path, 'history', 'units')
+    for filename in os.listdir(path):
         oobname = filename.replace(".txt", "")
         if (oobname != 'empty'):
             returndict[oobname] = False

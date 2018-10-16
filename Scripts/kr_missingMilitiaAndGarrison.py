@@ -1,14 +1,14 @@
-from os import listdir
+import os
 from codecs import open
 from timedFunction import timed
 
 @timed
 def kr_missing_militia_and_garrison (path, output_file):
-    path += "\\common\\units\\names_divisions"
-    for filename in listdir(path):
+    path = os.path.join(path, 'common','units','names_divisions')
+    for filename in os.listdir(path):
         has_garrison = 0
         has_militia = 0
-        file = open(path+'\\'+filename, 'r', 'utf-8-sig')
+        file = open(os.join(path,filename), 'r', 'utf-8-sig')
         line = file.readline()
         while line:
             split_line = line.split(' ')

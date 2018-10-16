@@ -20,7 +20,7 @@ def actually_check_for_missing_focus(path, focusdict):
 @timed
 def check_for_missing_focus(path, output_file):
     #this creates a dict of all the focuses that are referenced
-    path = os.path.join(os.path.join(path, 'common'), 'national_focus')
+    path = os.path.join(path, 'common', 'national_focus')
     focusdict = {}
     linedict = {}
     filedict = {}

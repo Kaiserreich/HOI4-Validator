@@ -23,10 +23,9 @@ def check_flag_usage(mod_path, output_file):
     state_flags_modified = []
     state_flags_checked = []
     state_flags_cleared = []
-
-    flag_set_directories = ['events', 'common//decisions', 'common//scripted_effects',
-                            'common//national_focuses', 'history//countries', 'common//on_actions']
-    paths = [os.path.join(mod_path,directory) for directory in flag_set_directories] #will this work on non-windows systems? I don't know, but changing this thing to work in another way is way too much effort
+    commonpath = os.path.join(mod_path, 'common')
+    paths = [os.path.join(mod_path, 'events'), os.path.join(commonpath,'decisions'), os.path.join(commonpath,'scripted_effects'),
+                            os.path.join(commonpath,'national_focuses'), os.path.join(mod_path, 'history','countries'), os.path.join(commonpath,'on_actions')]
     for path in paths:
         for contents, filename in files_as_strings_from_path_gen(path):
             for flag, start_line in field_contents_gen(contents, 'set_global_flag'):
@@ -62,12 +61,11 @@ def check_flag_usage(mod_path, output_file):
                 if flag not in state_flags_cleared:
                     state_flags_cleared += [Flag(flag, start_line, filename)]
 
-    flag_checking_directories = ['events', 'common//decisions', 'common//scripted_triggers',
-                                 'common//scripted localisation', 'common//national_focuses',
-                                 'common//on_actions', 'common//ai_peace', 'common//ai_strategy',
-                                 'common//ai_strategy_plans', 'common//autonomous_states', 'common//ideas',
-                                 'common//technologies']
-    paths = [os.path.join(mod_path,directory)  for directory in flag_checking_directories]
+    paths = [os.path.join(mod_path, 'events'),  os.path.join(commonpath,'decisions'),  os.path.join(commonpath,'scripted_triggers'),
+            os.path.join(commonpath,'scripted localisation'),  os.path.join(commonpath,'national_focuses'),
+            os.path.join(commonpath,'on_actions'),  os.path.join(commonpath,'ai_peace'),  os.path.join(commonpath,'ai_strategy'),
+            os.path.join(commonpath,'ai_strategy_plans'),  os.path.join(commonpath,'autonomous_states'),  os.path.join(commonpath,'ideas'),
+            os.path.join(commonpath, 'technologies')]
     for path in paths:
         for contents, filename in files_as_strings_from_path_gen(path):
             for flag, start_line in field_contents_gen(contents, 'has_global_flag'):

@@ -1,15 +1,14 @@
 from timedFunction import timed
 from stringAndFileFromPath import files_as_strings_from_path_gen
 from checkEvents import Bug
-
+import os
 
 @timed
 def check_missing_equals(mod_path, output_file):
     bugs = []
-    directories = ['/events/', '/common/national_focus/', '/interface/', '/history/']
+    directories = [os.path.join(mod_path, 'events'), os.path.join(mod_path, 'common', 'national_focus'), os.path.join(mod_path, 'interface'), os.path.join(mod_path, 'history')]
     for directory in directories:
-        path = mod_path + directory
-        for contents, filename in files_as_strings_from_path_gen(path):
+        for contents, filename in files_as_strings_from_path_gen(directory):
             if "credits.txt" not in filename:
                 bugs += [bug for bug in missing_equals_gen(contents, filename)]
 

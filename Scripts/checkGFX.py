@@ -59,7 +59,7 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
     interface_path = path.join(file_path, "interface")
 
     tree_path = path.join(common_path, "national_focus")
-    tree_gfx_path =path.join(path.join(gfx_path, 'interface'), 'goals')
+    tree_gfx_path =path.join(gfx_path, 'interface', 'goals')
 
     decisions_path = path.join(common_path, 'decisions')
 
@@ -77,7 +77,7 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
     #tech_gfx_path = file_path + "\\gfx\\interface\\technologies"
 
     leaders_gfx_path = path.join(gfx_path, "leaders")
-    country_history_path = path.join(path.join(common_path, 'history'), 'countries')
+    country_history_path = path.join(file_path, 'history', 'countries')
 
     flags_gfx_path = path.join(gfx_path, "flags")
 

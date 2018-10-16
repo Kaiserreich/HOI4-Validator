@@ -10,7 +10,7 @@ import os
 def check_duplicate_ids(mod_path, output_file):
     bugs = []
     id_set = set()
-    directories = [os.path.join("events"), os.path.join(os.path.join(mod_path, "common"), "national_focus")]
+    directories = [os.path.join("events"), os.path.join(mod_path, "common", "national_focus")]
     for path in directories:
         for contents, filename in files_as_strings_from_path_gen(path):
             for id_tag, line_number in duplicate_ids_gen(contents):

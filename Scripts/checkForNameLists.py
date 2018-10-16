@@ -69,7 +69,7 @@ def check_for_name_lists(file_path, output_file):
 
     # Step 4: Start reading namelist files, to remove unit types as needed
 
-    aux_path = path.join(path.join(commonpath, 'units'), 'names_divisions')
+    aux_path = path.join(commonpath, 'units', 'names_divisions')
     for filename in listdir(aux_path):
         level = 0
         file = open_file(path.join(aux_path, filename))

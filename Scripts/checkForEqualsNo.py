@@ -25,8 +25,7 @@ def check_for_equals_no(path, output_file):
 
 
 def find_scripted_triggers(path):
-    path += "\\common\\scripted_triggers"
-    path = os.path.join(os.path.join(path, "common"), 'scripted_triggers')
+    path = os.path.join(path, "common", 'scripted_triggers')
     triggerlist = []
     #print("finding scripted triggers")
     for filename in os.listdir(path):
