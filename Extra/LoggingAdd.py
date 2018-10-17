@@ -6,8 +6,7 @@ import os
 import re
 
 #TODO
-#Technology
-#State Changes (no need, generic)
+#Unit leader events
 
 
 def check_triggered(line_number, lines):
@@ -51,6 +50,8 @@ def focus(cpath):
             new_focus = False
             find_coml = False
             timestart = time.time()
+            shared_focus = False
+            shared_focuseseses = []
             for line in lines:
                 line_number += 1
                 if line.strip().startswith('#'):
@@ -58,6 +59,8 @@ def focus(cpath):
                 if '#' in line:
                     line = line.split('#')[0]
                 if 'focus = {' in line:  # New Event
+                    if 'shared_focus' in line:
+                        shared_focus = True
                     new_focus = True
                     if find_coml is True:
                         find_coml = False
@@ -69,11 +72,14 @@ def focus(cpath):
                         if '#' in focus_id:
                             focus_id = focus_id.split('#')[0].strip()
                         ids.append(focus_id)
+                        if shared_focus:
+                            shared_focuseseses.append(focus_id)
+                            shared_focus = False
                 if 'completion_reward' in line and find_coml is True:
                         find_coml = False
                         idss.append(line_number)
                 if 'log = "[GetDateText]:' in line:
-                    if  idss != [] or ids != []:
+                    if idss != [] or ids != []:
                         idss.pop()
                         ids.pop()
             time1 = time.time() - timestart
@@ -84,14 +90,17 @@ def focus(cpath):
             for line in lines:
                 line_number += 1
                 if line_number in idss:
+                    whitespace = '\t\t'
                     focus_id = ids[idss.index(line_number)]
                     if focus_id in ["{", "}"]:
                         focus_id = "Error, focus name not found"
+                    if focus_id in shared_focuseseses:
+                        whitespace = whitespace[:len(whitespace)-1]
                     if '}' in line:
                         temp = line.split("{")
-                        replacement_text = temp[0] + "{\n\n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Focus " + focus_id + "\"\n" + "{".join(temp)[len(temp[0])+1:] + "\n"
+                        replacement_text = temp[0] + "{\n" + whitespace + "\tlog = \"[GetDateText]: [Root.GetName]: Focus " + focus_id + "\"\n" + "{".join(temp)[len(temp[0])+1:] + "\n"
                     else:
-                        replacement_text = "\t\tcompletion_reward = {\n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Focus " + focus_id + "\"\n"
+                        replacement_text = whitespace + "completion_reward = {\n" + whitespace + "\tlog = \"[GetDateText]: [Root.GetName]: Focus " + focus_id + "\"\n"
                     outputfile.write(replacement_text)
                     #print("Inserted loc at {0} in file {1}".format(line_number.__str__(), filename))
                 else:
@@ -130,7 +139,7 @@ def event(cpath):
                     continue
                 if '#' in line:
                     line = line.split('#')[0]
-                if 'country_event' in line or 'news_event' in line: #New Event
+                if 'country_event' in line or 'news_event' in line or 'unit_leader_event' in line: #New Event
                     if check_triggered(line_number, lines) is False:
                         if "}" not in line or "days" not in line:
                             new_event = True
@@ -221,7 +230,8 @@ def idea(cpath):
                 if line_number in ids:
                     extra = ""
                     if '#' in line:
-                        extra = "#" + line.split('#')[1].strip()
+                        line = line.strip()
+                        extra = "#" + line.split('#')[len(line.split('#'))-1].strip()
                     idea_id = line.split('=')[0].strip()
                     replacement_text = "\t\t" + idea_id + " = {" + extra + "\n\t\t\ton_add = {log = \"[GetDateText]: [Root.GetName]: add idea " + idea_id + "\"}\n"
                     outputfile.write(replacement_text)
@@ -281,7 +291,7 @@ def decision(cpath):
                         ids.append(line.split('=')[0].strip())
                 if 'complete_effect' in line:
                     if '[Root.GetName]:' not in lines[line_number] and 'log = \"[GetDateText]:' not in line:
-                            print(lines[line_number])
+                            #print(lines[line_number])
                             idss.append(line_number)
                             found_one = True
                 if 'remove_effect' in line:
@@ -334,7 +344,7 @@ def decision(cpath):
                         temp = line.split("{")
                         replacement_text = temp[0] + "{\n\n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Decision " + dec_id + "\"\n" + "{".join(temp)[len(temp[0])+1:] + "\n"
                     else:
-                        replacement_text = "\t\tcomplete_effect = { \n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Decision " + dec_id + "\"\n"
+                        replacement_text = "\t\tcomplete_effect = {\n\t\t\tlog = \"[GetDateText]: [Root.GetName]: Decision " + dec_id + "\"\n"
                     outputfile.write(replacement_text)
                     #print("Inserted loc at {0} in file {1}".format(line_number.__str__(), filename))
                 elif line_number in idsss:
