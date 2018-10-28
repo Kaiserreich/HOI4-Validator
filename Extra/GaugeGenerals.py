@@ -40,7 +40,7 @@ def main():
             sum = 999
             tag = "REEEEEEEEE"
             g_or_fm = 'REEEEEEEEEEEE'
-            for x in range(1, len(lines)-1):
+            for x in range(0, len(lines)-1):
                 line = lines[x].strip()
                 if '#' in line:
                     line = line.split('#')[0].strip()
