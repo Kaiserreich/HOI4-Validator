@@ -1,15 +1,197 @@
-from codecs import open
 import sys
-from os import listdir
-import os
 import time
 from os import listdir
-from os import walk
 from os import path
 from codecs import open
+import random
+
 
 def print_general(generals, to_find):
     print(to_find + ":", generals[to_find])
+
+
+def get_extremes(pips, available = None):
+    if available is None:
+        available = ["A", "D", "P", "L"]
+
+    remove = {"A", "D", "P", "L"} - set(available)
+
+    keys = list(set(pips.keys()) - remove)
+
+    values = list(pips.values())
+
+    for key in list(remove):
+        values.remove(pips[key])
+
+    high = max(values)
+    high_no = []
+    low = min(values)
+    low_no = []
+
+    for key in keys:
+        if pips[key] == high:
+            high_no.append(key)
+        elif pips[key] == low:
+            low_no.append(key)
+
+    #print("High:", high_no, "Low:", low_no)
+    return high_no, low_no
+
+
+def normalise_again(pips):
+    reduce = 0
+    if min(list(pips.values())) == 0:
+        for x in pips:
+            if pips[x] == 0:
+                pips[x] = 1
+                reduce += 1
+    return reduce
+
+
+def get_elegible(pips, lower, available = None):
+    if available is None:
+        available = ["A", "D", "P", "L"]
+
+    high, low = get_extremes(pips)
+
+    if len(high) == 4:  # If all are of the same value return all the values
+        return available
+
+    if lower is True:
+        for key in pips:  # Yeet the 1's, can't ever lower em
+            if pips[key] == 1:
+                if key in available:
+                    available.remove(key)
+
+        high, low = get_extremes(pips, available)
+
+        values = list(pips.values())  # Sort values to determine if the max value can be lowered
+        sorted_values = values
+        list.sort(sorted_values)
+
+        if sorted_values[3] == (sorted_values[2]+2):  # Difference of two means that the highest can be lowered without losing specialisation
+            for key in pips:
+                if pips[key] == sorted_values[3]:
+                    return [key]
+
+        if len(high) == 1 and len(low) == 1 and len(available) > 2:  # If there are two nice central values, return those
+            return list(set(available) - set(high) - set(low))
+
+        if len(high) + len(low) == len(available):  # If all remaining values are either in high or low, return the larger
+            if len(high) > len(low):
+                return high
+            else:
+                return low
+    else:
+        if len(low) < 3:  # Raise the lowest values
+            return low
+
+        if len(low) == 3:
+            if pips[high[0]] - pips[low[0]] == 1:
+                return high
+            else:
+                return low
+
+    return available  # Else just return what's left of available
+
+
+def fix_by_one(pips, subtract):
+    elegible = get_elegible(pips, subtract)
+    #print("Pips before:", pips)
+    #print("elegible:", elegible)
+    if len(elegible) == 0:
+        print(pips, subtract, elegible)
+        exit()
+    random.seed()
+    if subtract is True:
+        pips[random.choice(elegible)] -= 1
+        return 1
+    else:
+        pips[random.choice(elegible)] += 1
+        return -1
+
+
+def fix_by_fours(pips, to_add):
+    if to_add > 0:
+        add = 1
+    else:
+        add = -1
+
+    while abs(to_add) > 3:
+
+        for key in pips:
+            pips[key] += add
+        to_add += -add * 4
+
+        if add == -1:
+            to_add += -normalise_again(pips)
+
+
+    return to_add
+
+
+def normalise_stats(generals, normalise):
+
+    rank, skill, A, D, P, L, total, tag = generals[normalise]
+
+    # rank, skill, A, D, P, L, total, tag = 'a', 2, 2, 1, 1, 1, 6, 'BAT'
+    # rank, skill, A, D, P, L, total, tag = 'a', 3, 4, 4, 2, 1, 11, 'BAT'
+
+    return_string = normalise + " from skill {}:{}/{}/{}/{} to ".format(skill, A, D, P, L)
+    pips = {"A": A, "D": D, "P": P, "L": L}
+
+    aim = skill * 3 + 1
+
+    to_add = aim - total
+
+    if to_add < 0:
+        #print("Removing", -to_add)
+        lower = True
+    else:
+        #print("Adding", to_add)
+        lower = False
+
+    if to_add != 0:
+        if skill == 1:
+            for key in pips.keys():
+                pips[key] = 1
+        else:
+            if abs(to_add) > 3:
+                to_add = fix_by_fours(pips, to_add)
+            while to_add != 0:
+                to_add += fix_by_one(pips, lower)
+
+    generals[normalise] = rank, skill, pips["A"], pips["D"], pips["P"], pips["L"], sum(list(pips.values())), tag
+    return_string2 = "{}/{}/{}/{}".format(pips["A"], pips["D"], pips["P"], pips["L"])
+
+    return return_string + return_string2
+
+
+def print_stats(generals, max_sum_gen, max_tag, max_tag_no, total_generals, ops, min_gen, max_gen):
+    print("Max Stat:", max_sum_gen, generals[max_sum_gen])
+    print("Most OP nations:", max_tag + ",", max_tag_no)
+    print("Total Generals:", total_generals)
+
+    for x in range(-6, 7):
+        if x == -6:
+            print("Underpowered by 6 or more:", ops[x])
+        elif x == 0:
+            print("Perfection:", ops[x])
+        elif x == 6:
+            print("Overpowered by 6 or more:", ops[x])
+        elif x < 0:
+            print("Underpowered by " + str(abs(x)) + ":", ops[x])
+        elif x > 0:
+            print("Overpowered by " + str(abs(x)) + ":", ops[x])
+
+    print("Too OP:", sum(ops[1:7]))
+    print("Most OP:")
+    for name in max_gen.split(','):
+        print_general(generals, name.strip())
+    print("Most UP:")
+    for name in min_gen.split(','):
+        print_general(generals, name.strip())
+
 
 def main():
     cpath = sys.argv[1]
@@ -37,7 +219,6 @@ def main():
             planning = 999
             logistics = 999
             level = 0
-            sum = 999
             tag = "REEEEEEEEE"
             g_or_fm = 'REEEEEEEEEEEE'
             for x in range(0, len(lines)-1):
@@ -73,25 +254,13 @@ def main():
                 if '}' in line and searching is True and level == 1 and 'trait' not in line:
                     searching = False
                     generals[current_general] = (g_or_fm, skill, attack, defense, planning, logistics, attack+defense+planning+logistics, tag)
-                    #print(current_general, generals[current_general])
                 if '{' in line:
                     level += line.count('{')
                 if '}' in line:
                     level -= line.count('}')
 
-    up_1 = 0
-    up_2 = 0
-    up_3 = 0
-    up_4 = 0
-    up_5 = 0
-    up_6_more = 0
-    perfect = 0
-    op_1 = 0
-    op_2 = 0
-    op_3 = 0
-    op_4 = 0
-    op_5 = 0
-    op_6_more = 0
+    ops = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
     max_sum = 0
     max_gen = ""
     min_sum = 0
@@ -102,40 +271,21 @@ def main():
     output_file = open("generals.txt", 'w', 'utf-8-sig')
 
     per_level = 3
-    starting = 4
+    starting = 1
+
+    fixed = 0
+
     for general in generals:
-        rank, skill, A, D, P, L, sum, tag = generals[general]
-        target = (skill-1) * per_level + starting
-        deviance = sum-target
-        if abs(deviance) >2:
+        rank, skill, A, D, P, L, total, tag = generals[general]
+        target = skill * per_level + starting
+        deviance = total-target
+        if abs(deviance) > 0:
+            fixed += 1
             output_file.write(general + ": " + str(generals[general]) + "\n")
+            normalise_stats(generals, general)
             tags[tag] += 1
-        if deviance < -5:
-            up_6_more += 1
-        elif deviance < -4:
-            up_5 += 1
-        elif deviance < -3:
-            up_4 += 1
-        elif deviance < -2:
-            up_3 += 1
-        elif deviance < -1:
-            up_2 += 1
-        elif deviance < 0:
-            up_1 += 1
-        elif deviance < 1:
-            perfect += 1
-        elif deviance < 2:
-            op_1 += 1
-        elif deviance < 3:
-            op_2 += 1
-        elif deviance < 4:
-            op_3 += 1
-        elif deviance < 5:
-            op_4 += 1
-        elif deviance < 6:
-            op_5 += 1
-        else:
-            op_6_more += 1
+
+        ops[sorted((-6, deviance, 6))[1]] += 1
 
         if deviance > max_sum:
             max_sum = deviance
@@ -143,8 +293,8 @@ def main():
         elif deviance == max_sum:
             max_gen += ", " + general
 
-        if sum > max_sum2:
-            max_sum2 = sum
+        if total > max_sum2:
+            max_sum2 = total
             max_sum_gen = general
         elif deviance == max_sum2:
             max_sum_gen += ", " + general
@@ -154,39 +304,33 @@ def main():
             min_gen = general
         elif deviance == min_sum:
             min_gen += ", " + general
+
     max_tag_no = 0
     max_tag = ""
+
     for tag in tags:
         if tags[tag] > max_tag_no:
             max_tag = tag
             max_tag_no = tags[tag]
         elif tags[tag] == max_tag_no:
             max_tag += ', ' + tag
-    print("Max Stat:", max_sum_gen, generals[max_sum_gen])
-    print("Most OP nations:", max_tag+ ",", max_tag_no)
-    print("Total Generals:", total_generals)
-    print("Underpowered by 6 or more:", up_6_more)
-    print("Underpowered by 5:", up_5)
-    print("Underpowered by 4:", up_4)
-    print("Underpowered by 3:", up_3)
-    print("Underpowered by 2:", up_2)
-    print("Underpowered by 1:", up_1)
-    print("Perfection:", perfect)
-    print("Overpowered by 1:", op_1)
-    print("Overpowered by 2:", op_2)
-    print("Overpowered by 3:", op_3)
-    print("Overpowered by 4:", op_4)
-    print("Overpowered by 5:", op_5)
-    print("Overpowered by 6 or more:", op_6_more)
-    print("Too OP:", op_3+op_4+op_5+op_6_more)
-    print("Most OP:")
-    for name in max_gen.split(','):
-        print_general(generals, name.strip())
-    print("Most UP:")
-    for name in min_gen.split(','):
-        print_general(generals, name.strip())
+
+    errors = 0
+    for general in generals:
+        rank, skill, A, D, P, L, total, tag = generals[general]
+        target = skill * 3 + 1
+        deviance = total-target
+        if abs(deviance) > 0:
+            print(general, generals[general])
+            errors += 1
+            fixed -= 1
+
+    print("Total generals checked:", str(total_generals) + " with " + str(errors) + " errors and " + str(fixed) + " fixed")
+    if(errors != 0):
+        exit()
 
 
+    # print_stats(generals, max_sum_gen, max_tag, max_tag_no, total_generals, ops, min_gen, max_gen)
 
     print("Total Time: %.3f ms" % ((time.time() - ttime) * 1000))
 
