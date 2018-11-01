@@ -19,8 +19,20 @@ check_for_missing_focus = yes
 check_for_missing_cores = yes
 #this checks for missing OOBs
 check_for_missing_oobs = yes
-#this checks for events that are missing graphics, as well as some other things
-check_events = yes
+#this checks for events that are missing graphics
+check_events_for_graphics = yes
+#checks for events that are missing options
+check_events_for_options = yes
+#checks for events that are missing titles
+check_events_for_titles = yes
+#checks for events that are missing descriptions
+check_events_for_descriptions = yes
+#checks hidden events for visible content
+check_hidden_events = yes
+#checks if events with ai_chance fields have only one option
+check_ai_chance_usage = yes
+#checks if events that load oobs also have custom tooltips
+check_load_oob_usage = yes
 #this checks to make sure endlines are used properly
 check_endlines = yes
 #this checks to make sure all generals referenced in effects actually exist

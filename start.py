@@ -70,8 +70,7 @@ def start(mod_path, hoi4_path):
         check_for_missing_cores(mod_path, output_file)
     if optionsdict["check_for_missing_oobs"]:
         check_for_missing_OOB(mod_path, output_file)
-    if optionsdict["check_events"]:
-        check_events(mod_path, output_file)
+    check_events(mod_path, output_file, optionsdict)
     if optionsdict["check_endlines"]:
         check_endlines(mod_path, output_file)
     if optionsdict["check_generals"]:
