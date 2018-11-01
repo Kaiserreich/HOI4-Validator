@@ -31,9 +31,12 @@ def check_event_usage(mod_path, output_file):
                     called_ids += [called_event_id]
                     called_events += [Event(called_event_id, called_event_start_line+start_line-1, events_directory+filename)]
 
-    directories_that_can_call_events = ['national_focus', 'on_actions']
+    directories_that_can_call_events = [os.path.join('common', 'national_focus'),
+                                        os.path.join('common', 'on_actions'), 'history',
+                                        os.path.join('common', 'decisions'),
+                                        ]
     for subdir in directories_that_can_call_events:
-        path = os.path.join(os.path.join(mod_path, 'common'), subdir)
+        path = os.path.join(mod_path, subdir)
         for contents, filename in files_as_strings_from_path_gen(path):
             for event, start_line in scope_gen(contents, ['news_event', 'country_event']):
                 called_event_id = find_contents_of_field(event, 'id')

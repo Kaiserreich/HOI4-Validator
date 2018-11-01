@@ -12,7 +12,7 @@ check_for_brackets = yes
 #this checks for locs that are defined twice
 check_for_double_locs = yes
 #this checks for missing graphics
-check_for_missing_gfx = yes
+check_for_missing_gfx = no
 #this checks to make sure focuses referenced elsewhere actually exist
 check_for_missing_focus = yes
 #this checks to make sure all provinces have at least one core at game start
