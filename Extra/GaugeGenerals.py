@@ -201,7 +201,7 @@ def main():
             ok += 1
         else:
             cpath += ' ' + string
-    cpath = "C:\\Users\\Martijn\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\KRBU\\history\\countries\\"
+    cpath = path.join(cpath, "history", "countries")
 
     ttime = time.time()
 
