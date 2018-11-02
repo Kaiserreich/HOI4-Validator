@@ -48,7 +48,7 @@ def normalise_again(pips):
     return reduce
 
 
-def get_elegible(pips, lower, available = None):
+def get_elegible(pips, lower, original_stats,  available = None):
     if available is None:
         available = ["A", "D", "P", "L"]
 
@@ -73,15 +73,27 @@ def get_elegible(pips, lower, available = None):
             for key in pips:
                 if pips[key] == sorted_values[3]:
                     return [key]
+        elif sorted_values[2] == (sorted_values[1]+2):
+            for key in pips:
+                if pips[key] == sorted_values[2]:
+                    return [key]
 
-        if len(high) == 1 and len(low) == 1 and len(available) > 2:  # If there are two nice central values, return those
+        if len(high) == 1 and len(available) > 2 and (len(low) == 1 or len(low) == 2):  # If there are two nice central values, return those
+            backup = available
+            for keys in original_stats:
+                if original_stats[keys] - pips[keys] != 0:
+                    if keys in available:
+                        available.remove(keys)
+            if len(available) == 0:
+                available = backup
             return list(set(available) - set(high) - set(low))
 
         if len(high) + len(low) == len(available):  # If all remaining values are either in high or low, return the larger
-            if len(high) > len(low):
-                return high
-            else:
+            if len(low) > len(high):
                 return low
+            else:
+                return high
+
     else:
         if len(low) < 3:  # Raise the lowest values
             return low
@@ -95,10 +107,10 @@ def get_elegible(pips, lower, available = None):
     return available  # Else just return what's left of available
 
 
-def fix_by_one(pips, subtract):
-    elegible = get_elegible(pips, subtract)
-    #print("Pips before:", pips)
-    #print("elegible:", elegible)
+def fix_by_one(pips, subtract, original_stats):
+    elegible = get_elegible(pips, subtract, original_stats)
+    print("Pips before:", pips)
+    print("elegible:", elegible)
     if len(elegible) == 0:
         print(pips, subtract, elegible)
         exit()
@@ -126,20 +138,30 @@ def fix_by_fours(pips, to_add):
         if add == -1:
             to_add += -normalise_again(pips)
 
-
     return to_add
+
+
+def not_blocked(pips):
+    values = list(pips.values())  # Sort values to determine if the max value can be lowered
+    sorted_values = values
+    list.sort(sorted_values)
+    if sorted_values[3] == (sorted_values[2] + 2):  # Difference of two means that the highest can be lowered without losing specialisation
+        return False
+    else:
+        return True
 
 
 def normalise_stats(generals, normalise):
 
     rank, skill, A, D, P, L, total, tag = generals[normalise]
 
+
     # rank, skill, A, D, P, L, total, tag = 'a', 2, 2, 1, 1, 1, 6, 'BAT'
     # rank, skill, A, D, P, L, total, tag = 'a', 3, 4, 4, 2, 1, 11, 'BAT'
 
     return_string = normalise + " from skill {}:{}/{}/{}/{} to ".format(skill, A, D, P, L)
     pips = {"A": A, "D": D, "P": P, "L": L}
-
+    original_stats = pips.copy()
     aim = skill * 3 + 1
 
     to_add = aim - total
@@ -156,10 +178,10 @@ def normalise_stats(generals, normalise):
             for key in pips.keys():
                 pips[key] = 1
         else:
-            if abs(to_add) > 3:
+            if abs(to_add) > 3 and not_blocked(pips) is True:
                 to_add = fix_by_fours(pips, to_add)
             while to_add != 0:
-                to_add += fix_by_one(pips, lower)
+                to_add += fix_by_one(pips, lower, original_stats)
 
     generals[normalise] = rank, skill, pips["A"], pips["D"], pips["P"], pips["L"], sum(list(pips.values())), tag
     return_string2 = "{}/{}/{}/{}".format(pips["A"], pips["D"], pips["P"], pips["L"])
@@ -209,7 +231,7 @@ def main():
     generals = {}  # name : (G/FM, skill, A, D, P, L, SUM)
     tags = {}
     for filenames in listdir(cpath):
-         with open(path.join(cpath, filenames),'r', 'utf-8-sig') as file:
+        with open(path.join(cpath, filenames),'r', 'utf-8-sig') as file:
             lines = file.readlines()
             current_general = ""
             searching = False
@@ -274,6 +296,7 @@ def main():
     starting = 1
 
     fixed = 0
+    fix = False
 
     for general in generals:
         rank, skill, A, D, P, L, total, tag = generals[general]
@@ -282,7 +305,8 @@ def main():
         if abs(deviance) > 0:
             fixed += 1
             output_file.write(general + ": " + str(generals[general]) + "\n")
-            normalise_stats(generals, general)
+            if fix or 'Mustafa Kemal' in general:
+                print(normalise_stats(generals, general))
             tags[tag] += 1
 
         ops[sorted((-6, deviance, 6))[1]] += 1
@@ -320,17 +344,21 @@ def main():
         rank, skill, A, D, P, L, total, tag = generals[general]
         target = skill * 3 + 1
         deviance = total-target
-        if abs(deviance) > 0:
+        if abs(deviance) > 0 and fix:
             print(general, generals[general])
             errors += 1
             fixed -= 1
 
     print("Total generals checked:", str(total_generals) + " with " + str(errors) + " errors and " + str(fixed) + " fixed")
-    if(errors != 0):
-        exit()
+    if fix is False and False:
+        print_stats(generals, max_sum_gen, max_tag, max_tag_no, total_generals, ops, min_gen, max_gen)
 
 
-    # print_stats(generals, max_sum_gen, max_tag, max_tag_no, total_generals, ops, min_gen, max_gen)
+    if errors != 0 and fix:
+        exit("There are still broken generals, aborting")
+
+
+
 
     print("Total Time: %.3f ms" % ((time.time() - ttime) * 1000))
 
