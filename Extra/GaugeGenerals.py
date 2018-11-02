@@ -79,14 +79,14 @@ def get_elegible(pips, lower, original_stats,  available = None):
                     return [key]
 
         if len(high) == 1 and len(available) > 2 and (len(low) == 1 or len(low) == 2):  # If there are two nice central values, return those
-            backup = available
+            backup = list(set(available) - set(high) - set(low))
             for keys in original_stats:
                 if original_stats[keys] - pips[keys] != 0:
-                    if keys in available:
-                        available.remove(keys)
-            if len(available) == 0:
-                available = backup
-            return list(set(available) - set(high) - set(low))
+                    if keys in backup:
+                        backup.remove(keys)
+            if len(backup) == 0:
+                backup = available
+            return backup
 
         if len(high) + len(low) == len(available):  # If all remaining values are either in high or low, return the larger
             if len(low) > len(high):
@@ -109,10 +109,10 @@ def get_elegible(pips, lower, original_stats,  available = None):
 
 def fix_by_one(pips, subtract, original_stats):
     elegible = get_elegible(pips, subtract, original_stats)
-    print("Pips before:", pips)
-    print("elegible:", elegible)
+    #print("Pips before:", pips)
+    #print("elegible:", elegible)
     if len(elegible) == 0:
-        print(pips, subtract, elegible)
+        print(pips, subtract, elegible, original_stats)
         exit()
     random.seed()
     if subtract is True:
@@ -296,7 +296,7 @@ def main():
     starting = 1
 
     fixed = 0
-    fix = False
+    fix = True
 
     for general in generals:
         rank, skill, A, D, P, L, total, tag = generals[general]
@@ -306,7 +306,7 @@ def main():
             fixed += 1
             output_file.write(general + ": " + str(generals[general]) + "\n")
             if fix or 'Mustafa Kemal' in general:
-                print(normalise_stats(generals, general))
+                normalise_stats(generals, general)
             tags[tag] += 1
 
         ops[sorted((-6, deviance, 6))[1]] += 1
@@ -350,9 +350,8 @@ def main():
             fixed -= 1
 
     print("Total generals checked:", str(total_generals) + " with " + str(errors) + " errors and " + str(fixed) + " fixed")
-    if fix is False and False:
+    if fix is False:
         print_stats(generals, max_sum_gen, max_tag, max_tag_no, total_generals, ops, min_gen, max_gen)
-
 
     if errors != 0 and fix:
         exit("There are still broken generals, aborting")
