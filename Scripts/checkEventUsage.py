@@ -2,7 +2,7 @@ import collections
 
 from stringAndFileFromPath import files_as_strings_from_path_gen
 from timedFunction import timed
-from checkEvents import Bug
+from usefulNamedTuples import Bug
 from scopeGen import scope_gen
 from checkDuplicateIds import find_contents_of_field
 

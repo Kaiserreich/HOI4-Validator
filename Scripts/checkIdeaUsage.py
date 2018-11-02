@@ -3,7 +3,7 @@ import collections
 from timedFunction import timed
 from stringAndFileFromPath import files_as_strings_from_path_gen
 from fieldContentsGen import field_contents_gen
-from checkEvents import Bug
+from usefulNamedTuples import Bug
 import os
 
 IdeaUse = collections.namedtuple('IdeaUse', 'name line_number filename')

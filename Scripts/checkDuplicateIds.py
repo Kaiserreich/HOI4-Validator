@@ -1,5 +1,5 @@
 import bisect
-from checkEvents import Bug
+from usefulNamedTuples import Bug
 from findNewlineIndices import find_indices_of_new_lines
 from timedFunction import timed
 from stringAndFileFromPath import files_as_strings_from_path_gen

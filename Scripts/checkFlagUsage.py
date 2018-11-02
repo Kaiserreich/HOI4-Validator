@@ -3,7 +3,7 @@ import collections
 from timedFunction import timed
 from scopeGen import scope_gen
 from stringAndFileFromPath import files_as_strings_from_path_gen
-from checkEvents import Bug
+from usefulNamedTuples import Bug
 from fieldContentsGen import field_contents_gen
 import os
 Flag = collections.namedtuple('Flag', 'name start_line filename')

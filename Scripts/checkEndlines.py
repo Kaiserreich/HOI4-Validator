@@ -1,5 +1,5 @@
 from timedFunction import timed
-from checkEvents import Bug
+from usefulNamedTuples import Bug
 from stringAndFileFromPath import files_as_strings_from_path_gen
 import os
 

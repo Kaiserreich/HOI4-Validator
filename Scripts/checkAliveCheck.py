@@ -3,7 +3,7 @@ import bisect
 from stringAndFileFromPath import files_as_strings_from_path_gen
 from findNewlineIndices import find_indices_of_new_lines
 from changeInScopeLevel import change_in_scope_level
-from checkEvents import Bug
+from usefulNamedTuples import Bug
 from timedFunction import timed
 import os
 

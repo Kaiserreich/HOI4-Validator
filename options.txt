@@ -12,7 +12,7 @@ check_for_brackets = yes
 #this checks for locs that are defined twice
 check_for_double_locs = yes
 #this checks for missing graphics
-check_for_missing_gfx = no
+check_for_missing_gfx = yes
 #this checks to make sure focuses referenced elsewhere actually exist
 check_for_missing_focus = yes
 #this checks to make sure all provinces have at least one core at game start
@@ -33,6 +33,8 @@ check_hidden_events = yes
 check_ai_chance_usage = yes
 #checks if events that load oobs also have custom tooltips
 check_load_oob_usage = yes
+#checks event options each have separate localizations
+check_for_duplicate_options_loc = yes
 #this checks to make sure endlines are used properly
 check_endlines = yes
 #this checks to make sure all generals referenced in effects actually exist

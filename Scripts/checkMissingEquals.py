@@ -1,6 +1,6 @@
 from timedFunction import timed
 from stringAndFileFromPath import files_as_strings_from_path_gen
-from checkEvents import Bug
+from usefulNamedTuples import Bug
 import os
 
 @timed
