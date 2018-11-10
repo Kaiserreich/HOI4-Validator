@@ -59,3 +59,5 @@ check_for_event_use = yes
 check_flag_usage = yes
 #This checks that ideas are ever added if used
 check_idea_usage = yes
+#This checks if mutually exclusive focuses all list each other as mutually exclusive
+check_mutually_exclusive_focuses = yes
