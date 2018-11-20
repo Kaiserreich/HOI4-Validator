@@ -19,22 +19,8 @@ check_for_missing_focus = yes
 check_for_missing_cores = yes
 #this checks for missing OOBs
 check_for_missing_oobs = yes
-#this checks for events that are missing graphics
-check_events_for_graphics = yes
-#checks for events that are missing options
-check_events_for_options = yes
-#checks for events that are missing titles
-check_events_for_titles = yes
-#checks for events that are missing descriptions
-check_events_for_descriptions = yes
-#checks hidden events for visible content
-check_hidden_events = yes
-#checks if events with ai_chance fields have only one option
-check_ai_chance_usage = yes
-#checks if events that load oobs also have custom tooltips
-check_load_oob_usage = yes
-#checks event options each have separate localizations
-check_for_duplicate_options_loc = yes
+#this checks for events that are missing graphics, as well as some other things
+check_events = yes
 #this checks to make sure endlines are used properly
 check_endlines = yes
 #this checks to make sure all generals referenced in effects actually exist
@@ -59,5 +45,5 @@ check_for_event_use = yes
 check_flag_usage = yes
 #This checks that ideas are ever added if used
 check_idea_usage = yes
-#This checks if mutually exclusive focuses all list each other as mutually exclusive
-check_mutually_exclusive_focuses = yes
+#this checks for if a tag has naval aviation, but does not have the invisible tech granted by naval avation decisisions. Specific to KR's naval rework
+check_naval_aviation = yes

@@ -52,7 +52,7 @@ CURRENT FEATURES:
 
 	Checks for missing '='.
 
-
+    Checks to make sure that nations that have carrier techs have the naval avation techs. (KR specific)
  
 HOW TO CONTRIBUTE:
 
