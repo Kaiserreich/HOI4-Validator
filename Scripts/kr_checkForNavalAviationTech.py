@@ -22,17 +22,17 @@ def check_for_naval_aviation_tech(path, output_file):
                     i = i +1
                 line = file.readline()
             if array[0] == False and (array[3] == True or array[4] == True or array[5] == True or array[6] == True):
-                result = filename + ' does not have nav_av_one but does have some form of naval aviation.'
+                result = filename + ' does not have nav_av_one but does have some form of naval aviation.\n'
                 if debug == True:
                     print(result)
                 output_file.write(result)
             elif array[1] == False and (array[4] == True or array[5] == True or array[6] == True):
-                result = filename + ' does not have nav_av_two but does have carrier 2 or higher, or heavy carriers'
+                result = filename + ' does not have nav_av_two but does have carrier 2 or higher, or heavy carriers\n'
                 if debug == True:
                     print(result)
                 output_file.write(result)
             elif array[2] == False and (array[5] == True or array[6] == True):
-                result = filename + ' does not have nav_av_three but does have carrier 3 or higher, or heavy carriers'
+                result = filename + ' does not have nav_av_three but does have carrier 3 or higher, or heavy carriers\n'
                 if debug == True:
                     print(result)
                 output_file.write(result)

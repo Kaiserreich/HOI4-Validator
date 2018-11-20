@@ -6,7 +6,6 @@ dirName = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(dirName + "\\Scripts")
 
 # imports go HERE
-from openFile import open_file
 from missingDivisionNamesGroup import missing_divisions_names_group
 from checkForOldGenerals import check_for_old_generals
 from checkForNameLists import check_for_name_lists
@@ -28,6 +27,7 @@ from checkDuplicateIds import check_duplicate_ids
 from checkEventUsage import check_event_usage
 from checkFlagUsage import check_flag_usage
 from checkIdeaUsage import check_idea_usage
+from checkMutallyExclusiveFocuses import check_mutually_exclusive_focuses
 from kr_checkForNavalAviationTech import check_for_naval_aviation_tech
 
 
@@ -71,8 +71,7 @@ def start(mod_path, hoi4_path):
         check_for_missing_cores(mod_path, output_file)
     if optionsdict["check_for_missing_oobs"]:
         check_for_missing_OOB(mod_path, output_file)
-    if optionsdict["check_events"]:
-        check_events(mod_path, output_file)
+    check_events(mod_path, output_file, optionsdict)
     if optionsdict["check_endlines"]:
         check_endlines(mod_path, output_file)
     if optionsdict["check_generals"]:
@@ -97,6 +96,8 @@ def start(mod_path, hoi4_path):
         check_flag_usage(mod_path, output_file)
     if optionsdict["check_idea_usage"]:
         check_idea_usage(mod_path, output_file)
+    if optionsdict["check_mutually_exclusive_focuses"]:
+        check_mutually_exclusive_focuses(mod_path, output_file)
     if optionsdict["check_naval_aviation"]:
         check_for_naval_aviation_tech(mod_path, output_file)
 
