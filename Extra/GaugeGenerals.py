@@ -243,7 +243,7 @@ def main():
             level = 0
             tag = "REEEEEEEEE"
             g_or_fm = 'REEEEEEEEEEEE'
-            for x in range(0, len(lines)-1):
+            for x in range(0, len(lines)):
                 line = lines[x].strip()
                 if '#' in line:
                     line = line.split('#')[0].strip()
@@ -276,11 +276,16 @@ def main():
                 if '}' in line and searching is True and level == 1 and 'trait' not in line:
                     searching = False
                     generals[current_general] = (g_or_fm, skill, attack, defense, planning, logistics, attack+defense+planning+logistics, tag)
+                    #print(current_general)
                 if '{' in line:
                     level += line.count('{')
                 if '}' in line:
                     level -= line.count('}')
+                last_line = line
 
+
+
+    file.close()
     ops = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     max_sum = 0
@@ -299,35 +304,36 @@ def main():
     fix = True
 
     for general in generals:
-        rank, skill, A, D, P, L, total, tag = generals[general]
-        target = skill * per_level + starting
-        deviance = total-target
-        if abs(deviance) > 0:
-            fixed += 1
-            output_file.write(general + ": " + str(generals[general]) + "\n")
-            if fix or 'Mustafa Kemal' in general:
-                normalise_stats(generals, general)
-            tags[tag] += 1
+            rank, skill, A, D, P, L, total, tag = generals[general]
+            target = skill * per_level + starting
+            deviance = total-target
+            if abs(deviance) > 0:
+                fixed += 1
+                output_file.write(general + ": " + str(generals[general]) + "\n")
+                if fix or 'Mustafa Kemal' in general:
+                    normalise_stats(generals, general)
+                tags[tag] += 1
 
-        ops[sorted((-6, deviance, 6))[1]] += 1
+            ops[sorted((-6, deviance, 6))[1]] += 1
 
-        if deviance > max_sum:
-            max_sum = deviance
-            max_gen = general
-        elif deviance == max_sum:
-            max_gen += ", " + general
+            if deviance > max_sum:
+                max_sum = deviance
+                max_gen = general
+            elif deviance == max_sum:
+                max_gen += ", " + general
 
-        if total > max_sum2:
-            max_sum2 = total
-            max_sum_gen = general
-        elif deviance == max_sum2:
-            max_sum_gen += ", " + general
+            if total > max_sum2:
+                max_sum2 = total
+                max_sum_gen = general
+            elif deviance == max_sum2:
+                max_sum_gen += ", " + general
 
-        if deviance < min_sum:
-            min_sum = deviance
-            min_gen = general
-        elif deviance == min_sum:
-            min_gen += ", " + general
+            if deviance < min_sum:
+                min_sum = deviance
+                min_gen = general
+            elif deviance == min_sum:
+                min_gen += ", " + general
+
 
     max_tag_no = 0
     max_tag = ""
@@ -355,6 +361,61 @@ def main():
 
     if errors != 0 and fix:
         exit("There are still broken generals, aborting")
+
+
+    for filenames in listdir(cpath):
+
+        file = open(path.join(cpath, filenames), 'r', 'utf-8-sig')
+        lines = file.readlines()
+        file.close()
+
+        file = open(path.join(cpath, filenames), 'w', 'utf-8-sig')
+        file.truncate()
+
+        current_general = ""
+        searching = False
+        for x in range(0, len(lines)):
+            comment = ""
+            line = lines[x]
+            if '#' in line:
+                comment = "#".join(line.split('#')[1:])
+                line = line.split('#')[0]
+                comment = "#" + comment
+            if ('field_marshal' in line or 'corps_commander' in line) and '{' in line and level == 0:
+                if 'field_marshal' in line:
+                    g_or_fm = 'FM'
+                else:
+                    g_or_fm = 'G'
+
+                current_general = lines[x + 1].split("\"")[1]
+
+                rank, skill, A, D, P, L, total, tag = generals[current_general]
+
+                searching = True
+                # print(current_general)
+            if '=' in line and searching is True and line.split('=')[0].strip() == "skill":
+                file.write("\tskill = " + str(skill) + comment + "\n")
+            elif 'attack_skill' in line and searching is True:
+                file.write("\tattack_skill = " + str(A) + comment + "\n")
+            elif 'defense_skill' in line and searching is True:
+                file.write("\tdefense_skill = " + str(D) + comment + "\n")
+            elif 'planning_skill' in line and searching is True:
+                file.write("\tplanning_skill = " + str(P) + comment + "\n")
+            elif 'logistics_skill' in line and searching is True:
+                file.write("\tlogistics_skill = " + str(L) + comment + "\n")
+            elif '}' in line and searching is True and level == 1 and 'trait' not in line:
+                searching = False
+                file.write(line + comment)
+            else:
+                file.write(line + comment)
+            if '{' in line:
+                level += line.count('{')
+            if '}' in line:
+                level -= line.count('}')
+
+        file.close()
+
+
 
 
 
