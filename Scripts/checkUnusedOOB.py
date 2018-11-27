@@ -17,6 +17,8 @@ def check_for_unused_OOB(path, output_file):
     path = os.path.join(path, 'history', 'countries')
     finaldict = actually_check_for_unused_oob(originalpath, newoobdict)
     oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, filterstrings, thingstripped)
+    path = os.path.join(originalpath, 'common', 'technologies')
+    oobdict, linedict, filedict = create_search_dict(oobdict, linedict, filedict, path, searchstrings, filterstrings, thingstripped)
     oobdict, linedict, filedict =search_effects(oobdict, linedict, filedict, originalpath, searchstrings, filterstrings, thingstripped)
     for key in oobdict:
         #print(key)
