@@ -29,7 +29,7 @@ from checkFlagUsage import check_flag_usage
 from checkIdeaUsage import check_idea_usage
 from checkMutallyExclusiveFocuses import check_mutually_exclusive_focuses
 from kr_checkForNavalAviationTech import check_for_naval_aviation_tech
-
+from checkOOBContents import check_OOB_Contents
 
 # output file initialisation
 
@@ -71,7 +71,7 @@ def start(mod_path, hoi4_path):
         check_for_missing_cores(mod_path, output_file)
     if optionsdict["check_for_missing_oobs"]:
         check_for_missing_OOB(mod_path, output_file)
-    check_events(mod_path, output_file, optionsdict)
+    check_events(mod_path, output_file, optionsdict) #optionsdict is checked in the function, so no if for it
     if optionsdict["check_endlines"]:
         check_endlines(mod_path, output_file)
     if optionsdict["check_generals"]:
@@ -100,6 +100,7 @@ def start(mod_path, hoi4_path):
         check_mutually_exclusive_focuses(mod_path, output_file)
     if optionsdict["check_naval_aviation"]:
         check_for_naval_aviation_tech(mod_path, output_file)
+    check_OOB_Contents(mod_path, output_file, optionsdict)#optionsdict is checked in the function, so no if for it
 
     t0 = time.time() - t0
     print("Total time taken: " + (t0*1000).__str__() + " ms")

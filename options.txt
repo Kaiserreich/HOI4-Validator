@@ -63,3 +63,11 @@ check_idea_usage = yes
 check_mutually_exclusive_focuses = yes
 #this checks for if a tag has naval aviation, but does not have the invisible tech granted by naval avation decisisions. Specific to KR's naval rework
 check_naval_aviation = yes
+#this checks for if units in OOBs have templates defined for them
+check_oob_templates = yes
+#this checks for if templates have namegroups properly defined
+check_template_namegroup = yes
+#this checks for if templates have names
+check_template_names = yes
+#this checks for if division templates in a OOB are defined after the units are defined
+check_OOB_order = yes

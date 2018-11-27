@@ -53,6 +53,14 @@ CURRENT FEATURES:
 	Checks for missing '='.
 
     Checks to make sure that nations that have carrier techs have the naval avation techs. (KR specific)
+    
+    Checks for templates in non-unlock OOBs without specified namelists
+    
+    Checks for units in OOBs without templates
+    
+    Checks for templates in OOBs without names
+    
+    Checks to make sure division templates in a OOB are defined before the units in that OOB
  
 HOW TO CONTRIBUTE:
 
