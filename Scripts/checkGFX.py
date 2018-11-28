@@ -162,14 +162,17 @@ def strip_and_clean(string):
         return string.strip()
 
 
-def check_flags( flag_path, output_file, file_path):
+def check_flags( flag_path, output_file, file_path, **kwargs):
     ideos = ["totalist", "syndicalist", "radical_socialist", "social_democrat", "social_liberal", "market_liberal", "social_conservative", "authoritarian_democrat", "paternal_autocrat", "national_populist"]
     flagarr = []
-
+    medsmallword = ""
+    if 'medsmall' in kwargs:
+        medsmallword = " " + kwargs.get('medsmall')
     tag_array = fill_tag_array(file_path, 2)
 
     for file_name in listdir(flag_path):
         if 'medium' in file_name or 'small' in file_name:
+            check_flags(path.join(flag_path, file_name), output_file, file_path, medsmall= file_name) #this calls the function again to make sure medium and small flags exist
             continue
         temp_string = file_name[:-4]
         if hasideo(temp_string, ideos) is True:
@@ -183,8 +186,8 @@ def check_flags( flag_path, output_file, file_path):
     tag_array = fill_tag_array(file_path, 0)
     for strings in tag_array:
         if finddup(flagarr, strings) is False:
-            output_file.write("No flag for " + strings + "\n")
-            #print("No flag for " + strings)
+            output_file.write("No"+ medsmallword+ "flag for " + strings + "\n")
+            #print("No"+ medsmallword+ " flag for " + strings)
 
 
 def check_a_lot(event_path, event_gfx_path, interface_path, file_path, output_file, hoi4path, leaders_gfx_path, country_history_path, decisions_path, tree_path):
