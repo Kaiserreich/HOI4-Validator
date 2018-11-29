@@ -52,7 +52,7 @@ CURRENT FEATURES:
 
 	Checks for missing '='.
 
-    Checks to make sure that nations that have carrier techs have the naval avation techs. (KR specific)
+    Checks to make sure that nations that have certain naval techs have the prerequisite techs. (KR specific)
     
     Checks for templates in non-unlock OOBs without specified namelists
     

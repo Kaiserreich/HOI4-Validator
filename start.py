@@ -98,7 +98,7 @@ def start(mod_path, hoi4_path):
         check_idea_usage(mod_path, output_file)
     if optionsdict["check_mutually_exclusive_focuses"]:
         check_mutually_exclusive_focuses(mod_path, output_file)
-    if optionsdict["check_naval_aviation"]:
+    if optionsdict["check_naval_tech"]:
         check_for_naval_aviation_tech(mod_path, output_file)
     check_OOB_Contents(mod_path, output_file, optionsdict)#optionsdict is checked in the function, so no if for it
 

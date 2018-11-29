@@ -61,8 +61,8 @@ check_flag_usage = yes
 check_idea_usage = yes
 #This checks if mutually exclusive focuses all list each other as mutually exclusive
 check_mutually_exclusive_focuses = yes
-#this checks for if a tag has naval aviation, but does not have the invisible tech granted by naval avation decisisions. Specific to KR's naval rework
-check_naval_aviation = yes
+#this checks for if a tag has naval techs, but does not have the prerec invisible tech granted by naval decisisions. Specific to KR's naval rework
+check_naval_tech = yes
 #this checks for if units in OOBs have templates defined for them
 check_oob_templates = yes
 #this checks for if templates have namegroups properly defined
