@@ -37,10 +37,10 @@ def check_triggered(line_number, lines):
 def focus(cpath):
     ttime = 0
     #immediate = {log = "Focus id: "+ id + "\n"}  # autolog
-    for filename in listdir(cpath + "\\common\\national_focus"):
+    for filename in listdir(os.path.join(cpath, "common", "national_focus")):
         if ".txt" in filename:
-            file = open(cpath + "\\common\\national_focus\\" + filename, 'r', 'utf-8')
-            size = os.path.getsize(cpath + "\\common\\national_focus\\" + filename)
+            file = open(os.path.join(cpath, "common", "national_focus", filename), 'r', 'utf-8')
+            size = os.path.getsize(os.path.join(cpath, "common", "national_focus", filename))
             if size < 100:
                 continue
             lines = file.readlines()
@@ -85,7 +85,7 @@ def focus(cpath):
             time1 = time.time() - timestart
             line_number = 0
             file.close()
-            outputfile = open(cpath + "\\common\\national_focus\\" + filename, 'w', 'utf-8')
+            outputfile = open(os.path.join(cpath, "common", "national_focus", filename), 'w', 'utf-8')
             outputfile.truncate()
             for line in lines:
                 line_number += 1
@@ -115,15 +115,15 @@ def focus(cpath):
 def event(cpath):
     ttime = 0
     # immediate = {log = "[Root.GetName]: event "+ id + "\n"}  # autolog
-    for filename in listdir(cpath + "\\events"):
+    for filename in listdir(os.path.join(cpath, "events")):
         if ".txt" in filename:
-            file = open(cpath + "\\events\\" + filename, 'r', 'utf-8-sig')
+            file = open(os.path.join(cpath, "events", filename), 'r', 'utf-8-sig')
             try:
                 lines = file.readlines()
             except UnicodeDecodeError:
                 print(filename)
                 continue
-            size = os.path.getsize(cpath + "\\events\\" + filename)
+            size = os.path.getsize(os.path.join(cpath, "events", filename))
             if size < 100:
                 continue
             event_id = None
@@ -164,7 +164,7 @@ def event(cpath):
             time1 = time.time() - timestart
             line_number = 0
             file.close()
-            outputfile = open(cpath + "\\events\\" + filename, 'w', 'utf-8-sig')
+            outputfile = open(os.path.join(cpath, "events", filename), 'w', 'utf-8-sig')
             outputfile.truncate()
             for line in lines:
                 line_number += 1
@@ -194,10 +194,10 @@ def idea(cpath):
     timestart = time.time()
     #First bit
     # 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea "}
-    for filename in listdir(cpath + "\\common\\ideas"):
+    for filename in listdir(os.path.join(cpath, "common", "ideas")):
         if ".txt" in filename and filename.startswith('_') is False:
-            file = open(cpath + "\\common\\ideas\\" + filename, 'r', 'utf-8')
-            size = os.path.getsize(cpath + "\\common\\ideas\\" + filename)
+            file = open(os.path.join(cpath, "common", "ideas", filename), 'r', 'utf-8')
+            size = os.path.getsize(os.path.join(cpath, "common", "ideas", filename))
             if size < 100:
                 continue
             level = 0
@@ -223,7 +223,7 @@ def idea(cpath):
                     level -= line.count('}')
             file.close()
             line_number = 0
-            outputfile = open(cpath + "\\common\\ideas\\" + filename, 'w', 'utf-8')
+            outputfile = open(os.path.join(cpath, "common", "ideas", filename), 'w', 'utf-8')
             outputfile.truncate()
             for line in lines:
                 line_number += 1
@@ -255,12 +255,12 @@ def decision(cpath):
     # log = "[GetDateText] [Root.GetName]: decision (remove) name"
     #common\decisions
     #for filename in listdir(cpath + "\\common\\decisions"):
-    for filename in listdir(cpath + "\\common\\decisions"):
+    for filename in listdir(os.path.join(cpath, "common", "decisions")):
         if 'categories' in filename:
             continue
         if ".txt" in filename:
-            file = open(cpath + "\\common\\decisions\\" + filename, 'r', 'utf-8')
-            size = os.path.getsize(cpath + "\\common\\decisions\\" + filename)
+            file = open(os.path.join(cpath, "common", "decisions", filename), 'r', 'utf-8')
+            size = os.path.getsize(os.path.join(cpath, "common", "decisions", filename))
             if size < 100:
                 continue
             lines = file.readlines()
@@ -317,7 +317,7 @@ def decision(cpath):
             backup_index = 0
             if ids == []:
                 continue
-            outputfile = open(cpath + "\\common\\decisions\\" + filename, 'w', 'utf-8')
+            outputfile = open(os.path.join(cpath, "common", "decisions", filename), 'w', 'utf-8')
             outputfile.truncate()
             dec_id = ""
             dec_bu = ""
@@ -388,10 +388,10 @@ def tech(cpath):
     ttime = time.time()
 
     # on_research_complete = {  log = "[GetDateText] [Root.GetName]: add tech advanced_light_spaa"}
-    for filename in listdir(cpath + "\\common\\technologies"):
+    for filename in listdir(os.path.join(cpath, "common", "technologies")):
         if ".txt" in filename:
-            file = open(cpath + "\\common\\technologies\\" + filename, 'r', 'utf-8')
-            size = os.path.getsize(cpath + "\\common\\technologies\\" + filename)
+            file = open(os.path.join(cpath, "common", "technologies", filename), 'r', 'utf-8')
+            size = os.path.getsize(os.path.join(cpath, "common", "technologies", filename))
             if size < 100:
                 continue
             lines = file.readlines()
@@ -419,7 +419,7 @@ def tech(cpath):
 
             file.close()
             line_number = 0
-            outputfile = open(cpath + "\\common\\technologies\\" + filename, 'w', 'utf-8')
+            outputfile = open(os.path.join(cpath, "common", "technologies", filename), 'w', 'utf-8')
             outputfile.truncate()
             for line in lines:
                 line_number += 1
