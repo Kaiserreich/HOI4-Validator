@@ -61,6 +61,8 @@ CURRENT FEATURES:
     Checks for templates in OOBs without names
     
     Checks to make sure division templates in a OOB are defined before the units in that OOB
+    
+    Checks to make sure referenced ideologies are actually defined
  
 HOW TO CONTRIBUTE:
 

@@ -18,6 +18,7 @@ def search_effects(maindict, linedict, filedict, path, searchstrings, filterstri
 
 def create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped, **kwargs):
     filterstrings.append('#') #ignore comments
+    debug = False
     focussearch = False
     eventsearch = False
     techsearch = False
@@ -62,6 +63,7 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
             nextline = False
             while line:
                 i = 0
+                foundstring = 0
                 isin = False
                 while i < len(searchstrings):
                     if needdepth:
@@ -75,7 +77,9 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                             for item in searchstrings2:
                                 if item in line:
                                     isin = True
+                                    foundstring = i
                         except TypeError:
+                            foundstring = i
                             isin = True #checking to see if it has stuff that means it should be checked
                     if needdepth:
                         if '}' in line:
@@ -90,6 +94,7 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                                 isin = False
                             if nextline == True:
                                 isin = True
+                                foundstring = i
                         elif decisionsearch == True:
                             if eventdeep != 2:
                                 isin = False
@@ -126,7 +131,7 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                                 maintext = line.split(' = {')[0].strip()
                                 #print(maintext)
                                 maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path, desc=True)
-                    if thingstripped == 'oob':
+                    elif thingstripped == 'oob':
                         maintext = stripOOB(line)
                         #print(maintext)
                         if maintext != 'empty' and maintext != "" and (maintext in maindict) == False:
@@ -148,6 +153,15 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                                 maintext = strip_focus(posfocus, 0, '=')
                                 if (maintext in maindict) == False and maintext != "":
                                     maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
+                    elif thingstripped == 'ideology':
+                        if debug:
+                            print("line is " + line+" foundstring is " + str(foundstring))
+                        text = line.split(searchstrings[foundstring])[1].split()[0].split('}')[0]
+                        if debug:
+                            print(text)
+                        maindict, linedict, filedict = insertdict(maindict, linedict, filedict, text,
+                                                                      current_line, filename, path)
+
                 line = file.readline()
                 current_line += 1
     return maindict, linedict, filedict

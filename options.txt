@@ -71,3 +71,5 @@ check_template_namegroup = yes
 check_template_names = yes
 #this checks for if division templates in a OOB are defined after the units are defined
 check_OOB_order = yes
+#this checks to see if referenced ideologies actually exist
+check_ideologies = yes

@@ -30,7 +30,7 @@ from checkIdeaUsage import check_idea_usage
 from checkMutallyExclusiveFocuses import check_mutually_exclusive_focuses
 from kr_checkForNavalAviationTech import check_for_naval_aviation_tech
 from checkOOBContents import check_OOB_Contents
-
+from checkIdeologies import check_ideologies
 # output file initialisation
 
 # functions go HERE
@@ -53,6 +53,8 @@ def start(mod_path, hoi4_path):
                     optionsdict[linelist[0].strip()] = False
     options_file.close()
     output_file = open("validator.txt", 'w', 'utf-8-sig')
+    if optionsdict["check_ideologies"]:
+        check_ideologies(mod_path, output_file)
     if optionsdict["check_missing_division_name_group"]:
         missing_divisions_names_group(mod_path, output_file, optionsdict["skip_unlock"])
     if optionsdict["check_for_old_generals"]:
@@ -101,7 +103,6 @@ def start(mod_path, hoi4_path):
     if optionsdict["check_naval_tech"]:
         check_for_naval_aviation_tech(mod_path, output_file)
     check_OOB_Contents(mod_path, output_file, optionsdict)#optionsdict is checked in the function, so no if for it
-
     t0 = time.time() - t0
     print("Total time taken: " + (t0*1000).__str__() + " ms")
 
