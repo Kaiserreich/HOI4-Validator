@@ -40,7 +40,7 @@ check_endlines = yes
 #this checks to make sure all generals referenced in effects actually exist
 check_generals = yes
 #this lists the ID of all unique generals
-list_general_ids = yes
+list_general_ids = no
 #this checks to make sure = no is not used anywhere where it would screw up a tooltip.
 check_for_equals_no = yes
 #this checks for unused oobs
@@ -73,3 +73,5 @@ check_template_names = yes
 check_OOB_order = yes
 #this checks to see if referenced ideologies actually exist
 check_ideologies = yes
+#this checks for non-existent states in focus trees, decisions, and events
+check_states = yes

@@ -63,8 +63,10 @@ def strip_created_general(line):
         line = line.split("id =")[1].strip()
     return line
 
+@timed
 def create_general_list(originalpath, output_file):
     commonpath = os.path.join(originalpath, 'common')
+    print("Printing general list")
     #this heads through the files. Every time it sees a general, it prints that general's ID and the file the general was found in in order to produce that list I was asked for earlier
     pathlist = [os.path.join(originalpath, 'history',"countries"), os.path.join(originalpath, "events"), os.path.join(commonpath, "national_focus"), os.path.join(commonpath, "scripted_effects"),  os.path.join(commonpath, "decisions")]
     allgeneraldict ={}

@@ -136,9 +136,14 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                         #print(maintext)
                         if maintext != 'empty' and maintext != "" and (maintext in maindict) == False:
                             maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
+                    elif thingstripped == 'states':
+                        maintext = line.split(' = ')[1].strip()
+                        if maintext.isdigit():
+                            maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
                     elif thingstripped == 'general':
                         maintext = stripGeneral(line)
                         if maintext != 'empty' and maintext != "" and (maintext in maindict) == False:
+                            #print(maintext)
                             maindict, linedict, filedict = insertdict(maindict, linedict, filedict, maintext, current_line, filename, path)
                     elif thingstripped == '=no':
                         maindict, linedict, filedict = insertdict(maindict, linedict, filedict, line, current_line, filename, path)

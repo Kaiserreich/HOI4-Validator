@@ -31,6 +31,7 @@ from checkMutallyExclusiveFocuses import check_mutually_exclusive_focuses
 from kr_checkForNavalAviationTech import check_for_naval_aviation_tech
 from checkOOBContents import check_OOB_Contents
 from checkIdeologies import check_ideologies
+from checkStates import check_states
 # output file initialisation
 
 # functions go HERE
@@ -102,6 +103,8 @@ def start(mod_path, hoi4_path):
         check_mutually_exclusive_focuses(mod_path, output_file)
     if optionsdict["check_naval_tech"]:
         check_for_naval_aviation_tech(mod_path, output_file)
+    if optionsdict["check_states"]:
+        check_states(mod_path, output_file)
     check_OOB_Contents(mod_path, output_file, optionsdict)#optionsdict is checked in the function, so no if for it
     t0 = time.time() - t0
     print("Total time taken: " + (t0*1000).__str__() + " ms")
