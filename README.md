@@ -1,5 +1,5 @@
-# PDS-Validator
-Home of the up and coming validator for Hearts of Iron 4, help is always welcome!
+# HOI4-Validator
+Home of the validator for Hearts of Iron 4, help very much welcome!
 
 How to use:
 
