@@ -2,3 +2,8 @@ validator.txt
 settings.txt
 settings.txt
 *.pyc
+Tests/*
+log
+settings.json
+*.cache
+validator.txt

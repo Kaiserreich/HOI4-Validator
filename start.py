@@ -23,13 +23,31 @@ from checkCores import check_for_missing_cores
 '''
 import Scripts.global_vars as global_vars
 from Scripts.validator_logging import LOGGER as Logger
-from Scripts.parsePDS import preparse_idea_file, parse_idea, preparse_focus_file, parse_focus
-from Scripts.PDSObject import PDSFocusTree
+from Scripts.parsePDS import preparse_idea_file, parse_idea, preparse_focus_file, parse_focus, parse_event_file, parse_event, preparse_event_file
+from Scripts.PDSObject import PDSFocusTree, PDSEvent
 import pathos
 import pickle
 import statistics
 
 # output file initialisation
+def preparse_events(directory, preparsed_events_dict, namespaces_set, pool):
+    files = sorted([os.path.join(directory, f) for f in os.listdir(directory)])
+    results = pool.map(lambda x: preparse_event_file(x), files)
+    for dct in results:
+        if dct:
+            if dct[0]:
+                for key, value in dct[0].items():
+                    preparsed_events_dict[key].extend(value)
+            if dct[1]:
+                namespaces_set.update(dct[1])
+
+def parse_events(preparsed_events_dict, events_dict, namespaces_set, pool):
+    for key, value in preparsed_events_dict.items():
+        results = pool.map(lambda x: parse_event(x, namespaces_set, key), value)
+        for event in results:
+            if event:
+                events_dict[event.event_id] = event
+
 def preparse_ideas(directory, preparsed_ideas_dict, pool):
     files = [os.path.join(directory, f) for f in os.listdir(directory)]
     results = pool.map(lambda x: preparse_idea_file(x), files)
@@ -220,9 +238,9 @@ def get_total_tech_bonus_value(effect_block):
     return (value, total_uses)
 
 def start(mod_path, hoi4_path):
-    '''t0 = time.time()
+    t0 = time.time()
     pool = pathos.multiprocessing.Pool(8)
-
+    '''
     
     preparse_ideas(
         os.path.join(mod_path, "common", "ideas"), global_vars.PREPARSED_IDEAS_DICT, pool
@@ -241,21 +259,39 @@ def start(mod_path, hoi4_path):
     parse_focuses(
         global_vars.PREPARSED_FOCUSES_DICT, global_vars.FOCUSES_DICT, global_vars.FOCUS_TREE_PROPERTIES_DICT, global_vars.FOCUS_TREES_DICT, pool
     )
+
+    #preparse_event_file(os.path.join(mod_path, "events", "KR_White_Ruthenia.txt"))
+    '''
+
+    preparse_events(
+        os.path.join(mod_path, "events"), global_vars.PREPARSED_EVENTS_DICT, global_vars.NAMESPACES_SET, pool
+    )
+
+    parse_events(
+        global_vars.PREPARSED_EVENTS_DICT, global_vars.EVENTS_DICT, global_vars.NAMESPACES_SET, pool
+    )
+
     pool.close()
     pool.join()
     t0 = time.time() - t0
-    Logger.log("Total time taken: " + (t0*1000).__str__() + " ms")'''
+    Logger.log("Total time taken: " + (t0*1000).__str__() + " ms")
     
-    with open(os.path.join(mod_path, 'FOCUSES_DICT.pickle'), 'rb') as handle:
-        global_vars.FOCUSES_DICT = pickle.load(handle)
-    with open(os.path.join(mod_path, 'FOCUS_TREES_DICT.pickle'), 'rb') as handle:
-        global_vars.FOCUS_TREES_DICT = pickle.load(handle)
+   # with open(os.path.join(mod_path, 'FOCUSES_DICT.pickle'), 'rb') as handle:
+   #     global_vars.FOCUSES_DICT = pickle.load(handle)
+   # with open(os.path.join(mod_path, 'FOCUS_TREES_DICT.pickle'), 'rb') as handle:
+   #     global_vars.FOCUS_TREES_DICT = pickle.load(handle)
+   
+    #with open(os.path.join(mod_path, 'EVENTS_DICT.pickle'), 'rb') as handle:
+    #    global_vars.EVENTS_DICT = pickle.load(handle)
 
-    get_total_tech_bonus_value_in_focuses()
+    #print(global_vars.EVENTS_DICT)
+    #get_total_tech_bonus_value_in_focuses()
 
     #count_focuses()
 
-
+    with open(os.path.join(mod_path, 'EVENTS_DICT.pickle'), 'wb') as handle:
+        pickle.dump(global_vars.EVENTS_DICT, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    
     #with open(os.path.join(mod_path, 'FOCUSES_DICT.pickle'), 'wb') as handle:
     #    pickle.dump(global_vars.FOCUSES_DICT, handle, protocol=pickle.HIGHEST_PROTOCOL)
     #with open(os.path.join(mod_path, 'FOCUS_TREES_DICT.pickle'), 'wb') as handle:

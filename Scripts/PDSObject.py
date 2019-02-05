@@ -1,6 +1,6 @@
 import enum
 import re
-from validator_logging import LOGGER as Logger
+from validator_logging import LOGGER as Logger, LogLevel
 
 def auto_str(cls):
     def __str__(self):
@@ -26,9 +26,7 @@ class PDSEvent:
         self.mean_time_to_happen = mean_time_to_happen
         if mean_time_to_happen:
             if is_triggered_only:
-                raise ValueError('Has both is_triggered_only and mean_time_to_happen')
-            if len(mean_time_to_happen) != 1:
-                raise ValueError('Too many mean_time_to_happen arguments - %s, has to be 1' % str(len(mean_time_to_happen)))
+                Logger.log('%s Has both is_triggered_only and mean_time_to_happen' % event_id, level=LogLevel.Warn)
         self.trigger = trigger
         self.immediate = immediate
         self.options = options

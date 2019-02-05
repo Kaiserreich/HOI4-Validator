@@ -16,6 +16,7 @@ from openFile import open_file
 from validator_logging import LOGGER as Logger
 from validator_logging import LogLevel
 import pathos
+import traceback
 import gc
 from collections import defaultdict
 
@@ -157,7 +158,7 @@ def parse_localisation(loc_file, loc_dict):
     for item in [x for x in parsed_loc_file]:
         loc_dict[item[0]] = item[1]
 
-def parse_event_file(event_file, events_dict):
+def parse_event_file(event_file):
     namespaces = set()
 
     Logger.log("Reading file %s" % event_file, level=LogLevel.Info)
@@ -171,30 +172,55 @@ def parse_event_file(event_file, events_dict):
         namespaces.add(item)
 
     text_events = [x for x in parsed_event_file if (x and x[0] == "country_event")]
-    for event in text_events:
-        if not event:
-            continue
-        event_type = event[0]
-        event = event[1]
 
-        event = PDSEvent(
-            event_id=get_contents_of_command("id", event, None),
-            event_type=event_type,
-            title=[get_triggered_text(item) for item in event if len(item) == 3 and item[0] == "title"],
-            desc=[get_triggered_text(item) for item in event if len(item) == 3 and item[0] == "desc"],
-            picture=get_contents_of_command("picture", event, None),
-            is_triggered_only=get_bool_from_yes_no_str(get_contents_of_command("is_triggered_only", event, False)),
-            fire_only_once=get_bool_from_yes_no_str(get_contents_of_command("fire_only_once", event, False)),
-            hidden=get_bool_from_yes_no_str(get_contents_of_command("hidden", event, False)),
-            mean_time_to_happen=get_contents_of_command("mean_time_to_happen", event, None),
-            trigger=get_contents_of_command("trigger", event, None),
-            immediate=get_contents_of_command("immediate", event, None),
-            options=get_contents_of_multiple_commands("option", event, None)
-        )
-        if not event.namespace in namespaces:
-            raise ValueError('Event %s namespace %s is not in file\'s namespaces.' % (event.event_id, event.namespace))
-        events_dict[event.event_id] = event
-    Logger.log(events_dict, level=LogLevel.Debug)
+    #Logger.log(text_events, level=LogLevel.Debug)
+
+    return (text_events, namespaces)
+
+def preparse_event_file(event_file):
+    Logger.log("Reading file %s" % event_file, level=LogLevel.Info)
+    event_file = open_file(event_file)
+
+    if not event_file.strip():
+        return
+
+    namespaces = set()
+
+    preparsed_namespaces = re.findall(r"^[^#]*add_namespace\s*=\s*([^\s]*?)(\s|$)", event_file, flags=re.MULTILINE)
+
+    for match in preparsed_namespaces:
+        namespaces.add(match[0].strip())
+
+    return (preparse_PDS_script(event_file, 1, 0), namespaces)
+
+def parse_event(event, namespaces, event_type):
+    try:
+        event = PARSER.parse_PDS_script(event)
+    except:
+        exc_type, exc_value, exc_traceback = sys.exc_info()
+        Logger.log(''.join(repr(traceback.format_exception(exc_type, exc_value, exc_traceback))), LogLevel.Error)
+        Logger.log(event, LogLevel.Error)
+        return
+    if not event:
+        return
+
+    event = PDSEvent(
+        event_id=get_contents_of_command("id", event, None),
+        event_type=event_type,
+        title=[get_triggered_text(item) for item in event if len(item) == 3 and item[0] == "title"],
+        desc=[get_triggered_text(item) for item in event if len(item) == 3 and item[0] == "desc"],
+        picture=get_contents_of_command("picture", event, None),
+        is_triggered_only=get_bool_from_yes_no_str(get_contents_of_command("is_triggered_only", event, False)),
+        fire_only_once=get_bool_from_yes_no_str(get_contents_of_command("fire_only_once", event, False)),
+        hidden=get_bool_from_yes_no_str(get_contents_of_command("hidden", event, False)),
+        mean_time_to_happen=get_contents_of_command("mean_time_to_happen", event, None),
+        trigger=get_contents_of_command("trigger", event, None),
+        immediate=get_contents_of_command("immediate", event, None),
+        options=get_contents_of_multiple_commands("option", event, None)
+    )
+    if not event.namespace in namespaces:
+        Logger.log('Event %s namespace %s is not in file\'s namespaces.' % (event.event_id, event.namespace), level=LogLevel.Error)
+    return event
 
 def parse_scripted_effect_file(scripted_effect_file, scripted_effects_dict):
 
