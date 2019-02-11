@@ -77,3 +77,5 @@ check_ideologies = yes
 check_states = yes
 #this checks for VPs that are missing loc, and VP loc that is unused
 check_vp_loc = yes
+#this does the same thing as the previous one, but is specific to the Kaiserreich endonym victory points
+check_kr_endo_vp_loc = yes

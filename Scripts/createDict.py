@@ -17,7 +17,7 @@ def search_effects(maindict, linedict, filedict, path, searchstrings, filterstri
     return maindict, linedict, filedict
 
 def create_search_dict(maindict, linedict, filedict, path, searchstrings, filterstrings, thingstripped, **kwargs):
-    filterstrings.append('#') #ignore comments
+
     debug = False
     focussearch = False
     eventsearch = False
@@ -25,6 +25,7 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
     needdepth = False
     decisionsearch = False
     skipfiles = []
+    checkfiles = True
     try:
         skipfiles = kwargs.get('skipfiles')
         for name in skipfiles:
@@ -45,12 +46,25 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
         needdepth = True
     for filename in os.listdir(path):
         shouldcontinue = False
-        if ".txt" in filename: #this makes sure it's not a folder
+        if ".txt" in filename or ".yml" in filename: #this makes sure it's not a folder
+            if debug:
+                print(filename)
             if filterfiles: #checking to make sure it's not in a file we're not supposed to check
                 for name in skipfiles:
                     if name == filename:
                         #print("in should continue for " + filename)
                         shouldcontinue = True
+            if checkfiles:
+                try:
+                    checkfile = kwargs.get('checkfiles')
+                    if (checkfile in filename.lower()) == False:
+                        shouldcontinue = True
+                        if debug:
+                            print("skipping this file")
+                except:
+                    if debug:
+                        print("not checking files this time")
+                    checkfiles = False
             if shouldcontinue == True:
                 continue
             hasoccured = False
@@ -62,6 +76,7 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
             eventdeep = 0
             nextline = False
             while line:
+                line = line.split('#')[0] #this means it won't look at comments, if there are any comments
                 i = 0
                 foundstring = 0
                 isin = False
@@ -104,6 +119,8 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                     if filterstrings[i] in line:
                         isin = False #checking to see if it's being filtered for one reason or another
                     i = i+1
+                if nextline == True:
+                    isin = True
                 if isin:
                     #this means line is a thing being called, so we need to add it to the dictionary
                     if thingstripped == 'lockey':
@@ -166,7 +183,29 @@ def create_search_dict(maindict, linedict, filedict, path, searchstrings, filter
                             print(text)
                         maindict, linedict, filedict = insertdict(maindict, linedict, filedict, text,
                                                                       current_line, filename, path)
-
+                    elif thingstripped == "vp":
+                        if nextline == False:
+                            try:
+                                text = line.split(searchstrings[0])[1].strip().split(' ')[1]
+                                if debug:
+                                    print(text)
+                                maindict, linedict, filedict = insertdict(maindict, linedict, filedict, text,
+                                                                          current_line, filename, path)
+                            except:
+                                nextline = True
+                        else:
+                            nextline = False
+                            text = line.strip().split(' ')[0]
+                            if debug:
+                                print(text)
+                            maindict, linedict, filedict = insertdict(maindict, linedict, filedict, text,
+                                                                          current_line, filename, path)
+                    elif thingstripped == "vp_loc":
+                            text = line.split(searchstrings[0])[1].strip().split(':')[0]
+                            if debug:
+                                print(text)
+                            maindict, linedict, filedict = insertdict(maindict, linedict, filedict, text,
+                                                                          current_line, filename, path)
                 line = file.readline()
                 current_line += 1
     return maindict, linedict, filedict

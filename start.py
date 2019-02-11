@@ -107,7 +107,10 @@ def start(mod_path, hoi4_path):
     if optionsdict["check_states"]:
         check_states(mod_path, output_file)
     if optionsdict["check_vp_loc"]:
-        check_for_vp_loc(mod_path, output_file)
+        check_for_vp_loc(mod_path, output_file, False)
+    if optionsdict["check_kr_endo_vp_loc"]:
+        check_for_vp_loc(mod_path, output_file, True)
+
     check_OOB_Contents(mod_path, output_file, optionsdict)#optionsdict is checked in the function, so no if for it
     t0 = time.time() - t0
     print("Total time taken: " + (t0*1000).__str__() + " ms")
