@@ -32,6 +32,7 @@ from kr_checkForNavalAviationTech import check_for_naval_aviation_tech
 from checkOOBContents import check_OOB_Contents
 from checkIdeologies import check_ideologies
 from checkStates import check_states
+from checkVpLoc import check_for_vp_loc
 # output file initialisation
 
 # functions go HERE
@@ -105,6 +106,8 @@ def start(mod_path, hoi4_path):
         check_for_naval_aviation_tech(mod_path, output_file)
     if optionsdict["check_states"]:
         check_states(mod_path, output_file)
+    if optionsdict["check_vp_loc"]:
+        check_for_vp_loc(mod_path, output_file)
     check_OOB_Contents(mod_path, output_file, optionsdict)#optionsdict is checked in the function, so no if for it
     t0 = time.time() - t0
     print("Total time taken: " + (t0*1000).__str__() + " ms")

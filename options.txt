@@ -75,3 +75,5 @@ check_OOB_order = yes
 check_ideologies = yes
 #this checks for non-existent states in focus trees, decisions, and events
 check_states = yes
+#this checks for VPs that are missing loc, and VP loc that is unused
+check_vp_loc = yes

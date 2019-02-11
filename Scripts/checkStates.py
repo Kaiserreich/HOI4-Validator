@@ -10,7 +10,7 @@ def check_states(path, output_file):
     statedict = {}
     linedict = {}
     filedict = {}
-    searchstrings = ['add_state_claim = ', 'owns_state = ', 'controls_state = ', 'transfer_state = ', 'add_state_core = ', 'state =']
+    searchstrings = ['add_state_claim = ', 'owns_state = ', 'controls_state = ', 'transfer_state = ', 'add_state_core = ', 'state = ']
     filterstrings = []
     thingstripped = 'states'
     statedict, linedict, filedict =search_effects(statedict, linedict, filedict, originalpath, searchstrings, filterstrings, thingstripped)
