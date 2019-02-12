@@ -52,17 +52,21 @@ CURRENT FEATURES:
 
 	Checks for missing '='.
 
-    Checks to make sure that nations that have certain naval techs have the prerequisite techs. (KR specific)
+    	Checks to make sure that nations that have certain naval techs have the prerequisite techs. (KR specific)
     
-    Checks for templates in non-unlock OOBs without specified namelists
+    	Checks for templates in non-unlock OOBs without specified namelists
     
-    Checks for units in OOBs without templates
+    	Checks for units in OOBs without templates
     
-    Checks for templates in OOBs without names
+    	Checks for templates in OOBs without names
     
-    Checks to make sure division templates in a OOB are defined before the units in that OOB
+    	Checks to make sure division templates in a OOB are defined before the units in that OOB
     
-    Checks to make sure referenced ideologies are actually defined
+    	Checks to make sure referenced ideologies are actually defined
+	
+	Checks to make sure VPs all have localization
+
+	Checks to make sure all VP loc has a corresponding VP
  
 HOW TO CONTRIBUTE:
 
