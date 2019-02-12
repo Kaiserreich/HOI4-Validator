@@ -117,7 +117,7 @@ def decision(cpath):
 
 def main():
     cpath = sys.argv[1]
-    #cpath = "C:\\Users\\Martijn\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\KRBU"
+
 
     ok = 0
     for string in sys.argv:
@@ -125,6 +125,7 @@ def main():
             ok += 1
         else:
             cpath += ' ' + string
+
     event(cpath)
     focus(cpath)
     idea(cpath)
