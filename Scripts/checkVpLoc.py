@@ -31,10 +31,10 @@ def check_for_vp_loc(path, output_file, endo):
         print("calling create search dict again")
     locdict, loclinedict, locfiledict = create_search_dict(locdict, loclinedict, locfiledict, locpath, locsearchstrings, locfilterstrings, locthingstripped, checkfiles = "victory_points")
     if locdict == {}:
-        locdict, loclinedict, locfiledict = create_search_dict(locdict, loclinedict, locfiledict, locpath,
-                                                               locsearchstrings, filterstrings, locthingstripped)
+        locdict, loclinedict, locfiledict = create_search_dict(locdict, loclinedict, locfiledict, locpath, locsearchstrings, locfilterstrings, locthingstripped)
     for key in locdict:
-        vpdict[key] = True
+        if key in vpdict:
+            vpdict[key] = True
     for key in vpdict:
         if vpdict[key] == False:
             if endo:
@@ -45,11 +45,12 @@ def check_for_vp_loc(path, output_file, endo):
                 print(result)
             output_file.write(result)
         else:
-            del locdict[key]
+            locdict[key] = True
     for key in locdict:
-        result = "The vp localization " + key + " on line " + str(loclinedict[key]) + " of "+ locfiledict[key] + " does not have any corresponding victory point.\n"
-        if debug == True:
-            print(result)
-        output_file.write(result)
+        if locdict[key] == False:
+            result = "The vp localization " + key + " on line " + str(loclinedict[key]) + " of "+ locfiledict[key] + " does not have any corresponding victory point.\n"
+            if debug == True:
+                print(result)
+            output_file.write(result)
 
 
