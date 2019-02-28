@@ -271,14 +271,100 @@ def tech():
 
                     outputfile.write(replacement_text)
 
+def fix_oob_calls():
+    path = "C:\\Users\\Martijn\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\KRIRON\\history\\units"
 
+    path_3 = "C:\\Users\\Martijn\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\KRIRON\\history\\countries"
+
+    naval_oobs = set()
+
+    for filename in listdir(path):
+        if "_naval" in filename:
+            naval_oobs.add(filename[:-4])
+
+    print(naval_oobs)
+
+    # Scripted Effects
+    # Decisions
+    # National Focus
+    # Events
+    # Technologies
+
+    base_path = "C:\\Users\\Martijn\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\KRIRON"
+    paths = ["events", "common\\decisions", "common\\scripted_triggers", "common\\technologies", "common\\national_focus"]
+    for pth in paths:
+        if pth == "events":
+            encoding = "utf-8-sig"
+        else:
+            encoding = "utf-8"
+        for filename in listdir(os.path.join(base_path, pth)):
+
+            # listdir also provides directories and this is very annoying thank you very much
+            if 'categories' in filename:
+                continue
+
+            with open(os.path.join(base_path, pth, filename), 'r+', encoding) as file:
+                lines = file.readlines()
+
+                line_nos = set()
+
+                for line_number, line in enumerate(lines):
+                    if '#' in line:
+                        if line.strip().startswith("#") is True:
+                            continue
+                        else:
+                            line = line.split('#')[0]
+
+                    if "oob" in line:
+                        oob = line.split("=")[1].strip()
+                        if "\"" in oob or "\'" in oob:
+                            oob = oob[1:-1]
+
+                        oob = "" + oob + "_naval"
+                        if oob in naval_oobs:
+                            line_nos.add(line_number)
+
+            if line_nos == set():
+                continue
+
+            with open(os.path.join(base_path, pth , filename), 'w', encoding) as outputfile:
+                outputfile.truncate()
+
+                for line_number, line in enumerate(lines):
+
+                    if line.strip().startswith('#'):
+                        outputfile.write(line)
+                        continue
+
+                    if line_number in line_nos:
+
+
+                        if '}' in line:
+                            if line.count("}") > 1:
+                                print(line)
+                                exit(-1)
+
+                            line = line.split("}")[0]
+
+                        oob = line.split("=")[1].strip()
+                        if "\"" in oob or "\'" in oob:
+                            oob = oob[1:-1]
+                        oob = "" + oob + "_naval"
+
+                        outputfile.write(line)
+                        outputfile.write(line[:len(line)-len(line.lstrip())] + "load_oob = " + oob + "\n")
+                        if '}' in line:
+                            outputfile.write("}\n")
+
+                    else:
+                        outputfile.write(line)
 
 
 def main():
     #strat_region()
     #tech()
-    convert_oob()
-
+    #convert_oob()
+    fix_oob_calls()
 
 if __name__ == "__main__":
     main()
