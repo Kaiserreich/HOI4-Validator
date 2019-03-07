@@ -6,12 +6,10 @@ import os
 import re
 
 
-def convert_oob():
-    #C:\Users\Martijn\Documents\Paradox Interactive\Hearts of Iron IV\mod\KRIRON\history\units\ENG.txt
-    path = "C:\\Users\\Martijn\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\KRIRON\\history\\units"
-    path_2 = "C:\\Users\\Martijn\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\KRBU\\history\\units"
+def convert_oob(modpath):
 
-    path_3 = "C:\\Users\\Martijn\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\KRIRON\\history\\countries"
+    path = os.path.join(modpath, "history", "units")
+    path_3 = os.path.join(modpath, "history", "countries")
 
     examine_path = path
     navies = set()
@@ -165,12 +163,12 @@ def convert_oob():
                 outputfile.write(line)
 
 
+def strat_region(gamepath, modpath):
 
+    path = os.path.join(modpath, "map", "strategicregions")
+    path_2 = os.path.join(gamepath, "map", "strategicregions")
+    path_3 = os.path.join(modpath, "map", "definition.csv")
 
-def strat_region():
-    path = "C:\\Users\\Martijn\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\KRIRON\\map\\strategicregions"
-    path_2 = "G:\\Games\\steamapps\\common\\Hearts of Iron IV\\map\\strategicregions"
-    path_3 = "C:\\Users\Martijn\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\KRIRON\map\\definition.csv"
 
     filenames = {"filename": "naval_terrain = x"}
 
@@ -232,10 +230,12 @@ def strat_region():
 
                     outputfile.write(replacement_text)
 
-def tech():
-    path_1 = "C:\\Users\\Martijn\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\KRIRON\\common\\technologies"
-    path_2 = "C:\\Users\\Martijn\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\KRIRON\\common\\ideas"
-    path_3 = "C:\\Users\\Martijn\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\KRIRON\\common\\country_leader"
+
+def tech(modpath):
+
+    path_1 = os.path.join(modpath, "common", "technologies")
+    path_2 = os.path.join(modpath, "common", "ideas")
+    path_3 = os.path.join(modpath, "common", "country_leader")
 
     for path in [path_1, path_2, path_3]:
         for filename in listdir(path):
@@ -254,27 +254,28 @@ def tech():
 
                     replacement_text = line
 
-                    if 'research_speed_factor' in line:
+                    if 'research_time_factor' in line:
 
                         if '{' in line:
                             amount = float(line.split("=")[2].split("}")[0].split("#")[0].strip())
                         else:
                             amount = float(line.split("=")[1].split("}")[0].split("#")[0].strip())
 
-                        if amount < 0.1000000001:
+                        if amount < abs(0.1000000001):
                             amount = round(-1*amount, 3)
                         else:
                             amount = round((1/(amount + 1))-1, 3)
-                            replacement_text = line.split("research_speed_factor")[0] + "research_speed_factor = " + str(amount) + line.split('=')[1][6:]
+
+                        replacement_text = "\t\t\t\t" + "research_speed_factor = " + str(amount) + line.split('=')[1][6:]
 
 
 
                     outputfile.write(replacement_text)
 
-def fix_oob_calls():
-    path = "C:\\Users\\Martijn\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\KRIRON\\history\\units"
 
-    path_3 = "C:\\Users\\Martijn\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\KRIRON\\history\\countries"
+def fix_oob_calls(modpath):
+
+    path = os.path.join(modpath, "history", "units")
 
     naval_oobs = set()
 
@@ -282,7 +283,7 @@ def fix_oob_calls():
         if "_naval" in filename:
             naval_oobs.add(filename[:-4])
 
-    print(naval_oobs)
+    #print(naval_oobs)
 
     # Scripted Effects
     # Decisions
@@ -290,20 +291,20 @@ def fix_oob_calls():
     # Events
     # Technologies
 
-    base_path = "C:\\Users\\Martijn\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\KRIRON"
+
     paths = ["events", "common\\decisions", "common\\scripted_triggers", "common\\technologies", "common\\national_focus"]
     for pth in paths:
         if pth == "events":
             encoding = "utf-8-sig"
         else:
             encoding = "utf-8"
-        for filename in listdir(os.path.join(base_path, pth)):
+        for filename in listdir(os.path.join(modpath, pth)):
 
             # listdir also provides directories and this is very annoying thank you very much
             if 'categories' in filename:
                 continue
 
-            with open(os.path.join(base_path, pth, filename), 'r+', encoding) as file:
+            with open(os.path.join(modpath, pth, filename), 'r+', encoding) as file:
                 lines = file.readlines()
 
                 line_nos = set()
@@ -321,13 +322,13 @@ def fix_oob_calls():
                             oob = oob[1:-1]
 
                         oob = "" + oob + "_naval"
-                        if oob in naval_oobs:
+                        if oob in naval_oobs and 'naval' not in lines[line_number+1]:
                             line_nos.add(line_number)
 
             if line_nos == set():
                 continue
 
-            with open(os.path.join(base_path, pth , filename), 'w', encoding) as outputfile:
+            with open(os.path.join(modpath, pth , filename), 'w', encoding) as outputfile:
                 outputfile.truncate()
 
                 for line_number, line in enumerate(lines):
@@ -360,11 +361,185 @@ def fix_oob_calls():
                         outputfile.write(line)
 
 
+def check_ship_names(modpath):
+
+    names_path = os.path.join(modpath, "common", "units", "names")
+    oob_path = os.path.join(modpath, "history", "units")
+
+    # names in oob, always over namelists
+    bad = False
+
+    oob_names_total = set()
+
+    pattern = r'{\s?name\s?=\s?"([1-9.a-zA-Z ]+)"'
+    for filename in listdir(oob_path):
+        oob_names = set()
+        with open(os.path.join(oob_path, filename), 'r', 'utf-8-sig') as file:
+            lines = file.readlines()
+
+            for line in lines:
+                math = re.search(pattern, line)
+                if math is not None:
+                    if math.group(1) not in oob_names:
+                        oob_names.add(math.group(1))
+                        oob_names_total.add(math.group(1))
+                    else:
+                        print(filename, math.group(1))
+                        bad = True
+
+    if bad:
+        print("Found duplicate names in oobs, aborting")
+        return(-1)
+    else:
+        print("Found no duplicate ships in oobs, continuing")
+
+    names_list_names = set()
+
+
+    for filename in listdir(names_path):
+        with open(os.path.join(names_path, filename), 'r', 'utf-8-sig') as file:
+            lines = file.readlines()
+            level = 0
+            searching = False
+            super_search = False
+            names = ""
+            prefix = ""
+            names_list = []
+            i = 0
+            for line in lines:
+
+                if '#' in line:
+                    if line.strip().startswith("#") is True:
+                        continue
+                    else:
+                        line = line.split('#')[0]
+
+                if level == 1 and '{' in line:
+                    name = line.split("=")[0].strip()
+                    if name in ['submarine', 'destroyer', 'light_cruiser', 'heavy_cruiser', 'battleship', 'SH_battleship', 'carrier', 'heavy_carrier']:
+                        names = ""
+                        searching = True
+                    else:
+                        searching = False
+
+                if searching:
+                    if 'prefix' in line:
+                        prefix = line.split("=")[1].strip()[1:-1]
+                        if len(prefix) > 0:
+                            prefix += " "
+
+                        print(filename, prefix)
+                    elif 'unique' in line:
+                        super_search = True
+                    elif super_search is True:
+                        if '}' in line:
+                            super_search = False
+                            searching = False
+
+                            names = [prefix + name for name in names[1:-1].split("\" \"") if name.strip() != ""]
+
+                            names_set = set(names)
+
+                            #if oob_names_total.intersection(names_set) != set():
+                            #print("already present in an oob:", len(oob_names_total.intersection(names_set)))
+                            #if names_list_names.intersection(names_set) != set():
+                            #print("already present in another namelist:", len(names_list_names.intersection(names_set)))
+
+
+                            #print("Total names in namelist:", len(names_set))
+                            #print("Total names left", len(names_set.difference(oob_names_total).difference(names_list_names)))
+                            #print(names_set.difference(oob_names_total).difference(names_list_names))
+                            #if len(names_set.difference(oob_names_total).difference(names_list_names)) == 0:
+                            #    zero_left += 1
+                            #names_list.append(names_set.difference(oob_names_total).difference(names_list_names))
+                            names_list.append([name[len(prefix):] for name in names if name not in list(oob_names_total) and name not in list(names_list_names)])
+                            names_list_names.update(names_set)
+                            i += 1
+                            #print("\n")
+                        else:
+                            names += line.strip() + " "
+
+
+
+                if '{' in line:
+                    level += line.count('{')
+                if '}' in line:
+                    level -= line.count('}')
+
+        # Read the file
+
+        with open(os.path.join(names_path, filename), 'w', 'utf-8-sig') as file:
+            file.truncate()
+            i = 0
+            level = 0
+            searching = False
+            super_search = False
+            block = False
+            for lineno, line in enumerate(lines):
+
+                if line.strip().startswith("#") is True:
+                    file.write(line)
+                    continue
+
+
+
+                if level == 1 and '{' in line:
+                    name = line.split("=")[0].strip()
+                    if name in ['submarine', 'destroyer', 'light_cruiser', 'heavy_cruiser', 'battleship', 'SH_battleship', 'carrier', 'heavy_carrier']:
+                        names = ""
+                        searching = True
+                    else:
+                        searching = False
+
+                    file.write(line)
+                else:
+
+                    if searching:
+                        if 'unique' in line:
+                            super_search = True
+                            file.write(line)
+                            block = False
+                        elif super_search is True:
+                            if '}' in line:
+                                super_search = False
+                                searching = False
+                                file.write(line)
+                            elif block is False:
+                                if names_list[i] == list():
+                                    continue
+                                to_write = "\" \"".join(list(names_list[i]))
+                                if to_write.strip().endswith("\"") is False:
+                                    to_write = to_write + "\""
+                                if to_write.strip().startswith("\"") is False:
+                                    to_write = "\"" + to_write
+                                file.write("\t\t\t" + to_write + "\n")
+                                block = True
+                                i += 1
+                        else:
+                            file.write(line)
+                    else:
+                        file.write(line)
+
+                if '{' in line:
+                    level += line.count('{')
+                if '}' in line:
+                    level -= line.count('}')
+
+
+
+
+
+
 def main():
-    #strat_region()
-    #tech()
-    #convert_oob()
-    fix_oob_calls()
+
+    modpath = r"C:\Users\Martijn\Documents\Paradox Interactive\Hearts of Iron IV\mod\KRBU"
+    gamepath = r"G:\Games\steamapps\common\Hearts of Iron IV"
+
+    check_ship_names(modpath)
+    #strat_region(gamepath, modpath)
+    #tech(modpath)
+    #convert_oob(modpath)
+    #fix_oob_calls(modpath)
 
 if __name__ == "__main__":
     main()

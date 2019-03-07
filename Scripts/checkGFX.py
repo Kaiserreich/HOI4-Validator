@@ -54,6 +54,7 @@ def check_for_missing_gfx(file_path, output_file, hoi4_path):
     #   Companies:
     #Other:
     #   Miscased: Done (Only relevant for leader portraits so far)
+
     common_path = path.join(file_path, "common")
     gfx_path = path.join(file_path, "gfx")
     interface_path = path.join(file_path, "interface")

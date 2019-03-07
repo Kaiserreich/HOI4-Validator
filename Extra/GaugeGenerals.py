@@ -223,12 +223,13 @@ def main():
             ok += 1
         else:
             cpath += ' ' + string
+
     cpath = path.join(cpath, "history", "countries")
 
     ttime = time.time()
 
     total_generals = 0
-    generals = {}  # name : (G/FM, skill, A, D, P, L, SUM)
+    generals = {}  # name : (G/FM/N, skill, A, D, P, L, SUM)
     tags = {}
     for filenames in listdir(cpath):
         with open(path.join(cpath, filenames),'r', 'utf-8-sig') as file:
@@ -247,11 +248,15 @@ def main():
                 line = lines[x].strip()
                 if '#' in line:
                     line = line.split('#')[0].strip()
-                if ('field_marshal' in line or 'corps_commander' in line) and '{' in line and level == 0:
+                    if line.strip().startswith('#'):
+                        continue
+                if ('field_marshal' in line or 'corps_commander' in line or 'create_navy_leader' in line) and '{' in line and level == 0:
                     if 'field_marshal' in line:
                         g_or_fm = 'FM'
-                    else:
+                    elif 'corps_commander' in line:
                         g_or_fm = 'G'
+                    else:
+                        g_or_fm = 'N'
                     try:
                         current_general = lines[x+1].split("\"")[1]
                     except IndexError:
@@ -262,20 +267,30 @@ def main():
                     total_generals += 1
                     searching = True
                     #print(current_general)
+
                 if '=' in line and searching is True :
                     if line.split('=')[0].strip() == "skill":
                         skill = int(line.split('=')[1])
+
                 if 'attack_skill' in line and searching is True:
                     attack = int(line.split('=')[1])
+
                 if 'defense_skill' in line and searching is True:
                     defense = int(line.split('=')[1])
+
                 if 'planning_skill' in line and searching is True:
                     planning = int(line.split('=')[1])
+                elif 'maneuvering_skill' in line and searching is True:
+                    planning = int(line.split('=')[1])
+
                 if 'logistics_skill' in line and searching is True:
                     logistics = int(line.split('=')[1])
+                elif 'coordination_skill' in line and searching is True:
+                    logistics = int(line.split('=')[1])
+
                 if '}' in line and searching is True and level == 1 and 'trait' not in line:
                     searching = False
-                    generals[current_general] = (g_or_fm, skill, attack, defense, planning, logistics, attack+defense+planning+logistics, tag)
+                    generals[filenames + current_general] = (g_or_fm, skill, attack, defense, planning, logistics, attack+defense+planning+logistics, tag)
                     #print(current_general)
                 if '{' in line:
                     level += line.count('{')
@@ -381,15 +396,17 @@ def main():
                 comment = "#".join(line.split('#')[1:])
                 line = line.split('#')[0]
                 comment = "#" + comment
-            if ('field_marshal' in line or 'corps_commander' in line) and '{' in line and level == 0:
+            if ('field_marshal' in line or 'corps_commander' in line or 'create_navy_leader' in line) and '{' in line and level == 0:
                 if 'field_marshal' in line:
                     g_or_fm = 'FM'
-                else:
+                elif 'corps_commander' in line:
                     g_or_fm = 'G'
+                else:
+                    g_or_fm = 'N'
 
                 current_general = lines[x + 1].split("\"")[1]
 
-                rank, skill, A, D, P, L, total, tag = generals[current_general]
+                rank, skill, A, D, P, L, total, tag = generals[filenames + current_general]
 
                 searching = True
                 # print(current_general)
@@ -401,8 +418,12 @@ def main():
                 file.write("\tdefense_skill = " + str(D) + comment + "\n")
             elif 'planning_skill' in line and searching is True:
                 file.write("\tplanning_skill = " + str(P) + comment + "\n")
+            elif 'maneuvering_skill' in line and searching is True:
+                file.write("\tmaneuvering_skill = " + str(P) + comment + "\n")
             elif 'logistics_skill' in line and searching is True:
                 file.write("\tlogistics_skill = " + str(L) + comment + "\n")
+            elif 'coordination_skill' in line and searching is True:
+                file.write("\tcoordination_skill = " + str(L) + comment + "\n")
             elif '}' in line and searching is True and level == 1 and 'trait' not in line:
                 searching = False
                 file.write(line + comment)
