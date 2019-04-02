@@ -73,6 +73,8 @@ check_template_names = yes
 check_OOB_order = yes
 #this checks to see if referenced ideologies actually exist
 check_ideologies = yes
+#this determines if the vanilla ideologies are considered valid ideologies or not
+uses_default_ideologies = yes
 #this checks for non-existent states in focus trees, decisions, and events
 check_states = yes
 #this checks for VPs that are missing loc, and VP loc that is unused

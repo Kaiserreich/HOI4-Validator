@@ -4,11 +4,12 @@ from timedFunction import timed
 from openFile import open_file
 
 @timed
-def check_ideologies(path, output_file):
+def check_ideologies(path, usesvanilla, output_file):
     debug = False
     ideologydict = {}
     linedict = {}
     filedict = {}
+    defaultideologies = ['democratic', 'communism','fascism', 'neutrality']
     filterstrings = []
     thingstripped = 'ideology'
     searchstrings = ['ideology = ', 'has_government =', 'ruling_party = ']
@@ -18,6 +19,10 @@ def check_ideologies(path, output_file):
     line = file.readline()
     depth = 0
     istypes = False
+    ideologydict['ROOT'] = True
+    if usesvanilla:
+        for each in defaultideologies:
+            ideologydict[each] = True
     while line:
         line = file.readline()
         if depth == 1 and '= {' in line:
@@ -32,7 +37,7 @@ def check_ideologies(path, output_file):
             ideology = line.split('= {}')[0].strip()
             if debug is True:
                 print(ideology)
-            if ideology == 'ROOT' or ideology in ideologydict:
+            if ideology in ideologydict:
                 ideologydict[ideology] = True
 
         if '{' in line:
