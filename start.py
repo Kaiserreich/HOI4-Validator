@@ -41,6 +41,11 @@ def start(mod_path, hoi4_path):
     t0 = time.time()
     print(dirName + '\\options.txt')
     optionsdict = {}
+    settings_file = open('settings.txt', 'r', 'utf-8-sig')
+    outputfile = 'validator.txt'
+    for line in settings_file:
+        if 'Output File:' in line and line.replace('Output File:', '') != '':
+            outputfile = line.replace('Output File:', '')
     options_file = open('options.txt', 'r', 'utf-8-sig')
     for line in options_file:
         #this checks through the options file to see if a given line is an option. If so, it checks the
@@ -54,7 +59,10 @@ def start(mod_path, hoi4_path):
                 else:
                     optionsdict[linelist[0].strip()] = False
     options_file.close()
-    output_file = open("validator.txt", 'w', 'utf-8-sig')
+    try:
+        output_file = open(outputfile, 'w', 'utf-8-sig')
+    except:
+        output_file = open('validator.txt', 'w', 'utf-8-sig') #it'll default to doing this in the base folder if there's an issue in the way the output file location is specified
     if optionsdict["check_ideologies"]:
         check_ideologies(mod_path, optionsdict["uses_default_ideologies"], output_file)
     if optionsdict["check_missing_division_name_group"]:
