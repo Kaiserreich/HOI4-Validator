@@ -32,8 +32,9 @@ def check_ideologies(path, output_file):
             ideology = line.split('= {}')[0].strip()
             if debug is True:
                 print(ideology)
-            if ideology in ideologydict:
+            if ideology == 'ROOT' or ideology in ideologydict:
                 ideologydict[ideology] = True
+
         if '{' in line:
             depth = depth + 1
         if '}' in line:
