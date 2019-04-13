@@ -139,7 +139,7 @@ def event(cpath):
                     continue
                 if '#' in line:
                     line = line.split('#')[0]
-                if 'country_event' in line or 'news_event' in line or 'unit_leader_event' in line: #New Event
+                if 'country_event' in line or 'news_event' in line or 'unit_leader_event' in line or 'state_event' in line: #New Event
                     if check_triggered(line_number, lines) is False:
                         if "}" not in line or "days" not in line:
                             new_event = True
@@ -310,7 +310,7 @@ def decision_improved(cpath):
                     elif 'timeout_effect' in line:
                         found_decisions[latest_found][2] = line_number
 
-                    elif 'target_trigger' in line:
+                    elif 'target_trigger' in line or 'targets' in line:
                         found_decisions[latest_found][3] = True
 
                     if '{' in line:

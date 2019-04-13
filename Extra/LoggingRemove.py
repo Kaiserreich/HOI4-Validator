@@ -96,7 +96,7 @@ def idea(cpath):
 def decision(cpath):
     # immediate = {log = "[Root.GetName]: event "+ id + "\n"}  # autolog
     for filename in listdir(cpath + "\\common\\decisions"):
-        if ".txt" in filename and filename.startswith('_') is False and 'categories' not in filename:
+        if ".txt" in filename and 'categories' not in filename:
             outputfile = open(cpath + "\\common\\decisions\\" + filename, 'r', 'utf-8')
             size = os.path.getsize(cpath + "\\common\\decisions\\" + filename)
             if size < 100:

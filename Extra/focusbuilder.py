@@ -21,8 +21,8 @@ def main():
 
             file = open(filename, 'r', 'ansi')
             lines = file.readlines()
-            for string in lines:
-                if "id " in string and string.strip().startswith('#') is False and 'relative_position_id' not in string and 'country_event' not in string and 'sve' not in string:
+            for lineno, string in enumerate(lines):
+                if '{' not in string and "id " in string and string.strip().startswith('#') is False and 'relative_position_id' not in string and 'country_event' not in string and 'sve' not in string and 'province' not in lines[lineno-1]:
                     if counter != 0:
                         focus = string.split('=')[1].strip()
                         output_file.write(" " + focus + ":0 \"\"\n")
