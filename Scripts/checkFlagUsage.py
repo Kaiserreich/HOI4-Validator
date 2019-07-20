@@ -74,9 +74,10 @@ def check_flag_usage(mod_path, output_file):
             for flag, start_line in field_contents_gen(contents, 'has_country_flag'):
                 if flag not in country_flags_checked:
                     country_flags_checked += [Flag(flag, start_line, filename)]
-            for flag, start_line in field_contents_gen(contents, 'has_state_flag'):
-                if flag not in state_flags_checked:
-                    state_flags_checked += [Flag(flag, start_line, filename)]
+            if filename != "_Ministers_ideas.txt":
+                for flag, start_line in field_contents_gen(contents, 'has_state_flag'):
+                    if flag not in state_flags_checked:
+                        state_flags_checked += [Flag(flag, start_line, filename)]
 
     global_flags_set_names = set()
     for flag in global_flags_set:
