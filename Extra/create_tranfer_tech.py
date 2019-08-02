@@ -3,13 +3,13 @@ from os import listdir
 from os import path
 
 
-
-def main():
+def main(xors):
     mod_path = r'C:\Users\Martijn\Documents\Paradox Interactive\Hearts of Iron IV\mod\KROTHER'
     tech_folder = path.join(mod_path, 'common', 'technologies')
     scripted_effects = path.join(mod_path, 'common', 'scripted_effects')
 
-    template = "\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tPREV = {\n\t\t\t\t\thas_tech = %(tech)s\n\t\t\t\t}\n\t\t\t}\n\t\t\tset_technology = {\n\t\t\t\t%(tech)s = 1\n\t\t\t}\n\t\t}\n"
+    template = "\t\tif = {\n\t\t\tlimit = {\n%(addendum)s\t\t\t\tPREV = {\n\t\t\t\t\thas_tech = %(tech)s\n\t\t\t\t}\n\t\t\t}\n\t\t\tset_technology = {\n\t\t\t\t%(tech)s = 1\n\t\t\t}\n\t\t}\n"
+    addentum_templace = "\t\t\t\tNOT = { has_tech = %(prev)s }\n"
 
     with open(path.join(scripted_effects, 'transfer_technology_effects_new.txt'), 'w', 'utf-8') as new_scripted_effect:
         # Its ugly, but works
@@ -52,7 +52,13 @@ transfer_technology = {
 
                     if level == 1 and '{' in line:
                         techname = line.split('=')[0].strip()
-                        new_scripted_effect.write(template % {"tech": techname})
+                        if techname in list(xors.keys()):
+                            xor = ""
+                            for NOT in xors[techname]:
+                                xor = xor + addentum_templace % {"prev": NOT}
+                        else:
+                            xor = ""
+                        new_scripted_effect.write(template % {"tech": techname, "addendum": xor})
                     if '{' in line:
                         level += line.count('{')
                     if '}' in line:
@@ -60,5 +66,47 @@ transfer_technology = {
 
         new_scripted_effect.write("\t}\n}")
 
+def get_xors():
+    xors = dict()
+    mod_path = r'C:\Users\Martijn\Documents\Paradox Interactive\Hearts of Iron IV\mod\KROTHER'
+    tech_folder = path.join(mod_path, 'common', 'technologies')
 
-main()
+    for filename in listdir(tech_folder):
+        with open(path.join(tech_folder, filename), 'r', 'utf-8') as file:
+            lines = file.readlines()
+            level = 0
+
+            for line_number, line in enumerate(lines):
+                if '#' in line:
+                    if line.strip().startswith("#") is True:
+                        continue
+                    else:
+                        line = line.split('#')[0]
+
+                if level == 1 and '{' in line:
+                    techname = line.split('=')[0].strip()
+
+                if level == 2 and ('XOR' in line or 'xor' in line):
+                    end_me = False
+                    current_line = line
+                    exclusives = ""
+                    i = 0
+                    while end_me is False:
+                        if '}' in current_line:
+                            end_me = True
+                            current_line = current_line.split("}")[0].strip()
+                        if '{' in current_line:
+                            current_line = current_line.split("{")[1].strip()
+                        exclusives += current_line.strip()
+                        current_line = lines[line_number + i]
+                        i += 1
+
+                    xors[techname] = exclusives.split(" ")
+                if '{' in line:
+                    level += line.count('{')
+                if '}' in line:
+                    level -= line.count('}')
+    return xors
+
+xors_dict = get_xors()
+main(xors_dict)
