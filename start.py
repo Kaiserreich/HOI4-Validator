@@ -73,8 +73,8 @@ def start(mod_path, hoi4_path):
         check_for_name_lists(mod_path, output_file)
     if optionsdict["check_for_brackets"]:
         check_brackets(mod_path, output_file)
-    if optionsdict["check_for_double_locs"]:
-        check_for_double_locs(mod_path, output_file)
+    if optionsdict["check_for_double_locs"] or optionsdict["check_for_double_loc_spaces"]:
+        check_for_double_locs(mod_path, output_file, bool(optionsdict["check_for_double_locs"]), bool(optionsdict["check_for_double_loc_spaces"]))
     if optionsdict["check_for_missing_gfx"]:
         check_for_missing_gfx(mod_path, output_file, hoi4_path)
     if optionsdict["check_for_missing_focus"]:

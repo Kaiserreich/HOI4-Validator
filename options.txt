@@ -11,6 +11,8 @@ check_for_name_lists = yes
 check_for_brackets = yes
 #this checks for locs that are defined twice
 check_for_double_locs = yes
+#this checks for double spaces in loc
+check_for_double_loc_spaces = yes
 #this checks for missing graphics
 check_for_missing_gfx = yes
 #this checks to make sure focuses referenced elsewhere actually exist
