@@ -2,11 +2,16 @@
 ### Validator Options ###
 #########################
 
+#########################
 # Section One
 # This is made up of working checks and so is kept on my default
+#########################
 
-# Section Two
-# This is made up of checks that either are broken or only used in niche circumstance
+#this checks for locs that are defined twice
+check_for_double_locs = no
+
+#this checks to make sure brackets are being used correctly
+check_for_brackets = no
 
 #this checks for divisions with missing namegroups
 check_missing_division_name_group = no
@@ -14,32 +19,41 @@ check_missing_division_name_group = no
 #this makes the check for missing namegroups skip files with 'unlock' in their name (such as unlock_marines.txt) to avoid giving false positives on OOBs that are used to unlock templates
 skip_unlock = no
 
-#this checks for comments indicating a general has been updated. It does not check for unupdated generals, just comments.
-check_for_old_generals = no
-
 #this checks for tags without namelists
 check_for_name_lists = no
 
-#this checks to make sure brackets are being used correctly
-check_for_brackets = no
-
-#this checks for locs that are defined twice
-check_for_double_locs = no
+#########################
+# Section Two
+# This is made up of checks that are only used in niche circumstance
+#########################
 
 #this checks for double spaces in loc
 check_for_double_loc_spaces = no
 
-#this checks for missing graphics
-check_for_missing_gfx = no
+#this checks for comments indicating a general has been updated. It does not check for unupdated generals, just comments.
+check_for_old_generals = no
+
+#########################
+# Section Three
+# This is made up of checks that are currently broken
+#########################
+
+#this checks to see if referenced ideologies actually exist
+check_ideologies = no
+
+#checks hidden events for visible content
+check_hidden_events = no
+
+#########################
+# Section Four
+# This is made up of checks that haven't been checked yet...get it?
+#########################
 
 #this checks to make sure focuses referenced elsewhere actually exist
 check_for_missing_focus = no
 
 #this checks to make sure all provinces have at least one core at game start
 check_for_missing_cores = no
-
-#this checks for missing OOBs
-check_for_missing_oobs = no
 
 #this checks for events that are missing graphics
 check_events_for_graphics = no
@@ -53,14 +67,8 @@ check_events_for_titles = no
 #checks for events that are missing descriptions
 check_events_for_descriptions = no
 
-#checks hidden events for visible content
-check_hidden_events = no
-
 #checks if events with ai_chance fields have only one option
 check_ai_chance_usage = no
-
-#checks if events that load oobs also have custom tooltips
-check_load_oob_usage = no
 
 #checks event options each have separate localizations
 check_for_duplicate_options_loc = no
@@ -119,9 +127,6 @@ check_template_names = no
 #this checks for if division templates in a OOB are defined after the units are defined
 check_OOB_order = no
 
-#this checks to see if referenced ideologies actually exist
-check_ideologies = no
-
 #this determines if the vanilla ideologies are considered valid ideologies or not
 uses_default_ideologies = no
 
@@ -133,3 +138,14 @@ check_vp_loc = no
 
 #this does the same thing as the previous one, but is specific to the Kaiserreich endonym victory points
 check_kr_endo_vp_loc = no
+
+#this checks for missing OOBs
+check_for_missing_oobs = no
+
+#checks if events that load oobs also have custom tooltips
+check_load_oob_usage = no
+
+### ones I have been lazy with and not checked yet, leaving to last
+
+#this checks for missing graphics
+check_for_missing_gfx = no
