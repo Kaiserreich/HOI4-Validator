@@ -1,15 +1,7 @@
 
-validator.txt
-settings.txt
-settings.txt
-settings.txt
-validator.txt
 *.xml
 *.iml
-settings.txt
-*.pyc
-validator.txt
-*.pyc
 *.pyc
 __pycache__/start.cpython-36.pyc
-*.pyc
+/settings.txt
+/validator.txt
