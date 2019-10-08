@@ -19,7 +19,7 @@ def check_for_equals_no(path, output_file):
     path = os.path.join(commonpath, 'decisions')
     nodict, linedict, filedict = create_search_dict(nodict, linedict, filedict, path, searchstrings, filterstrings, thingstripped, searchstrings2 = triggerlist)
     for key in nodict:
-        result = "= no is used in file " + filedict[key] + " on line " + str(linedict[key]) + ". Don't do that.\n"
+        result = "= no is used in file " + filedict[key] + " on line " + str(linedict[key]) + ".\n"
         #print(result)
         output_file.write(result)
 

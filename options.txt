@@ -22,9 +22,16 @@ skip_unlock = no
 #this checks for tags without namelists
 check_for_name_lists = no
 
+#checks if events with ai_chance fields have only one option
+check_ai_chance_usage = no
+
+#this checks to make sure all generals referenced in effects actually exist
+check_generals = no
+
 #########################
 # Section Two
-# This is made up of checks that are only used in niche circumstance
+# This is made up of checks that are working but aren't turned on my default
+# Things here either aren't always bugs or only have niche uses
 #########################
 
 #this checks for double spaces in loc
@@ -33,54 +40,47 @@ check_for_double_loc_spaces = no
 #this checks for comments indicating a general has been updated. It does not check for unupdated generals, just comments.
 check_for_old_generals = no
 
-#########################
-# Section Three
-# This is made up of checks that are currently broken
-#########################
-
-#this checks to see if referenced ideologies actually exist
-check_ideologies = no
-
-#checks hidden events for visible content
-check_hidden_events = no
-
-#########################
-# Section Four
-# This is made up of checks that haven't been checked yet...get it?
-#########################
-
-#this checks to make sure focuses referenced elsewhere actually exist
-check_for_missing_focus = no
-
 #this checks to make sure all provinces have at least one core at game start
 check_for_missing_cores = no
 
 #this checks for events that are missing graphics
 check_events_for_graphics = no
 
-#checks for events that are missing options
-check_events_for_options = no
-
-#checks for events that are missing titles
-check_events_for_titles = no
-
-#checks for events that are missing descriptions
-check_events_for_descriptions = no
-
-#checks if events with ai_chance fields have only one option
-check_ai_chance_usage = no
-
-#checks event options each have separate localizations
-check_for_duplicate_options_loc = no
-
 #this checks to make sure endlines are used properly
 check_endlines = no
 
-#this checks to make sure all generals referenced in effects actually exist
-check_generals = no
-
 #this lists the ID of all unique generals
 list_general_ids = no
+
+#########################
+# Section Three
+# This is made up of checks that are currently broken
+#########################
+
+#this checks to see if referenced ideologies actually exist
+#broken: https://github.com/KR4/HOI4-Validator/issues/99
+check_ideologies = no
+
+#checks hidden events for visible content
+#broken: https://github.com/KR4/HOI4-Validator/issues/92
+check_hidden_events = no
+
+#checks for events that are missing options
+#broken: https://github.com/KR4/HOI4-Validator/issues/96
+check_events_for_options = no
+
+#checks for events that are missing titles
+#broken: https://github.com/KR4/HOI4-Validator/issues/96
+check_events_for_titles = no
+
+#checks for events that are missing descriptions
+#broken: https://github.com/KR4/HOI4-Validator/issues/96
+check_events_for_descriptions = no
+
+#########################
+# Section Four
+# This is made up of checks that haven't been checked yet...get it?
+#########################
 
 #this checks to make sure = no is not used anywhere where it would screw up a tooltip.
 check_for_equals_no = no
@@ -149,3 +149,9 @@ check_load_oob_usage = no
 
 #this checks for missing graphics
 check_for_missing_gfx = no
+
+#this checks to make sure focuses referenced elsewhere actually exist
+check_for_missing_focus = no
+
+#checks event options each have separate localizations
+check_for_duplicate_options_loc = no

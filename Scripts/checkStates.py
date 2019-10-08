@@ -17,7 +17,7 @@ def check_states(path, output_file):
     finaldict = create_state_dict(originalpath, statedict, output_file)
     for key in finaldict:
         if finaldict[key] == False:
-            result = "State " + key + " referenced in " + filedict[key] + " on line " + str(linedict[key]) + " does not exist"
+            result = "State " + key + " referenced in " + filedict[key] + " on line " + str(linedict[key]) + " does not exist.\n"
             #print(result)
             output_file.write(result)
 
@@ -42,7 +42,7 @@ def create_state_dict(path, statedict, output_file):
             line = file.readline()
         if idname:
             if id != fileid:
-                result = "In " + filename + " the state id is " + str(id) + " instead of " + str(fileid)
+                result = "In " + filename + " the state id is " + str(id) + " instead of " + str(fileid) + ".\n"
                 #print(result)
                 output_file.write(result)
         returndict[str(id)] = True
