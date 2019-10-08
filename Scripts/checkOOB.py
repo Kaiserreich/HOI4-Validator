@@ -19,7 +19,7 @@ def check_for_missing_OOB(path, output_file):
     finaldict = actually_check_for_missing_oob(originalpath, oobdict)
     for key in finaldict:
         if finaldict[key] == False:
-            result = "The oob " + key + " referenced in file " + filedict[key] + " on line " + str(linedict[key]) + " does not exist.\n"
+            result = "The OOB " + key + " referenced in file " + filedict[key] + " on line " + str(linedict[key]) + " does not exist.\n"
             #print(result)
             output_file.write(result)
 

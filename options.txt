@@ -7,19 +7,18 @@
 # This is made up of working checks and so is kept on my default
 #########################
 
-#this checks for locs that are defined twice
+#this checks for localization that is defined twice
 check_for_double_locs = no
 
 #this checks to make sure brackets are being used correctly
 check_for_brackets = no
 
-#this checks for divisions with missing namegroups
+#this checks for divisions with missing name-groups
+#the second option makes the check for missing name-groups skip files with 'unlock' in their name (such as unlock_marines.txt) to avoid giving false positives on OOBs that are used to unlock templates
 check_missing_division_name_group = no
-
-#this makes the check for missing namegroups skip files with 'unlock' in their name (such as unlock_marines.txt) to avoid giving false positives on OOBs that are used to unlock templates
 skip_unlock = no
 
-#this checks for tags without namelists
+#this checks for tags without name-lists
 check_for_name_lists = no
 
 #checks if events with ai_chance fields have only one option
@@ -28,16 +27,30 @@ check_ai_chance_usage = no
 #this checks to make sure all generals referenced in effects actually exist
 check_generals = no
 
+#this checks for unused OOBs
+check_for_unused_oobs = no
+
+#This checks for missing '='.
+check_for_missing_equals = no
+
+#this checks for VPs that are missing loc, and VP loc that is unused
+#the second option does the same thing as the first, but is specific to the Kaiserreich endonym victory points
+check_vp_loc = no
+check_kr_endo_vp_loc = no
+
+#this checks for missing OOBs
+check_for_missing_oobs = no
+
 #########################
 # Section Two
 # This is made up of checks that are working but aren't turned on my default
 # Things here either aren't always bugs or only have niche uses
 #########################
 
-#this checks for double spaces in loc
+#this checks for double spaces in localization
 check_for_double_loc_spaces = no
 
-#this checks for comments indicating a general has been updated. It does not check for unupdated generals, just comments.
+#this checks for comments indicating a general has been updated. It does not check for un-updated generals, just comments.
 check_for_old_generals = no
 
 #this checks to make sure all provinces have at least one core at game start
@@ -46,11 +59,14 @@ check_for_missing_cores = no
 #this checks for events that are missing graphics
 check_events_for_graphics = no
 
-#this checks to make sure endlines are used properly
+#this checks to make sure end-lines are used properly
 check_endlines = no
 
 #this lists the ID of all unique generals
 list_general_ids = no
+
+#this checks for if a tag has naval techs, but does not have the prerequisite invisible tech granted by naval decisions. This was specific to KR's naval rework, but is now no longer in use.
+check_naval_tech = no
 
 #########################
 # Section Three
@@ -58,8 +74,10 @@ list_general_ids = no
 #########################
 
 #this checks to see if referenced ideologies actually exist
+#the second option determines if the vanilla ideologies are considered valid ideologies or not
 #broken: https://github.com/KR4/HOI4-Validator/issues/99
 check_ideologies = no
+uses_default_ideologies = no
 
 #checks hidden events for visible content
 #broken: https://github.com/KR4/HOI4-Validator/issues/92
@@ -77,81 +95,67 @@ check_events_for_titles = no
 #broken: https://github.com/KR4/HOI4-Validator/issues/96
 check_events_for_descriptions = no
 
+#This checks for missing localization. Currently just events and focuses though.
+#broken: https://github.com/KR4/HOI4-Validator/issues/100
+check_for_missing_loc = no
+
+#This checks that each event or focus id is only defined once
+#broken: https://github.com/KR4/HOI4-Validator/issues/101
+check_for_duplicate_ids = no
+
+#This checks that flags that are used or changed are ever set and vice versa.
+#broken: https://github.com/KR4/HOI4-Validator/issues/102
+check_flag_usage = no
+
+#This checks that ideas are ever added if used
+#broken: https://github.com/KR4/HOI4-Validator/issues/103
+check_idea_usage = no
+
+#this checks to make sure focuses referenced elsewhere actually exist
+#broken: https://github.com/KR4/HOI4-Validator/issues/90
+check_for_missing_focus = no
+
+#this checks for if units in OOBs have templates defined for them
+#broken: https://github.com/KR4/HOI4-Validator/issues/104
+check_oob_templates = no
+
+#this checks for if templates have namegroups properly defined
+#broken: https://github.com/KR4/HOI4-Validator/issues/105
+check_template_namegroup = no
+
+#this checks for if templates have names
+#broken: https://github.com/KR4/HOI4-Validator/issues/106
+check_template_names = no
+
+#this checks for if division templates in a OOB are defined after the units are defined
+#broken: https://github.com/KR4/HOI4-Validator/issues/107
+check_OOB_order = no
+
 #########################
 # Section Four
 # This is made up of checks that haven't been checked yet...get it?
 #########################
 
-#this checks to make sure = no is not used anywhere where it would screw up a tooltip.
-check_for_equals_no = no
-
-#this checks for unused oobs
-check_for_unused_oobs = no
-
-#This checks for missing localization. Currently just events and focuses though.
-check_for_missing_loc = no
-
-#This checks that each diplo relations effect checks that its subject still exists.
-check_for_alive_checks = no
-
-#This checks for missing '='.
-check_for_missing_equals = no
-
-#This checks that each event or focus id is only defined once
-check_for_duplicate_ids = no
-
-#This checks that every event that is called is defined and that every non-MTTH event is called at least once
-check_for_event_use = no
-
-#This checks that flags that are used or changed are ever set and vice versa.
-check_flag_usage = no
-
-#This checks that ideas are ever added if used
-check_idea_usage = no
-
-#This checks if mutually exclusive focuses all list each other as mutually exclusive
-check_mutually_exclusive_focuses = no
-
-#this checks for if a tag has naval techs, but does not have the prerec invisible tech granted by naval decisisions. Specific to KR's naval rework
-check_naval_tech = no
-
-#this checks for if units in OOBs have templates defined for them
-check_oob_templates = no
-
-#this checks for if templates have namegroups properly defined
-check_template_namegroup = no
-
-#this checks for if templates have names
-check_template_names = no
-
-#this checks for if division templates in a OOB are defined after the units are defined
-check_OOB_order = no
-
-#this determines if the vanilla ideologies are considered valid ideologies or not
-uses_default_ideologies = no
-
-#this checks for non-existent states in focus trees, decisions, and events
-check_states = no
-
-#this checks for VPs that are missing loc, and VP loc that is unused
-check_vp_loc = no
-
-#this does the same thing as the previous one, but is specific to the Kaiserreich endonym victory points
-check_kr_endo_vp_loc = no
-
-#this checks for missing OOBs
-check_for_missing_oobs = no
-
-#checks if events that load oobs also have custom tooltips
+#checks if events that load OOBs also have custom tooltips
 check_load_oob_usage = no
-
-### ones I have been lazy with and not checked yet, leaving to last
 
 #this checks for missing graphics
 check_for_missing_gfx = no
 
-#this checks to make sure focuses referenced elsewhere actually exist
-check_for_missing_focus = no
-
 #checks event options each have separate localizations
 check_for_duplicate_options_loc = no
+
+#this checks to make sure = no is not used anywhere where it would screw up a tooltip.
+check_for_equals_no = no
+
+#This checks that each diplomatic relations effect checks that its subject still exists.
+check_for_alive_checks = no
+
+#This checks that every event that is called is defined and that every non-MTTH event is called at least once
+check_for_event_use = no
+
+#This checks if mutually exclusive focuses all list each other as mutually exclusive
+check_mutually_exclusive_focuses = no
+
+#this checks for non-existent states in focus trees, decisions, and events
+check_states = no
