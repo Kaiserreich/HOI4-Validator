@@ -301,17 +301,21 @@ def decision_improved(cpath):
                         # Add an default reference to this decision
                         found_decisions[line_number] = [0, 0, 0, False]
 
-                    if 'complete_effect' in line:
-                        found_decisions[latest_found][0] = line_number
+                        if found_decisions[latest_found]:
+                            if 'complete_effect' in line:
+                                found_decisions[latest_found][0] = line_number
 
-                    elif 'remove_effect' in line:
-                        found_decisions[latest_found][1] = line_number
+                            elif 'remove_effect' in line:
+                                found_decisions[latest_found][1] = line_number
 
-                    elif 'timeout_effect' in line:
-                        found_decisions[latest_found][2] = line_number
+                            elif 'timeout_effect' in line:
+                                found_decisions[latest_found][2] = line_number
 
-                    elif 'target_trigger' in line or 'targets' in line:
-                        found_decisions[latest_found][3] = True
+                            elif 'target_trigger' in line or 'targets' in line:
+                                found_decisions[latest_found][3] = True
+
+                    if 'log = "[GetDateText]:' in line:
+                        found_decisions[latest_found] = None
 
                     if '{' in line:
                         level += line.count('{')
@@ -321,6 +325,14 @@ def decision_improved(cpath):
 
             if found_decisions == {}:
                 continue
+
+            found_decisions_filtered = {}
+            for key, value in found_decisions.items():
+                # Check if key is even then add pair to new dictionary
+                if value:
+                    found_decisions_filtered[key] = value
+
+            found_decisions = found_decisions_filtered
 
             id = ""
             index = [-1, -1, -1, False]
