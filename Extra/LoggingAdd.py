@@ -90,16 +90,13 @@ def focus(cpath):
             for line in lines:
                 line_number += 1
                 if line_number in idss:
-                    whitespace = '\t\t'
+                    whitespace = line[:-len(line.lstrip())]
                     focus_id = ids[idss.index(line_number)]
                     if focus_id in ["{", "}"]:
                         focus_id = "Error, focus name not found"
-                    if focus_id in shared_focuseseses:
-                        if 'Mongolia' not in filename:
-                            whitespace = whitespace[:len(whitespace)-1]
                     if '}' in line:
                         temp = line.split("{")
-                        replacement_text = temp[0] + "{\n" + whitespace + "\tlog = \"[GetDateText]: [Root.GetName]: Focus " + focus_id + "\"\n" + "{".join(temp)[len(temp[0])+1:] + "\n"
+                        replacement_text = whitespace + temp[0].strip() + "{\n" + whitespace + "\tlog = \"[GetDateText]: [Root.GetName]: Focus " + focus_id + "\"\n" + "{".join(temp)[len(temp[0])+1:] + "\n"
                     else:
                         replacement_text = whitespace + "completion_reward = {\n" + whitespace + "\tlog = \"[GetDateText]: [Root.GetName]: Focus " + focus_id + "\"\n"
                     outputfile.write(replacement_text)
@@ -172,6 +169,7 @@ def event(cpath):
             outputfile = open(os.path.join(cpath, "events", filename), 'w', 'utf-8-sig')
             outputfile.truncate()
 
+
             event_id = "THIS SHOULD NEVER SHOW UP"
             insert_in_trigger = -1
             for line in lines:
@@ -192,7 +190,7 @@ def event(cpath):
                     else:
                         insert_in_trigger = has_add_keyword[event_id]
 
-                elif line_number is insert_in_trigger:
+                elif line_number == insert_in_trigger:
                     white_space = line[:-len(line.lstrip())]
                     if '#' in line:
                         extra = " #" + line.split('#')[len(line.split('#')) - 1].strip()
