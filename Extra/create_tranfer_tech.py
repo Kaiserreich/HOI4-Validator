@@ -4,14 +4,14 @@ from os import path
 
 
 def main(xors):
-    mod_path = r'C:\Users\Martijn\Documents\Paradox Interactive\Hearts of Iron IV\mod\KROTHER'
+    mod_path = r'C:\Users\Martijn\Documents\Paradox Interactive\Hearts of Iron IV\mod\KRBU'
     tech_folder = path.join(mod_path, 'common', 'technologies')
     scripted_effects = path.join(mod_path, 'common', 'scripted_effects')
 
     template = "\t\tif = {\n\t\t\tlimit = {\n%(addendum)s\t\t\t\tPREV = {\n\t\t\t\t\thas_tech = %(tech)s\n\t\t\t\t}\n\t\t\t}\n\t\t\tset_technology = {\n\t\t\t\t%(tech)s = 1\n\t\t\t}\n\t\t}\n"
     addentum_templace = "\t\t\t\tNOT = { has_tech = %(prev)s }\n"
 
-    with open(path.join(scripted_effects, 'transfer_technology_effects_new.txt'), 'w', 'utf-8') as new_scripted_effect:
+    with open(path.join(scripted_effects, '_transfer_technology_effects.txt'), 'w', 'utf-8') as new_scripted_effect:
         # Its ugly, but works
         intro_string = """### Transfer Technology
 ### Written by wyandotte
@@ -68,7 +68,7 @@ transfer_technology = {
 
 def get_xors():
     xors = dict()
-    mod_path = r'C:\Users\Martijn\Documents\Paradox Interactive\Hearts of Iron IV\mod\KROTHER'
+    mod_path = r'C:\Users\Martijn\Documents\Paradox Interactive\Hearts of Iron IV\mod\KRBU'
     tech_folder = path.join(mod_path, 'common', 'technologies')
 
     for filename in listdir(tech_folder):

@@ -89,6 +89,7 @@ def focus(cpath):
             outputfile.truncate()
             for line in lines:
                 line_number += 1
+
                 if line_number in idss:
                     whitespace = line[:-len(line.lstrip())]
                     focus_id = ids[idss.index(line_number)]
@@ -159,7 +160,7 @@ def event(cpath):
                         ids.append(line_number)
                     else:
                         triggered = False
-                if adding_keyword in line:
+                if line.strip().startswith(adding_keyword):
                     has_add_keyword[event_id] = line_number
 
 
@@ -244,7 +245,7 @@ def idea(cpath):
                             #print(line.split('=')[0].strip())
                             ids.append(line_number)
 
-                if adding_keyword in line:
+                if line.strip().startswith(adding_keyword):
                     has_add_keyword[idea_id] = line_number
 
                 if '{' in line:
@@ -463,7 +464,7 @@ def tech(cpath):
                         ids.append(line_number)
                         idea_id = line.split('=')[0].strip()
 
-                if adding_keyword in line:
+                if line.strip().startswith(adding_keyword):
                     has_add_keyword[idea_id] = line_number
 
                 if '{' in line:
