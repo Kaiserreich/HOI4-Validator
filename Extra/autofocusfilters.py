@@ -151,7 +151,7 @@ for filename in listdir(os.path.join(eaw_folder, "common", "national_focus")):
 
         file.write(orig_line)
 
-        if check_shit and '}' in line and level == exit_level and line.count('{') - line.count('}') != 0:
+        if check_shit and '}' in line and level == exit_level and line.count('{') - line.count('}') < 0:
             check_shit = False
             #print(filename, focus_name, current_keywords)
             if len(current_keywords) > 0:
