@@ -1,4 +1,17 @@
+# This project has been deprecated!
+
+It is now suggested that you make use of CWTools. CWTools is much more powerful, able to find more errors and run in real time, as well as being more actively supported.
+
+https://marketplace.visualstudio.com/items?itemName=tboby.cwtools-vscode
+
+Or find the repo for it here:
+
+https://github.com/tboby/cwtools
+
+Thank to all those that helped work on this project!
+
 # HOI4-Validator
+
 Home of the validator for Hearts of Iron 4, help very much welcome!
 
 How to use:
